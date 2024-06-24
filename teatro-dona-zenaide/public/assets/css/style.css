@@ -1,0 +1,75 @@
+/* General */
+
+* {
+    font-family: var(--font-family-roboto);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Variables */
+
+:root {
+    /* Font Roboto */
+    --font-family-roboto: 'Roboto', sans-serif;
+
+    /* Colors */
+    --vermelho-geral: #D5321D;
+    --semibranco: #F2F2F2;
+    --texto-primario: #212121;
+    --texto-secundario: #757575;
+    --divider: #BDBDBD;
+    --marrom-escuro: #5D2417;
+    --branco-transparente: rgba(255, 255, 255, 0.85);
+}
+
+/* Fonts */
+
+.roboto-light {
+    font-family: var(--font-family-roboto);
+    font-weight: 300;
+    font-style: normal;
+}
+  
+.roboto-regular {
+    font-family: var(--font-family-roboto);
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.roboto-bold {
+    font-family: var(--font-family-roboto);
+    font-weight: 700;
+    font-style: normal;
+}
+
+.tnr-bold { 
+    /* tnr = Times New Roman */
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Font Sizes - Times New Roman */
+/* tnr = Times New Roman */
+
+.tnr-title-size {
+    --font-size: 40px;
+    font-size: var(--font-size);
+}
+
+.tnr-title-size--xlg {
+    --font-size: 64px;
+}
+
+.tnr-title-size--lg {
+    --font-size: 48px;
+}
+
+.tnr-title-size--sm {
+    --font-size: 32px;
+}
+
+.tnr-title-size--xsm {
+    --font-size: 20px;
+}
