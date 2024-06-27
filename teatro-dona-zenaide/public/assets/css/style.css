@@ -1,4 +1,6 @@
-/* General */
+/* 
+ *  General 
+*/
 
 * {
     font-family: var(--font-family-roboto);
@@ -7,7 +9,9 @@
     box-sizing: border-box;
 }
 
-/* Global Variables */
+/* 
+ *  Global Variables 
+*/
 
 :root {
     /* Font Roboto */
@@ -23,7 +27,10 @@
     --branco-transparente: rgba(255, 255, 255, 0.85);
 }
 
-/* Fonts */
+/* 
+ *  Fonts
+ *  tnr = Times New Roman
+*/
 
 .roboto-light {
     font-family: var(--font-family-roboto);
@@ -44,14 +51,15 @@
 }
 
 .tnr-bold { 
-    /* tnr = Times New Roman */
     font-family: 'Times New Roman', Times, serif;
     font-weight: 700;
     font-style: normal;
 }
 
-/* Font Sizes - Times New Roman */
-/* tnr = Times New Roman */
+/* 
+ *  Font Sizes - Times New Roman
+ *  tnr = Times New Roman
+*/
 
 .tnr-title-size {
     --font-size: 40px;
@@ -72,4 +80,73 @@
 
 .tnr-title-size--xsm {
     --font-size: 20px;
+}
+
+/* 
+ *   Header/Navbar 
+*/
+
+.navbar {
+    /* Definindo altura, background color e box shadow */
+    height: 100px;
+    background-color: var(--semibranco);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.offcanvas-body, .offcanvas-header {
+    /* Definindo background color para o menu lateral do OffCanvas */
+    background-color: var(--semibranco);
+}
+
+.navbar .container-fluid {
+    /* Espaçamento lateral da navbar */
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.navbar-nav {
+    /* Espaçamento entre os itens da navbar */
+    gap: 125px;
+    /* Alinhando os itens navbar ao centro */
+    align-items: center;
+}
+
+.nav-item a {
+    /* Fonte e cor dos itens da navbar (exceto o item ativo) */
+    font-size: 20px;
+    color: var(--vermelho-geral);
+}
+
+.nav-item a:hover {
+    /* Sobrepondo o estilo do bootstrap, para que ao passar o mouse pelo item da navbar, mantenha sua cor padrão */
+    color: var(--vermelho-geral);
+}
+
+.nav-pills .nav-link.active {
+    /* Alterando as variáveis do bootstrap responsáveis por alterar a cor de fundo e a cor de texto quando o item da navbar está ativo */
+    --bs-nav-pills-link-active-bg: var(--vermelho-geral);
+    --bs-navbar-active-color: var(--semibranco);
+
+    /* Padding no item ativo, utilizando o !important para sobrepor estilos do bootstrap */
+    padding: 10px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.nav-pills .nav-link {
+    /* Alterando a variável do bootstrap responsável por alterar o border radius quando o item da navbar está ativo */
+    --bs-nav-pills-border-radius: 0px;
+}
+
+/* 
+ *  @media Header/Navbar
+*/
+
+/* Estilizando o menu lateral do OffCanvas quando for menor que 992px */
+@media screen and (width < 992px) {
+    .navbar-nav {
+        /* Ajustar o gap e voltar os items a se alinhar ao começo */
+        gap: 50px;
+        align-items: start;
+    }
 }

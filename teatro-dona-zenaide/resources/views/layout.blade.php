@@ -26,13 +26,55 @@
 
     <body>
         
-        {{-- Header --}}
+        {{-- * Header/Navbar * --}}
         
+        <header>
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <div class="container-fluid">
+    
+                    {{-- Título e Botão de Menu da Navbar (o botão aparece apenas em dimensões menores de tela) --}}
+                    <a class="navbar-brand" href="#">Teatro Dona Zenaide</a> {{-- o Logo oficial será colocado aqui posteriormente --}}
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+                    {{-- Offcanvas Navbar --}}
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
+    
+                        {{-- Título e o Botão de Fechar da Offcanvas (menu lateral) --}}
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Teatro Dona Zenaide</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        
+                        {{-- Corpo da Navbar --}}
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav nav-pills d-flex justify-content-end flex-grow-1">
+                                <li class="nav-item">
+                                <a class="nav-link roboto-regular active" aria-current="page" href="#">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link roboto-regular" href="#">SOBRE NÓS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link roboto-regular" href="#">SEU PROJETO NO TEATRO</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link roboto-regular" href="#">CONTATOS</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                </div>
+            </nav>
+        </header>
 
-        {{-- Content --}}
+        {{-- * Content * --}}
         
+        @yield('content')
         
-        {{-- Footer --}}
+        {{-- * Footer * --}}
 
 
     </body>
