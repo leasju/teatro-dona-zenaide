@@ -76,6 +76,59 @@
         
         {{-- * Footer * --}}
 
+        <footer>
+            <div id="footer-area">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        {{-- Logo do Teatro Dona Zenaide --}}
+                        <div class="col-md-12">
+                            <a class="logo-brand" href="#">Teatro Dona Zenaide</a> {{-- o Logo oficial será colocado aqui posteriormente --}}
+                        </div>
+        
+                        {{-- Divider do footer --}}
+                        <hr class="divider divider--footer">
+    
+                        {{-- Seção: Onde nos encontrar --}}
+                        <div class="col-md-4">
+                            <h2 class="tnr-bold tnr-title-size tnr-title-size--xsm">ONDE NOS ENCONTRAR</h2>
+                            <div class="contact-icons d-flex">
+                                <span class="ic--baseline-whatsapp"></span>
+                                <span class="mdi--instagram"></span>
+                                <span class="ic--outline-email"></span>
+                            </div>
+                        </div>
+
+                        {{-- Seção: Localização --}}
+                        <div class="col-md-4">
+                            <h2 class="tnr-bold tnr-title-size tnr-title-size--xsm">LOCALIZAÇÃO</h2>
+                            <p class="roboto-regular p-footer">R. Alfredo Bueno, 1151 - Centro, <br>Jaguariúna - SP, 13820-000</p>
+                        </div>
+                        
+                        {{-- Seção: Fale conosco --}}
+                        <div class="col-md-4">
+                            <h2 class="tnr-bold tnr-title-size tnr-title-size--xsm">FALE CONOSCO</h2>
+                            <div class="form-inputs">
+                                <form action="">
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" id="floatingInput" placeholder="nome@exemplo.com">
+                                        <label for="floatingInput">Email</label>
+                                    </div>
+
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Mensagem" id="floatingTextarea"></textarea>
+                                        <label for="floatingTextarea">Mensagem</label>
+                                    </div>
+
+                                    <button class="btn main-btn">ENVIAR MENSAGEM</button>
+                                </form>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </footer>
 
     </body>
 </html>
