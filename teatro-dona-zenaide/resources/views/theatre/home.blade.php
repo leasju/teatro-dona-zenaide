@@ -2,7 +2,7 @@
 @extends('layout')
 
 {{-- Mudando o título da página dinâmicamente --}}
-@section('view-title', 'Página Principal')
+@section('view-title', 'Teatro Dona Zenaide')
 
 {{-- Conteúdo da página --}}
 @section('content')
