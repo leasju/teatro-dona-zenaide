@@ -9,6 +9,11 @@
     box-sizing: border-box;
 }
 
+html {
+    /* Background color da página */
+    background-color: var(--semibranco);
+}
+
 /* 
  * Icons Iconify CSS
 */
@@ -56,6 +61,7 @@
     --semibranco: #F2F2F2;
     --texto-primario: #212121;
     --texto-secundario: #757575;
+    --cinza: #999;
     --divider: #BDBDBD;
     --marrom-escuro: #5D2417;
     --branco-transparente: rgba(255, 255, 255, 0.85);
@@ -208,9 +214,78 @@
  * Footer
 */
 
+.logo-brand, .navbar-brand {
+    /* Estilos da logo do projeto da navbar e do footer */
+    text-decoration: none;
+    color: var(--vermelho-geral) !important;
+}
+
 footer {
+    /* Localizando o footer no bottom da página por enquanto */
     position: absolute;
     bottom: 0;
     width: 100%;
     margin-bottom: 100px;
+
+    /* Display flex e centralizando o footer no centro */
+    display: flex;
+    justify-content: center;
+}
+
+#footer-area {
+    /* Limitando em 60% do width */
+    width: 60%;
+}
+
+#footer-area h2 {
+    /* Margin para espaçar o título das seções do footer dos elementos abaixo */
+    margin-bottom: 10px;
+}
+
+.contact-icons {
+    /* Espaçando os ícones de contato */
+    gap: 15px;
+}
+
+#footer-area label {
+    /* Definindo cor para a label da seção de fale conosco */
+    color: var(--cinza);
+}
+
+#footer-area .form-control {
+    /* Alterando as variáveis do bootstrap responsáveis pelo width, border radius do input e cor */
+    --bs-border-width: 1px;
+    --bs-border-radius: 5px;
+    --bs-border-color: var(--texto-primario);
+    background-color: var(--semibranco);
+}
+
+.form-floating > label::after {
+    /* Tornando o background color da label transparente */
+    background-color: transparent !important;
+}
+
+input:focus, input:active, textarea:focus, textarea:active {
+    /* Sobrepondo os estilos do bootstrap de box shadow quando o input estiver ativo */
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: var(--texto-primario) !important;
+}
+
+#footer-area textarea {
+    /* Alterando a altura de exibição da textarea do footer */
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.main-btn {
+    /* Estilização do botão */
+    width: 100%;
+    padding: 10px 30px;
+
+    border-radius: 5px;
+    border: none;
+
+    background-color: var(--vermelho-geral);
+    color: var(--semibranco);
 }

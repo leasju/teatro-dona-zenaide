@@ -120,7 +120,7 @@
                                         <label for="floatingTextarea">Mensagem</label>
                                     </div>
 
-                                    <button class="btn main-btn">ENVIAR MENSAGEM</button>
+                                    <button class="main-btn">ENVIAR MENSAGEM</button>
                                 </form>
                             </div>
                         </div>
