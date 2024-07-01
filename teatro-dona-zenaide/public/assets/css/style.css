@@ -142,6 +142,38 @@ html {
 }
 
 /* 
+ * Buttons
+*/
+
+.main-btn {
+    /* Variáveis do botão */
+    --btn-width: 100%;
+    --btn-padding: 10px 30px;
+    --btn-font-size: 16px;
+
+    /* Estilização do botão */
+    width: var(--btn-width);
+    padding: var(--btn-padding);
+    font-size: var(--btn-font-size);
+
+    border-radius: 5px;
+    border: none;
+
+    background-color: var(--vermelho-geral);
+    color: var(--semibranco);
+}
+
+.main-btn--hero {
+    /* Tamanho do texto do botão */
+    --btn-width: 40%;
+    --btn-padding: 7px 30px;
+    --btn-font-size: 24px;
+    
+    /* Espaçamento do parágrafo */
+    margin-top: 15px;
+}
+
+/* 
  *   Header/Navbar 
 */
 
@@ -221,15 +253,16 @@ html {
 }
 
 footer {
-    /* Localizando o footer no bottom da página por enquanto */
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    margin-bottom: 100px;
-
     /* Display flex e centralizando o footer no centro */
     display: flex;
     justify-content: center;
+
+    /* Cor de fundo */
+    background-color: var(--semibranco);
+
+    /* Margin em cima e embaixo de 100px (top e bottom) */
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 #footer-area {
@@ -242,7 +275,7 @@ footer {
     margin-bottom: 10px;
 }
 
-.contact-icons {
+#contact-icons {
     /* Espaçando os ícones de contato */
     gap: 15px;
 }
@@ -278,14 +311,46 @@ input:focus, input:active, textarea:focus, textarea:active {
     margin-bottom: 20px;
 }
 
-.main-btn {
-    /* Estilização do botão */
-    width: 100%;
-    padding: 10px 30px;
+/* ------------------------------------------------ TELA HOME ---------------------------------------------------------- */
 
-    border-radius: 5px;
-    border: none;
+/* 
+ * Hero Section
+*/
 
-    background-color: var(--vermelho-geral);
+#hero-section {
+    /* Background do Hero  */
+    background: url('../img/img-hero.jpg') lightgray 50% / cover no-repeat;
+
+    /* Altura mínima de 750px e automática */
+    min-height: 750px;
+    height: auto;
+}
+
+#hero-section .container-fluid {
+    /* Espaçamento da fixed navbar */
+    margin-top: 100px;
+}
+
+#hero-section .row {
+    /* Alinhamento do conteúdo no centro da página */
+    display: flex;
+    justify-content: center;
+}
+
+#hero-section p {
+    /* Cor e tamanho do texto do parágrafo */
     color: var(--semibranco);
+    font-size: 20px;
+
+    /* Espaçamento do título */
+    margin-top: 25px;
+}
+
+#hero-section .hero-content {
+    /* Largura e alinhamento de texto conteúdo do hero */
+    width: 40%;
+    text-align: center;
+
+    /* Espaçamento da navbar */
+    margin-top: 100px;
 }
