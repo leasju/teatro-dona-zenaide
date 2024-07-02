@@ -72,7 +72,9 @@
 
         {{-- * Content * --}}
         
-        @yield('content')
+        <main>
+            @yield('content')
+        </main>
         
         {{-- * Footer * --}}
 
@@ -92,7 +94,7 @@
                         {{-- Seção: Onde nos encontrar --}}
                         <div class="col-md-4">
                             <h2 class="tnr-bold tnr-title-size tnr-title-size--xsm">ONDE NOS ENCONTRAR</h2>
-                            <div class="contact-icons d-flex">
+                            <div id="contact-icons" class="d-flex">
                                 <span class="ic--baseline-whatsapp"></span>
                                 <span class="mdi--instagram"></span>
                                 <span class="ic--outline-email"></span>

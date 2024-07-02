@@ -128,17 +128,79 @@ html {
 */
 
 .divider {
-    /* Variável de width do divider */
+    /* Variável de width e margin do divider */
     --divider-width: 100%;
+    --divider-margin-top: 10px;
+    --divider-margin-bottom: 10px;
+
+    /* Aplicando os valores */
     width: var(--divider-width);
+    margin-top: var(--divider-margin-top) !important;
+    margin-bottom: var(--divider-margin-bottom);
+
+    /* Altura do divider */
     height: 1px;
 
     /* Cor do divider */
-    background: var(--divider);
+    background-color: var(--divider);
 }
 
 .divider--footer {
+    /* Largura do divider */
     --divider-width: 100%;
+
+    /* Margin do divider */
+    --divider-margin-bottom: 25px;
+}
+
+.divider--card {
+    /* Largura do divider */
+    --divider-width: 70%;
+
+    /* Margin do divider */
+    --divider-margin-top: 5px;
+}
+
+/* 
+ * Buttons
+*/
+
+.main-btn {
+    /* Variáveis do botão */
+    --btn-width: 100%;
+    --btn-padding: 10px 30px;
+    --btn-font-size: 16px;
+
+    /* Estilização do botão */
+    width: var(--btn-width);
+    padding: var(--btn-padding);
+    font-size: var(--btn-font-size);
+
+    border-radius: 5px;
+    border: none;
+
+    background-color: var(--vermelho-geral);
+    color: var(--semibranco);
+}
+
+.main-btn--hero {
+    /* Alterando as variáveis do botão */
+    --btn-width: 40%;
+    --btn-padding: 7px 30px;
+    --btn-font-size: 20px;
+    
+    /* Espaçamento do parágrafo */
+    margin-top: 15px;
+}
+
+.main-btn--card {
+    /* Alterando as variáveis do botão */
+    --btn-width: 90%;
+    --btn-padding: 10px 30px;
+    --btn-font-size: 24px;
+
+    /* Espaçamento do título */
+    margin-top: 30px;
 }
 
 /* 
@@ -221,15 +283,15 @@ html {
 }
 
 footer {
-    /* Localizando o footer no bottom da página por enquanto */
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    margin-bottom: 100px;
-
     /* Display flex e centralizando o footer no centro */
     display: flex;
     justify-content: center;
+
+    /* Cor de fundo */
+    background-color: var(--semibranco);
+
+    /* Margin embaixo de 100px (bottom) */
+    margin-bottom: 100px;
 }
 
 #footer-area {
@@ -239,10 +301,10 @@ footer {
 
 #footer-area h2 {
     /* Margin para espaçar o título das seções do footer dos elementos abaixo */
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-.contact-icons {
+#contact-icons {
     /* Espaçando os ícones de contato */
     gap: 15px;
 }
@@ -256,7 +318,7 @@ footer {
     /* Alterando as variáveis do bootstrap responsáveis pelo width, border radius do input e cor */
     --bs-border-width: 1px;
     --bs-border-radius: 5px;
-    --bs-border-color: var(--texto-primario);
+    --bs-border-color: var(--cinza);
     background-color: var(--semibranco);
 }
 
@@ -278,14 +340,142 @@ input:focus, input:active, textarea:focus, textarea:active {
     margin-bottom: 20px;
 }
 
-.main-btn {
-    /* Estilização do botão */
-    width: 100%;
-    padding: 10px 30px;
+/* ------------------------------------------------ TELA HOME ---------------------------------------------------------- */
 
-    border-radius: 5px;
-    border: none;
+/* 
+ * Hero Section
+*/
 
-    background-color: var(--vermelho-geral);
+#hero-section {
+    /* Background do Hero  */
+    background: url('../img/img-hero.jpg') lightgray 50% / cover no-repeat;
+
+    /* Altura mínima de 750px e automática */
+    min-height: 750px;
+    height: auto;
+}
+
+#hero-section .container-fluid {
+    /* Espaçamento da fixed navbar */
+    margin-top: 100px;
+}
+
+#hero-section .row {
+    /* Alinhamento do conteúdo no centro da página */
+    display: flex;
+    justify-content: center;
+}
+
+#hero-section p {
+    /* Cor e tamanho do texto do parágrafo */
     color: var(--semibranco);
+    font-size: 20px;
+
+    /* Espaçamento do título */
+    margin-top: 25px;
+}
+
+#hero-section .hero-content {
+    /* Largura e alinhamento de texto conteúdo do hero */
+    width: 40%;
+    text-align: center;
+
+    /* Espaçamento da navbar */
+    margin-top: 100px;
+}
+
+/* 
+ * Cards Section
+*/
+
+#cards-section {
+    /* Background color para a seção de cards */
+    background-color: var(--semibranco);
+}
+
+#cards-section h2 {
+    /* Margin e padding do h2 (title) */
+    margin: 0;
+    padding: 95px 0 95px 95px;
+}
+
+#cards-section .container-fluid {
+    /* Sobrepondo as margins e padding do bootstrap, para se adequar ao projeto */
+    margin: 0 !important;
+    padding: 0 0 190px 0 !important;
+}
+
+#cards-section .row {
+    /* Sobrepondo a variável de padding da classe .row que espaçava internamente o card */
+    --bs-gutter-x: 0;
+}
+
+#cards-section .cards {
+    /* O alinhamento dos cards está em classes do bootstrap no HTML */
+
+    /* Gap entre os cards */
+    gap: 80px;
+
+    /* Margin left e right para permanecer 3 cards por linha */
+    margin: 0 100px 0 100px;
+}
+
+#cards-section .card {
+    /* Sobrepondo variáveis do card do bootstrap */
+    --bs-card-bg: var(--semibranco);
+    --bs-card-border-color: var(--texto-primario);
+
+    /* Largura do card */
+    min-width: 400px;
+    width: auto;
+
+    /* Altura do card */
+    min-height: 600px;
+    height: auto;
+
+    /* Border radius do card */
+    border-radius: 0 !important;
+
+    /* Box shadow do card */
+    box-shadow: -6px 6px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#cards-section .card-body {
+    /* Alinhamento do card centralizado e em coluna */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#cards-section .card-text {
+    /* Sobrepondo a margin do texto do card do bootstrap */
+    margin: 0 !important;
+
+    /* Cor do texto do card (parágrafo) */
+    color: var(--texto-secundario);
+
+    /* Tamanho do texto */
+    font-size: 18px;
+}
+
+#cards-section .card-title {
+    /* Espaçamento do título do card com o divider */
+    margin-top: 20px;
+
+    /* Font Size do título do card */
+    font-size: 32px;
+}
+
+#cards-section .card-img-top {
+    /* Largura da imagem do card */
+    min-width: 400px;
+    width: auto;
+
+    /* Altura da imagem do card */
+    min-height: 300px;
+    height: auto;
+
+    /* Border radius da imagem do card */
+    border-radius: 0 !important;
 }
