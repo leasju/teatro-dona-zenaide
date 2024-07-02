@@ -24,4 +24,33 @@
         </div>
     </div>
 
+    {{-- * Cards Section * --}}
+    <div id="cards-section">
+        <div class="container-fluid">
+
+                {{-- Title: Em Cartaz --}}
+                <h2 class="tnr-bold tnr-title-size tnr-title-size--lg">EM CARTAZ</h2>
+
+                {{-- Cards: Posteriormente, com o Banco de Dados, englobar os cards em um forelse de acordo com os dados vindos --}}
+                <div class="cards d-flex justify-content-center row">
+                    
+                    {{-- Forelse aqui dentro, para cada peça no BD, mais um card --}}
+                    <div class="card col-md-4"">
+                        <img src="{{ asset('/assets/img/img-card.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            {{-- Data do Card e Divider --}}
+                            <p class="card-text roboto-regular">SAB, 31 DE MAR - 13:00</p>
+                            <hr class="divider divider--card">
+
+                            {{-- Título e Botão --}}
+                            <h3 class="card-title">Lorem Ipsum</h3>
+                            <button class="main-btn main-btn--card">SAIBA MAIS</button>
+                        </div>
+                    </div>
+                    
+                </div>
+
+        </div>
+    </div>
+
 @endsection
