@@ -17,7 +17,10 @@
                         <h1 class="tnr-bold tnr-title-size tnr-title-size--xlg">TEATRO DONA ZENAIDE</h1>
                         <p class="roboto-regular">Entre no palco da imaginação e deixe-se envolver pelas histórias que ganham vida sob os holofotes. Bem-vindo ao nosso universo teatral, onde cada cena é uma jornada única e emocionante. Descubra conosco a magia das artes cênicas e embarque em uma experiência que transcende o tempo e o espaço. O espetáculo está prestes a começar. Você está pronto para ser parte dessa história?</p>
                     </div>
-                    <button class="main-btn main-btn--hero">VER PEÇAS</button>
+                    <button class="main-btn main-btn--hero">
+                        <span>VER PEÇAS</span>
+                        <span class="ri--arrow-down-s-line"></span>
+                    </button>
                 </div>
 
             </div>
@@ -44,7 +47,10 @@
 
                             {{-- Título e Botão --}}
                             <h3 class="card-title">Lorem Ipsum</h3>
-                            <button class="main-btn main-btn--card">SAIBA MAIS</button>
+                            <button class="main-btn main-btn--card">
+                                <span class="fontisto--ticket"></span>
+                                <span>INGRESSOS</span>                                
+                            </button>
                         </div>
                     </div>
                     
@@ -66,7 +72,10 @@
                     <div id="about-us-content">
                         <h2 class="tnr-bold tnr-title-size tnr-title-size--lg">SEJA BEM VINDO AO TEATRO DONA ZENAIDE</h2>
                         <p class="roboto-light">Dê uma olhada em toda a estrutura de nosso local e fique a par de como as coisas funcionam por aqui!</p>
-                        <button class="main-btn main-btn--about roboto-light">SAIBA MAIS SOBRE O TEATRO</button>
+                        <button class="main-btn main-btn--about roboto-light">
+                            <span>SAIBA MAIS SOBRE O TEATRO</span>
+                            <span class="material-symbols-light--keyboard-double-arrow-right"></span>
+                        </button>
                     </div>
                 </div>
 
