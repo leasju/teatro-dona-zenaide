@@ -169,7 +169,7 @@ html {
     /* Variáveis do botão */
     --btn-width: 100%;
     --btn-padding: 10px 30px;
-    --btn-font-size: 16px;
+    --btn-font-size: 18px;
 
     /* Estilização do botão */
     width: var(--btn-width);
@@ -201,6 +201,18 @@ html {
 
     /* Espaçamento do título */
     margin-top: 30px;
+}
+
+.main-btn--about {
+    /* Alterando as variáveis do botão */
+    --btn-padding: 25px 30px;
+
+    /* Botão vazado e com borda */
+    background-color: transparent;
+    border: 2px solid var(--semibranco);
+
+    /* Espaçamento entre as letras */
+    letter-spacing: 1.8px;
 }
 
 /* 
@@ -290,8 +302,9 @@ footer {
     /* Cor de fundo */
     background-color: var(--semibranco);
 
-    /* Margin embaixo de 100px (bottom) */
-    margin-bottom: 100px;
+    /* Padding embaixo e em cima de 100px (bottom e top) */
+    padding-bottom: 100px;
+    padding-top: 100px;
 }
 
 #footer-area {
@@ -483,4 +496,43 @@ input:focus, input:active, textarea:focus, textarea:active {
 
     /* Border radius da imagem do card */
     border-radius: 0 !important;
+}
+
+/* 
+ * About Us Section
+*/
+
+#about-us-section {
+    /* Background color para a seção de sobre nós */
+    background-color: var(--marrom-escuro);
+
+    /* Espaçamento para a seção de sobre nós */
+    padding: 30px 0 30px 100px
+}
+
+#about-us-section .img-fluid {
+    /* Border radius da imagem do teatro da seção de sobre nós */
+    border-radius: 5px;
+
+    /* Sobrepondo o padding o bootstrap */
+    padding: 0;
+}
+
+#about-us-section #about-us-content {
+    /* largura de 70% do col-md-6 */
+    width: 70%;
+}
+
+#about-us-section h2 {
+    /* Cor para o título da seção de sobre nós */
+    color: var(--semibranco);
+}
+
+#about-us-section p {
+    /* Cor e font size do parágrafo da seção de sobre nós */
+    color: var(--semibranco);
+    font-size: 22px;
+
+    /* Espaçamento entre o título e o botão */
+    margin: 40px 0;
 }
