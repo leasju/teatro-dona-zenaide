@@ -197,7 +197,7 @@ html {
     /* Alterando as variáveis do botão */
     --btn-width: 90%;
     --btn-padding: 10px 30px;
-    --btn-font-size: 24px;
+    --btn-font-size: 20px;
 
     /* Espaçamento do título */
     margin-top: 30px;
@@ -426,8 +426,7 @@ input:focus, input:active, textarea:focus, textarea:active {
     --bs-card-border-color: var(--texto-primario);
 
     /* Largura do card */
-    min-width: 400px;
-    width: auto;
+    width: 400px;
 
     /* Altura do card */
     min-height: 600px;
@@ -460,11 +459,17 @@ input:focus, input:active, textarea:focus, textarea:active {
 }
 
 #cards-section .card-title {
+    /* Altura mínima do título */
+    min-height: 70px;
+
     /* Espaçamento do título do card com o divider */
     margin-top: 20px;
 
     /* Font Size do título do card */
-    font-size: 32px;
+    font-size: 28px;
+
+    /* Centralizando o título */
+    text-align: center;
 }
 
 #cards-section .card-img-top {
