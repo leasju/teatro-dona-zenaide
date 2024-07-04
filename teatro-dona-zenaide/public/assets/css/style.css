@@ -243,6 +243,8 @@ html {
 
     background-color: var(--vermelho-geral);
     color: var(--semibranco);
+    text-decoration: none;
+    cursor: pointer;
 
     /* Alinhamento com o ícone */
     display: flex;

@@ -52,10 +52,10 @@
                 </div>
 
                 {{-- Botão para comprar o ingresso no Sympla --}}
-                <button class="main-btn main-btn--play col-md-3">
+                <a class="main-btn main-btn--play col-md-3" href="#">
                     <span>COMPRAR INGRESSO</span>
                     <span class="tabler--arrow-right"></span>
-                </button>
+                </a>
 
                 {{-- Aviso sobre a compra de ingressos --}}
                 <p id="play-ticket-info" class="roboto-regular">(A compra dos ingressos é feita de modo terceirizado pelo site do Sympla)</p>
