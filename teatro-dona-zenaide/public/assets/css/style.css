@@ -303,9 +303,10 @@ html {
     color: var(--vermelho-geral);
 }
 
-.nav-item a:hover {
-    /* Sobrepondo o estilo do bootstrap, para que ao passar o mouse pelo item da navbar, mantenha sua cor padrão */
+.nav-item a:hover, .nav-item a:visited {
+    /* Sobrepondo o estilo do bootstrap, para que ao passar o mouse pelo item da navbar, mantenha sua cor padrão, assim como depois de visitar o link */
     color: var(--vermelho-geral);
+    text-decoration: none;
 }
 
 .nav-pills .nav-link.active {
