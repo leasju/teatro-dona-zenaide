@@ -51,7 +51,8 @@
                         <div class="offcanvas-body">
                             <ul class="navbar-nav nav-pills d-flex justify-content-end flex-grow-1">
                                 <li class="nav-item">
-                                    <a class="nav-link roboto-regular active" aria-current="page" href="#">HOME</a>
+                                    {{-- request()->is('home') = se na url a requisição for home, inserir a classe active, se não, conteúdo em branco  --}}
+                                    <a class="nav-link roboto-regular {{ request()->is('/') ? 'active' : ''}}" aria-current="page" href="/">HOME</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link roboto-regular" href="#">SOBRE NÓS</a>
