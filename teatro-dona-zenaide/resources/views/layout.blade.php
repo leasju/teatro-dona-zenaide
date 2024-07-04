@@ -51,10 +51,10 @@
                         <div class="offcanvas-body">
                             <ul class="navbar-nav nav-pills d-flex justify-content-end flex-grow-1">
                                 <li class="nav-item">
-                                <a class="nav-link roboto-regular active" aria-current="page" href="#">HOME</a>
+                                    <a class="nav-link roboto-regular active" aria-current="page" href="#">HOME</a>
                                 </li>
                                 <li class="nav-item">
-                                <a class="nav-link roboto-regular" href="#">SOBRE NÓS</a>
+                                    <a class="nav-link roboto-regular" href="#">SOBRE NÓS</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link roboto-regular" href="#">SEU PROJETO NO TEATRO</a>
@@ -122,7 +122,10 @@
                                         <label for="floatingTextarea">Mensagem</label>
                                     </div>
 
-                                    <button class="main-btn">ENVIAR MENSAGEM</button>
+                                    <button class="main-btn main-btn--footer">
+                                        <span>ENVIAR MENSAGEM</span>
+                                        <span class="fluent--send-28-filled"></span>
+                                    </button>
                                 </form>
                             </div>
                         </div>
