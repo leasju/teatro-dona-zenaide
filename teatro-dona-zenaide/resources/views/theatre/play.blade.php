@@ -7,12 +7,12 @@
 {{-- Conteúdo da página --}}
 @section('content')
 
-    {{-- * Play Banner Section * --}}
+    {{-- * Play Banner Section: o conteúdo será mudado dinâmicamente de acordo com os dados vindos do banco de dados * --}}
     <div id="play-banner-section">
         <img src="{{ asset('/assets/img/img-banner.jpg') }}" class="img-fluid" alt="">
     </div>
 
-    {{-- * Play Info Section * --}}
+    {{-- * Play Info Section: o conteúdo será mudado dinâmicamente de acordo com os dados vindos do banco de dados * --}}
     <div id="play-info-section">
         <div class="container-fluid">
 
@@ -60,6 +60,43 @@
                 {{-- Aviso sobre a compra de ingressos --}}
                 <p id="play-ticket-info" class="roboto-regular">(A compra dos ingressos é feita de modo terceirizado pelo site do Sympla)</p>
 
+        </div>
+    </div>
+
+    {{-- * Datasheet Section: o conteúdo será mudado dinâmicamente de acordo com os dados vindos do banco de dados * --}}
+    <div id="datasheet-section">
+        <div class="container-fluid">
+            <div class="row">
+
+                {{-- Title: Ficha Técnica --}}
+                <h1 class="tnr-bold tnr-title-size col-md-12">FICHA TÉCNICA</h1>
+
+                {{-- Conteúdo da Ficha Técnica --}}
+                <div id="datasheet-content" class="col-md-12">
+
+                    <div class="datasheet-item">
+                        <h2 class="tnr-bold tnr-title-size tnr-title-size--sm">Texto</h2>
+                        <p class="roboto-regular">Wiesa Zanoda</p>
+                    </div>
+
+                    <div class="datasheet-item">
+                        <h2 class="tnr-bold tnr-title-size tnr-title-size--sm">Texto</h2>
+                        <p class="roboto-regular">Wiesa Zanoda</p>
+                    </div>
+
+                    <div class="datasheet-item">
+                        <h2 class="tnr-bold tnr-title-size tnr-title-size--sm">Texto</h2>
+                        <p class="roboto-regular">Wiesa Zanoda</p>
+                    </div>
+
+                    <div class="datasheet-item">
+                        <h2 class="tnr-bold tnr-title-size tnr-title-size--sm">Texto</h2>
+                        <p class="roboto-regular">Wiesa Zanoda</p>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
     </div>
 

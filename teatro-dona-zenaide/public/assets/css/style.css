@@ -711,3 +711,40 @@ input:focus, input:active, textarea:focus, textarea:active {
     /* Espaçamento do botão de 20px */
     margin-top: 20px;
 }
+
+/* 
+ * Datasheet Section
+*/
+
+#datasheet-section {
+    /* Background color da ficha técnica */
+    background-color: var(--marrom-escuro);
+
+    /* Alinhamento centralizado do texto da ficha técnica */
+    text-align: center;
+
+    /* Espaçamento interno da ficha técnica */
+    padding: 100px 0;
+}
+
+#datasheet-section h1 {
+    /* Cor do título */
+    color: var(--semibranco);
+
+    /* Espaçamento do primeiro item da ficha técnica */
+    margin-bottom: 50px;
+}
+
+#datasheet-section #datasheet-content p {
+    font-size: 24px;
+    color: var(--semibranco);
+}
+
+#datasheet-section #datasheet-content {
+    /* Alinhamento do conteúdo da ficha técnica */
+    display: flex;
+    flex-direction: column;
+
+    /* Gap de 30px entre cada item da ficha técnica */
+    gap: 30px;
+}
