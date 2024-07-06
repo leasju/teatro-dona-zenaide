@@ -754,6 +754,27 @@ input:focus, input:active, textarea:focus, textarea:active {
 /* ------------------------------------------------ TELA ABOUT ---------------------------------------------------------- */
 
 /* 
+ * About Banner Section
+*/
+
+#about-banner-section {
+    /* Background image com efeito de escurecer e alinhamento */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/img-sobre-banner.jpg');
+    background-position: center;
+    background-size: cover;
+
+    /* Largura e altura */
+    width: 100%;
+    height: 500px;
+}
+
+#about-banner-section h1 {
+    /* Font size e cor do título de Sobre Nós */
+    font-size: 64px;
+    color: var(--semibranco);
+}
+
+/* 
  * About Content Section
 */
 
@@ -775,6 +796,12 @@ input:focus, input:active, textarea:focus, textarea:active {
     gap: 100px;
 }
 
+#about-content-section h2 {
+    /* Font size e cor do título de introdução aos textos do conteúdo do sobre nós */
+    font-size: 32px;
+    color: var(--vermelho-geral);
+}
+
 #about-content-section p {
     /* Font size e justificando o parágrafo do conteúdo do sobre nós */
     font-size: 18px;
@@ -785,7 +812,7 @@ input:focus, input:active, textarea:focus, textarea:active {
 }
 
 #about-content-section .about-content-text-highlight {
-    /* Destacando a frase selecionada com negrito e cor vermelha do conteúdo do sobre nós (parágrafos) */
+    /* Destacando a frase selecionada com negrito e cor do texto primário do conteúdo do sobre nós (parágrafos) */
     font-weight: 700;
-    color: var(--vermelho-geral);
+    color: var(--texto-primario);
 }
