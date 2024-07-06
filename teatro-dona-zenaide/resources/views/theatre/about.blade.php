@@ -1,7 +1,7 @@
 {{-- Puxando o layout --}}
 @extends('layout')
 
-{{-- Mudando o título da página dinâmicamente --}}
+{{-- Mudando o título da página dinamicamente --}}
 @section('view-title', 'Sobre Nós - Teatro Dona Zenaide')
 
 {{-- Conteúdo da página --}}
@@ -21,7 +21,7 @@
 
                     {{-- Imagem Teatro --}}
                     <div class="col-md-5">
-                        <img src="{{ asset('/assets/img/img-sobre-teatro.png') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('/assets/img/tela-about/img-sobre-teatro.png') }}" class="img-fluid" alt="">
                     </div>
     
                     {{-- Texto Teatro --}}
@@ -49,7 +49,7 @@
 
                     {{-- Imagem Dona Zenaide --}}
                     <div class="col-md-5">
-                        <img src="{{ asset('/assets/img/img-sobre-zenaide.png') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('/assets/img/tela-about/img-sobre-zenaide.png') }}" class="img-fluid" alt="">
                     </div>
 
                 </div>
@@ -90,7 +90,7 @@
                     <div class="tab-pane fade show active" id="mapa-de-lugares-tab-pane" role="tabpanel" aria-labelledby="mapa-de-lugares-tab" tabindex="0">
                         <div class="row d-flex justify-content-center align-items-center">
                             <div class="col-md-5">
-                                <img src="{{ asset('/assets/img/img-mapa-de-lugares.png') }}" class="img-fluid" alt="">
+                                <img src="{{ asset('/assets/img/tela-about/img-mapa-de-lugares.png') }}" class="img-fluid" alt="">
                             </div>
                             <div class="col-md-5">
                                 <ul class="technical-characteristics-ul d-flex flex-column">
@@ -106,7 +106,7 @@
                     <div class="tab-pane fade" id="hall-tab-pane" role="tabpanel" aria-labelledby="hall-tab" tabindex="0">
                         <div class="row d-flex justify-content-center align-items-center">
                             <div class="col-md-5">
-                                <img src="{{ asset('/assets/img/img-hall.jpeg') }}" class="img-fluid" alt="">
+                                <img src="{{ asset('/assets/img/tela-about/img-hall.jpeg') }}" class="img-fluid" alt="">
                             </div>
                             <div class="col-md-5">
                                 <ul class="technical-characteristics-ul d-flex flex-column">
@@ -123,7 +123,7 @@
                     <div class="tab-pane fade" id="palco-tab-pane" role="tabpanel" aria-labelledby="palco-tab" tabindex="0">
                         <div class="row d-flex justify-content-center align-items-center">
                             <div class="col-md-5">
-                                <img src="{{ asset('/assets/img/img-palco.jpeg') }}" class="img-fluid" alt="">
+                                <img src="{{ asset('/assets/img/tela-about/img-palco.jpeg') }}" class="img-fluid" alt="">
                             </div>
                             <div class="col-md-5">
                                 <ul class="technical-characteristics-ul d-flex flex-column">
@@ -138,7 +138,7 @@
                     <div class="tab-pane fade" id="equipamento-de-luz-tab-pane" role="tabpanel" aria-labelledby="equipamento-de-luz-tab" tabindex="0">
                         <div class="row d-flex justify-content-center align-items-center">
                             <div class="col-md-5">
-                                <img src="{{ asset('/assets/img/img-equipamento-de-luz.jpeg') }}" class="img-fluid" alt="">
+                                <img src="{{ asset('/assets/img/tela-about/img-equipamento-de-luz.jpeg') }}" class="img-fluid" alt="">
                             </div>
                             <div class="col-md-5">
                                 <ul class="technical-characteristics-ul d-flex flex-column">

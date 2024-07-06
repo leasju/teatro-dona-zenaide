@@ -455,7 +455,7 @@ input:focus, input:active, textarea:focus, textarea:active {
 
 #hero-section {
     /* Background do Hero  */
-    background: url('../img/img-hero.jpg') lightgray 50% / cover no-repeat;
+    background: url('../img/tela-home/img-hero.jpg') lightgray 50% / cover no-repeat;
 
     /* Altura mínima de 750px e automática */
     min-height: 750px;
@@ -759,7 +759,7 @@ input:focus, input:active, textarea:focus, textarea:active {
 
 #about-banner-section {
     /* Background image com efeito de escurecer e alinhamento */
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/img-sobre-banner.jpg');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/tela-about/img-sobre-banner.jpg');
     background-position: center;
     background-size: cover;
 
