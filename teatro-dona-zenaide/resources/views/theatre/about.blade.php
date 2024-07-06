@@ -9,7 +9,7 @@
 
     {{-- * About Banner Section * --}}
     <div class="d-flex justify-content-center align-items-center" id="about-banner-section">
-        <h1 class="tnr-bold">SOBRE NÓS</h1>
+        <h1 class="tnr-bold tnr-title-size tnr-title-size--xlg">SOBRE NÓS</h1>
     </div>
 
     {{-- * About Content Section * --}}
@@ -54,6 +54,105 @@
 
                 </div>
 
+        </div>
+    </div>
+
+    {{-- * Technical Characteristics Section * --}}
+    <div id="technical-characteristics-section">
+        <div class="container">
+            <div class="row">
+
+                {{-- Title: Características Técnicas --}}
+                <div class="technical-characteristics-title-div col-md-12 d-flex justify-content-center">
+                    <h1 class="tnr-bold tnr-title-size tnr-title-size--xlg">Características Técnicas</h1>
+                </div>
+
+                {{-- Menu de Navegação com Conteúdo Dinâmico --}}
+                <ul class="nav nav-tabs d-flex justify-content-center col-md-12" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="mapa-de-lugares-tab" data-bs-toggle="tab" data-bs-target="#mapa-de-lugares-tab-pane" type="button" role="tab" aria-controls="mapa-de-lugares-tab-pane" aria-selected="true">Mapa de Lugares</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="hall-tab" data-bs-toggle="tab" data-bs-target="#hall-tab-pane" type="button" role="tab" aria-controls="hall-tab-pane" aria-selected="false">Hall</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="palco-tab" data-bs-toggle="tab" data-bs-target="#palco-tab-pane" type="button" role="tab" aria-controls="palco-tab-pane" aria-selected="false">Palco</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="equipamento-de-luz-tab" data-bs-toggle="tab" data-bs-target="#equipamento-de-luz-tab-pane" type="button" role="tab" aria-controls="equipamento-de-luz-tab-pane" aria-selected="false">Equipamento de Luz</button>
+                    </li>
+                </ul>
+
+                {{-- Conteúdo do Menu de Navegação Dinâmico --}}
+                <div class="tab-content" id="myTabContent">
+
+                    {{-- Mapa de Lugares Conteúdo --}}
+                    <div class="tab-pane fade show active" id="mapa-de-lugares-tab-pane" role="tabpanel" aria-labelledby="mapa-de-lugares-tab" tabindex="0">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <div class="col-md-5">
+                                <img src="{{ asset('/assets/img/img-mapa-de-lugares.png') }}" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-md-5">
+                                <ul class="technical-characteristics-ul d-flex flex-column">
+                                    <li class="roboto-regular">Excelente lugar para <span class="technical-characteristics-text-highlight">exposições</span></li>
+                                    <li class="roboto-regular">Aconchegante, acolhedor, climatizado e <span class="technical-characteristics-text-highlight">encantador</span></li>
+                                    <li class="roboto-regular">Capacidade de <span class="technical-characteristics-text-highlight">130 pessoas</span> em pé</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Hall Conteúdo --}}
+                    <div class="tab-pane fade" id="hall-tab-pane" role="tabpanel" aria-labelledby="hall-tab" tabindex="0">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <div class="col-md-5">
+                                <img src="{{ asset('/assets/img/img-hall.jpeg') }}" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-md-5">
+                                <ul class="technical-characteristics-ul d-flex flex-column">
+                                    <li class="roboto-regular">Excelente lugar para <span class="technical-characteristics-text-highlight">exposições</span></li>
+                                    <li class="roboto-regular">Aconchegante, acolhedor, climatizado e <span class="technical-characteristics-text-highlight">encantador</span></li>
+                                    <li class="roboto-regular">Capacidade de <span class="technical-characteristics-text-highlight">130 pessoas</span> em pé</li>
+                                    <li class="roboto-regular">Conta com uma iluminação calorosa e <span class="technical-characteristics-text-highlight">surpreendente</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Palco Conteúdo --}}
+                    <div class="tab-pane fade" id="palco-tab-pane" role="tabpanel" aria-labelledby="palco-tab" tabindex="0">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <div class="col-md-5">
+                                <img src="{{ asset('/assets/img/img-palco.jpeg') }}" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-md-5">
+                                <ul class="technical-characteristics-ul d-flex flex-column">
+                                    <li class="roboto-regular">Excelente estrutura para <span class="technical-characteristics-text-highlight">acolher todos</span> os espetáculos</li>
+                                    <li class="roboto-regular">Dimensões do palco são de <span class="technical-characteristics-text-highlight">1.54m²</span> por <span class="technical-characteristics-text-highlight">4,7m²</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {{-- Equipamento de Luz Conteúdo --}}
+                    <div class="tab-pane fade" id="equipamento-de-luz-tab-pane" role="tabpanel" aria-labelledby="equipamento-de-luz-tab" tabindex="0">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <div class="col-md-5">
+                                <img src="{{ asset('/assets/img/img-equipamento-de-luz.jpeg') }}" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-md-5">
+                                <ul class="technical-characteristics-ul d-flex flex-column">
+                                    <li class="roboto-regular">01 <span class="technical-characteristics-text-highlight">mesa Element</span></li>
+                                    <li class="roboto-regular">01 monitor 15"</li>
+                                    <li class="roboto-regular">12 <span class="technical-characteristics-text-highlight">DIMMERBOX</span> de 12 canais com 2000w por canal</li>
+                                    <li class="roboto-regular"><span class="technical-characteristics-text-highlight">5 varas</span> fixas no palco</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 
