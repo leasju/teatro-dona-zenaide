@@ -75,7 +75,7 @@
                     <div id="about-us-content">
                         <h2 class="tnr-bold tnr-title-size tnr-title-size--lg">SEJA BEM VINDO AO TEATRO DONA ZENAIDE</h2>
                         <p class="roboto-light">Dê uma olhada em toda a estrutura de nosso local e fique a par de como as coisas funcionam por aqui!</p>
-                        <a class="main-btn main-btn--about roboto-light" href="#">
+                        <a class="main-btn main-btn--about roboto-light" href="/sobre-nos">
                             <span>SAIBA MAIS SOBRE O TEATRO</span>
                             <span class="material-symbols-light--keyboard-double-arrow-right"></span>
                         </a>

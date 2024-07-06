@@ -750,3 +750,42 @@ input:focus, input:active, textarea:focus, textarea:active {
     /* Gap de 30px entre cada item da ficha técnica */
     gap: 30px;
 }
+
+/* ------------------------------------------------ TELA ABOUT ---------------------------------------------------------- */
+
+/* 
+ * About Content Section
+*/
+
+#about-content-section {
+    /* Background color da seção do conteúdo so sobre nós */
+    background-color: var(--semibranco);
+
+    /* Espaçamento interno de 200px */
+    padding: 200px;
+}
+
+#about-content-section .row {
+    /* Sobrepondo a variável de padding da classe .row que espaçava internamente as imagens */
+    --bs-gutter-x: 0;
+}
+
+#about-content-section .container {
+    /* Espaçamento entre as duas áreas de imagem e texto de 100px */
+    gap: 100px;
+}
+
+#about-content-section p {
+    /* Font size e justificando o parágrafo do conteúdo do sobre nós */
+    font-size: 18px;
+    text-align: justify;
+
+    /* Cor do parágrafo */
+    color: var(--texto-primario);
+}
+
+#about-content-section .about-content-text-highlight {
+    /* Destacando a frase selecionada com negrito e cor vermelha do conteúdo do sobre nós (parágrafos) */
+    font-weight: 700;
+    color: var(--vermelho-geral);
+}
