@@ -1,7 +1,7 @@
 {{-- Puxando o layout --}}
 @extends('layout')
 
-{{-- Mudando o título da página dinâmicamente --}}
+{{-- Mudando o título da página dinamicamente --}}
 @section('view-title', 'Teatro Dona Zenaide')
 
 {{-- Conteúdo da página --}}
@@ -42,7 +42,7 @@
                     
                     {{-- Forelse aqui dentro, para cada peça no BD, mais um card --}}
                     <div class="card col-md-4"">
-                        <img src="{{ asset('/assets/img/img-card.jpg') }}" class="card-img-top" alt="...">
+                        <img src="{{ asset('/assets/img/tela-home/img-card.jpg') }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             {{-- Data do Card e Divider --}}
                             <p class="card-text roboto-regular">SAB, 31 DE MAR - 13:00</p>
@@ -68,14 +68,14 @@
             <div class="row">
 
                 {{-- Imagem do Teatro --}}
-                <img src="{{ asset('/assets/img/img-teatro.jpg') }}" class="col-md-6 col-sm-12 img-fluid" alt="">
+                <img src="{{ asset('/assets/img/tela-home/img-teatro.jpg') }}" class="col-md-6 col-sm-12 img-fluid" alt="">
 
                 {{-- Conteúdo do Sobre Nós --}}
                 <div class="col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
                     <div id="about-us-content">
                         <h2 class="tnr-bold tnr-title-size tnr-title-size--lg">SEJA BEM VINDO AO TEATRO DONA ZENAIDE</h2>
                         <p class="roboto-light">Dê uma olhada em toda a estrutura de nosso local e fique a par de como as coisas funcionam por aqui!</p>
-                        <a class="main-btn main-btn--about roboto-light" href="#">
+                        <a class="main-btn main-btn--about roboto-light" href="/sobre-nos">
                             <span>SAIBA MAIS SOBRE O TEATRO</span>
                             <span class="material-symbols-light--keyboard-double-arrow-right"></span>
                         </a>

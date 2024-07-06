@@ -1,7 +1,7 @@
 {{-- Puxando o layout --}}
 @extends('layout')
 
-{{-- Mudando o título da página dinâmicamente --}}
+{{-- Mudando o título da página dinamicamente --}}
 @section('view-title', 'Nome da Peça - Teatro Dona Zenaide')
 
 {{-- Conteúdo da página --}}
@@ -9,7 +9,7 @@
 
     {{-- * Play Banner Section: o conteúdo será mudado dinâmicamente de acordo com os dados vindos do banco de dados * --}}
     <div id="play-banner-section">
-        <img src="{{ asset('/assets/img/img-banner.jpg') }}" class="img-fluid" alt="">
+        <img src="{{ asset('/assets/img/tela-play/img-banner.jpg') }}" class="img-fluid" alt="">
     </div>
 
     {{-- * Play Info Section: o conteúdo será mudado dinâmicamente de acordo com os dados vindos do banco de dados * --}}
@@ -73,21 +73,6 @@
 
                 {{-- Conteúdo da Ficha Técnica --}}
                 <div id="datasheet-content" class="col-md-12">
-
-                    <div class="datasheet-item">
-                        <h2 class="tnr-bold tnr-title-size tnr-title-size--sm">Texto</h2>
-                        <p class="roboto-regular">Wiesa Zanoda</p>
-                    </div>
-
-                    <div class="datasheet-item">
-                        <h2 class="tnr-bold tnr-title-size tnr-title-size--sm">Texto</h2>
-                        <p class="roboto-regular">Wiesa Zanoda</p>
-                    </div>
-
-                    <div class="datasheet-item">
-                        <h2 class="tnr-bold tnr-title-size tnr-title-size--sm">Texto</h2>
-                        <p class="roboto-regular">Wiesa Zanoda</p>
-                    </div>
 
                     <div class="datasheet-item">
                         <h2 class="tnr-bold tnr-title-size tnr-title-size--sm">Texto</h2>

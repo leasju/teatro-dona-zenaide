@@ -11,3 +11,8 @@ Route::get('/', function () {
 Route::get('/espetaculos', function() {
     return view('theatre/play');
 });
+
+// Rota por GET para tela sobre nós
+Route::get('/sobre-nos', function() {
+    return view('theatre/about');
+});

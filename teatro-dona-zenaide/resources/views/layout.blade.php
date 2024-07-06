@@ -55,7 +55,7 @@
                                     <a class="nav-link roboto-regular {{ request()->is('/') ? 'active' : ''}}" aria-current="page" href="/">HOME</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link roboto-regular" href="#">SOBRE NÓS</a>
+                                    <a class="nav-link roboto-regular {{ request()->is('sobre-nos') ? 'active' : ''}}" href="/sobre-nos">SOBRE NÓS</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link roboto-regular" href="#">SEU PROJETO NO TEATRO</a>
