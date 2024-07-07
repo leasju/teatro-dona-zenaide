@@ -9,10 +9,15 @@ Route::get('/', function () {
 
 // Rota por GET para a tela play (apenas por enquanto, futuramente será chamado a view play (peça teatral) preenchida com a peça requisitada de acordo com o card da tela home)
 Route::get('/espetaculos', function() {
-    return view('theater/play');
+    return view('theater/play_info');
 });
 
 // Rota por GET para tela sobre nós
 Route::get('/sobre-nos', function() {
-    return view('theater/about');
+    return view('theater/about_us');
+});
+
+// Rota por GET para tela seu projeto no teatro
+Route::get('/seu-projeto-no-teatro', function() {
+    return view('theater/your_theater_project');
 });

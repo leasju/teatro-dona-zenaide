@@ -296,7 +296,7 @@ html {
     letter-spacing: 1.8px;
 }
 
-/* Tela Play */
+/* Tela Play Info */
 
 .main-btn--play {
     /* Alterando as variáveis do botão */
@@ -631,7 +631,7 @@ input:focus, input:active, textarea:focus, textarea:active {
     margin: 40px 0;
 }
 
-/* ------------------------------------------------ TELA PLAY ---------------------------------------------------------- */
+/* ------------------------------------------------ TELA PLAY INFO ---------------------------------------------------------- */
 
 /* 
  * Play Banner Section
@@ -751,7 +751,7 @@ input:focus, input:active, textarea:focus, textarea:active {
     gap: 30px;
 }
 
-/* ------------------------------------------------ TELA ABOUT ---------------------------------------------------------- */
+/* ------------------------------------------------ TELA ABOUT US ---------------------------------------------------------- */
 
 /* 
  * About Banner Section
@@ -888,4 +888,50 @@ input:focus, input:active, textarea:focus, textarea:active {
     /* Cor do texto em destaque de vermelho e negrito */
     color: var(--vermelho-geral);
     font-weight: 700;
+}
+
+/* ------------------------------------------------ TELA YOUR THEATER PROJECT ---------------------------------------------------------- */
+
+/* 
+ * Your Theater Project Title Section
+*/
+
+#your-theater-project-title-section {
+    /* Background color do título de Seu Projeto No Teatro */
+    background-color: var(--semibranco);
+
+    /* Espaçamento em cima e embaixo do título de Seu Projeto No Teatro */
+    padding: 100px 0;
+}
+
+/* 
+ * Call To Action Banner Section
+*/
+
+#call-to-action-banner-section {
+    /* Background da seção de chamado ao artista */
+    background: url(../img/tela-your-theater-project/img-entre-em-cartaz-banner.png);
+    background-position: center;
+    background-size: cover;
+
+    /* Largura e altura */
+    width: 100%;
+    height: 740px;
+}
+
+#call-to-action-banner-section #call-to-action-box {
+    /* Background color da box do chamado ao artista */
+    background-color: var(--branco-transparente);
+
+    /* Espaçamento interno da box de 80px */
+    padding: 80px;
+
+    /* Gap de 10px entre os itens da box */
+    gap: 10px;
+}
+
+#call-to-action-banner-section #call-to-action-box p {
+    /* Font size e cor do parágrafo do chamado ao artista */
+    font-size: 22px;
+    color: var(--texto-primario);
 }
