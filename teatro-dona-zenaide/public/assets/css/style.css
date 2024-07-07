@@ -935,3 +935,49 @@ input:focus, input:active, textarea:focus, textarea:active {
     font-size: 22px;
     color: var(--texto-primario);
 }
+
+/* 
+ * Hold Your Event Section
+*/
+
+#hold-your-event-section {
+    /* Background color da seção de Faça Seu Evento */
+    background-color: var(--semibranco);
+
+    /* Espaçamento interno top da seção de Faça Seu Evento */
+    padding-top: 100px;
+}
+
+#hold-your-event-section .hold-your-event-introduction {
+    /* Gap entre os itens da seção de introdução do Faça Seu Evento de 15px */
+    gap: 15px;
+
+    /* Espaçamento entre a seção de introdução do Faça Seu Evento das listas ul */
+    margin-bottom: 15px;
+}
+
+#hold-your-event-section .hold-your-event-introduction h2 {
+    /* Zerando a margin do subtítulo introdutório */
+    margin: 0;
+}
+
+#hold-your-event-section .hold-your-event-list-ul {
+    /* Gap de 10px entre cada item das listas da seção de Faça Seu Evento */
+    gap: 10px;
+}
+
+#hold-your-event-section h2 {
+    /* Font size dos subtítulos da seção de Faça Seu Evento */
+    font-size: 28px;
+    font-weight: 700;
+}
+
+#hold-your-event-section p, #hold-your-event-section li {
+    /* Font size do p e do li de 18px da seção de Faça Seu Evento */
+    font-size: 18px;
+}
+
+#hold-your-event-section h2, #hold-your-event-section p, #hold-your-event-section li {
+    /* Cor de texto de todos os h2, p e li da seção de Faça Seu Evento */
+    color: var(--texto-primario);
+}
