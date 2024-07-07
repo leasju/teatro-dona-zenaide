@@ -296,7 +296,7 @@ html {
     letter-spacing: 1.8px;
 }
 
-/* Tela Play */
+/* Tela Play Info */
 
 .main-btn--play {
     /* Alterando as variáveis do botão */
@@ -631,7 +631,7 @@ input:focus, input:active, textarea:focus, textarea:active {
     margin: 40px 0;
 }
 
-/* ------------------------------------------------ TELA PLAY ---------------------------------------------------------- */
+/* ------------------------------------------------ TELA PLAY INFO ---------------------------------------------------------- */
 
 /* 
  * Play Banner Section
@@ -751,7 +751,7 @@ input:focus, input:active, textarea:focus, textarea:active {
     gap: 30px;
 }
 
-/* ------------------------------------------------ TELA ABOUT ---------------------------------------------------------- */
+/* ------------------------------------------------ TELA ABOUT US ---------------------------------------------------------- */
 
 /* 
  * About Banner Section
@@ -759,7 +759,7 @@ input:focus, input:active, textarea:focus, textarea:active {
 
 #about-banner-section {
     /* Background image com efeito de escurecer e alinhamento */
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/tela-about/img-sobre-banner.jpg');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/tela-about-us/img-sobre-banner.jpg');
     background-position: center;
     background-size: cover;
 
@@ -888,4 +888,96 @@ input:focus, input:active, textarea:focus, textarea:active {
     /* Cor do texto em destaque de vermelho e negrito */
     color: var(--vermelho-geral);
     font-weight: 700;
+}
+
+/* ------------------------------------------------ TELA YOUR THEATER PROJECT ---------------------------------------------------------- */
+
+/* 
+ * Your Theater Project Title Section
+*/
+
+#your-theater-project-title-section {
+    /* Background color do título de Seu Projeto No Teatro */
+    background-color: var(--semibranco);
+
+    /* Espaçamento em cima e embaixo do título de Seu Projeto No Teatro */
+    padding: 100px 0;
+}
+
+/* 
+ * Call To Action Banner Section
+*/
+
+#call-to-action-banner-section {
+    /* Background da seção de chamado ao artista */
+    background: url(../img/tela-your-theater-project/img-entre-em-cartaz-banner.png);
+    background-position: center;
+    background-size: cover;
+
+    /* Largura e altura */
+    width: 100%;
+    height: 740px;
+}
+
+#call-to-action-banner-section #call-to-action-box {
+    /* Background color da box do chamado ao artista */
+    background-color: var(--branco-transparente);
+
+    /* Espaçamento interno da box de 80px */
+    padding: 80px;
+
+    /* Gap de 10px entre os itens da box */
+    gap: 10px;
+}
+
+#call-to-action-banner-section #call-to-action-box p {
+    /* Font size e cor do parágrafo do chamado ao artista */
+    font-size: 22px;
+    color: var(--texto-primario);
+}
+
+/* 
+ * Hold Your Event Section
+*/
+
+#hold-your-event-section {
+    /* Background color da seção de Faça Seu Evento */
+    background-color: var(--semibranco);
+
+    /* Espaçamento interno top da seção de Faça Seu Evento */
+    padding-top: 100px;
+}
+
+#hold-your-event-section .hold-your-event-introduction {
+    /* Gap entre os itens da seção de introdução do Faça Seu Evento de 15px */
+    gap: 15px;
+
+    /* Espaçamento entre a seção de introdução do Faça Seu Evento das listas ul */
+    margin-bottom: 15px;
+}
+
+#hold-your-event-section .hold-your-event-introduction h2 {
+    /* Zerando a margin do subtítulo introdutório */
+    margin: 0;
+}
+
+#hold-your-event-section .hold-your-event-list-ul {
+    /* Gap de 10px entre cada item das listas da seção de Faça Seu Evento */
+    gap: 10px;
+}
+
+#hold-your-event-section h2 {
+    /* Font size dos subtítulos da seção de Faça Seu Evento */
+    font-size: 28px;
+    font-weight: 700;
+}
+
+#hold-your-event-section p, #hold-your-event-section li {
+    /* Font size do p e do li de 18px da seção de Faça Seu Evento */
+    font-size: 18px;
+}
+
+#hold-your-event-section h2, #hold-your-event-section p, #hold-your-event-section li {
+    /* Cor de texto de todos os h2, p e li da seção de Faça Seu Evento */
+    color: var(--texto-primario);
 }

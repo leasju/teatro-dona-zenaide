@@ -4,15 +4,20 @@ use Illuminate\Support\Facades\Route;
 
 // Rota por GET para a tela home
 Route::get('/', function () {
-    return view('theatre/home');
+    return view('theater/home');
 });
 
 // Rota por GET para a tela play (apenas por enquanto, futuramente será chamado a view play (peça teatral) preenchida com a peça requisitada de acordo com o card da tela home)
 Route::get('/espetaculos', function() {
-    return view('theatre/play');
+    return view('theater/play_info');
 });
 
 // Rota por GET para tela sobre nós
 Route::get('/sobre-nos', function() {
-    return view('theatre/about');
+    return view('theater/about_us');
+});
+
+// Rota por GET para tela seu projeto no teatro
+Route::get('/seu-projeto-no-teatro', function() {
+    return view('theater/your_theater_project');
 });
