@@ -320,6 +320,18 @@ html {
     transition: 0.25s;
 }
 
+/* Botão Card */
+.main-btn--card {
+    /* Transição de 0.25s para o efeito não ficar instantâneo */
+    transition: 0.25s;
+}
+
+.main-btn--card:hover {
+    /* Background color do hover de marrom escuro e transição de 0.25s */
+    background-color: var(--marrom-escuro);
+    transition: 0.25s;
+}
+
 /* 
  *   Header/Navbar 
 */
