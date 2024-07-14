@@ -115,6 +115,9 @@ html {
     --divider: #BDBDBD;
     --marrom-escuro: #5D2417;
     --branco-transparente: rgba(255, 255, 255, 0.85);
+
+    /* Colors for Effects */
+    --vermelho-hover: #b42b18;
 }
 
 /* 
@@ -303,6 +306,47 @@ html {
     --btn-font-size: 24px;
 }
 
+/* Efeitos nos Botões */
+
+/* Botão Hero, Play, Project e Footer */
+.main-btn--hero, .main-btn--play, .main-btn--project, .main-btn--footer {
+    /* Transição de 0.25s para o efeito não ficar instantâneo */
+    transition: 0.25s;
+}
+
+.main-btn--hero:hover, .main-btn--play:hover, .main-btn--project:hover, .main-btn--footer:hover {
+    /* Background color do hover um pouco mais escuro que o vermelho geral e transição de 0.25s */
+    background-color: var(--vermelho-hover);
+    transition: 0.25s;
+}
+
+/* Botão Card */
+.main-btn--card {
+    /* Transição de 0.25s para o efeito não ficar instantâneo */
+    transition: 0.25s;
+}
+
+.main-btn--card:hover {
+    /* Background color do hover de marrom escuro e transição de 0.25s */
+    background-color: var(--marrom-escuro);
+    transition: 0.25s;
+}
+
+/* Botão About */
+.main-btn--about {
+    /* Transição de 0.25s para o efeito não ficar instantâneo */
+    transition: 0.25s;
+}
+
+.main-btn--about:hover {
+    /* Box shadow e border color quando em hover  */
+    box-shadow: 0px 0px 15px 5px var(--semibranco);
+    border-color: var(--marrom-escuro);
+
+    /* Transição de 0.25s */
+    transition: 0.25s;
+}
+
 /* 
  *   Header/Navbar 
 */
@@ -312,44 +356,44 @@ header {
     margin-bottom: 100px;
 }
 
-.navbar {
+header .navbar {
     /* Definindo altura, background color e box shadow */
     height: 100px;
     background-color: var(--semibranco);
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
-.offcanvas-body, .offcanvas-header {
+header .offcanvas-body, .offcanvas-header {
     /* Definindo background color para o menu lateral do OffCanvas */
     background-color: var(--semibranco);
 }
 
-.navbar .container-fluid {
+header .navbar .container-fluid {
     /* Espaçamento lateral da navbar */
     padding-left: 100px;
     padding-right: 100px;
 }
 
-.navbar-nav {
+header .navbar-nav {
     /* Espaçamento entre os itens da navbar */
     gap: 125px;
     /* Alinhando os itens navbar ao centro */
     align-items: center;
 }
 
-.nav-item a {
+header .nav-item a {
     /* Fonte e cor dos itens da navbar (exceto o item ativo) */
     font-size: 20px;
     color: var(--vermelho-geral);
 }
 
-.nav-item a:hover, .nav-item a:visited {
+header .nav-item a:hover, .nav-item a:visited {
     /* Sobrepondo o estilo do bootstrap, para que ao passar o mouse pelo item da navbar, mantenha sua cor padrão, assim como depois de visitar o link */
     color: var(--vermelho-geral);
     text-decoration: none;
 }
 
-.nav-pills .nav-link.active {
+header .nav-pills .nav-link.active {
     /* Alterando as variáveis do bootstrap responsáveis por alterar a cor de fundo e a cor de texto quando o item da navbar está ativo */
     --bs-nav-pills-link-active-bg: var(--vermelho-geral);
     --bs-navbar-active-color: var(--semibranco);
@@ -360,9 +404,44 @@ header {
     padding-right: 20px !important;
 }
 
-.nav-pills .nav-link {
+header .nav-pills .nav-link {
     /* Alterando a variável do bootstrap responsável por alterar o border radius quando o item da navbar está ativo */
     --bs-nav-pills-border-radius: 0px;
+}
+
+/* Efeito de Underline Hover nos itens da NavBar */
+
+header .nav-item {
+    /* Posição relative para os itens da NavBar */
+    position: relative;
+}
+
+header .nav-item::after {
+    /* Conteúdo vazio e posição absolute para o underline */
+    content: '';
+    position: absolute;
+
+    /* Largura de 100% de acordo com o tamanho do item da NavBar e altura de 2px para o underline */
+    width: 100%;
+    height: 2px;
+
+    /* Bottom e left 0 para se encaixar no item da NavBar */
+    bottom: 0;
+    left: 0;
+
+    /* Background color para o underline */
+    background-color: var(--vermelho-geral);
+
+    /* Propriedades do efeito */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+header .nav-item:hover::after {
+    /* Fazendo o efeito aparecer quando sobre o hover se originando da esquerda embaixo */
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 /* 
