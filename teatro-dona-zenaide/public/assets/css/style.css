@@ -332,6 +332,21 @@ html {
     transition: 0.25s;
 }
 
+/* Botão About */
+.main-btn--about {
+    /* Transição de 0.25s para o efeito não ficar instantâneo */
+    transition: 0.25s;
+}
+
+.main-btn--about:hover {
+    /* Box shadow e border color quando em hover  */
+    box-shadow: 0px 0px 15px 5px var(--semibranco);
+    border-color: var(--marrom-escuro);
+
+    /* Transição de 0.25s */
+    transition: 0.25s;
+}
+
 /* 
  *   Header/Navbar 
 */
