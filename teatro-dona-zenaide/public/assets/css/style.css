@@ -115,6 +115,9 @@ html {
     --divider: #BDBDBD;
     --marrom-escuro: #5D2417;
     --branco-transparente: rgba(255, 255, 255, 0.85);
+
+    /* Colors for Effects */
+    --vermelho-hover: #b42b18;
 }
 
 /* 
@@ -301,6 +304,20 @@ html {
 .main-btn--play {
     /* Alterando as variáveis do botão */
     --btn-font-size: 24px;
+}
+
+/* Efeitos nos Botões */
+
+/* Botão Hero, Play, Project e Footer */
+.main-btn--hero, .main-btn--play, .main-btn--project, .main-btn--footer {
+    /* Transição de 0.25s para o efeito não ficar instantâneo */
+    transition: 0.25s;
+}
+
+.main-btn--hero:hover, .main-btn--play:hover, .main-btn--project:hover, .main-btn--footer:hover {
+    /* Background color do hover um pouco mais escuro que o vermelho geral e transição de 0.25s */
+    background-color: var(--vermelho-hover);
+    transition: 0.25s;
 }
 
 /* 
