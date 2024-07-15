@@ -368,6 +368,11 @@ header .offcanvas-body, .offcanvas-header {
     background-color: var(--semibranco);
 }
 
+header .offcanvas-title {
+    /* Cor do título do menu lateral do OffCanvas */
+    color: var(--vermelho-geral);
+}
+
 header .navbar .container-fluid {
     /* Espaçamento lateral da navbar */
     padding-left: 100px;
@@ -376,7 +381,7 @@ header .navbar .container-fluid {
 
 header .navbar-nav {
     /* Espaçamento entre os itens da navbar */
-    gap: 125px;
+    column-gap: 125px;
     /* Alinhando os itens navbar ao centro */
     align-items: center;
 }
@@ -1011,7 +1016,7 @@ input:focus, input:active, textarea:focus, textarea:active {
 
 #call-to-action-banner-section #call-to-action-box p {
     /* Font size e cor do parágrafo do chamado ao artista */
-    font-size: 22px;
+    font-size: 18px;
     color: var(--texto-primario);
 }
 
@@ -1028,8 +1033,8 @@ input:focus, input:active, textarea:focus, textarea:active {
 }
 
 #hold-your-event-section .hold-your-event-introduction {
-    /* Gap entre os itens da seção de introdução do Faça Seu Evento de 15px */
-    gap: 15px;
+    /* Gap entre os itens da seção de introdução do Faça Seu Evento de 20px */
+    gap: 20px;
 
     /* Espaçamento entre a seção de introdução do Faça Seu Evento das listas ul */
     margin-bottom: 15px;
@@ -1038,17 +1043,24 @@ input:focus, input:active, textarea:focus, textarea:active {
 #hold-your-event-section .hold-your-event-introduction h2 {
     /* Zerando a margin do subtítulo introdutório */
     margin: 0;
+
+    /* Font size do subtítulo introdutório e bold */
+    font-size: 28px;
+    font-weight: 700;
 }
 
 #hold-your-event-section .hold-your-event-list-ul {
-    /* Gap de 10px entre cada item das listas da seção de Faça Seu Evento */
-    gap: 10px;
+    /* Gap de 15px entre cada item das listas da seção de Faça Seu Evento */
+    gap: 15px;
 }
 
-#hold-your-event-section h2 {
-    /* Font size dos subtítulos da seção de Faça Seu Evento */
-    font-size: 28px;
+#hold-your-event-section .hold-your-event-list h2 {
+    /* Font size dos subtítulos da seção de Faça Seu Evento e bold */
+    font-size: 22px;
     font-weight: 700;
+
+    /* Espaçamento embaixo do título da lista da seção de Faça Seu Evento */
+    margin-bottom: 20px;
 }
 
 #hold-your-event-section p, #hold-your-event-section li {
