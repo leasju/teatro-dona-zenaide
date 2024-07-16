@@ -57,7 +57,7 @@
                                     <a class="nav-link roboto-regular {{ request()->is('seu-projeto-no-teatro') ? 'active' : ''}}" href="/seu-projeto-no-teatro">SEU PROJETO NO TEATRO</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link roboto-regular" href="#">CONTATOS</a>
+                                    <a class="nav-link roboto-regular" href="#contatos">CONTATOS</a>
                                 </li>
                             </ul>
                         </div>
@@ -75,7 +75,7 @@
         
         {{-- * Footer * --}}
 
-        <footer>
+        <footer id="contatos">
             <div id="footer-area">
                 <div class="container-fluid">
                     <div class="row">
