@@ -38,16 +38,6 @@ html {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23212121' d='M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3'/%3E%3C/svg%3E");
 }
 
-/* Email Icon */
-.ic--outline-email {
-    display: inline-block;
-    width: 36px;
-    height: 36px;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23212121' d='M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0l-8 5l-8-5zm0 12H4V8l8 5l8-5z'/%3E%3C/svg%3E");
-}
-
 /* Arrow Down Icon */
 .ri--arrow-down-s-line {
     display: inline-block;
@@ -97,6 +87,16 @@ html {
     background-size: 100% 100%;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23f2f2f2' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 12h14m-6 6l6-6m-6-6l6 6'/%3E%3C/svg%3E");
 }
+
+/* Icon Effects */
+
+.icon-effect-wobble:hover {
+    /* Ativando a animação no ícone de oscilar de duração de .8s */
+    animation:icon-effect-wobble .8s both;
+}
+
+/* Animação de wobble (oscilar) */
+@keyframes icon-effect-wobble{0%,100%{transform:translateX(0);transform-origin:50% 50%}15%{transform:translateX(0px) rotate(-6deg)}30%{transform:translateX(0px) rotate(6deg)}45%{transform:translateX(0px) rotate(-3.6deg)}60%{transform:translateX(0px) rotate(2.4deg)}75%{transform:translateX(0px) rotate(-1.2deg)}}
 
 /* 
  *  Global Variables 
@@ -174,6 +174,16 @@ html {
 
 .tnr-title-size--xsm {
     --font-size: 20px;
+}
+
+/* 
+ * Tooltips
+*/
+
+.custom-tooltip {
+    /* Sobrepondo as variáveis do bootstrap responsáveis por customizar os tooltips */
+    --bs-tooltip-bg: var(--texto-primario) !important;
+    --bs-tooltip-color: var(--semibranco) !important;
 }
 
 /* 
@@ -368,6 +378,11 @@ header .offcanvas-body, .offcanvas-header {
     background-color: var(--semibranco);
 }
 
+header .offcanvas-title {
+    /* Cor do título do menu lateral do OffCanvas */
+    color: var(--vermelho-geral);
+}
+
 header .navbar .container-fluid {
     /* Espaçamento lateral da navbar */
     padding-left: 100px;
@@ -376,7 +391,7 @@ header .navbar .container-fluid {
 
 header .navbar-nav {
     /* Espaçamento entre os itens da navbar */
-    gap: 125px;
+    column-gap: 125px;
     /* Alinhando os itens navbar ao centro */
     align-items: center;
 }
@@ -1011,7 +1026,7 @@ input:focus, input:active, textarea:focus, textarea:active {
 
 #call-to-action-banner-section #call-to-action-box p {
     /* Font size e cor do parágrafo do chamado ao artista */
-    font-size: 22px;
+    font-size: 18px;
     color: var(--texto-primario);
 }
 
@@ -1028,8 +1043,8 @@ input:focus, input:active, textarea:focus, textarea:active {
 }
 
 #hold-your-event-section .hold-your-event-introduction {
-    /* Gap entre os itens da seção de introdução do Faça Seu Evento de 15px */
-    gap: 15px;
+    /* Gap entre os itens da seção de introdução do Faça Seu Evento de 20px */
+    gap: 20px;
 
     /* Espaçamento entre a seção de introdução do Faça Seu Evento das listas ul */
     margin-bottom: 15px;
@@ -1038,17 +1053,24 @@ input:focus, input:active, textarea:focus, textarea:active {
 #hold-your-event-section .hold-your-event-introduction h2 {
     /* Zerando a margin do subtítulo introdutório */
     margin: 0;
+
+    /* Font size do subtítulo introdutório e bold */
+    font-size: 28px;
+    font-weight: 700;
 }
 
 #hold-your-event-section .hold-your-event-list-ul {
-    /* Gap de 10px entre cada item das listas da seção de Faça Seu Evento */
-    gap: 10px;
+    /* Gap de 15px entre cada item das listas da seção de Faça Seu Evento */
+    gap: 15px;
 }
 
-#hold-your-event-section h2 {
-    /* Font size dos subtítulos da seção de Faça Seu Evento */
-    font-size: 28px;
+#hold-your-event-section .hold-your-event-list h2 {
+    /* Font size dos subtítulos da seção de Faça Seu Evento e bold */
+    font-size: 22px;
     font-weight: 700;
+
+    /* Espaçamento embaixo do título da lista da seção de Faça Seu Evento */
+    margin-bottom: 20px;
 }
 
 #hold-your-event-section p, #hold-your-event-section li {

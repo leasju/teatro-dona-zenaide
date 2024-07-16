@@ -17,10 +17,6 @@
 
         {{-- CSS Bootstrap --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-        {{-- JS Bootstrap --}}
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         
     </head>
 
@@ -61,7 +57,7 @@
                                     <a class="nav-link roboto-regular {{ request()->is('seu-projeto-no-teatro') ? 'active' : ''}}" href="/seu-projeto-no-teatro">SEU PROJETO NO TEATRO</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link roboto-regular" href="#">CONTATOS</a>
+                                    <a class="nav-link roboto-regular" href="#contatos">CONTATOS</a>
                                 </li>
                             </ul>
                         </div>
@@ -79,7 +75,7 @@
         
         {{-- * Footer * --}}
 
-        <footer>
+        <footer id="contatos">
             <div id="footer-area">
                 <div class="container-fluid">
                     <div class="row">
@@ -96,9 +92,8 @@
                         <div class="col-md-4">
                             <h2 class="tnr-bold tnr-title-size tnr-title-size--xsm">ONDE NOS ENCONTRAR</h2>
                             <div id="contact-icons" class="d-flex">
-                                <span class="ic--baseline-whatsapp"></span>
-                                <span class="mdi--instagram"></span>
-                                <span class="ic--outline-email"></span>
+                                <a href="https://wa.me/551938375160"><span class="ic--baseline-whatsapp icon-effect-wobble" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="(19) 3837-5160"></span></a>
+                                <a href="https://www.instagram.com/teatrodejaguariunaoficial/"><span class="mdi--instagram icon-effect-wobble" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="@teatrodejaguariunaoficial"></span></a>
                             </div>
                         </div>
 
@@ -135,6 +130,13 @@
                 </div>
             </div>
         </footer>
+
+        {{-- JS Bootstrap --}}
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+        {{-- JS Nativo --}}
+        <script src="{{ asset('/assets/js/scripts.js') }}"></script>
 
     </body>
 </html>
