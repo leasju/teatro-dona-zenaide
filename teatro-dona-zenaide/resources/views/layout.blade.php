@@ -92,9 +92,8 @@
                         <div class="col-md-4">
                             <h2 class="tnr-bold tnr-title-size tnr-title-size--xsm">ONDE NOS ENCONTRAR</h2>
                             <div id="contact-icons" class="d-flex">
-                                <span class="ic--baseline-whatsapp"></span>
-                                <span class="mdi--instagram"></span>
-                                <span class="ic--outline-email"></span>
+                                <a href="https://wa.me/551938375160" class="icon-effect-wobble" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="(19) 3837-5160"><span class="ic--baseline-whatsapp"></span></a>
+                                <a href="https://www.instagram.com/teatrodejaguariunaoficial/" class="icon-effect-wobble" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="@teatrodejaguariunaoficial"><span class="mdi--instagram"></span></a>
                             </div>
                         </div>
 
