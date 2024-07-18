@@ -314,6 +314,7 @@ html {
 .main-btn--play {
     /* Alterando as variáveis do botão */
     --btn-font-size: 24px;
+    --btn-width: 25%;
 }
 
 /* Efeitos nos Botões */
