@@ -9,7 +9,7 @@
 
     {{-- * Play Banner Section: o conteúdo será mudado dinâmicamente de acordo com os dados vindos do banco de dados * --}}
     <div id="play-banner-section">
-        <img src="{{ asset('/assets/img/tela-play-info/img-banner.jpg') }}" class="img-fluid" alt="">
+        <img src="{{ Vite::asset('resources/img/tela-play-info/img-banner.jpg') }}" class="img-fluid" alt="">
     </div>
 
     {{-- * Play Info Section: o conteúdo será mudado dinâmicamente de acordo com os dados vindos do banco de dados * --}}

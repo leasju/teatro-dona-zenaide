@@ -1,0 +1,183 @@
+/* ------------------------------------------------ TELA HOME ---------------------------------------------------------- */
+
+/* 
+ * Hero Section
+*/
+
+#hero-section {
+    /* Background do Hero  */
+    background: url('../img/tela-home/img-hero.jpg') lightgray 50% / cover no-repeat;
+
+    /* Altura mínima de 750px e automática */
+    min-height: 750px;
+    height: auto;
+}
+
+#hero-section .row {
+    /* Alinhamento do conteúdo no centro da página */
+    display: flex;
+    justify-content: center;
+}
+
+#hero-section p {
+    /* Cor e tamanho do texto do parágrafo */
+    color: var(--semibranco);
+    font-size: 20px;
+
+    /* Espaçamento do título */
+    margin-top: 25px;
+}
+
+#hero-section .hero-content {
+    /* Alinhamento centralizado */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* Largura e alinhamento de texto conteúdo do hero */
+    width: 40%;
+    text-align: center;
+
+    /* Espaçamento da navbar */
+    margin-top: 100px;
+}
+
+/* 
+ * Cards Section
+*/
+
+#cards-section {
+    /* Background color para a seção de cards */
+    background-color: var(--semibranco);
+}
+
+#cards-section h2 {
+    /* Margin e padding do h2 (title) */
+    margin: 0;
+    padding: 95px 0 95px 95px;
+}
+
+#cards-section .container-fluid {
+    /* Sobrepondo as margins e padding do bootstrap, para se adequar ao projeto */
+    margin: 0 !important;
+    padding: 0 0 190px 0 !important;
+}
+
+#cards-section .row {
+    /* Sobrepondo a variável de padding da classe .row que espaçava internamente o card */
+    --bs-gutter-x: 0;
+}
+
+#cards-section .cards {
+    /* O alinhamento dos cards está em classes do bootstrap no HTML */
+
+    /* Gap entre os cards */
+    gap: 80px;
+
+    /* Margin left e right para permanecer 3 cards por linha */
+    margin: 0 100px 0 100px;
+}
+
+#cards-section .card {
+    /* Sobrepondo variáveis do card do bootstrap */
+    --bs-card-bg: var(--semibranco);
+    --bs-card-border-color: var(--texto-primario);
+
+    /* Largura do card */
+    width: 400px;
+
+    /* Altura do card */
+    min-height: 600px;
+    height: auto;
+
+    /* Border radius do card */
+    border-radius: 0 !important;
+
+    /* Box shadow do card */
+    box-shadow: -6px 6px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#cards-section .card-body {
+    /* Alinhamento do card centralizado e em coluna */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#cards-section .card-text {
+    /* Sobrepondo a margin do texto do card do bootstrap */
+    margin: 0 !important;
+
+    /* Cor do texto do card (parágrafo) */
+    color: var(--texto-secundario);
+
+    /* Tamanho do texto */
+    font-size: 18px;
+}
+
+#cards-section .card-title {
+    /* Altura mínima do título */
+    min-height: 70px;
+
+    /* Espaçamento do título do card com o divider */
+    margin-top: 20px;
+
+    /* Font Size do título do card */
+    font-size: 28px;
+
+    /* Centralizando o título */
+    text-align: center;
+}
+
+#cards-section .card-img-top {
+    /* Largura da imagem do card */
+    max-width: 400px;
+    width: auto;
+
+    /* Altura da imagem do card */
+    max-height: 300px;
+    height: auto;
+
+    /* Border radius da imagem do card */
+    border-radius: 0 !important;
+}
+
+/* 
+ * About Us Section
+*/
+
+#about-us-section {
+    /* Background color para a seção de sobre nós */
+    background-color: var(--marrom-escuro);
+
+    /* Espaçamento para a seção de sobre nós */
+    padding: 30px 0 30px 100px
+}
+
+#about-us-section .img-fluid {
+    /* Border radius da imagem do teatro da seção de sobre nós */
+    border-radius: 5px;
+
+    /* Sobrepondo o padding o bootstrap */
+    padding: 0;
+}
+
+#about-us-section #about-us-content {
+    /* largura de 70% do col-md-6 */
+    width: 70%;
+}
+
+#about-us-section h2 {
+    /* Cor para o título da seção de sobre nós */
+    color: var(--semibranco);
+}
+
+#about-us-section p {
+    /* Cor e font size do parágrafo da seção de sobre nós */
+    color: var(--semibranco);
+    font-size: 22px;
+
+    /* Espaçamento entre o título e o botão */
+    margin: 40px 0;
+}

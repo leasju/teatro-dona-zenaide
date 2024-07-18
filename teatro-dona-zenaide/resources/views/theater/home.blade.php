@@ -42,7 +42,7 @@
                     
                     {{-- Forelse aqui dentro, para cada peça no BD, mais um card --}}
                     <div class="card col-md-4"">
-                        <img src="{{ asset('/assets/img/tela-home/img-card.jpg') }}" class="card-img-top" alt="...">
+                        <img src="{{ Vite::asset('resources/img/tela-home/img-card.jpg') }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             {{-- Data do Card e Divider --}}
                             <p class="card-text roboto-regular">SAB, 31 DE MAR - 13:00</p>
@@ -68,7 +68,7 @@
             <div class="row">
 
                 {{-- Imagem do Teatro --}}
-                <img src="{{ asset('/assets/img/tela-home/img-teatro.jpg') }}" class="col-md-6 col-sm-12 img-fluid" alt="">
+                <img src="{{ Vite::asset('resources/img/tela-home/img-teatro.jpg') }}" class="col-md-6 col-sm-12 img-fluid" alt="">
 
                 {{-- Conteúdo do Sobre Nós --}}
                 <div class="col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
