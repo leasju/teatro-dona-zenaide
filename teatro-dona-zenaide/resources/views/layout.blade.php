@@ -89,7 +89,7 @@
                         <hr class="divider divider--footer">
     
                         {{-- Seção: Onde nos encontrar --}}
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-12 footer-section-center">
                             <h2 class="tnr-bold tnr-title-size tnr-title-size--xsm">ONDE NOS ENCONTRAR</h2>
                             <div id="contact-icons" class="d-flex">
                                 <a href="https://wa.me/551938375160"><span class="ic--baseline-whatsapp icon-effect-wobble" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="(19) 3837-5160"></span></a>
@@ -98,13 +98,13 @@
                         </div>
 
                         {{-- Seção: Localização --}}
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-12 footer-section-center">
                             <h2 class="tnr-bold tnr-title-size tnr-title-size--xsm">LOCALIZAÇÃO</h2>
-                            <p class="roboto-regular p-footer">R. Alfredo Bueno, 1151 - Centro, <br>Jaguariúna - SP, 13820-000</p>
+                            <p class="roboto-regular p-footer">R. Alfredo Bueno, 1151 - Centro, Jaguariúna - SP, 13820-000</p>
                         </div>
                         
                         {{-- Seção: Fale conosco --}}
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-12 footer-section-text-center">
                             <h2 class="tnr-bold tnr-title-size tnr-title-size--xsm">FALE CONOSCO</h2>
                             <div class="form-inputs">
                                 <form action="">

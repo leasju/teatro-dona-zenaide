@@ -15,12 +15,12 @@
                 {{-- Conteúdo do Hero --}}
                 <div class="hero-content col-md-12">
                     <div class="hero-text">
-                        <h1 class="tnr-bold tnr-title-size tnr-title-size--xlg">TEATRO DONA ZENAIDE</h1>
+                        <h1 class="tnr-bold tnr-title-size tnr-title-size--xlg">TEATRO DONA <br>ZENAIDE</h1>
                         <p class="roboto-regular">Entre no palco da imaginação e deixe-se envolver pelas histórias que ganham vida sob os holofotes. Bem-vindo ao nosso universo teatral, onde cada cena é uma jornada única e emocionante. Descubra conosco a magia das artes cênicas e embarque em uma experiência que transcende o tempo e o espaço. O espetáculo está prestes a começar. Você está pronto para ser parte dessa história?</p>
                     </div>
 
                     {{-- Botão de Ver Peças --}}
-                    <a class="main-btn main-btn--hero" href="#">
+                    <a class="main-btn main-btn--hero" href="#cards-section">
                         <span>VER PEÇAS</span>
                         <span class="ri--arrow-down-s-line"></span>
                     </a>
@@ -41,7 +41,7 @@
                 <div class="cards d-flex justify-content-center row">
                     
                     {{-- Forelse aqui dentro, para cada peça no BD, mais um card --}}
-                    <div class="card col-md-4"">
+                    <div class="card col-md-4 col-sm-12"">
                         <img src="{{ Vite::asset('resources/img/tela-home/img-card.jpg') }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             {{-- Data do Card e Divider --}}
@@ -65,13 +65,13 @@
     {{-- * About Us Section * --}}
     <div id="about-us-section">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row d-flex justify-content-center">
 
                 {{-- Imagem do Teatro --}}
-                <img src="{{ Vite::asset('resources/img/tela-home/img-teatro.jpg') }}" class="col-md-6 col-sm-12 img-fluid" alt="">
+                <img src="{{ Vite::asset('resources/img/tela-home/img-teatro.jpg') }}" class="col-lg-6 col-sm-12 img-fluid" alt="">
 
                 {{-- Conteúdo do Sobre Nós --}}
-                <div class="col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
+                <div class="col-lg-6 col-sm-12 d-flex justify-content-center align-items-center">
                     <div id="about-us-content">
                         <h2 class="tnr-bold tnr-title-size tnr-title-size--lg">SEJA BEM VINDO AO TEATRO DONA ZENAIDE</h2>
                         <p class="roboto-light">Dê uma olhada em toda a estrutura de nosso local e fique a par de como as coisas funcionam por aqui!</p>
