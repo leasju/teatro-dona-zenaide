@@ -43,6 +43,131 @@
 }
 
 /* 
+ * @media Sections - Hero Section
+*/
+
+/* `xxl` applies to x-large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+
+    /* Aumentando a largura do conteúdo da seção de Hero */
+    #hero-section .hero-content {
+        width: 50%;
+    }
+
+}
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Aumentando a largura do conteúdo da seção de Hero */
+    #hero-section .hero-content {
+        width: 60%;
+    }
+
+    /* Diminuindo o font size do título da seção de Hero */
+    #hero-section .hero-text h1 {
+        font-size: 54px;
+    }
+
+    /* Diminuindo o font size do parágrafo da seção de Hero */
+    #hero-section .hero-text p {
+        font-size: 18px;
+    }
+
+    /* Diminuindo o font size do botão da seção de Hero */
+    #hero-section .main-btn--hero {
+        --btn-font-size: 18px
+    }
+
+    /* Diminuindo a largura e altura do ícone do botão da seção de Hero */
+    .ri--arrow-down-s-line {
+        width: 24px;
+        height: 24px;
+    }
+
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Aumentando a largura do conteúdo da seção de Hero */
+    #hero-section .hero-content {
+        width: 70%;
+    }
+
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* Diminuindo a altura da seção de Hero */
+    #hero-section {
+        min-height: 600px;
+    }
+
+    /* Aumentando a largura do conteúdo da seção de Hero */
+    #hero-section .hero-content {
+        width: 80%;
+    }
+
+    /* Diminuindo o font size do título da seção de Hero */
+    #hero-section .hero-text h1 {
+        font-size: 44px;
+    }
+
+    /* Diminuindo o font size do parágrafo da seção de Hero */
+    #hero-section .hero-text p {
+        font-size: 16px;
+    }
+
+    /* Diminuindo o font size do botão da seção de Hero */
+    #hero-section .main-btn--hero {
+        --btn-font-size: 16px
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /* Aumentando a largura do conteúdo da seção de Hero */
+    #hero-section .hero-content {
+        width: 90%;
+    }
+
+    /* Diminuindo o font size do título da seção de Hero */
+    #hero-section .hero-text h1 {
+        font-size: 36px;
+    }
+
+    /* Diminuindo o font size do botão da seção de Hero */
+    #hero-section .main-btn--hero {
+        --btn-width: 60%;
+    }    
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o font size do título da seção de Hero */
+    #hero-section .hero-text h1 {
+        font-size: 32px;
+    }
+
+    /* Diminuindo o font size do parágrafo da seção de Hero */
+    #hero-section .hero-text p {
+        font-size: 14px;
+    }
+
+    /* Diminuindo o font size do botão da seção de Hero */
+    #hero-section .main-btn--hero {
+        --btn-font-size: 14px
+    }
+
+}
+
+/* 
  * Cards Section
 */
 
