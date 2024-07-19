@@ -432,7 +432,7 @@
         font-size: 18px;
     }
 
-    /* Diminuindo o font size e zerando a margin do título do botão do card da seção de Cards */
+    /* Diminuindo o font size do botão do card da seção de Cards */
     #cards-section .main-btn--card {
         --btn-font-size: 14px;
     }
@@ -454,7 +454,7 @@
     background-color: var(--marrom-escuro);
 
     /* Espaçamento para a seção de sobre nós */
-    padding: 30px 0 30px 100px
+    padding: 50px 0 50px 120px
 }
 
 #about-us-section .img-fluid {
@@ -482,4 +482,168 @@
 
     /* Espaçamento entre o título e o botão */
     margin: 40px 0;
+}
+
+/* 
+ * @media Sections - About Us Section
+*/
+
+/* `xxl` applies to x-large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+
+    /* Diminuindo a largura e altura da imagem proporcionalmente em 1.25x da imagem da seção de Sobre Nós */
+    #about-us-section .img-fluid {
+        width: 520px;
+        height: 344px;
+    }
+
+    /* Diminuindo o espaçamento lateral da imagem da seção de Sobre Nós */
+    #about-us-section {
+        padding: 50px 0 50px 60px;
+    }
+
+    /* Aumentando a largura ocupada pelo conteúdo da seção de Sobre Nós */
+    #about-us-section #about-us-content {
+        width: 80%;
+    }
+
+    /* Diminuindo o font size do título da seção de Sobre Nós */
+    #about-us-section #about-us-content h2 {
+        font-size: 40px;
+    }
+
+    /* Diminuindo o font size e a margin top e bottom do parágrafo da seção de Sobre Nós */
+    #about-us-section #about-us-content p {
+        font-size: 20px;
+        margin: 20px 0;
+    }
+
+    /* Diminuindo o font size e o padding do botão about da seção de Sobre Nós */
+    #about-us-section #about-us-content .main-btn--about {
+        --btn-font-size: 16px;
+        --btn-padding: 20px 25px;
+    }
+
+}
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Diminuindo a largura e altura da imagem proporcionalmente em 1.10x da imagem da seção de Sobre Nós */
+    #about-us-section .img-fluid {
+        width: 472px;
+        height: 312px;
+    }
+
+    /* Aumentando a largura ocupada pelo conteúdo da seção de Sobre Nós */
+    #about-us-section #about-us-content {
+        width: 85%;
+    }
+
+    /* Alinhando a imagem e o conteúdo da seção de Sobre Nós ao centro */
+    #about-us-section .row {
+        align-items: center;
+    }
+
+    /* Zerando o padding do conteúdo da seção de Sobre Nós */
+    #about-us-section .col-lg-6 {
+        padding: 0;
+    }
+
+    /* Diminuindo o espaçamento lateral da imagem da seção de Sobre Nós */
+    #about-us-section {
+        padding: 50px 0 50px 30px;
+    }
+
+    /* Diminuindo o font size e a margin top e bottom do parágrafo da seção de Sobre Nós */
+    #about-us-section #about-us-content p {
+        font-size: 18px;
+        margin: 15px 0;
+    }
+
+    /* Diminuindo o padding do botão about da seção de Sobre Nós */
+    #about-us-section #about-us-content .main-btn--about {
+        --btn-padding: 15px 20px;
+    }
+
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Ajustando a largura e altura para automático da imagem da seção de Sobre Nós */
+    #about-us-section .img-fluid {
+        width: auto;
+        height: auto;
+
+        margin-bottom: 50px;
+    }
+
+    /* Aumentando a largura ocupada pelo conteúdo da seção de Sobre Nós */
+    #about-us-section #about-us-content {
+        width: 80%;
+    }
+
+    /* Adicionando o espaçamento lateral em ambos os lados da seção de Sobre Nós */
+    #about-us-section {
+        padding: 50px 30px;
+    }
+
+    /* Aumentando a margin top e bottom do parágrafo da seção de Sobre Nós */
+    #about-us-section #about-us-content p {
+        margin: 20px 0;
+    }
+
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* Diminuindo o font size do título da seção de Sobre Nós */
+    #about-us-section #about-us-content h2 {
+        font-size: 30px;
+    }
+
+    /* Diminuindo o font size do parágrafo da seção de Sobre Nós */
+    #about-us-section #about-us-content p {
+        font-size: 16px;
+    }
+
+    /* Diminuindo o font size e o padding do botão about da seção de Sobre Nós */
+    #about-us-section #about-us-content .main-btn--about {
+        --btn-font-size: 14px;
+    }
+
+    /* Diminuindo a largura e altura do ícone do botão about da seção de Sobre Nós */
+    .material-symbols-light--keyboard-double-arrow-right {
+        width: 24px;
+        height: 24px;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /* Aumentando a largura ocupada pelo conteúdo da seção de Sobre Nós */
+    #about-us-section #about-us-content {
+        width: 100%;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o font size do parágrafo da seção de Sobre Nós */
+    #about-us-section #about-us-content p {
+        font-size: 14px;
+    }
+
+    /* Diminuindo o font size e o padding do botão about da seção de Sobre Nós */
+    #about-us-section #about-us-content .main-btn--about {
+        --btn-font-size: 12px;
+        --btn-padding: 15px 10px;
+    }
+
 }

@@ -65,13 +65,13 @@
     {{-- * About Us Section * --}}
     <div id="about-us-section">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row d-flex justify-content-center">
 
                 {{-- Imagem do Teatro --}}
-                <img src="{{ Vite::asset('resources/img/tela-home/img-teatro.jpg') }}" class="col-md-6 col-sm-12 img-fluid" alt="">
+                <img src="{{ Vite::asset('resources/img/tela-home/img-teatro.jpg') }}" class="col-lg-6 col-sm-12 img-fluid" alt="">
 
                 {{-- Conteúdo do Sobre Nós --}}
-                <div class="col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
+                <div class="col-lg-6 col-sm-12 d-flex justify-content-center align-items-center">
                     <div id="about-us-content">
                         <h2 class="tnr-bold tnr-title-size tnr-title-size--lg">SEJA BEM VINDO AO TEATRO DONA ZENAIDE</h2>
                         <p class="roboto-light">Dê uma olhada em toda a estrutura de nosso local e fique a par de como as coisas funcionam por aqui!</p>
