@@ -386,6 +386,12 @@ header .offcanvas-title {
     color: var(--vermelho-geral);
 }
 
+header .navbar-toggler {
+    /* Alterando o SVG e o padding do ícone do menu lateral da OffCanvas NavBar */
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23212121' d='M4 17.27v-1h16v1zm0-4.77v-1h16v1zm0-4.77v-1h16v1z'/%3E%3C/svg%3E");
+    padding: 4px 8px;
+}
+
 header .navbar .container-fluid {
     /* Espaçamento lateral da navbar */
     padding-left: 100px;
@@ -466,14 +472,64 @@ header .nav-item:hover::after {
  *  @media Header/Navbar
 */
 
-/* Estilizando o menu lateral do OffCanvas quando for menor que 992px */
-@media screen and (width < 992px) {
-    .navbar-nav {
-        /* Ajustar o gap e voltar os items a se alinhar ao começo */
-        gap: 50px;
+/* `xxl` applies to x-large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) { 
+
+    /* Diminuindo o espaçamento entre os itens da NavBar */
+    header .navbar-nav {
+        column-gap: 50px;
+    }
+
+}
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Diminuindo o espaçamento entre os itens da NavBar */
+    header .navbar-nav {
+        column-gap: 40px;
+    }
+
+    /* Diminuindo a font size dos itens da NavBar */
+    header .nav-item a {
+        font-size: 16px;
+    }
+
+    /* Diminuindo o espaçamento lateral da NavBar */
+    header .navbar .container-fluid {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Diminuindo o espaçamento entre cada item da NavBar pela row (linha) e alinhando os itens no começo da OffCanvas NavBar */
+    header .navbar-nav {
+        row-gap: 35px;
         align-items: start;
     }
+
+    header .offcanvas-header {
+        /* Espaçamento para o título da OffCanvas NavBar */
+        padding-bottom: 30px;
+    }
+
 }
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /* Diminuindo o espaçamento lateral da NavBar */
+    header .navbar .container-fluid {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+}
+
 
 /* 
  * Footer
@@ -513,6 +569,11 @@ footer {
     gap: 15px;
 }
 
+#footer-area p {
+    /* Definindo largura para o parágrafo da seção de localização do Footer */
+    width: 90%;
+}
+
 #footer-area label {
     /* Definindo cor para a label da seção de fale conosco */
     color: var(--cinza);
@@ -542,4 +603,125 @@ input:focus, input:active, textarea:focus, textarea:active {
     /* Alterando a altura de exibição da textarea do footer */
     height: 80px;
     margin-bottom: 20px;
+}
+
+/* 
+ * @media Footer
+*/
+
+/* `xxl` applies to x-large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+    
+    /* Aumentando a largura do footer para 70% da página */
+    #footer-area {
+        width: 70%;
+    }
+
+}
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Aumentando a largura do footer para 80% da página */
+    #footer-area {
+        width: 80%;
+    }
+
+    /* Diminuindo o font size dos títulos de cada seção do Footer */
+    #footer-area h2 {
+        font-size: 18px;
+    }
+
+    /* Zerando o padding das colunas de cada seção do Footer */
+    #footer-area .col-md-4 {
+        padding: 0px;
+    }
+
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Aumentando a largura do footer para 100% da página e dando um espaçamento lateral */
+    #footer-area {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    /* Diminuindo a largura e altura dos ícones de contato do Footer */
+    .ic--baseline-whatsapp, .mdi--instagram {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Diminuindo o font size do parágrafo de localização do Footer */
+    #footer-area p {
+        font-size: 14px;
+    }
+
+    /* Diminuindo o font size do botão do Footer */
+    #footer-area .main-btn--footer {
+        --btn-font-size: 14px;
+    }
+
+    /* Diminuindo a largura e altura do ícone de enviar mensagem do botão do Footer */
+    .fluent--send-28-filled {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Diminuindo o font size das labels do Footer */
+    #footer-area label {
+        font-size: 14px;
+    }
+
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* Definindo largura para o parágrafo da seção de localização de 100% */
+    #footer-area p {
+        width: 100%;
+    }
+
+    /* Centralizando o conteúdo das seções do Footer (exceto a seção de Fale Conosco), espaçamento entre as seções de 20px */
+    #footer-area .footer-section-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+
+        margin-bottom: 20px;
+    }
+
+    /* Centralizando o título da seção de Fale Conosco do Footer e espaçando lateralmente */
+    #footer-area .footer-section-text-center {
+        text-align: center;
+
+        padding: 0 100px;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /* Diminuindo o espaçamento lateral da seção Fale Conosco do Footer */
+    #footer-area .footer-section-text-center {
+        padding: 0 50px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o espaçamento lateral da seção Fale Conosco do Footer */
+    #footer-area .footer-section-text-center {
+        padding: 0 25px;
+    }
+
 }
