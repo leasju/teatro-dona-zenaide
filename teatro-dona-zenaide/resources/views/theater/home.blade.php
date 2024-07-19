@@ -41,7 +41,7 @@
                 <div class="cards d-flex justify-content-center row">
                     
                     {{-- Forelse aqui dentro, para cada peça no BD, mais um card --}}
-                    <div class="card col-md-4"">
+                    <div class="card col-md-4 col-sm-12"">
                         <img src="{{ Vite::asset('resources/img/tela-home/img-card.jpg') }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             {{-- Data do Card e Divider --}}

@@ -197,7 +197,7 @@
     /* O alinhamento dos cards está em classes do bootstrap no HTML */
 
     /* Gap entre os cards */
-    gap: 80px;
+    gap: 60px;
 
     /* Margin left e right para permanecer 3 cards por linha */
     margin: 0 100px 0 100px;
@@ -266,6 +266,183 @@
 
     /* Border radius da imagem do card */
     border-radius: 0 !important;
+}
+
+/* 
+ * @media Sections - Cards Section
+*/
+
+/* `xxl` applies to x-large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+
+    /* Diminuindo o espaçamento lateral da seção de Cards */
+    #cards-section .cards {
+        margin: 0 50px 0 50px;
+    }
+
+    /* Diminuindo o tamanho dos cards da seção de Cards */
+    #cards-section .card {
+        width: 350px;
+        min-height: 550px;
+    }
+
+    /* Diminuindo o font size e o espaçamento lateral do título da seção de Cards */
+    #cards-section h2 {
+        font-size: 40px;
+        padding: 95px 0 95px 50px;
+    }
+
+    /* Diminuindo o font size do horário do card da seção de Cards */
+    #cards-section .card-text {
+        font-size: 16px;
+    }
+
+    /* Diminuindo o font size do título do card da seção de Cards */
+    #cards-section .card-title {
+        font-size: 24px;
+    }
+
+    /* Diminuindo o font size do botão do card da seção de Cards */
+    #cards-section .main-btn--card {
+        --btn-font-size: 18px;
+    }
+
+    /* Diminuindo a largura e altura do ícone do botão do card da seção de Cards */
+    .fontisto--ticket {
+        width: 24px;
+        height: 24px;
+    }
+
+}
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Diminuindo o espaçamento lateral do título da seção de Cards */
+    #cards-section h2 {
+        padding: 95px 0 95px 25px;
+    }
+
+    /* Diminuindo o gap entre os cards da seção de Cards */
+    #cards-section .cards {
+        gap: 40px;
+    }
+
+    /* Diminuindo o tamanho dos cards da seção de Cards */
+    #cards-section .card {
+        width: 300px;
+        min-height: 500px;
+    }
+
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Aumentando o espaçamento lateral do título da seção de Cards */
+    #cards-section h2 {
+        padding: 95px 0 95px 50px;
+    }
+
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    #cards-section .container-fluid {
+        padding: 0 0 95px 0 !important;
+    }
+
+    /* Diminuindo o espaçamento lateral do título da seção de Cards */
+    #cards-section h2 {
+        padding: 60px 0 60px 25px;
+        font-size: 30px;
+    }
+
+    /* Diminuindo o gap entre os cards e o espaçamento lateral da seção de Cards */
+    #cards-section .cards {
+        column-gap: 25px;
+        row-gap: 50px;
+
+        margin: 0 25px 0 25px;
+    }
+
+    /* Diminuindo o tamanho dos cards da seção de Cards */
+    #cards-section .card {
+        width: 250px;
+        min-height: 400px;
+    }
+
+    /* Diminuindo o font size do horário do card da seção de Cards */
+    #cards-section .card-text {
+        font-size: 14px;
+    }
+
+    /* Diminuindo o font size do título do card da seção de Cards */
+    #cards-section .card-title {
+        font-size: 20px;
+    }
+
+    /* Diminuindo o font size e zerando a margin do título do botão do card da seção de Cards */
+    #cards-section .main-btn--card {
+        --btn-font-size: 16px;
+        margin-top: 0;
+    }
+
+    /* Diminuindo a largura e altura do ícone do botão do card da seção de Cards */
+    .fontisto--ticket {
+        width: 20px;
+        height: 20px;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /* Aumentando o tamanho dos cards da seção de Cards */
+    #cards-section .card {
+        width: 300px;
+        min-height: 450px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o gap entre os cards da seção de Cards */
+    #cards-section .cards {
+        row-gap: 25px;
+    }
+    
+    /* Aumentando o tamanho dos cards da seção de Cards */
+    #cards-section .card {
+        width: 275px;
+        min-height: 425px;
+    }
+
+    /* Diminuindo o font size do horário do card da seção de Cards */
+    #cards-section .card-text {
+        font-size: 12px;
+    }
+
+    /* Diminuindo o font size do título do card da seção de Cards */
+    #cards-section .card-title {
+        font-size: 18px;
+    }
+
+    /* Diminuindo o font size e zerando a margin do título do botão do card da seção de Cards */
+    #cards-section .main-btn--card {
+        --btn-font-size: 14px;
+    }
+
+    /* Diminuindo a largura e altura do ícone do botão do card da seção de Cards */
+    .fontisto--ticket {
+        width: 16px;
+        height: 16px;
+    }
+
 }
 
 /* 
