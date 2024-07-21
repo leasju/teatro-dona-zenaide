@@ -21,22 +21,22 @@
 
                 {{-- Informações da Peça Teatral --}}
                 <div id="play-info" class="row">
-                    <div class="col-md-3">
+                    <div class="col-lg-3 col-sm-6">
                         <h2 class="roboto-regular">TEMPORADA</h2>
                         <p class="roboto-regular">de 05/05/2024 a 23/07/2024</p>
                     </div>
     
-                    <div class="col-md-3">
+                    <div class="col-lg-3 col-sm-6">
                         <h2 class="roboto-regular">DURAÇÃO</h2>
                         <p class="roboto-regular">90 minutos</p>
                     </div>
     
-                    <div class="col-md-3">
+                    <div class="col-lg-3 col-sm-6">
                         <h2 class="roboto-regular">APRESENTAÇÕES</h2>
                         <p class="roboto-regular">Seg, Ter, Qua - 19:30h</p>
                     </div>
     
-                    <div class="col-md-3">
+                    <div class="col-lg-3 col-sm-6">
                         <h2 class="roboto-regular">CLASSIFICAÇÃO</h2>
                         <p class="roboto-regular">Livre</p>
                     </div>
@@ -52,7 +52,7 @@
                 </div>
 
                 {{-- Botão para comprar o ingresso no Sympla --}}
-                <a class="main-btn main-btn--play col-md-3" href="#">
+                <a class="main-btn main-btn--play" href="#">
                     <span>COMPRAR INGRESSO</span>
                     <span class="tabler--arrow-right"></span>
                 </a>
