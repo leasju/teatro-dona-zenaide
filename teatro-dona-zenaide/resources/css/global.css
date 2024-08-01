@@ -230,12 +230,23 @@ html {
     --divider-margin-top: 5px;
 }
 
-/* Tela Play */
+/* Tela Play Info */
 
 .divider--play {
     /* Margin do divider */
     --divider-margin-top: 45px;
     --divider-margin-bottom: 45px;
+}
+
+/* Tela About Us */
+
+.divider--about {
+    /* Display none para não ser mostrado inicialmente */
+    display: none;
+
+    /* Zerando as margins */
+    --divider-margin-top: 0px;
+    --divider-margin-bottom: 0px;
 }
 
 /* 

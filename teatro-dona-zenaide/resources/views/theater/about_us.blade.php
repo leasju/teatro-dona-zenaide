@@ -20,12 +20,12 @@
                 <div class="row justify-content-between">
 
                     {{-- Imagem Teatro --}}
-                    <div class="col-md-5">
+                    <div class="col-lg-5 col-sm-12 text-center about-content-margin-bottom">
                         <img src="{{ Vite::asset('resources/img/tela-about-us/img-sobre-teatro.png') }}" class="img-fluid" alt="">
                     </div>
     
                     {{-- Texto Teatro --}}
-                    <div class="col-md-5">
+                    <div class="col-lg-5 col-sm-12">
                         <h2 class="roboto-bold">O TEATRO</h2>
 
                         <p class="roboto-regular"><span class="about-content-text-highlight">Bem-vindos ao Teatro Dona Zenaide</span>, um verdadeiro <span class="about-content-text-highlight">marco cultural</span> situado no coração de <span class="about-content-text-highlight">Jaguariúna, São Paulo</span>. Inaugurado com o propósito de ser um espaço dedicado à <span class="about-content-text-highlight">arte e à cultura</span>, o nosso teatro tem sido um <span class="about-content-text-highlight">palco vibrante</span> para uma variedade de espetáculos que vão desde <span class="about-content-text-highlight">peças teatrais</span> a <span class="about-content-text-highlight">shows musicais</span>, passando por <span class="about-content-text-highlight">apresentações de dança</span> e <span class="about-content-text-highlight">eventos comunitários</span>.</p>
@@ -35,11 +35,13 @@
                     
                 </div>
 
+                <hr class="divider divider--about">
+
                 {{-- Texto e Imagem da Dona Zenaide --}}
                 <div class="row justify-content-between">
     
                     {{-- Texto Dona Zenaide --}}
-                    <div class="col-md-5">
+                    <div class="col-lg-5 col-sm-12 about-content-margin-bottom">
                         <h2 class="roboto-bold">DONA ZENAIDE</h2>
 
                         <p class="roboto-regular"><span class="about-content-text-highlight">Dona Zenaide</span> foi uma figura <span class="about-content-text-highlight">emblemática de Jaguariúna</span>, cuja vida e trabalho deixaram um <span class="about-content-text-highlight">impacto duradouro</span> na comunidade. Conhecida por sua <span class="about-content-text-highlight">paixão pela arte e pela cultura</span>, Dona Zenaide dedicou grande parte de sua vida a <span class="about-content-text-highlight">promover atividades culturais</span> e a <span class="about-content-text-highlight">incentivar o talento local</span>. Seu amor pelo <span class="about-content-text-highlight">teatro e pela música</span> inspirou gerações e ajudou a moldar a <span class="about-content-text-highlight">identidade cultural da cidade</span>.</p>
@@ -48,7 +50,7 @@
                     </div>
 
                     {{-- Imagem Dona Zenaide --}}
-                    <div class="col-md-5">
+                    <div class="col-lg-5 col-sm-12 text-center">
                         <img src="{{ Vite::asset('resources/img/tela-about-us/img-sobre-zenaide.png') }}" class="img-fluid" alt="">
                     </div>
 
