@@ -21,6 +21,75 @@
 }
 
 /* 
+ * @media Sections - About Banner Section
+*/
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Diminuindo o font size do título de Sobre Nós da seção de banner */
+    #about-banner-section h1 {
+        font-size: 54px;
+    }
+
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Diminuindo a altura da seção de banner */
+    #about-banner-section {
+        height: 400px;
+    }
+
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* Diminuindo o font size do título de Sobre Nós da seção de banner */
+    #about-banner-section h1 {
+        font-size: 44px;
+    }
+
+    /* Diminuindo a altura da seção de banner */
+    #about-banner-section {
+        height: 350px;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /* Diminuindo o font size do título de Sobre Nós da seção de banner */
+    #about-banner-section h1 {
+        font-size: 36px;
+    }
+
+    /* Diminuindo a altura da seção de banner */
+    #about-banner-section {
+        height: 300px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o font size do título de Sobre Nós da seção de banner */
+    #about-banner-section h1 {
+        font-size: 32px;
+    }
+
+    /* Diminuindo a altura da seção de banner */
+    #about-banner-section {
+        height: 250px;
+    }
+
+}
+
+/* 
  * About Content Section
 */
 
