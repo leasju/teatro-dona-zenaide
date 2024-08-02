@@ -21,15 +21,84 @@
 }
 
 /* 
+ * @media Sections - About Banner Section
+*/
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Diminuindo o font size do título de Sobre Nós da seção de banner */
+    #about-banner-section h1 {
+        font-size: 54px;
+    }
+
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Diminuindo a altura da seção de banner */
+    #about-banner-section {
+        height: 400px;
+    }
+
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* Diminuindo o font size do título de Sobre Nós da seção de banner */
+    #about-banner-section h1 {
+        font-size: 44px;
+    }
+
+    /* Diminuindo a altura da seção de banner */
+    #about-banner-section {
+        height: 350px;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /* Diminuindo o font size do título de Sobre Nós da seção de banner */
+    #about-banner-section h1 {
+        font-size: 36px;
+    }
+
+    /* Diminuindo a altura da seção de banner */
+    #about-banner-section {
+        height: 300px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o font size do título de Sobre Nós da seção de banner */
+    #about-banner-section h1 {
+        font-size: 32px;
+    }
+
+    /* Diminuindo a altura da seção de banner */
+    #about-banner-section {
+        height: 250px;
+    }
+
+}
+
+/* 
  * About Content Section
 */
 
 #about-content-section {
-    /* Background color da seção do conteúdo so sobre nós */
+    /* Background color da seção do conteúdo do sobre nós */
     background-color: var(--semibranco);
 
-    /* Espaçamento interno de 200px */
-    padding: 200px;
+    /* Espaçamento interno de 200px top e bottom*/
+    padding: 200px 0;
 }
 
 #about-content-section .row {
@@ -39,7 +108,7 @@
 
 #about-content-section .container {
     /* Espaçamento entre as duas áreas de imagem e texto de 100px */
-    gap: 100px;
+    row-gap: 100px;
 }
 
 #about-content-section h2 {
@@ -61,6 +130,116 @@
     /* Destacando a frase selecionada com negrito e cor do texto primário do conteúdo do sobre nós (parágrafos) */
     font-weight: 700;
     color: var(--texto-primario);
+}
+
+/* 
+ * @media Sections - About Content Section
+*/
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Diminuindo o padding interno top e bottom da seção de Conteúdo do Sobre Nós */
+    #about-content-section {
+        padding: 150px 0;
+    }
+
+    /* Centralizando o conteúdo e espaçando entre os itens da seção de Conteúdo do Sobre Nós */
+    #about-content-section .row {
+        justify-content: center !important;
+        column-gap: 100px;
+    }
+
+    /* Diminuindo o font size do título de introdução aos textos do Conteúdo do Sobre Nós  */
+    #about-content-section h2 {
+        font-size: 28px;
+    }
+
+    /* Diminuindo o font size do parágrafo do Conteúdo do Sobre Nós */
+    #about-content-section p {
+        font-size: 16px;
+    }
+
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Diminuindo o padding interno top e bottom e adicionando left e right da seção de Conteúdo do Sobre Nós */
+    #about-content-section {
+        padding: 100px 50px;
+    }
+
+    /* Diminuindo o gap entre os itens da seção de Conteúdo do Sobre Nós */
+    #about-content-section .container {
+        row-gap: 50px;
+    }
+
+    /* Inserindo uma margin bottom para o primeiro item de cada seção de Conteúdo do Sobre Nós */
+    #about-content-section .about-content-margin-bottom {
+        margin-bottom: 50px;
+    }
+
+    /* Diminuindo a largura ocupada pela imagem para 80% da seção de Conteúdo do Sobre Nós */
+    #about-content-section .img-fluid {
+        width: 80%;
+    }
+
+    /* Mostrando o divider about da seção de Conteúdo do Sobre Nós */
+    #about-content-section .divider--about {
+        display: block;
+    }
+
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* Voltando a largura ocupada pela imagem para 100% da seção de Conteúdo do Sobre Nós */
+    #about-content-section .img-fluid {
+        width: 100%;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /* Diminuindo o padding interno da seção de Conteúdo do Sobre Nós */
+    #about-content-section {
+        padding: 75px 25px;
+    }
+
+    /* Diminuindo a margin bottom para o primeiro item de cada seção de Conteúdo do Sobre Nós */
+    #about-content-section .about-content-margin-bottom {
+        margin-bottom: 25px;
+    }
+
+    /* Diminuindo o font size do título de introdução aos textos do Conteúdo do Sobre Nós  */
+    #about-content-section h2 {
+        font-size: 24px;
+    }
+
+    /* Diminuindo o font size do parágrafo do Conteúdo do Sobre Nós */
+    #about-content-section p {
+        font-size: 14px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o padding interno da seção de Conteúdo do Sobre Nós */
+    #about-content-section {
+        padding: 50px 25px;
+    }
+
+    /* Diminuindo o gap entre os itens da seção de Conteúdo do Sobre Nós */
+    #about-content-section .container {
+        row-gap: 25px;
+    }
+
 }
 
 /* 
@@ -135,4 +314,103 @@
     /* Cor do texto em destaque de vermelho e negrito */
     color: var(--vermelho-geral);
     font-weight: 700;
+}
+
+/* 
+ * @media Sections - Technical Characteristics Section
+*/
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Diminuindo o font size do título da seção de Características Técnicas */
+    #technical-characteristics-section h1 {
+        font-size: 54px;
+    }
+
+    /* Diminuindo o font size dos itens da barra de navegação e dos itens da lista não ordenada da seção de Características Técnicas */
+    #technical-characteristics-section .nav-link, #technical-characteristics-section .technical-characteristics-ul {
+        font-size: 18px;
+    }
+    
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Diminuindo o espaçamento interno (bottom) da seção de Características Técnicas */
+    #technical-characteristics-section {
+        padding: 40px 0;
+    }
+
+    /* Fixando a largura e a altura das imagens da seção de Características Técnicas (exceto a imagem do mapa de lugares) */
+    #technical-characteristics-section #hall-tab-pane .img-fluid, 
+    #technical-characteristics-section #palco-tab-pane .img-fluid, 
+    #technical-characteristics-section #equipamento-de-luz-tab-pane .img-fluid {
+        width: 500px;
+        height: 300px;
+    }
+    
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    
+    /* Diminuindo o font size do título da seção de Características Técnicas */
+    #technical-characteristics-section h1 {
+        font-size: 44px;
+    }
+
+    /* Diminuindo o font size dos itens da barra de navegação e dos itens da lista não ordenada da seção de Características Técnicas */
+    #technical-characteristics-section .nav-link, #technical-characteristics-section .technical-characteristics-ul {
+        font-size: 16px;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    #technical-characteristics-section .nav-link {
+        margin-bottom: 0px;
+    }
+
+    /* Automatizando novamente a largura e a altura das imagens da seção de Características Técnicas (exceto a imagem do mapa de lugares) */
+    #technical-characteristics-section #hall-tab-pane .img-fluid, 
+    #technical-characteristics-section #palco-tab-pane .img-fluid, 
+    #technical-characteristics-section #equipamento-de-luz-tab-pane .img-fluid {
+        width: auto;
+        height: auto;
+    }
+    
+    /* Adicionando um padding lateral no conteúdo dinâmico da seção de Características Técnicas */
+    #technical-characteristics-section .tab-content {
+        padding: 0 25px;
+    }
+
+    /* Diminuindo o font size do título da seção de Características Técnicas */
+    #technical-characteristics-section h1 {
+        font-size: 36px;
+    }
+
+    /* Diminuindo o font size dos itens da barra de navegação e dos itens da lista não ordenada da seção de Características Técnicas */
+    #technical-characteristics-section .nav-link, #technical-characteristics-section .technical-characteristics-ul {
+        font-size: 14px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o font size do título da seção de Características Técnicas */
+    #technical-characteristics-section h1 {
+        font-size: 32px;
+    }
+
+    /* Diminuindo o gap entre os itens da lista da seção de Características Técnicas */
+    #technical-characteristics-section .technical-characteristics-ul {
+        gap: 10px;
+    }
+
 }
