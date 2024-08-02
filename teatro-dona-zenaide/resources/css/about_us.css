@@ -315,3 +315,102 @@
     color: var(--vermelho-geral);
     font-weight: 700;
 }
+
+/* 
+ * @media Sections - Technical Characteristics Section
+*/
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Diminuindo o font size do título da seção de Características Técnicas */
+    #technical-characteristics-section h1 {
+        font-size: 54px;
+    }
+
+    /* Diminuindo o font size dos itens da barra de navegação e dos itens da lista não ordenada da seção de Características Técnicas */
+    #technical-characteristics-section .nav-link, #technical-characteristics-section .technical-characteristics-ul {
+        font-size: 18px;
+    }
+    
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Diminuindo o espaçamento interno (bottom) da seção de Características Técnicas */
+    #technical-characteristics-section {
+        padding: 40px 0;
+    }
+
+    /* Fixando a largura e a altura das imagens da seção de Características Técnicas (exceto a imagem do mapa de lugares) */
+    #technical-characteristics-section #hall-tab-pane .img-fluid, 
+    #technical-characteristics-section #palco-tab-pane .img-fluid, 
+    #technical-characteristics-section #equipamento-de-luz-tab-pane .img-fluid {
+        width: 500px;
+        height: 300px;
+    }
+    
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    
+    /* Diminuindo o font size do título da seção de Características Técnicas */
+    #technical-characteristics-section h1 {
+        font-size: 44px;
+    }
+
+    /* Diminuindo o font size dos itens da barra de navegação e dos itens da lista não ordenada da seção de Características Técnicas */
+    #technical-characteristics-section .nav-link, #technical-characteristics-section .technical-characteristics-ul {
+        font-size: 16px;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    #technical-characteristics-section .nav-link {
+        margin-bottom: 0px;
+    }
+
+    /* Automatizando novamente a largura e a altura das imagens da seção de Características Técnicas (exceto a imagem do mapa de lugares) */
+    #technical-characteristics-section #hall-tab-pane .img-fluid, 
+    #technical-characteristics-section #palco-tab-pane .img-fluid, 
+    #technical-characteristics-section #equipamento-de-luz-tab-pane .img-fluid {
+        width: auto;
+        height: auto;
+    }
+    
+    /* Adicionando um padding lateral no conteúdo dinâmico da seção de Características Técnicas */
+    #technical-characteristics-section .tab-content {
+        padding: 0 25px;
+    }
+
+    /* Diminuindo o font size do título da seção de Características Técnicas */
+    #technical-characteristics-section h1 {
+        font-size: 36px;
+    }
+
+    /* Diminuindo o font size dos itens da barra de navegação e dos itens da lista não ordenada da seção de Características Técnicas */
+    #technical-characteristics-section .nav-link, #technical-characteristics-section .technical-characteristics-ul {
+        font-size: 14px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o font size do título da seção de Características Técnicas */
+    #technical-characteristics-section h1 {
+        font-size: 32px;
+    }
+
+    /* Diminuindo o gap entre os itens da lista da seção de Características Técnicas */
+    #technical-characteristics-section .technical-characteristics-ul {
+        gap: 10px;
+    }
+
+}

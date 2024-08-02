@@ -65,12 +65,12 @@
             <div class="row">
 
                 {{-- Title: Características Técnicas --}}
-                <div class="technical-characteristics-title-div col-md-12 d-flex justify-content-center">
+                <div class="technical-characteristics-title-div col-md-12 d-flex justify-content-center text-center">
                     <h1 class="tnr-bold tnr-title-size tnr-title-size--xlg">Características Técnicas</h1>
                 </div>
 
                 {{-- Menu de Navegação com Conteúdo Dinâmico --}}
-                <ul class="nav nav-tabs d-flex justify-content-center col-md-12" id="myTab" role="tablist">
+                <ul class="nav nav-tabs d-flex justify-content-center align-items-center col-md-12" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="mapa-de-lugares-tab" data-bs-toggle="tab" data-bs-target="#mapa-de-lugares-tab-pane" type="button" role="tab" aria-controls="mapa-de-lugares-tab-pane" aria-selected="true">Mapa de Lugares</button>
                     </li>
@@ -90,11 +90,11 @@
 
                     {{-- Mapa de Lugares Conteúdo --}}
                     <div class="tab-pane fade show active" id="mapa-de-lugares-tab-pane" role="tabpanel" aria-labelledby="mapa-de-lugares-tab" tabindex="0">
-                        <div class="row d-flex justify-content-center align-items-center">
-                            <div class="col-md-5">
+                        <div class="row d-flex justify-content-center align-items-center row-gap-5">
+                            <div class="col-lg-5 col-sm-12 text-center">
                                 <img src="{{ Vite::asset('resources/img/tela-about-us/img-mapa-de-lugares.png') }}" class="img-fluid" alt="">
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-lg-5 col-sm-12 d-flex flex-column align-items-center">
                                 <ul class="technical-characteristics-ul d-flex flex-column">
                                     <li class="roboto-regular">Excelente lugar para <span class="technical-characteristics-text-highlight">exposições</span></li>
                                     <li class="roboto-regular">Aconchegante, acolhedor, climatizado e <span class="technical-characteristics-text-highlight">encantador</span></li>
@@ -106,11 +106,11 @@
 
                     {{-- Hall Conteúdo --}}
                     <div class="tab-pane fade" id="hall-tab-pane" role="tabpanel" aria-labelledby="hall-tab" tabindex="0">
-                        <div class="row d-flex justify-content-center align-items-center">
-                            <div class="col-md-5">
+                        <div class="row d-flex justify-content-center align-items-center row-gap-5">
+                            <div class="col-lg-5 col-sm-12 text-center">
                                 <img src="{{ Vite::asset('resources/img/tela-about-us/img-hall.jpeg') }}" class="img-fluid" alt="">
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-lg-5 col-sm-12 d-flex flex-column align-items-center">
                                 <ul class="technical-characteristics-ul d-flex flex-column">
                                     <li class="roboto-regular">Excelente lugar para <span class="technical-characteristics-text-highlight">exposições</span></li>
                                     <li class="roboto-regular">Aconchegante, acolhedor, climatizado e <span class="technical-characteristics-text-highlight">encantador</span></li>
@@ -123,11 +123,11 @@
 
                     {{-- Palco Conteúdo --}}
                     <div class="tab-pane fade" id="palco-tab-pane" role="tabpanel" aria-labelledby="palco-tab" tabindex="0">
-                        <div class="row d-flex justify-content-center align-items-center">
-                            <div class="col-md-5">
+                        <div class="row d-flex justify-content-center align-items-center row-gap-5">
+                            <div class="col-lg-5 col-sm-12 text-center">
                                 <img src="{{ Vite::asset('resources/img/tela-about-us/img-palco.jpeg') }}" class="img-fluid" alt="">
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-lg-5 col-sm-12 d-flex flex-column align-items-center">
                                 <ul class="technical-characteristics-ul d-flex flex-column">
                                     <li class="roboto-regular">Excelente estrutura para <span class="technical-characteristics-text-highlight">acolher todos</span> os espetáculos</li>
                                     <li class="roboto-regular">Dimensões do palco são de <span class="technical-characteristics-text-highlight">1.54m²</span> por <span class="technical-characteristics-text-highlight">4,7m²</span></li>
@@ -138,11 +138,11 @@
                     
                     {{-- Equipamento de Luz Conteúdo --}}
                     <div class="tab-pane fade" id="equipamento-de-luz-tab-pane" role="tabpanel" aria-labelledby="equipamento-de-luz-tab" tabindex="0">
-                        <div class="row d-flex justify-content-center align-items-center">
-                            <div class="col-md-5">
+                        <div class="row d-flex justify-content-center align-items-center row-gap-5">
+                            <div class="col-lg-5 col-sm-12 text-center">
                                 <img src="{{ Vite::asset('resources/img/tela-about-us/img-equipamento-de-luz.jpeg') }}" class="img-fluid" alt="">
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-lg-5 col-sm-12 d-flex flex-column align-items-center">
                                 <ul class="technical-characteristics-ul d-flex flex-column">
                                     <li class="roboto-regular">01 <span class="technical-characteristics-text-highlight">mesa Element</span></li>
                                     <li class="roboto-regular">01 monitor 15"</li>
