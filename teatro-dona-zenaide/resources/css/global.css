@@ -722,7 +722,7 @@ input:focus, input:active, textarea:focus, textarea:active {
 
     /* Diminuindo o espaçamento lateral da seção Fale Conosco do Footer */
     #footer-area .footer-section-text-center {
-        padding: 0 50px;
+        padding: 0 25px;
     }
 
 }
@@ -730,9 +730,15 @@ input:focus, input:active, textarea:focus, textarea:active {
 /* Custom @media */
 @media (max-width: 399.98px) {
 
-    /* Diminuindo o espaçamento lateral da seção Fale Conosco do Footer */
+    /* Diminuindo o espaçamento superior e inferior do Footer */
+    footer {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    /* Zerando o espaçamento lateral da seção Fale Conosco do Footer */
     #footer-area .footer-section-text-center {
-        padding: 0 25px;
+        padding: 0px;
     }
 
 }
