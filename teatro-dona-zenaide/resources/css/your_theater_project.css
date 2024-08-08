@@ -13,6 +13,60 @@
 }
 
 /* 
+ * @media Sections - Your Theater Project Title Section
+*/
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Diminuindo o font size do título da seção de Título de Seu Projeto No Teatro */
+    #your-theater-project-title-section h1 {
+        font-size: 54px;
+    }
+
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* Diminuindo o padding interno da seção de Título de Seu Projeto No Teatro */
+    #your-theater-project-title-section {
+        padding: 75px 0;
+    }
+
+    /* Diminuindo o font size do título da seção de Título de Seu Projeto No Teatro */
+    #your-theater-project-title-section h1 {
+        font-size: 44px;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /* Diminuindo o padding interno da seção de Título de Seu Projeto No Teatro */
+    #your-theater-project-title-section {
+        padding: 50px 0;
+    }
+
+    /* Diminuindo o font size do título da seção de Título de Seu Projeto No Teatro */
+    #your-theater-project-title-section h1 {
+        font-size: 36px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o font size do título da seção de Título de Seu Projeto No Teatro */
+    #your-theater-project-title-section h1 {
+        font-size: 32px;
+    }
+
+}
+
+/* 
  * Call To Action Banner Section
 */
 
@@ -42,6 +96,94 @@
     /* Font size e cor do parágrafo do chamado ao artista */
     font-size: 18px;
     color: var(--texto-primario);
+}
+
+/* 
+ * @media Sections - Call To Action Banner Section
+*/
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Diminuindo o font size do título da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box h2 {
+        font-size: 40px;
+    }
+
+    /* Diminuindo o font size do parágrafo e do botão project da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box p, .main-btn--project {
+        font-size: 16px;
+        --btn-font-size: 16px;
+    }
+
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Aumentando o padding top e bottom e aumentando o gap da box da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box {
+        padding: 100px 80px;
+        gap: 20px;
+    }
+    
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* Diminuindo o padding top e bottom e diminuindo o gap da box da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box {
+        padding: 80px;
+        gap: 15px;
+    }
+
+    /* Diminuindo o font size do título da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box h2 {
+        font-size: 30px;
+    }
+
+    /* Diminuindo o font size do parágrafo e do botão project da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box p, .main-btn--project {
+        font-size: 14px;
+        --btn-font-size: 14px;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /* Diminuindo a altura da seção de Chamado ao Artista */
+    #call-to-action-banner-section {
+        height: 600px;
+    }
+
+    /* Adicionando uma margin lateral para a box não preencher 100% da seção de Chamado ao Artista */
+    #call-to-action-banner-section .container {
+        margin: 0 20px;
+    }
+
+    /* Diminuindo o padding da box da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box {
+        padding: 70px 40px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o padding da box da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box {
+        padding: 50px 30px;
+    }
+
+    /* Diminuindo o font size do título da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box h2 {
+        font-size: 28px;
+    }
+
 }
 
 /* 
@@ -95,4 +237,89 @@
 #hold-your-event-section h2, #hold-your-event-section p, #hold-your-event-section li {
     /* Cor de texto de todos os h2, p e li da seção de Faça Seu Evento */
     color: var(--texto-primario);
+}
+
+/* 
+ * @media Sections - Hold Your Event Section
+*/
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Diminuindo o font size do título de Faça Seu Evento da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-introduction h1 {
+        font-size: 40px;
+    }
+
+    /* Diminuindo o font size do subtítulo introdutório da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-introduction h2 {
+        font-size: 24px;
+    }
+
+    /* Diminuindo o font size dos subtítulos da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-list h2 {
+        font-size: 20px;
+    }
+
+    /* Diminuindo o font size do p e do li da seção de Faça Seu Evento */
+    #hold-your-event-section p, #hold-your-event-section li {
+        font-size: 16px;
+    }
+
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* Diminuindo o font size do título de Faça Seu Evento da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-introduction h1 {
+        font-size: 36px;
+    }
+
+    /* Diminuindo o font size do subtítulo introdutório da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-introduction h2 {
+        font-size: 22px;
+    }
+
+    /* Diminuindo o font size dos subtítulos da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-list h2 {
+        font-size: 18px;
+    }
+
+    /* Diminuindo o font size do p e do li da seção de Faça Seu Evento */
+    #hold-your-event-section p, #hold-your-event-section li {
+        font-size: 14px;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /* Diminuindo o padding top e adicionando padding lateral na seção de Faça Seu Evento */
+    #hold-your-event-section {
+        padding: 50px 20px 0 20px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o font size do título de Faça Seu Evento da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-introduction h1 {
+        font-size: 30px;
+    }
+
+    /* Diminuindo o font size e aumentando a altura de cada linha do subtítulo introdutório da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-introduction h2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    /* Diminuindo o font size dos subtítulos da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-list h2 {
+        font-size: 16px;
+    }
+    
 }
