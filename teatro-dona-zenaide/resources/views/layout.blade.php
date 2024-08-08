@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="light">
     <head>
         
         <meta charset="utf-8">
@@ -71,6 +71,13 @@
         
         <main>
             @yield('content')
+
+            {{-- Theme Changer (Light/Dark) --}}
+            <label class="theme-container" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Alternar tema" data-bs-delay='{"show":500,"hide":100}' data-bs-trigger="hover">
+                <input checked="checked" type="checkbox" id="chk">
+                <span class="fa6-solid--moon moon"></span>
+                <span class="fa-solid--sun sun"></span>
+            </label>
         </main>
         
         {{-- * Footer * --}}
