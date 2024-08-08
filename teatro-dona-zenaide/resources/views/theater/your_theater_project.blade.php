@@ -19,7 +19,7 @@
             <div class="row d-flex justify-content-end">
 
                 {{-- Call To Action Box --}}
-                <div id="call-to-action-box" class="col-md-6 d-flex flex-column">
+                <div id="call-to-action-box" class="col-lg-6 col-sm-12 d-flex flex-column">
 
                     {{-- Title: Entre Em Cartaz --}}
                     <h2 class="tnr-bold tnr-title-size tnr-title-size--lg">ENTRE EM CARTAZ</h2>

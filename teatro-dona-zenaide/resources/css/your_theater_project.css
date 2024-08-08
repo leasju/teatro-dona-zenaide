@@ -99,6 +99,94 @@
 }
 
 /* 
+ * @media Sections - Call To Action Banner Section
+*/
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Diminuindo o font size do título da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box h2 {
+        font-size: 40px;
+    }
+
+    /* Diminuindo o font size do parágrafo e do botão project da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box p, .main-btn--project {
+        font-size: 16px;
+        --btn-font-size: 16px;
+    }
+
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Aumentando o padding top e bottom e aumentando o gap da box da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box {
+        padding: 100px 80px;
+        gap: 20px;
+    }
+    
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* Diminuindo o padding top e bottom e diminuindo o gap da box da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box {
+        padding: 80px;
+        gap: 15px;
+    }
+
+    /* Diminuindo o font size do título da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box h2 {
+        font-size: 30px;
+    }
+
+    /* Diminuindo o font size do parágrafo e do botão project da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box p, .main-btn--project {
+        font-size: 14px;
+        --btn-font-size: 14px;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /* Diminuindo a altura da seção de Chamado ao Artista */
+    #call-to-action-banner-section {
+        height: 600px;
+    }
+
+    /* Adicionando uma margin lateral para a box não preencher 100% da seção de Chamado ao Artista */
+    #call-to-action-banner-section .container {
+        margin: 0 20px;
+    }
+
+    /* Diminuindo o padding da box da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box {
+        padding: 70px 40px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o padding da box da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box {
+        padding: 50px 30px;
+    }
+
+    /* Diminuindo o font size do título da seção de Chamado ao Artista */
+    #call-to-action-banner-section #call-to-action-box h2 {
+        font-size: 28px;
+    }
+
+}
+
+/* 
  * Hold Your Event Section
 */
 
