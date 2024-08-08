@@ -238,3 +238,88 @@
     /* Cor de texto de todos os h2, p e li da seção de Faça Seu Evento */
     color: var(--texto-primario);
 }
+
+/* 
+ * @media Sections - Hold Your Event Section
+*/
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Diminuindo o font size do título de Faça Seu Evento da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-introduction h1 {
+        font-size: 40px;
+    }
+
+    /* Diminuindo o font size do subtítulo introdutório da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-introduction h2 {
+        font-size: 24px;
+    }
+
+    /* Diminuindo o font size dos subtítulos da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-list h2 {
+        font-size: 20px;
+    }
+
+    /* Diminuindo o font size do p e do li da seção de Faça Seu Evento */
+    #hold-your-event-section p, #hold-your-event-section li {
+        font-size: 16px;
+    }
+
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* Diminuindo o font size do título de Faça Seu Evento da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-introduction h1 {
+        font-size: 36px;
+    }
+
+    /* Diminuindo o font size do subtítulo introdutório da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-introduction h2 {
+        font-size: 22px;
+    }
+
+    /* Diminuindo o font size dos subtítulos da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-list h2 {
+        font-size: 18px;
+    }
+
+    /* Diminuindo o font size do p e do li da seção de Faça Seu Evento */
+    #hold-your-event-section p, #hold-your-event-section li {
+        font-size: 14px;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /* Diminuindo o padding top e adicionando padding lateral na seção de Faça Seu Evento */
+    #hold-your-event-section {
+        padding: 50px 20px 0 20px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o font size do título de Faça Seu Evento da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-introduction h1 {
+        font-size: 30px;
+    }
+
+    /* Diminuindo o font size e aumentando a altura de cada linha do subtítulo introdutório da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-introduction h2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    /* Diminuindo o font size dos subtítulos da seção de Faça Seu Evento */
+    #hold-your-event-section .hold-your-event-list h2 {
+        font-size: 16px;
+    }
+    
+}

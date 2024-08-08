@@ -54,7 +54,7 @@
                 </div>
 
                 {{-- Lista de Eventos Recebidos --}}
-                <div class="hold-your-event-list col-md-6">
+                <div class="hold-your-event-list col-md-6 mb-4">
                     <h2 class="roboto-regular">Eventos recebidos:</h2>
 
                     <ul class="d-flex flex-column hold-your-event-list-ul roboto-regular">
