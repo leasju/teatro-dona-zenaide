@@ -10,7 +10,7 @@
     {{-- * Your Theater Project Title Section * --}}
     <div class="d-flex justify-content-center" id="your-theater-project-title-section">
         {{-- Title: Seu Projeto No Teatro --}}
-        <h1 class="tnr-bold tnr-title-size tnr-title-size--xlg">SEU PROJETO NO TEATRO</h1>
+        <h1 class="tnr-bold tnr-title-size tnr-title-size--xlg text-center">SEU PROJETO NO TEATRO</h1>
     </div>
 
     {{-- * Call To Action Banner Section * --}}

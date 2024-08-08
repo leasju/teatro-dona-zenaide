@@ -13,6 +13,60 @@
 }
 
 /* 
+ * @media Sections - Your Theater Project Title Section
+*/
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    /* Diminuindo o font size do título da seção de Título de Seu Projeto No Teatro */
+    #your-theater-project-title-section h1 {
+        font-size: 54px;
+    }
+
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* Diminuindo o padding interno da seção de Título de Seu Projeto No Teatro */
+    #your-theater-project-title-section {
+        padding: 75px 0;
+    }
+
+    /* Diminuindo o font size do título da seção de Título de Seu Projeto No Teatro */
+    #your-theater-project-title-section h1 {
+        font-size: 44px;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /* Diminuindo o padding interno da seção de Título de Seu Projeto No Teatro */
+    #your-theater-project-title-section {
+        padding: 50px 0;
+    }
+
+    /* Diminuindo o font size do título da seção de Título de Seu Projeto No Teatro */
+    #your-theater-project-title-section h1 {
+        font-size: 36px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o font size do título da seção de Título de Seu Projeto No Teatro */
+    #your-theater-project-title-section h1 {
+        font-size: 32px;
+    }
+
+}
+
+/* 
  * Call To Action Banner Section
 */
 
