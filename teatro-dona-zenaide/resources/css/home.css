@@ -173,7 +173,7 @@
 
 #cards-section {
     /* Background color para a seção de cards */
-    background-color: var(--semibranco);
+    background-color: var(--branco-preto);
 }
 
 #cards-section h2 {
@@ -206,7 +206,7 @@
 #cards-section .card {
     /* Sobrepondo variáveis do card do bootstrap */
     --bs-card-bg: var(--semibranco);
-    --bs-card-border-color: var(--texto-primario);
+    --bs-card-border-color: var(--card-border-color);
 
     /* Largura do card */
     width: 400px;

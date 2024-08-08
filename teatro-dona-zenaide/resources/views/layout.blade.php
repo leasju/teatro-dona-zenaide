@@ -30,7 +30,7 @@
     
                     {{-- Título e Botão de Menu da Navbar (o botão aparece apenas em dimensões menores de tela) --}}
                     <a class="navbar-brand" href="#">Teatro Dona Zenaide</a> {{-- o Logo oficial será colocado aqui posteriormente --}}
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+                    <button class="navbar-toggler navbar-menu-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
     
@@ -99,15 +99,15 @@
                         <div class="col-md-4 col-sm-12 footer-section-center">
                             <h2 class="tnr-bold tnr-title-size tnr-title-size--xsm">ONDE NOS ENCONTRAR</h2>
                             <div id="contact-icons" class="d-flex">
-                                <a href="https://wa.me/551938375160"><span class="ic--baseline-whatsapp icon-effect-wobble" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="(19) 3837-5160"></span></a>
-                                <a href="https://www.instagram.com/teatrodejaguariunaoficial/"><span class="mdi--instagram icon-effect-wobble" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="@teatrodejaguariunaoficial"></span></a>
+                                <a href="https://wa.me/551938375160"><span class="ic--baseline-whatsapp icon-effect-wobble whatsapp-icon" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="(19) 3837-5160"></span></a>
+                                <a href="https://www.instagram.com/teatrodejaguariunaoficial/"><span class="mdi--instagram icon-effect-wobble instagram-icon" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="@teatrodejaguariunaoficial"></span></a>
                             </div>
                         </div>
 
                         {{-- Seção: Localização --}}
                         <div class="col-md-4 col-sm-12 footer-section-center">
                             <h2 class="tnr-bold tnr-title-size tnr-title-size--xsm">LOCALIZAÇÃO</h2>
-                            <p class="roboto-regular p-footer">R. Alfredo Bueno, 1151 - Centro, Jaguariúna - SP, 13820-000</p>
+                            <p class="roboto-regular">R. Alfredo Bueno, 1151 - Centro, Jaguariúna - SP, 13820-000</p>
                         </div>
                         
                         {{-- Seção: Fale conosco --}}

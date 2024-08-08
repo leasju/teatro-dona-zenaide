@@ -13,7 +13,7 @@
 
 html {
     /* Background color da página */
-    background-color: var(--semibranco);
+    background-color: var(--branco-preto);
 }
 
 /* 
@@ -30,6 +30,15 @@ html {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23212121' d='M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28'/%3E%3C/svg%3E");
 }
 
+.ic--baseline-whatsapp-white {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28'/%3E%3C/svg%3E");
+}
+
 /* Instagram Icon */
 .mdi--instagram {
     display: inline-block;
@@ -38,6 +47,15 @@ html {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23212121' d='M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3'/%3E%3C/svg%3E");
+}
+
+.mdi--instagram-white {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3'/%3E%3C/svg%3E");
 }
 
 /* Arrow Down Icon */
@@ -131,6 +149,7 @@ html {
     /* Colors */
     --vermelho-geral: #D5321D;
     --semibranco: #F2F2F2;
+    --branco-preto: #F2F2F2;
     --texto-primario: #212121;
     --texto-secundario: #757575;
     --cinza: #999;
@@ -138,8 +157,29 @@ html {
     --marrom-escuro: #5D2417;
     --branco-transparente: rgba(255, 255, 255, 0.85);
 
+    /* Unique Colors */
+    --tooltip-color: #212121;
+
+    --footer-text-area-border-color: #999;
+    --footer-input-active-border-color: #212121;
+    --footer-input-color: #212121;
+    --footer-placeholder-color: #999;
+    --card-border-color: #212121;
+
     /* Colors for Effects */
     --vermelho-hover: #b42b18;
+}
+
+[data-theme="dark"] {
+    /* Definição de variáveis para o tema escuro */
+    --branco-preto: #0d0d0d;
+    --texto-primario: #F2F2F2;
+
+    --footer-text-area-border-color: #212121;
+    --footer-input-active-border-color: #333333;
+    --footer-input-color: #F2F2F2;
+    --footer-placeholder-color: #333333;
+    --card-border-color: none;
 }
 
 /* 
@@ -204,8 +244,18 @@ html {
 
 .custom-tooltip {
     /* Sobrepondo as variáveis do bootstrap responsáveis por customizar os tooltips */
-    --bs-tooltip-bg: var(--texto-primario) !important;
+    --bs-tooltip-bg: var(--tooltip-color) !important;
     --bs-tooltip-color: var(--semibranco) !important;
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* Desativando as tooltips em telas abaixo de 768px */
+    .tooltip {
+        display: none;
+    }
+
 }
 
 /* 
@@ -230,7 +280,7 @@ html {
     top: 50%; /* Centralizando verticalmente */
     transform: translateY(-50%); /* Ajuste para centralizamento perfeito */
 
-    background-color: var(--texto-primario); 
+    background-color: var(--tooltip-color); 
     padding: 25px;
     border-radius: 8px;
 }
@@ -275,6 +325,50 @@ html {
     75% {
         transform: rotate(25deg);
     }
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* Diminuindo o padding do checkbox de alternar o tema entre claro e escuro */
+    .theme-container {
+        padding: 20px;
+    }
+
+    /* Diminuindo a largura e altura do ícone de lua */
+    .fa6-solid--moon {
+        width: 20px;
+        height: 28px;
+    }
+
+    /* Diminuindo a largura e altura do ícone de sol */
+    .fa-solid--sun {
+        width: 28px;
+        height: 28px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o padding do checkbox de alternar o tema entre claro e escuro */
+    .theme-container {
+        padding: 17px;
+    }
+
+    /* Diminuindo a largura e altura do ícone de lua */
+    .fa6-solid--moon {
+        width: 16px;
+        height: 24px;
+    }
+
+    /* Diminuindo a largura e altura do ícone de sol */
+    .fa-solid--sun {
+        width: 24px;
+        height: 24px;
+    }
+
 }
 
 /* 
@@ -472,13 +566,13 @@ header {
 header .navbar {
     /* Definindo altura, background color e box shadow */
     height: 100px;
-    background-color: var(--semibranco);
+    background-color: var(--branco-preto);
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
 header .offcanvas-body, .offcanvas-header {
     /* Definindo background color para o menu lateral do OffCanvas */
-    background-color: var(--semibranco);
+    background-color: var(--branco-preto);
 }
 
 header .offcanvas-title {
@@ -490,6 +584,44 @@ header .navbar-toggler {
     /* Alterando o SVG e o padding do ícone do menu lateral da OffCanvas NavBar */
     --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23212121' d='M4 17.27v-1h16v1zm0-4.77v-1h16v1zm0-4.77v-1h16v1z'/%3E%3C/svg%3E");
     padding: 4px 8px;
+
+    /* Removendo a cor de fundo do ícone do menu lateral da OffCanvas NavBar */
+    background: none !important;
+
+    /* Removendo a borda do ícone do menu lateral da OffCanvas NavBar */
+    border: 0;
+}
+
+header .navbar-toggler-white {
+    /* Alterando o SVG e o padding do ícone do menu lateral da OffCanvas NavBar */
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3E%3Cpath fill='%23f2f2f2' fill-rule='evenodd' d='M1.5 3a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1zM1 7.5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5m0 4a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5' clip-rule='evenodd'/%3E%3C/svg%3E");
+    padding: 4px 8px;
+
+    /* Removendo a cor de fundo do ícone do menu lateral da OffCanvas NavBar */
+    background: none !important;
+
+    /* Removendo a borda do ícone do menu lateral da OffCanvas NavBar */
+    border: 0;
+
+    /* Escondendo inicialmente */
+    display: none;
+}
+
+header .navbar-toggler:focus,
+header .navbar-toggler:active,
+header .navbar-toggler-icon:focus {
+    /* Removendo o efeito de box shadow quando o menu lateral da OffCanvas NavBar é clicado */
+    outline: none;
+    box-shadow: none;
+}
+
+header .offcanvas .btn-close {
+    /* Alterando o SVG do botão de fechar a OffCanvas NavBar */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23777' %3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+
+    /* Removendo o efeito de box shadow quando o botão de fechar da OffCanvas NavBar é clicado */
+    outline: none;
+    box-shadow: none;
 }
 
 header .navbar .container-fluid {
@@ -520,7 +652,7 @@ header .nav-item a:hover, .nav-item a:visited {
 header .nav-pills .nav-link.active {
     /* Alterando as variáveis do bootstrap responsáveis por alterar a cor de fundo e a cor de texto quando o item da navbar está ativo */
     --bs-nav-pills-link-active-bg: var(--vermelho-geral);
-    --bs-navbar-active-color: var(--semibranco);
+    --bs-navbar-active-color: var(--branco-preto);
 
     /* Padding no item ativo, utilizando o !important para sobrepor estilos do bootstrap */
     padding: 10px;
@@ -617,6 +749,11 @@ header .nav-item:hover::after {
         padding-bottom: 30px;
     }
 
+    header .navbar-toggler-white {
+        /* Tornando visível o ícone branco do menu lateral da OffCanvas NavBar */
+        display: block;
+    }
+
 }
 
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
@@ -647,7 +784,7 @@ footer {
     justify-content: center;
 
     /* Cor de fundo */
-    background-color: var(--semibranco);
+    background-color: var(--branco-preto);
 
     /* Padding embaixo e em cima de 100px (bottom e top) */
     padding-bottom: 100px;
@@ -672,19 +809,23 @@ footer {
 #footer-area p {
     /* Definindo largura para o parágrafo da seção de localização do Footer */
     width: 90%;
+
+    /* Cor de texto do parágrafo da seção de localização do Footer */
+    color: var(--texto-primario);
 }
 
 #footer-area label {
     /* Definindo cor para a label da seção de fale conosco */
-    color: var(--cinza);
+    color: var(--footer-placeholder-color);
 }
 
 #footer-area .form-control {
     /* Alterando as variáveis do bootstrap responsáveis pelo width, border radius do input e cor */
     --bs-border-width: 1px;
     --bs-border-radius: 5px;
-    --bs-border-color: var(--cinza);
-    background-color: var(--semibranco);
+    --bs-border-color: var(--footer-text-area-border-color);
+
+    background-color: var(--branco-preto);
 }
 
 .form-floating > label::after {
@@ -696,13 +837,21 @@ input:focus, input:active, textarea:focus, textarea:active {
     /* Sobrepondo os estilos do bootstrap de box shadow quando o input estiver ativo */
     outline: none !important;
     box-shadow: none !important;
-    border-color: var(--texto-primario) !important;
+    border-color: var(--footer-input-active-border-color) !important;
 }
 
 #footer-area textarea {
     /* Alterando a altura de exibição da textarea do footer */
     height: 80px;
     margin-bottom: 20px;
+
+    /* Cor do texto do textarea do footer */
+    color: var(--footer-input-color);
+}
+
+#footer-area input {
+    /* Cor do texto dos inputs do footer */
+    color: var(--footer-input-color);
 }
 
 /* 
@@ -747,12 +896,6 @@ input:focus, input:active, textarea:focus, textarea:active {
         width: 100%;
         padding-left: 30px;
         padding-right: 30px;
-    }
-
-    /* Diminuindo a largura e altura dos ícones de contato do Footer */
-    .ic--baseline-whatsapp, .mdi--instagram {
-        width: 28px;
-        height: 28px;
     }
 
     /* Diminuindo o font size do parágrafo de localização do Footer */
