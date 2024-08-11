@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="light">
     <head>
         
         <meta charset="utf-8">
@@ -27,16 +27,25 @@
         <header>
             <nav class="navbar navbar-expand-lg fixed-top">
                 <div class="container-fluid">
-    
-                    {{-- Título e Botão de Menu da Navbar (o botão aparece apenas em dimensões menores de tela) --}}
+        
+                    {{-- Logo do Teatro Dona Zenaide --}}
                     <a class="navbar-brand" href="#">Teatro Dona Zenaide</a> {{-- o Logo oficial será colocado aqui posteriormente --}}
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+                    
+                    {{-- Theme Changer (Light/Dark) --}}
+                    <label class="theme-container" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Alternar tema" data-bs-delay='{"show":500,"hide":100}' data-bs-trigger="hover">
+                        <input checked="checked" type="checkbox" id="chk">
+                        <span class="fa6-solid--moon moon"></span>
+                        <span class="fa-solid--sun sun"></span>
+                    </label>
+        
+                    {{-- Botão de Menu da Navbar (o botão aparece apenas em dimensões menores de tela) --}}
+                    <button class="navbar-toggler navbar-menu-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-    
+        
                     {{-- Offcanvas Navbar --}}
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
-    
+        
                         {{-- Título e o Botão de Fechar da Offcanvas (menu lateral) --}}
                         <div class="offcanvas-header">
                             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Teatro Dona Zenaide</h5>
@@ -50,19 +59,30 @@
                                     {{-- request()->is('home') = se na url a requisição for home, inserir a classe active, se não, conteúdo em branco  --}}
                                     <a class="nav-link roboto-regular {{ request()->is('/') ? 'active' : ''}}" aria-current="page" href="/">HOME</a>
                                 </li>
+
+                                <hr class="divider divider--header">
+
                                 <li class="nav-item">
                                     <a class="nav-link roboto-regular {{ request()->is('sobre-nos') ? 'active' : ''}}" href="/sobre-nos">SOBRE NÓS</a>
                                 </li>
+
+                                <hr class="divider divider--header">
+
                                 <li class="nav-item">
                                     <a class="nav-link roboto-regular {{ request()->is('seu-projeto-no-teatro') ? 'active' : ''}}" href="/seu-projeto-no-teatro">SEU PROJETO NO TEATRO</a>
                                 </li>
+
+                                <hr class="divider divider--header">
+
                                 <li class="nav-item">
-                                    <a class="nav-link roboto-regular" href="#contatos">CONTATOS</a>
+                                    <a class="nav-link roboto-regular" id="contatos-link" href="#contatos">CONTATOS</a>
                                 </li>
+
+                                <hr class="divider divider--header">
                             </ul>
                         </div>
                     </div>
-    
+        
                 </div>
             </nav>
         </header>
@@ -92,15 +112,15 @@
                         <div class="col-md-4 col-sm-12 footer-section-center">
                             <h2 class="tnr-bold tnr-title-size tnr-title-size--xsm">ONDE NOS ENCONTRAR</h2>
                             <div id="contact-icons" class="d-flex">
-                                <a href="https://wa.me/551938375160"><span class="ic--baseline-whatsapp icon-effect-wobble" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="(19) 3837-5160"></span></a>
-                                <a href="https://www.instagram.com/teatrodejaguariunaoficial/"><span class="mdi--instagram icon-effect-wobble" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="@teatrodejaguariunaoficial"></span></a>
+                                <a href="https://wa.me/551938375160"><span class="ic--baseline-whatsapp icon-effect-wobble whatsapp-icon" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="(19) 3837-5160"></span></a>
+                                <a href="https://www.instagram.com/teatrodejaguariunaoficial/"><span class="mdi--instagram icon-effect-wobble instagram-icon" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="@teatrodejaguariunaoficial"></span></a>
                             </div>
                         </div>
 
                         {{-- Seção: Localização --}}
                         <div class="col-md-4 col-sm-12 footer-section-center">
                             <h2 class="tnr-bold tnr-title-size tnr-title-size--xsm">LOCALIZAÇÃO</h2>
-                            <p class="roboto-regular p-footer">R. Alfredo Bueno, 1151 - Centro, Jaguariúna - SP, 13820-000</p>
+                            <p class="roboto-regular">R. Alfredo Bueno, 1151 - Centro, Jaguariúna - SP, 13820-000</p>
                         </div>
                         
                         {{-- Seção: Fale conosco --}}

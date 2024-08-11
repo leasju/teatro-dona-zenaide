@@ -25,7 +25,7 @@
 
 #play-info-section {
     /* Background color para a play-info-section */
-    background-color: var(--semibranco);
+    background-color: var(--branco-preto);
 
     /* Padding top e bottom na play-info-section */
     padding: 95px 125px;
@@ -68,8 +68,11 @@
     /* Font size de 24px para os parágrafos */
     font-size: 24px;
 
-    /* Zerando a margin bottom do parágrafo */
+    /* Zerando a margin bottom dos parágrafos */
     margin-bottom: 0;
+
+    /* Cor dos parágrafos */
+    color: var(--texto-primario);
 }
 
 #play-info-section #play-ticket-info {
