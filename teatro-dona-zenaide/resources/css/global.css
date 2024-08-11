@@ -165,6 +165,7 @@ html {
     --footer-input-color: #212121;
     --footer-placeholder-color: #999;
     --card-border-color: #212121;
+    --theme-changer-hover-color: #e6e6e6;
 
     /* Colors for Effects */
     --vermelho-hover: #b42b18;
@@ -182,6 +183,7 @@ html {
     --footer-input-color: #F2F2F2;
     --footer-placeholder-color: #333333;
     --card-border-color: none;
+    --theme-changer-hover-color: #1a1a1a;
 }
 
 /* 
@@ -250,8 +252,8 @@ html {
     --bs-tooltip-color: var(--semibranco) !important;
 }
 
-/* `md` applies to small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) {
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
 
     /* Desativando as tooltips em telas abaixo de 768px */
     .tooltip {
@@ -269,18 +271,17 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     cursor: pointer;
     user-select: none;
 
-    position: fixed; /* Posição fixa para continuar ao scrollar o site */
-    right: 10px; /* Alinhamento à direita */
-    top: 50%; /* Centralizando verticalmente */
-    transform: translateY(-50%); /* Ajuste para centralizamento perfeito */
-
-    background-color: var(--tooltip-color); 
+    margin-left: auto; /* Empurra o botão de tema para a direita */
     padding: 25px;
     border-radius: 8px;
+}
+
+/* Quando o cursor passar pela checkbox de troca de tema, aplicar uma background color */
+.theme-container:hover {
+    background-color: var(--theme-changer-hover-color);
 }
   
 .theme-container .moon {
@@ -325,8 +326,8 @@ html {
     }
 }
 
-/* `md` applies to small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) {
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
 
     /* Diminuindo o padding do checkbox de alternar o tema entre claro e escuro */
     .theme-container {
@@ -335,36 +336,29 @@ html {
 
     /* Diminuindo a largura e altura do ícone de lua */
     .fa6-solid--moon {
-        width: 20px;
-        height: 28px;
+        width: 18px;
+        height: 26px;
     }
 
     /* Diminuindo a largura e altura do ícone de sol */
     .fa-solid--sun {
-        width: 28px;
-        height: 28px;
+        width: 26px;
+        height: 26px;
     }
 
 }
 
-/* Custom @media */
-@media (max-width: 399.98px) {
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Retirando o background color de hover em telas menores (deixando o fundo igual o da navbar) */
+    .theme-container:hover {
+        background-color: var(--branco-preto);
+    }
 
     /* Diminuindo o padding do checkbox de alternar o tema entre claro e escuro */
     .theme-container {
-        padding: 17px;
-    }
-
-    /* Diminuindo a largura e altura do ícone de lua */
-    .fa6-solid--moon {
-        width: 16px;
-        height: 24px;
-    }
-
-    /* Diminuindo a largura e altura do ícone de sol */
-    .fa-solid--sun {
-        width: 24px;
-        height: 24px;
+        padding: 15px;
     }
 
 }
@@ -630,7 +624,7 @@ header .navbar .container-fluid {
 
 header .navbar-nav {
     /* Espaçamento entre os itens da navbar */
-    column-gap: 125px;
+    column-gap: 100px;
     /* Alinhando os itens navbar ao centro */
     align-items: center;
 }
@@ -708,6 +702,12 @@ header .nav-item:hover::after {
     /* Diminuindo o espaçamento entre os itens da NavBar */
     header .navbar-nav {
         column-gap: 50px;
+    }
+
+    /* Diminuindo o espaçamento lateral da NavBar */
+    header .navbar .container-fluid {
+        padding-left: 75px;
+        padding-right: 75px;
     }
 
 }

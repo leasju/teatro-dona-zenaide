@@ -27,16 +27,25 @@
         <header>
             <nav class="navbar navbar-expand-lg fixed-top">
                 <div class="container-fluid">
-    
-                    {{-- Título e Botão de Menu da Navbar (o botão aparece apenas em dimensões menores de tela) --}}
+        
+                    {{-- Logo do Teatro Dona Zenaide --}}
                     <a class="navbar-brand" href="#">Teatro Dona Zenaide</a> {{-- o Logo oficial será colocado aqui posteriormente --}}
+                    
+                    {{-- Theme Changer (Light/Dark) --}}
+                    <label class="theme-container" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Alternar tema" data-bs-delay='{"show":500,"hide":100}' data-bs-trigger="hover">
+                        <input checked="checked" type="checkbox" id="chk">
+                        <span class="fa6-solid--moon moon"></span>
+                        <span class="fa-solid--sun sun"></span>
+                    </label>
+        
+                    {{-- Botão de Menu da Navbar (o botão aparece apenas em dimensões menores de tela) --}}
                     <button class="navbar-toggler navbar-menu-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-    
+        
                     {{-- Offcanvas Navbar --}}
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
-    
+        
                         {{-- Título e o Botão de Fechar da Offcanvas (menu lateral) --}}
                         <div class="offcanvas-header">
                             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Teatro Dona Zenaide</h5>
@@ -62,7 +71,7 @@
                             </ul>
                         </div>
                     </div>
-    
+        
                 </div>
             </nav>
         </header>
@@ -71,13 +80,6 @@
         
         <main>
             @yield('content')
-
-            {{-- Theme Changer (Light/Dark) --}}
-            <label class="theme-container" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Alternar tema" data-bs-delay='{"show":500,"hide":100}' data-bs-trigger="hover">
-                <input checked="checked" type="checkbox" id="chk">
-                <span class="fa6-solid--moon moon"></span>
-                <span class="fa-solid--sun sun"></span>
-            </label>
         </main>
         
         {{-- * Footer * --}}
