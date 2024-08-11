@@ -6,7 +6,7 @@
 
 #your-theater-project-title-section {
     /* Background color do título de Seu Projeto No Teatro */
-    background-color: var(--semibranco);
+    background-color: var(--branco-preto);
 
     /* Espaçamento em cima e embaixo do título de Seu Projeto No Teatro */
     padding: 100px 0;
@@ -83,7 +83,7 @@
 
 #call-to-action-banner-section #call-to-action-box {
     /* Background color da box do chamado ao artista */
-    background-color: var(--branco-transparente);
+    background-color: var(--branco-preto-transparente);
 
     /* Espaçamento interno da box de 80px */
     padding: 80px;
@@ -192,7 +192,7 @@
 
 #hold-your-event-section {
     /* Background color da seção de Faça Seu Evento */
-    background-color: var(--semibranco);
+    background-color: var(--branco-preto);
 
     /* Espaçamento interno top da seção de Faça Seu Evento */
     padding-top: 100px;
