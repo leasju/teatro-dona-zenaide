@@ -387,6 +387,11 @@ html {
 
 /* Layout */
 
+.divider--header {
+    --divider-margin-top: 0px;
+    --divider-margin-bottom: 0px;
+}
+
 .divider--footer {
     /* Largura do divider */
     --divider-width: 100%;
@@ -616,6 +621,11 @@ header .offcanvas .btn-close {
     box-shadow: none;
 }
 
+header .divider--header {
+    /* Escondendo os dividers do header inicialmente */
+    display: none;
+}
+
 header .navbar .container-fluid {
     /* Espaçamento lateral da navbar */
     padding-left: 100px;
@@ -736,9 +746,14 @@ header .nav-item:hover::after {
 /* `lg` applies to medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
 
-    /* Diminuindo o espaçamento entre cada item da NavBar pela row (linha) e alinhando os itens no começo da OffCanvas NavBar */
+    header .nav-item::after {
+        /* Removendo o efeito de underline nos itens da Navbar quando a proporção de tela for menor (tablets ou menor) */
+        display: none;
+    }
+    
     header .navbar-nav {
-        row-gap: 35px;
+        /* Diminuindo o espaçamento entre cada item da NavBar pela row (linha) e alinhando os itens no começo da OffCanvas NavBar */
+        row-gap: 15px;
         align-items: start;
     }
 
@@ -749,6 +764,11 @@ header .nav-item:hover::after {
 
     header .navbar-toggler-white {
         /* Tornando visível o ícone branco do menu lateral da OffCanvas NavBar */
+        display: block;
+    }
+
+    header .divider--header {
+        /* Tornando visível os dividers do header quando a proporção de tela for menor (só aparecerá na OffCanvar NavBar) */
         display: block;
     }
 
@@ -763,8 +783,12 @@ header .nav-item:hover::after {
         padding-right: 30px;
     }
 
-}
+    /* Diminuindo o font size do título da Navbar (enquanto está sem a logo) */
+    header .navbar-brand {
+        font-size: 18px;
+    }
 
+}
 
 /* 
  * Footer

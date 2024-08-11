@@ -105,3 +105,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+// * Script para fechar a OffCanvas NavBar ao interagir com o link de 'CONTATOS'
+
+// Este evento garante que o código JavaScript só será executado após todo o conteúdo da página ter sido completamente carregado.
+document.addEventListener("DOMContentLoaded", function() {
+
+    // Obter o elemento do link de 'CONTATOS' usando seu ID.
+    var contatosLink = document.getElementById('contatos-link');
+    
+    // Obter o elemento da OffCanvas Navbar usando seu ID.
+    var offcanvasElement = document.getElementById('navbarOffcanvasLg');
+
+    // Verificar se o elemento contatosLink realmente existe para evitar erros.
+    if (contatosLink) {
+        // Adicionar um ouvinte de evento de clique ao link de 'CONTATOS'.
+        contatosLink.addEventListener('click', function() {
+            // Usar o método getInstance do Bootstrap para obter a instância atual da OffCanvas Navbar.
+            var bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+            // Usar o método hide para fechar a OffCanvas Navbar.
+            bsOffcanvas.hide();
+        });
+    }
+
+});

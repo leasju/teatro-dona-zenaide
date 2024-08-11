@@ -59,15 +59,26 @@
                                     {{-- request()->is('home') = se na url a requisição for home, inserir a classe active, se não, conteúdo em branco  --}}
                                     <a class="nav-link roboto-regular {{ request()->is('/') ? 'active' : ''}}" aria-current="page" href="/">HOME</a>
                                 </li>
+
+                                <hr class="divider divider--header">
+
                                 <li class="nav-item">
                                     <a class="nav-link roboto-regular {{ request()->is('sobre-nos') ? 'active' : ''}}" href="/sobre-nos">SOBRE NÓS</a>
                                 </li>
+
+                                <hr class="divider divider--header">
+
                                 <li class="nav-item">
                                     <a class="nav-link roboto-regular {{ request()->is('seu-projeto-no-teatro') ? 'active' : ''}}" href="/seu-projeto-no-teatro">SEU PROJETO NO TEATRO</a>
                                 </li>
+
+                                <hr class="divider divider--header">
+
                                 <li class="nav-item">
-                                    <a class="nav-link roboto-regular" href="#contatos">CONTATOS</a>
+                                    <a class="nav-link roboto-regular" id="contatos-link" href="#contatos">CONTATOS</a>
                                 </li>
+
+                                <hr class="divider divider--header">
                             </ul>
                         </div>
                     </div>
