@@ -95,7 +95,7 @@
 
 #about-content-section {
     /* Background color da seção do conteúdo do sobre nós */
-    background-color: var(--semibranco);
+    background-color: var(--branco-preto);
 
     /* Espaçamento interno de 200px top e bottom*/
     padding: 200px 0;
