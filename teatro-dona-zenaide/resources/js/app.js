@@ -3,12 +3,12 @@ import './bootstrap';
 import './scripts';
 
 // Imports CSS
-import '../css/global.css';
+import '../css/theater/global.css';
 
-import '../css/home.css';
-import '../css/play_info.css';
-import '../css/about_us.css';
-import '../css/your_theater_project.css';
+import '../css/theater/home.css';
+import '../css/theater/play_info.css';
+import '../css/theater/about_us.css';
+import '../css/theater/your_theater_project.css';
 
 // Vite Assets Img
 import.meta.glob([
