@@ -8,7 +8,7 @@
         <title>@yield('view-title')</title>
 
         {{-- Importando o arquivo JS com o Vite que contém os arquivos CSS e JS --}}
-        @vite('resources/js/app.js')
+        @vite('resources/js/admin.js')
 
         {{-- Icons - Iconify: Implementando os ícones no CSS e utilizando a tag <span> para mostrar os ícones --}}
 
@@ -23,7 +23,26 @@
     <body>
         
         {{-- * Header/Navbar * --}}
-        
+
+        <header>
+            <nav class="navbar navbar-expand fixed-top">
+                <div class="container-fluid">
+                    
+                    {{-- Logo do Teatro Dona Zenaide --}}
+                    <a class="navbar-brand" href="#">Teatro Dona Zenaide</a>
+
+                    {{-- Corpo da Navbar --}}
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav d-flex justify-content-end flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link roboto-regular" id="adminLink" aria-current="page" href="#">Modo Administrador</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+              </nav>
+        </header>
 
         {{-- * Content * --}}
         

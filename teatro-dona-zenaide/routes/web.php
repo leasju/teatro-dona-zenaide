@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+// * Views Teatro
+
 // Rota por GET para a tela home
 Route::get('/', function () {
     return view('theater/home');
@@ -20,4 +22,11 @@ Route::get('/sobre-nos', function() {
 // Rota por GET para tela seu projeto no teatro
 Route::get('/seu-projeto-no-teatro', function() {
     return view('theater/your_theater_project');
+});
+
+// * Views Administrador
+
+// Rota por GET para tela de Login do Admin
+Route::get('/login', function() {
+    return view('admin/login');
 });
