@@ -6,7 +6,7 @@
 
 #about-banner-section {
     /* Background image com efeito de escurecer e alinhamento */
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/tela-about-us/img-sobre-banner.jpg');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../img/tela-about-us/img-sobre-banner.jpg');
     background-position: center;
     background-size: cover;
 

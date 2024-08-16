@@ -1,5 +1,5 @@
 {{-- Puxando o layout --}}
-@extends('layout')
+@extends('layouts.layout')
 
 {{-- Mudando o título da página dinamicamente --}}
 @section('view-title', 'Nome da Peça - Teatro Dona Zenaide')

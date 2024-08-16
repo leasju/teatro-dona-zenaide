@@ -1,0 +1,147 @@
+/* ------------------------------------------------ GLOBAL ---------------------------------------------------------- */
+
+/* 
+ *  General 
+*/
+
+* {
+    font-family: var(--font-family-roboto);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Background color da página */
+    background: var(--gradient-background);
+
+    /* Garantindo que o gradiente cubra toda a área da tela */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* 
+ *  Global Variables 
+*/
+
+:root {
+    /* Font Roboto */
+    --font-family-roboto: 'Roboto', sans-serif;
+
+    /* Colors */
+    --vermelho-geral: #D5321D;
+    --semibranco: #F2F2F2;
+    --preto: #000000;
+    --cinza: #999999;
+    --amarelo: #F29810;
+    --verde: #30A61D;
+    --azul: #3771C8;
+    --column: #EDECEC;
+    --cinza-escuro: #333333;
+    --input-active-color: #555555;
+    --gradient-background: linear-gradient(180deg, #404040 0%, #000 100%);
+}
+
+/* 
+ *  Fonts
+*/
+
+.roboto-regular {
+    font-family: var(--font-family-roboto);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-medium {
+    font-family: var(--font-family-roboto);
+    font-weight: 500;
+    font-style: normal;
+}
+  
+.roboto-bold {
+    font-family: var(--font-family-roboto);
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* 
+ * Buttons
+*/
+
+.main-btn {
+    /* Variáveis do botão */
+    --btn-width: 100%;
+    --btn-padding: 10px 30px;
+    --btn-font-size: 18px;
+
+    /* Estilização do botão */
+    width: var(--btn-width);
+    padding: var(--btn-padding);
+    font-size: var(--btn-font-size);
+
+    border-radius: 5px;
+    border: none;
+
+    background-color: var(--vermelho-geral);
+    color: var(--semibranco);
+    text-decoration: none;
+    cursor: pointer;
+
+    /* Alinhamento com o ícone */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 
+ *   Header/Navbar 
+*/
+
+header .navbar {
+    /* Definindo altura, background color */
+    height: 100px;
+    background-color: var(--preto);
+}
+
+header .navbar .container-fluid {
+    /* Espaçamento lateral da navbar */
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+header .navbar-nav {
+    /* Alinhando os itens navbar ao centro */
+    align-items: center;
+}
+
+header .navbar-brand {
+    /* Cor para o logo da navbar */
+    color: var(--vermelho-geral);
+}
+
+header .navbar-brand:hover, header .navbar-brand:visited {
+    /* Sobrepondo o estilo do bootstrap, para que ao passar o mouse pela logo, mantenha sua cor padrão, assim como depois de visitar o link da logo */
+    color: var(--vermelho-geral);
+    text-decoration: none;
+}
+
+header .nav-item a {
+    /* Fonte, cor e espaçamento entre as letras do item do Modo Administrador da navbar */
+    font-size: 20px;
+    color: var(--semibranco);
+    letter-spacing: 2px;
+
+    /* Definindo uma cor de fundo para o item de Modo Administrador da navbar */
+    background-color: var(--vermelho-geral);
+
+    /* Espaçamento interno (substituindo o do Bootstrap) e border radius do item de Modo Administrador da navbar */
+    padding: 15px 30px !important;
+    border-radius: 15px;
+}
+
+header .nav-item a:hover, .nav-item a:visited, .nav-item a:link {
+    /* Sobrepondo o estilo do bootstrap, para que ao passar o mouse pelo item do Modo Administrador da navbar, mantenha sua cor padrão, assim como depois de visitar o link */
+    color: var(--semibranco);
+    text-decoration: none;
+}

@@ -6,7 +6,7 @@
 
 #hero-section {
     /* Background do Hero  */
-    background: url('../img/tela-home/img-hero.jpg') lightgray 50% / cover no-repeat;
+    background: url('../../img/tela-home/img-hero.jpg') lightgray 50% / cover no-repeat;
 
     /* Altura mínima de 750px e automática */
     min-height: 750px;

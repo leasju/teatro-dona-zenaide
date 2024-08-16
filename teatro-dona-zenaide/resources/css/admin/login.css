@@ -1,0 +1,67 @@
+/* ------------------------------------------------ LOGIN ---------------------------------------------------------- */
+
+/* 
+ * Login Area Section
+*/
+
+#login-area {
+    /* Background color da seção de Login Area */
+    background: var(--gradient-background);
+
+    /* Garantindo que o gradiente cubra toda a área da seção de Login Area */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#login-box {
+    /* Background color da Box de Login */
+    background-color: var(--preto);
+    
+    /* Espaçamento interno e arredondamento das bordas */
+    padding: 100px 100px 130px 100px;
+    border-radius: 5px;
+}
+
+#login-box h1 {
+    /* Font size e cor do título de Login da Box de Login */
+    font-size: 36px;
+    color: var(--semibranco);
+}
+
+#login-box h2 {
+    /* Font size e cor do h2 acima dos inputs da Box de Login */
+    font-size: 18px;
+    color: var(--semibranco);
+}
+
+#login-box .form-control {
+    /* Alterando as variáveis do bootstrap responsáveis pelo width, border radius do input e cor */
+    --bs-border-width: 1px;
+    --bs-border-radius: 5px;
+    --bs-border-color: var(--cinza-escuro);
+
+    background-color: var(--preto);
+}
+
+#login-box input {
+    /* Definindo uma cor para os inputs da Box de Login */
+    color: var(--semibranco);
+}
+
+input:focus, input:active, textarea:focus, textarea:active {
+    /* Sobrepondo os estilos do bootstrap de box shadow quando o input estiver ativo */
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: var(--input-active-color) !important;
+}
+
+#login-box label {
+    /* Definindo uma cor para a label da Box de Login */
+    color: var(--cinza-escuro);
+}
+
+.form-floating > label::after {
+    /* Tornando o background color da label transparente */
+    background-color: transparent !important;
+}
