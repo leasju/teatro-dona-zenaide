@@ -38,6 +38,8 @@ html {
     --verde: #30A61D;
     --azul: #3771C8;
     --column: #EDECEC;
+    --cinza-escuro: #333333;
+    --input-active-color: #555555;
     --gradient-background: linear-gradient(180deg, #404040 0%, #000 100%);
 }
 
@@ -50,6 +52,12 @@ html {
     font-weight: 400;
     font-style: normal;
 }
+
+.roboto-medium {
+    font-family: var(--font-family-roboto);
+    font-weight: 500;
+    font-style: normal;
+}
   
 .roboto-bold {
     font-family: var(--font-family-roboto);
@@ -58,13 +66,37 @@ html {
 }
 
 /* 
- *   Header/Navbar 
+ * Buttons
 */
 
-header {
-    /* Espaçamento da fixed navbar */
-    margin-bottom: 100px;
+.main-btn {
+    /* Variáveis do botão */
+    --btn-width: 100%;
+    --btn-padding: 10px 30px;
+    --btn-font-size: 18px;
+
+    /* Estilização do botão */
+    width: var(--btn-width);
+    padding: var(--btn-padding);
+    font-size: var(--btn-font-size);
+
+    border-radius: 5px;
+    border: none;
+
+    background-color: var(--vermelho-geral);
+    color: var(--semibranco);
+    text-decoration: none;
+    cursor: pointer;
+
+    /* Alinhamento com o ícone */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+/* 
+ *   Header/Navbar 
+*/
 
 header .navbar {
     /* Definindo altura, background color */

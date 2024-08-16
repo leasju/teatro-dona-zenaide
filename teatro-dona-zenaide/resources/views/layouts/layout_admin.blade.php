@@ -13,7 +13,7 @@
         {{-- Icons - Iconify: Implementando os ícones no CSS e utilizando a tag <span> para mostrar os ícones --}}
 
         {{-- Fonte - Roboto --}}
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
         {{-- CSS Bootstrap --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -29,7 +29,7 @@
                 <div class="container-fluid">
                     
                     {{-- Logo do Teatro Dona Zenaide --}}
-                    <a class="navbar-brand" href="#">Teatro Dona Zenaide</a>
+                    <a class="navbar-brand" href="/">Teatro Dona Zenaide</a>
 
                     {{-- Corpo da Navbar --}}
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
