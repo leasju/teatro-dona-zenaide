@@ -43,6 +43,40 @@ html {
     --gradient-background: linear-gradient(180deg, #404040 0%, #000 100%);
 }
 
+/*
+ * Icons
+*/
+
+/* Logout Icon */
+.material-symbols--logout {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h7v2zm11-4l-1.375-1.45l2.55-2.55H9v-2h8.175l-2.55-2.55L16 7l5 5z'/%3E%3C/svg%3E");
+}
+
+/* 
+ * Tooltips
+*/
+
+.custom-tooltip {
+    /* Sobrepondo as variáveis do bootstrap responsáveis por customizar os tooltips */
+    --bs-tooltip-bg: var(--semibranco) !important;
+    --bs-tooltip-color: var(--preto) !important;
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    /* Desativando as tooltips em telas abaixo de 768px */
+    .tooltip {
+        display: none;
+    }
+
+}
+
 /* 
  *  Fonts
 */
@@ -113,6 +147,9 @@ header .navbar .container-fluid {
 header .navbar-nav {
     /* Alinhando os itens navbar ao centro */
     align-items: center;
+    
+    /* Gap entre os itens da navbar de 10px */
+    gap: 10px;
 }
 
 header .navbar-brand {
@@ -126,7 +163,7 @@ header .navbar-brand:hover, header .navbar-brand:visited {
     text-decoration: none;
 }
 
-header .nav-item a {
+header #admin-indicator {
     /* Fonte, cor e espaçamento entre as letras do item do Modo Administrador da navbar */
     font-size: 20px;
     color: var(--semibranco);
@@ -140,8 +177,13 @@ header .nav-item a {
     border-radius: 15px;
 }
 
-header .nav-item a:hover, .nav-item a:visited, .nav-item a:link {
+header #admin-indicator:hover, #admin-indicator:visited, #admin-indicator:link {
     /* Sobrepondo o estilo do bootstrap, para que ao passar o mouse pelo item do Modo Administrador da navbar, mantenha sua cor padrão, assim como depois de visitar o link */
     color: var(--semibranco);
     text-decoration: none;
+}
+
+header #logout-icon {
+    /* Centralizando o ícone de logout na Navbar */
+    padding-top: 16px;
 }
