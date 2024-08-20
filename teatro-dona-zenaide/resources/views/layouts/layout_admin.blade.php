@@ -31,7 +31,7 @@
                     {{-- Logo do Teatro Dona Zenaide --}}
                     <a class="navbar-brand" href="/">Teatro Dona Zenaide</a>
 
-                    {{-- Corpo da Navbar --}}
+                    {{-- Corpo da Navbar - Fazer com que apenas apareça o Modo Administrador e Logout ao estar logado --}}
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav d-flex justify-content-end flex-grow-1">
                             <li class="nav-item">

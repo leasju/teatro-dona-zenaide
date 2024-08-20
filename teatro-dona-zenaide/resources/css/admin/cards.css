@@ -1,0 +1,117 @@
+/* ------------------------------------------------ CARDS ---------------------------------------------------------- */
+
+/* 
+ * Table Area Section
+*/
+
+#table-cards-area {
+    /* Background color da Área de Tabela dos Cards */
+    background: var(--gradient-background);
+
+    /* Garantindo que o gradiente cubra toda a área da Área de Tabela dos Cards */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#table-cards-box {
+    /* Background color da Box de Tabela dos Cards */
+    background-color: var(--preto);
+    
+    /* Espaçamento interno e arredondamento das bordas */
+    padding: 70px;
+    border-radius: 5px;
+}
+
+#table-cards-box .table-top-content h1 {
+    /* Font size e cor do título da tabela */
+    font-size: 32px;
+    color: var(--semibranco);
+
+    /* Zerando a margin */
+    margin: 0;
+}
+
+#table-cards-box .table-top-content .main-btn--new .roboto-regular {
+    /* Centralizando a span de 'Novo' do botão para igualar com o ícone */
+    position: relative;
+    top: 1.5px;
+}
+
+#table-cards-box .table {
+    /* Cores para a Tabela de Cards */
+    --bs-table-bg: var(--semibranco);
+    --bs-table-striped-bg: var(--row);
+    --bs-table-border-color: var(--preto);
+    border-bottom: 1px solid var(--cinza);
+
+    /* Zerando a margin */
+    margin: 0;
+
+    /* Border radius nas bordas superiores */
+    border-radius: 10px 10px 0 0; 
+    /* Garante que o conteúdo não ultrapasse as bordas arredondadas */
+    overflow: hidden; 
+}
+
+#table-cards-box .table thead tr th {
+    /* Cor de fundo e de texto do cabeçalho da tabela */
+    background-color: var(--vermelho-geral) !important;
+    color: var(--semibranco);
+
+    /* Font size para os itens do cabeçalho da tabela */
+    font-size: 18px;
+}
+
+#table-cards-box .table tbody tr {
+    /* Font size e cor das linhas do corpo da tabela */
+    font-size: 16px;
+    color: var(--preto);
+}
+
+/* 
+ * Action Buttons
+*/
+
+#table-cards-box #action-buttons {
+    /* Força o td de ação a ter apenas o espaço necessário, removendo o espamento lateral nos botões de ação */
+    width: 1%; 
+    /* Impede quebra de linha */
+    white-space: nowrap;
+}
+
+#table-cards-box #action-buttons .action-buttons-style {
+    /* Display e o cursor dos botões de ação */
+    display: inline-block;
+    cursor: pointer;
+
+    /* Cor de fundo dos botões de ação por meio de uma variável */
+    --background-color-action-button: var(--vermelho-geral);
+    background-color: var(--background-color-action-button);
+
+    /* Espamento interno e border radius dos botões de ação */
+    padding: 7px 20px;
+    border-radius: 15px;
+
+    /* Retirando a borda dos botões */
+    border: none;
+}
+
+/* Botão de Editar */
+
+#table-cards-box #action-buttons .action-buttons-style--edit {
+    /* Alterando a cor do botão para amarelo */
+    --background-color-action-button: var(--amarelo);
+}
+
+/* Botão Checkbox de Visibilidade */
+
+#table-cards-box #action-buttons .action-buttons-style--visibility {
+    /* Alterando a cor do botão para azul */
+    --background-color-action-button: var(--azul);
+}
+
+#table-cards-box #action-buttons .action-buttons-style--visibility input {
+    /* Escondendo o input do checkbox do botão de visibilidade da peça */
+    display: none;
+}
