@@ -115,6 +115,7 @@ html {
     /* Sobrepondo as variáveis do bootstrap responsáveis por customizar os tooltips */
     --bs-tooltip-bg: var(--semibranco) !important;
     --bs-tooltip-color: var(--preto) !important;
+    font-size: 12px;
 }
 
 /* `lg` applies to medium devices (tablets, less than 992px) */
