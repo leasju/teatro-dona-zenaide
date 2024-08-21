@@ -32,15 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Muda a classe do ícone do Instagram para a versão branca
         instagramIcon.classList.remove('mdi--instagram');
-        instagramIcon.classList.add('mdi--instagram-white')
+        instagramIcon.classList.add('mdi--instagram-white');
 
-        // Muda a classe do ícone do Menu para a versão branca
-        menuIcon.classList.remove('navbar-toggler');
-        menuIcon.classList.add('navbar-toggler-white');
+        // Adiciona a classe dark-theme ao ícone do Menu
+        menuIcon.classList.add('dark-theme');
 
-    } 
-    
-    else {
+    } else {
         document.documentElement.setAttribute('data-theme', 'light');
         checkbox.checked = false;
 
@@ -50,11 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Muda a classe do ícone do Instagram para a versão padrão
         instagramIcon.classList.remove('mdi--instagram-white');
-        instagramIcon.classList.add('mdi--instagram')
+        instagramIcon.classList.add('mdi--instagram');
 
-        // Muda a classe do ícone do Menu para a versão padrão
-        menuIcon.classList.add('navbar-toggler');
-        menuIcon.classList.remove('navbar-toggler-white');
+        // Remove a classe dark-theme do ícone do Menu
+        menuIcon.classList.remove('dark-theme');
     }
     
     // Adiciona um ouvinte de eventos para o evento 'change' no checkbox
@@ -74,15 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Muda a classe do ícone do Instagram para a versão branca
             instagramIcon.classList.remove('mdi--instagram');
-            instagramIcon.classList.add('mdi--instagram-white')
+            instagramIcon.classList.add('mdi--instagram-white');
 
-            // Muda a classe do ícone do Menu para a versão branca
-            menuIcon.classList.remove('navbar-toggler');
-            menuIcon.classList.add('navbar-toggler-white');
-        }
-        
-        // Se o checkbox estiver desmarcado, aplica o tema claro
-        else {
+            // Adiciona a classe dark-theme ao ícone do Menu
+            menuIcon.classList.add('dark-theme');
+
+        } else {
             // Aplicando o tema claro
             document.documentElement.setAttribute('data-theme', 'light');
 
@@ -95,15 +88,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Muda a classe do ícone do Instagram para a versão padrão
             instagramIcon.classList.remove('mdi--instagram-white');
-            instagramIcon.classList.add('mdi--instagram')
+            instagramIcon.classList.add('mdi--instagram');
 
-            // Muda a classe do ícone do Menu para a versão padrão
-            menuIcon.classList.add('navbar-toggler');
-            menuIcon.classList.remove('navbar-toggler-white');
+            // Remove a classe dark-theme do ícone do Menu
+            menuIcon.classList.remove('dark-theme');
         }
 
     });
 
+});
+
+// * Script para alterar o texto da tooltip baseado no tema (claro ou escuro)
+
+// Executa o código quando o conteúdo da página é carregado
+document.addEventListener("DOMContentLoaded", function() {
+
+    // Obter o elemento do checkbox
+    var checkbox = document.getElementById('chk');
+    
+    // Obter o elemento do contêiner do tema (label)
+    var themeContainer = document.querySelector('.theme-container');
+    
+    // Função que atualiza o texto da tooltip baseado no estado do checkbox
+    function updateTooltip() {
+        if (checkbox.checked) {
+            // Se o checkbox estiver marcado, definir o texto da tooltip como "Aparência: Tema Escuro"
+            themeContainer.setAttribute('data-bs-title', 'Aparência: Tema Escuro');
+        } 
+        
+        else {
+            // Se o checkbox não estiver marcado, definir o texto da tooltip como "Aparência: Tema Claro"
+            themeContainer.setAttribute('data-bs-title', 'Aparência: Tema Claro');
+        }
+        
+        // Atualizar manualmente a tooltip para refletir o novo título
+        var tooltip = bootstrap.Tooltip.getInstance(themeContainer);
+        if (tooltip) {
+            tooltip.setContent({ '.tooltip-inner': themeContainer.getAttribute('data-bs-title') });
+        }
+    }
+
+    // Adicionar o evento de mudança ao checkbox para atualizar a tooltip quando o tema for alterado
+    checkbox.addEventListener('change', updateTooltip);
+
+    // Inicializa a tooltip com o Bootstrap
+    new bootstrap.Tooltip(themeContainer);
+    
+    // Atualiza a tooltip na inicialização
+    updateTooltip();
 });
 
 // * Script para fechar a OffCanvas NavBar ao interagir com o link de 'CONTATOS'
