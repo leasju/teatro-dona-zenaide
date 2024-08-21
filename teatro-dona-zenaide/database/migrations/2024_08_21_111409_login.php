@@ -11,14 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+           //Criação da tabela "Login" no banco de dados
+        Schema::create('login', function (Blueprint $table) {
+            $table->id();
+            $table->text('adm_user', 100);
+            $table->text('adm_pass', 100);
+            $table->timestamps();
+        });
+
     }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
-    {
-        //
+    { 
+         Schema::dropIfExists('login');
     }
 };
