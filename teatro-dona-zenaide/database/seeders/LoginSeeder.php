@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Login;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class LoginSeeder extends Seeder
 {
@@ -12,10 +13,14 @@ class LoginSeeder extends Seeder
      */
     public function run()
     {
-        $slogin = new LoginSeeder();
+         // Pega valores inseridos no forms Login e armazena nas variáveis de objeto "slogin (Seeder Login)"
+        $slogin = new Login();
 
-        $slogin->email = 'jusouzaleandro@gmail.com';
-        $slogin->password = bcrypt('julia123'); // Hashar a senha
-        $slogin->save();
+        $slogin->adm_user = 'jusouzaleandro@gmail.com';
+
+        // Hash sendo usado para armazenar a senha de forma segura
+        $slogin->adm_pass = Hash::make('julia123');
+
+         $slogin->save();
     }
 }
