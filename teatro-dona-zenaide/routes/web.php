@@ -30,3 +30,6 @@ Route::get('/seu-projeto-no-teatro', function() {
 Route::get('/login', function() {
     return view('admin/login');
 });
+
+// Rota por POST para executar o método "login_adm" da classe "LoginController"
+Route::post('/login', [LoginController::class,'loginAdm']);

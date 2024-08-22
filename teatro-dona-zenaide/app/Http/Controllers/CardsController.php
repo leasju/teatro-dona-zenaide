@@ -13,7 +13,7 @@ class CardsController extends Controller
     public function cardsAdm(Request $request)
 {
 
-     // Validação da imagem anexada no forms e outros campos
+     // Validação dos campos preenchidos no forms de criação de cards
      $request->validate([
         'evento' => 'required|string',
         'artista' => 'required|string',
@@ -45,9 +45,11 @@ class CardsController extends Controller
     $ocard->img_evento = $imageName; //Salva o nome da imagem
     $ocard->desc_evento = $request->desc;
 
-    $ocard->save(); // Salva no banco de dados
+    // Salva no banco de dados
+    $ocard->save(); 
 
-        return view('/cards/create_card', ["sucess"=>true]); // Retorna para a view do forms de criação de cards
+     // Retorna para a view do forms de criação de cards
+        return view('/cards/create_card', ["sucess"=>true]);
     }
 
 
