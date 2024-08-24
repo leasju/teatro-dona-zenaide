@@ -25,8 +25,8 @@
 
     {{-- * Modal (New/Edit, Delete and Visibility) --}}
       
-    {{-- New/Edit Modal --}}
-    <x-admin.modal id="neweditModal" labelledby="neweditModalLabel" title="Adicionar Nova Peça">
+    {{-- * New/Edit Modal --}}
+    <x-admin.modal modalclasswidth="modal-lg" id="neweditModal" labelledby="neweditModalLabel" title="Adicionar Nova Peça">
 
         {{-- Conteúdo do Modal --}}
         <x-slot name="content">
@@ -104,7 +104,33 @@
             {{-- Botões do Footer --}}
             <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Fechar</button>
             <form action="">
-                <button type="submit" class="btn btn-save">Salvar</button>
+                <button type="submit" class="btn btn-confirm-action">Salvar</button>
+            </form>
+
+        </x-slot>
+
+    </x-admin.modal>
+
+    {{-- * Delete Modal --}}
+    <x-admin.modal modalclasswidth="" id="deleteModal" labelledby="deleteModalLabel" title="Deletar Peça">
+    
+        {{-- Conteúdo do Modal --}}
+        <x-slot name="content">
+            
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <span class="ph--trash-bold modal-icon mb-3"></span>
+                <h2 class="roboto-medium">Deseja prosseguir com a exclusão?</h2>
+            </div>
+
+        </x-slot>
+
+        {{-- Footer do Modal --}}
+        <x-slot name="footer">
+
+            {{-- Botões do Footer --}}
+            <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Fechar</button>
+            <form action="">
+                <button type="submit" class="btn btn-confirm-action btn-confirm-action--delete">Excluir</button>
             </form>
 
         </x-slot>
@@ -161,7 +187,7 @@
                                     <button class="action-buttons-style action-buttons-style--edit"><span class="bx--edit"></span></button>
 
                                     {{-- Botão de Excluir Peça --}}
-                                    <button class="action-buttons-style"><span class="ph--trash-bold"></span></button>
+                                    <button class="action-buttons-style" data-bs-toggle="modal" data-bs-target="#deleteModal"><span class="ph--trash-bold"></span></button>
 
                                     {{-- Botão de Visibilidade da Peça --}}
                                     <label class="action-buttons-style action-buttons-style--visibility">

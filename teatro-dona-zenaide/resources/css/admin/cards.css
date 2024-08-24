@@ -134,50 +134,97 @@
     box-shadow: none;
 }
 
-.modal-footer .btn-exit {
-    /* Definindo a cor de fundo do botão de fechar do Modal */
-    background-color: var(--vermelho-geral);
-    color: var(--semibranco);
-}
-
-.modal-footer .btn-save {
-    /* Definindo a cor de fundo do botão de salvar do Modal */
-    background-color: var(--verde);
-    color: var(--semibranco);
-}
-
 .modal-body {
     /* Inserindo um espaçamento interno para o Corpo do Modal */
     padding: 25px;
 }
 
-.modal-body input, .modal-body select, .modal-body textarea {
-    /* Definindo a cor de fundo dos inputs do Corpo do Modal */
+/* Modal New/Edit */
+
+#neweditModal .modal-body input, #neweditModal .modal-body select, #neweditModal .modal-body textarea {
+    /* Definindo a cor de fundo dos inputs do Corpo do Modal de Novo/Editar */
     background-color: var(--semibranco);
 }
 
-.modal-body input:focus, .modal-body input:active,
-.modal-body select:focus, .modal-body select:active,
-.modal-body textarea:focus, .modal-body textarea:active {
-    /* Removendo o efeito ao interagir com os inputs e os selects do Corpo do Modal */
+#neweditModal .modal-body input:focus, #neweditModal .modal-body input:active,
+#neweditModal .modal-body select:focus, #neweditModal .modal-body select:active,
+#neweditModal .modal-body textarea:focus, #neweditModal .modal-body textarea:active {
+    /* Removendo o efeito ao interagir com os inputs e os selects do Corpo do Modal de Novo/Editar */
     outline: none;
     box-shadow: none;
 
-    /* Cor de fundo quando os inputs e os selects do Corpo do Modal estiverem ativos */
+    /* Cor de fundo quando os inputs e os selects do Corpo do Modal de Novo/Editar estiverem ativos */
     background-color: var(--semibranco);
 
-    /* Cor da borda quando os inputs e os selects do Corpo do Modal estiverem ativos */
+    /* Cor da borda quando os inputs e os selects do Corpo do Modal de Novo/Editar estiverem ativos */
     border-color: var(--preto);
 }
 
-.modal-body input[type="file"]::file-selector-button, .modal-body input[type="file"]::file-selector-button:hover {
-    /* Cor de fundo e cor do texto do seletor de Escolher Arquivo do Input de Tipo File */
+#neweditModal .modal-body input[type="file"]::file-selector-button, #neweditModal .modal-body input[type="file"]::file-selector-button:hover {
+    /* Cor de fundo e cor do texto do seletor de Escolher Arquivo do Input de Tipo File do Modal de Novo/Editar */
     background-color: var(--vermelho-geral) !important;
     color: var(--semibranco) !important;
 }
 
-.modal-body h2 {
-    /* Cor e font size do texto de dica no Copo do Modal */
+#neweditModal .modal-body h2 {
+    /* Cor e font size do texto de dica no Copo do Modal de Novo/Editar */
     color: var(--cinza);
     font-size: 14px;
+}
+
+/* Modal Delete */
+
+#deleteModal .modal-body h2 {
+    /* Font size do título de exclusão do Modal de Deletar */
+    font-size: 24px;
+}
+
+/* 
+ * Modal Buttons
+*/
+
+/* Botão de Fechar Ação do Modal */
+
+.modal-footer .btn-exit, .modal-footer .btn-exit:active {
+    /* Definindo a cor de fundo do botão de fechar do Modal */
+    background-color: var(--cinza);
+    color: var(--semibranco);
+
+    /* Removendo a borda do botão de fechar do Modal */
+    border: none;
+}
+
+/* Botão de Confirmar Ação do Modal */
+
+.modal-footer .btn-confirm-action, .modal-footer .btn-confirm-action:active {
+    /* Variável de cor de fundo do botão de confirmação */
+    --modal-button-background-color: var(--verde);
+
+    /* Definindo a cor de fundo do botão de confirmação do Modal */
+    background-color: var(--modal-button-background-color);
+    color: var(--semibranco);
+
+    /* Removendo a borda do botão de confirmação do Modal */
+    border: none;
+}
+
+.modal-footer .btn-confirm-action--edit, .modal-footer .btn-confirm-action--edit:active {
+    /* Variável de cor de fundo do botão de confirmação */
+    --modal-button-background-color: var(--amarelo);
+}
+
+.modal-footer .btn-confirm-action--delete, .modal-footer .btn-confirm-action--delete:active {
+    /* Variável de cor de fundo do botão de confirmação */
+    --modal-button-background-color: var(--vermelho-geral);
+}
+
+/* 
+ * Modal Icons 
+*/
+
+/* Modal Delete Icon */
+.ph--trash-bold.modal-icon {
+    width: 64px;
+    height: 64px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='%23000000' d='M216 48h-36V36a28 28 0 0 0-28-28h-48a28 28 0 0 0-28 28v12H40a12 12 0 0 0 0 24h4v136a20 20 0 0 0 20 20h128a20 20 0 0 0 20-20V72h4a12 12 0 0 0 0-24M100 36a4 4 0 0 1 4-4h48a4 4 0 0 1 4 4v12h-56Zm88 168H68V72h120Zm-72-100v64a12 12 0 0 1-24 0v-64a12 12 0 0 1 24 0m48 0v64a12 12 0 0 1-24 0v-64a12 12 0 0 1 24 0'/%3E%3C/svg%3E");
 }
