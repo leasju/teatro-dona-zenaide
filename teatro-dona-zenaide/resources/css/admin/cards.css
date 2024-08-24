@@ -115,3 +115,69 @@
     /* Escondendo o input do checkbox do botão de visibilidade da peça */
     display: none;
 }
+
+/* 
+ * Modal
+*/
+
+.modal-dialog {
+    /* Definindo a cor de fundo da box de diálogo do Modal */
+    --bs-modal-bg: var(--semibranco);
+
+    /* Definindo a cor de todos os textos no Modal */
+    color: var(--preto);
+}
+
+.modal-header .btn-close {
+    /* Removendo o efeito ao clicar no ícone de fechar do Modal */
+    outline: none;
+    box-shadow: none;
+}
+
+.modal-footer .btn-exit {
+    /* Definindo a cor de fundo do botão de fechar do Modal */
+    background-color: var(--vermelho-geral);
+    color: var(--semibranco);
+}
+
+.modal-footer .btn-save {
+    /* Definindo a cor de fundo do botão de salvar do Modal */
+    background-color: var(--verde);
+    color: var(--semibranco);
+}
+
+.modal-body {
+    /* Inserindo um espaçamento interno para o Corpo do Modal */
+    padding: 25px;
+}
+
+.modal-body input, .modal-body select, .modal-body textarea {
+    /* Definindo a cor de fundo dos inputs do Corpo do Modal */
+    background-color: var(--semibranco);
+}
+
+.modal-body input:focus, .modal-body input:active,
+.modal-body select:focus, .modal-body select:active,
+.modal-body textarea:focus, .modal-body textarea:active {
+    /* Removendo o efeito ao interagir com os inputs e os selects do Corpo do Modal */
+    outline: none;
+    box-shadow: none;
+
+    /* Cor de fundo quando os inputs e os selects do Corpo do Modal estiverem ativos */
+    background-color: var(--semibranco);
+
+    /* Cor da borda quando os inputs e os selects do Corpo do Modal estiverem ativos */
+    border-color: var(--preto);
+}
+
+.modal-body input[type="file"]::file-selector-button, .modal-body input[type="file"]::file-selector-button:hover {
+    /* Cor de fundo e cor do texto do seletor de Escolher Arquivo do Input de Tipo File */
+    background-color: var(--vermelho-geral) !important;
+    color: var(--semibranco) !important;
+}
+
+.modal-body h2 {
+    /* Cor e font size do texto de dica no Copo do Modal */
+    color: var(--cinza);
+    font-size: 14px;
+}
