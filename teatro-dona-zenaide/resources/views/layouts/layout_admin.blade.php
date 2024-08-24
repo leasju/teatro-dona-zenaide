@@ -32,14 +32,8 @@
                     <a class="navbar-brand" href="/">Teatro Dona Zenaide</a>
 
                     {{-- Corpo da Navbar --}}
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav d-flex justify-content-end flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link roboto-regular" id="adminLink" aria-current="page" href="#">Modo Administrador</a>
-                            </li>
-                        </ul>
-                    </div>
-
+                    @yield('navbar-content')
+                    
                 </div>
               </nav>
         </header>
