@@ -117,6 +117,7 @@
         {{-- Conteúdo do Modal --}}
         <x-slot name="content">
             
+            {{-- Texto de Confirmação da Ação --}}
             <div class="d-flex flex-column justify-content-center align-items-center">
                 <span class="ph--trash-bold modal-icon mb-3"></span>
                 <h2 class="roboto-medium">Deseja prosseguir com a exclusão?</h2>
@@ -132,6 +133,31 @@
             <form action="">
                 <button type="submit" class="btn btn-confirm-action btn-confirm-action--delete">Excluir</button>
             </form>
+
+        </x-slot>
+
+    </x-admin.modal>
+
+    {{-- * Visibility Modal --}}
+    <x-admin.modal modalclasswidth="" id="visibilityModal" labelledby="visibilityModalLabel" title="Esconder Peça">
+    
+        {{-- Conteúdo do Modal --}}
+        <x-slot name="content">
+
+            {{-- Texto de Confirmação da Ação --}}
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <span class="ri--eye-line modal-icon mb-3"></span>
+                <h2 class="roboto-medium">Deseja ocultar a Peça?</h2>
+            </div>
+
+        </x-slot>
+
+        {{-- Footer do Modal --}}
+        <x-slot name="footer">
+
+            {{-- Botões do Footer --}}
+            <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-confirm-action btn-confirm-action--visibility">Ocultar</button>
 
         </x-slot>
 
@@ -190,7 +216,7 @@
                                     <button class="action-buttons-style" data-bs-toggle="modal" data-bs-target="#deleteModal"><span class="ph--trash-bold"></span></button>
 
                                     {{-- Botão de Visibilidade da Peça --}}
-                                    <label class="action-buttons-style action-buttons-style--visibility">
+                                    <label class="action-buttons-style action-buttons-style--visibility" data-bs-toggle="modal" data-bs-target="#visibilityModal">
                                         <input type="checkbox">
                                         <span class="d-flex justify-content-center align-items-center"><span class="ri--eye-line"></span></span>
                                     </label>
