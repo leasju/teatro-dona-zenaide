@@ -13,9 +13,9 @@ return new class extends Migration
     {
            //Criação da tabela "Login" no banco de dados
         Schema::create('login', function (Blueprint $table) {
-            $table->id();
-            $table->text('adm_user', 100);
-            $table->text('adm_pass', 100);
+            $table->increments('id'); //ID é definido como auto-incremento
+            $table->string('adm_user', 255);
+            $table->string('adm_pass', 255);
             $table->timestamps();
         });
 

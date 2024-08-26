@@ -9,4 +9,13 @@ class Login extends Model
 {
     use HasFactory;
     protected $table = "login";
+    protected $primaryKey = 'id';
+    protected $fillable = ['adm_user', 'adm_pass']; // Liste os campos que podem ser atribuídos em massa
+
+   // Método para verificar a senha
+   public function verifyPassword($password)
+   {
+       return Hash::check($password, $this->adm_pass);
+   }
+
 }
