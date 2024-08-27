@@ -26,11 +26,10 @@
                             <input type="email" class="form-control" id="user" name="user" placeholder="nome@exemplo.com" required>
                             <label for="user">Insira seu e-mail</label>
 
-                            {{-- Mensagem de erro --}}
-                            @error('user')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
+                          {{-- Mensagem de erro para o usuário --}}
+@error('user')
+<div class="alert alert-danger">{{ $message }}</div>
+@enderror
 
                         {{-- Input de Senha --}}
                         <h2 class="roboto-regular mb-3">Senha</h2>
@@ -38,11 +37,11 @@
                             <input type="password" class="form-control" id="pass" name="pass" placeholder="Senha" required>
                             <label for="pass">Insira sua senha</label>
 
-                            {{-- Mensagem de erro --}}
-                            @error('pass')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
+                            
+{{-- Mensagem de erro para a senha --}}
+@error('pass')
+<div class="alert alert-danger">{{ $message }}</div>
+@enderror
 
                         {{-- Botão de Entrar --}}
                         <div class="d-flex justify-content-center">
