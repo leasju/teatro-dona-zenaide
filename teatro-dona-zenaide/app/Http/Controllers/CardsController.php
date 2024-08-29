@@ -72,43 +72,7 @@ class CardsController extends Controller
     return view('cards/cards_menu', ['menuCardsList' => $menuCardsList]);
 }
     
-// BOTAO EXCLUIR LISTA 
-    public function destroy($id) {
-
-    // findOrFail - Procure esses dados no Banco de Dados, se não achar, de erro/falha 
-    // Retornar o tipo do Banco de Dados
-    $type = Type::findOrFail($id);
-
-    // Excluir o tipo do Banco de Dados
-    $type->delete();
-
-    // Redirecionar para a página dos tipos
-    return redirect('/types');
-
-} // Fim do destroy
 
 
-//BOTAO EDITAR LISTA
-public function edit(Request $request) {
 
-    // Verificar se o tipo existe
-    // findOrFail - Procure esses dados no Banco de Dados, se não achar, de erro/falha 
-    // Retornar o tipo do Banco de Dados
-    $type = Type::findOrFail($request->id);
-
-    // Se existir, alterar os dados
-    // Atributos da classe Type
-    $type->name = $request->name; // O atributo name da tabela Type é igual ao que veio da requisição com o nome de "name"
-    $type->unit = $request->unit;
-    $type->reference_value = $request->reference_value;
-    $type->description = $request->description;
-
-    // Editar os dados
-    $type->save();
-
-    // Redirecionar para a página dos tipos e ver se o editar funcionou
-    return redirect('/types');
-
-}
-    
 }

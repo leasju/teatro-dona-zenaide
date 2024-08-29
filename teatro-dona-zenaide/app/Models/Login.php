@@ -11,8 +11,9 @@ class Login extends Model
     use HasFactory;
     protected $table = "login";
     protected $primaryKey = 'id';
-    protected $fillable = ['adm_user', 'adm_pass']; // Liste os campos que podem ser atribuídos em massa
-
+    protected $fillable = ['adm_user']; // Liste os campos que podem ser atribuídos em massa
+    protected $guarded = ['adm_pass']; // Protege o campo adm_pass
+    
    // Método para verificar a senha
    public function verifyPassword($password)
    {

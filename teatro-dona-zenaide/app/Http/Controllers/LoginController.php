@@ -31,14 +31,14 @@ class LoginController extends Controller
             return back()->withErrors(['user' => 'Usuário não encontrado']);
         }
 
-        // Validação da senha inserida de acordo com a registrada no banco de dados
+        // Validação da senha inserida no forms de acordo com a registrada no banco de dados
         if (Hash::check($request->input('pass'), $ologin->adm_pass)) {
             Log::info('Login bem-sucedido');
             return redirect('/espetaculos')->with('success', 'Login realizado com sucesso!');
             
         } else {
             Log::error('Senha inválida');
-            return back()->withErrors(['pass' => 'Email ou senha inválidos']);
+            return back()->withErrors(['pass' => 'Senha inválida']);
         }
     }
 }
