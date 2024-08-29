@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 // * Views Teatro
 
@@ -35,3 +36,6 @@ Route::get('/admin/login', function() {
 Route::get('/admin/cards', function() {
     return view('admin/cards');
 });
+
+// Rota por POST para executar o método "login_adm" da classe "LoginController"
+Route::post('/login', [LoginController::class,'loginAdm']);
