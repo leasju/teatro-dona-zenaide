@@ -32,7 +32,7 @@
                     <a class="navbar-brand" href="#">Teatro Dona Zenaide</a> {{-- o Logo oficial será colocado aqui posteriormente --}}
                     
                     {{-- Theme Changer (Light/Dark) --}}
-                    <label class="theme-container" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Alternar tema" data-bs-delay='{"show":500,"hide":100}' data-bs-trigger="hover">
+                    <label class="theme-container" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Aparência: Tema Claro" data-bs-delay='{"show":500,"hide":100}' data-bs-trigger="hover">
                         <input checked="checked" type="checkbox" id="chk">
                         <span class="fa6-solid--moon moon"></span>
                         <span class="fa-solid--sun sun"></span>

@@ -28,8 +28,13 @@ Route::get('/seu-projeto-no-teatro', function() {
 // * Views Administrador
 
 // Rota por GET para tela de Login do Admin
-Route::get('/login', function() {
+Route::get('/admin/login', function() {
     return view('admin/login');
+});
+
+// Rota por GET para tela de Cards do Admin
+Route::get('/admin/cards', function() {
+    return view('admin/cards');
 });
 
 // Rota por POST para executar o método "login_adm" da classe "LoginController"

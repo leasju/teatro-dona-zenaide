@@ -1,0 +1,242 @@
+/* ------------------------------------------------ CARDS ---------------------------------------------------------- */
+
+/* 
+ * Table Area Section
+*/
+
+#table-cards-area {
+    /* Background color da Área de Tabela dos Cards */
+    background: var(--gradient-background);
+
+    /* Garantindo que o gradiente cubra toda a área da Área de Tabela dos Cards */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#table-cards-box {
+    /* Background color da Box de Tabela dos Cards */
+    background-color: var(--preto);
+    
+    /* Espaçamento interno e arredondamento das bordas */
+    padding: 70px;
+    border-radius: 5px;
+}
+
+#table-cards-box .table-top-content h1 {
+    /* Font size e cor do título da tabela */
+    font-size: 32px;
+    color: var(--semibranco);
+
+    /* Zerando a margin */
+    margin: 0;
+}
+
+#table-cards-box .table-top-content .main-btn--new .roboto-regular {
+    /* Centralizando a span de 'Novo' do botão para igualar com o ícone */
+    position: relative;
+    top: 1.5px;
+}
+
+#table-cards-box .table {
+    /* Cores para a Tabela de Cards */
+    --bs-table-bg: var(--semibranco);
+    --bs-table-striped-bg: var(--row);
+    --bs-table-border-color: var(--preto);
+    border-bottom: 1px solid var(--cinza);
+
+    /* Zerando a margin */
+    margin: 0;
+
+    /* Border radius nas bordas superiores */
+    border-radius: 10px 10px 0 0; 
+    /* Garante que o conteúdo não ultrapasse as bordas arredondadas */
+    overflow: hidden; 
+}
+
+#table-cards-box .table thead tr th {
+    /* Cor de fundo e de texto do cabeçalho da tabela */
+    background-color: var(--vermelho-geral) !important;
+    color: var(--semibranco);
+
+    /* Font size para os itens do cabeçalho da tabela */
+    font-size: 18px;
+}
+
+#table-cards-box .table tbody tr {
+    /* Font size e cor das linhas do corpo da tabela */
+    font-size: 16px;
+    color: var(--preto);
+}
+
+/* 
+ * Action Buttons
+*/
+
+#table-cards-box #action-buttons {
+    /* Força o td de ação a ter apenas o espaço necessário, removendo o espamento lateral nos botões de ação */
+    width: 1%; 
+    /* Impede quebra de linha */
+    white-space: nowrap;
+}
+
+#table-cards-box #action-buttons .action-buttons-style {
+    /* Display e o cursor dos botões de ação */
+    display: inline-block;
+    cursor: pointer;
+
+    /* Cor de fundo dos botões de ação por meio de uma variável */
+    --background-color-action-button: var(--vermelho-geral);
+    background-color: var(--background-color-action-button);
+
+    /* Espamento interno e border radius dos botões de ação */
+    padding: 7px 20px;
+    border-radius: 15px;
+
+    /* Retirando a borda dos botões */
+    border: none;
+}
+
+/* Botão de Editar */
+
+#table-cards-box #action-buttons .action-buttons-style--edit {
+    /* Alterando a cor do botão para amarelo */
+    --background-color-action-button: var(--amarelo);
+}
+
+/* Botão Checkbox de Visibilidade */
+
+#table-cards-box #action-buttons .action-buttons-style--visibility {
+    /* Alterando a cor do botão para azul */
+    --background-color-action-button: var(--azul);
+}
+
+#table-cards-box #action-buttons .action-buttons-style--visibility input {
+    /* Escondendo o input do checkbox do botão de visibilidade da peça */
+    display: none;
+}
+
+/* 
+ * Modal
+*/
+
+.modal-dialog {
+    /* Definindo a cor de fundo da box de diálogo do Modal */
+    --bs-modal-bg: var(--semibranco);
+
+    /* Definindo a cor de todos os textos no Modal */
+    color: var(--preto);
+}
+
+.modal-header .btn-close {
+    /* Removendo o efeito ao clicar no ícone de fechar do Modal */
+    outline: none;
+    box-shadow: none;
+}
+
+.modal-body {
+    /* Inserindo um espaçamento interno para o Corpo do Modal */
+    padding: 25px;
+}
+
+/* Modal New/Edit */
+
+#neweditModal .modal-body input, #neweditModal .modal-body select, #neweditModal .modal-body textarea {
+    /* Definindo a cor de fundo dos inputs do Corpo do Modal de Novo/Editar */
+    background-color: var(--semibranco);
+}
+
+#neweditModal .modal-body input:focus, #neweditModal .modal-body input:active,
+#neweditModal .modal-body select:focus, #neweditModal .modal-body select:active,
+#neweditModal .modal-body textarea:focus, #neweditModal .modal-body textarea:active {
+    /* Removendo o efeito ao interagir com os inputs e os selects do Corpo do Modal de Novo/Editar */
+    outline: none;
+    box-shadow: none;
+
+    /* Cor de fundo quando os inputs e os selects do Corpo do Modal de Novo/Editar estiverem ativos */
+    background-color: var(--semibranco);
+
+    /* Cor da borda quando os inputs e os selects do Corpo do Modal de Novo/Editar estiverem ativos */
+    border-color: var(--preto);
+}
+
+#neweditModal .modal-body input[type="file"]::file-selector-button, #neweditModal .modal-body input[type="file"]::file-selector-button:hover {
+    /* Cor de fundo e cor do texto do seletor de Escolher Arquivo do Input de Tipo File do Modal de Novo/Editar */
+    background-color: var(--vermelho-geral) !important;
+    color: var(--semibranco) !important;
+}
+
+#neweditModal .modal-body h2 {
+    /* Cor e font size do texto de dica no Copo do Modal de Novo/Editar */
+    color: var(--cinza);
+    font-size: 14px;
+}
+
+/* Modal Delete and Modal Visibility */
+
+#deleteModal .modal-body h2, #visibilityModal .modal-body h2 {
+    /* Font size do título de confirmação do Modal de Deletar e do Modal de Visibilidade */
+    font-size: 24px;
+}
+
+/* 
+ * Modal Buttons
+*/
+
+/* Botão de Fechar Ação do Modal */
+
+.modal-footer .btn-exit, .modal-footer .btn-exit:active {
+    /* Definindo a cor de fundo do botão de fechar do Modal */
+    background-color: var(--cinza);
+    color: var(--semibranco);
+
+    /* Removendo a borda do botão de fechar do Modal */
+    border: none;
+}
+
+/* Botão de Confirmar Ação do Modal */
+
+.modal-footer .btn-confirm-action, .modal-footer .btn-confirm-action:active {
+    /* Variável de cor de fundo do botão de confirmação */
+    --modal-button-background-color: var(--verde);
+
+    /* Definindo a cor de fundo do botão de confirmação do Modal */
+    background-color: var(--modal-button-background-color);
+    color: var(--semibranco);
+
+    /* Removendo a borda do botão de confirmação do Modal */
+    border: none;
+}
+
+.modal-footer .btn-confirm-action--edit, .modal-footer .btn-confirm-action--edit:active {
+    /* Variável de cor de fundo do botão de confirmação */
+    --modal-button-background-color: var(--amarelo);
+}
+
+.modal-footer .btn-confirm-action--delete, .modal-footer .btn-confirm-action--delete:active {
+    /* Variável de cor de fundo do botão de confirmação */
+    --modal-button-background-color: var(--vermelho-geral);
+}
+
+.modal-footer .btn-confirm-action--visibility, .modal-footer .btn-confirm-action--visibility:active {
+    /* Variável de cor de fundo do botão de confirmação */
+    --modal-button-background-color: var(--azul);
+}
+
+/* 
+ * Modal Icons 
+*/
+
+/* Modal Delete Icon */
+.ph--trash-bold.modal-icon {
+    width: 64px;
+    height: 64px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='%23000000' d='M216 48h-36V36a28 28 0 0 0-28-28h-48a28 28 0 0 0-28 28v12H40a12 12 0 0 0 0 24h4v136a20 20 0 0 0 20 20h128a20 20 0 0 0 20-20V72h4a12 12 0 0 0 0-24M100 36a4 4 0 0 1 4-4h48a4 4 0 0 1 4 4v12h-56Zm88 168H68V72h120Zm-72-100v64a12 12 0 0 1-24 0v-64a12 12 0 0 1 24 0m48 0v64a12 12 0 0 1-24 0v-64a12 12 0 0 1 24 0'/%3E%3C/svg%3E");
+}
+
+/* Modal Visibility Icon */
+.ri--eye-line.modal-icon {
+    width: 64px;
+    height: 64px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000000' d='M12 3c5.392 0 9.878 3.88 10.819 9c-.94 5.12-5.427 9-10.819 9s-9.878-3.88-10.818-9C2.122 6.88 6.608 3 12 3m0 16a9.005 9.005 0 0 0 8.778-7a9.005 9.005 0 0 0-17.555 0A9.005 9.005 0 0 0 12 19m0-2.5a4.5 4.5 0 1 1 0-9a4.5 4.5 0 0 1 0 9m0-2a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5'/%3E%3C/svg%3E");
+}
