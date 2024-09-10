@@ -36,31 +36,48 @@
                 
                 @csrf
 
+                {{-- * Collapse 1: Informações da Peça --}}
+
                 {{-- Input de Nome da Peça --}}
                 <div class="mb-3">
                     <label class="form-label">Nome da Peça</label>
                     <input type="text" class="form-control" placeholder="Nome" value="" required>
                 </div>
 
-                {{-- Input de Imagem da Peça --}}
-                <div class="mb-3">
-                    <label class="form-label">Imagem da Peça</label>
-                    <input type="file" class="form-control" aria-label="Escolher arquivo" required>
-                </div>
-
-                {{-- Select de Dias de Apresentação da Peça --}}
-                <div class="mb-3">
-                    <label class="form-label">Dias de Apresentação da Peça</label>
-                    <h2 class="roboto-regular">Segure Ctrl (ou Cmd no Mac) para selecionar múltiplos dias.</h2>
-                    <select class="form-select" size="9" multiple aria-label="Dias de Apresentação" required>
-                        <option value="1" class="mb-1">Domingo</option>
-                        <option value="2" class="mb-1">Segunda</option>
-                        <option value="3" class="mb-1">Terça</option>
-                        <option value="4" class="mb-1">Quarta</option>
-                        <option value="5" class="mb-1">Quinta</option>
-                        <option value="6" class="mb-1">Sexta</option>
-                        <option value="7" class="mb-1">Sábado</option>
-                    </select>
+                {{-- Inputs de Sessões de Apresentação --}}
+                <div class="mb-3 d-flex flex-column gap-2">
+                    <label>Dias e Horários das Sessões de Apresentação</label>
+                    @foreach(['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'] as $day)
+                        {{-- Looping pelos dias da semana (de Domingo a Sábado) para criar checkboxes e inputs de horários --}}
+                    
+                        {{-- Inputs Checkbox para selecionar os dias das sessões de apresentação --}}
+                        <div class="form-check ms-2">
+                            {{-- Checkbox para cada dia da semana, com o valor sendo o nome do dia (ex: Domingo) --}}
+                            <input class="form-check-input checkbox-day" type="checkbox" value="{{ $day }}" id="check{{ $day }}" name="days[]">
+                            
+                            {{-- Label para o checkbox, associada ao respectivo checkbox pelo atributo "for" --}}
+                            <label class="form-check-label" for="check{{ $day }}">
+                                {{ $day }}  {{-- O nome do dia é exibido na interface --}}
+                            </label>
+                        </div>
+                    
+                        {{-- Div que contém os campos de horário para o respectivo dia de apresentação --}}
+                        {{-- Inicialmente está oculta (classe d-none) e só será exibida quando o checkbox correspondente for marcado --}}
+                        <div id="schedules-{{ $day }}" class="mt-2 ms-2 d-none">
+                            {{-- Div para agrupar os inputs de horário --}}
+                            <div class="schedule-wrapper mb-3">
+                                {{-- Input para inserir o horário da sessão (formato de tempo) --}}
+                                <input type="time" class="form-control mb-2" name="schedules[{{ $day }}][]" placeholder="Horário">
+                            </div>
+                    
+                            {{-- Botão para adicionar mais horários para o respectivo dia de apresentação --}}
+                            {{-- O atributo "data-dia" contém o nome do dia, para que o JavaScript saiba a qual dia esse botão se refere --}}
+                            <button type="button" class="btn btn-add-schedule add-schedule d-flex align-items-center mb-3" day-date="{{ $day }}">
+                                <span class="ic--baseline-plus"></span>
+                                <span class="roboto-regular">Novo horário</span>
+                            </button>
+                        </div>
+                    @endforeach
                 </div>
 
                 {{-- Input de Duração da Peça --}}
@@ -93,6 +110,20 @@
                     <label class="form-label">URL/Link de Compra da Peça</label>
                     <input type="url" class="form-control" placeholder="https://exemplo.com" required>
                 </div>
+
+                {{-- * Collapse 2: Imagens da Peça --}}
+                
+                {{-- Input de Imagem da Peça --}}
+                <div class="mb-3">
+                    <label class="form-label">Imagem da Peça</label>
+                    <input type="file" class="form-control" aria-label="Escolher arquivo" required>
+                </div>
+
+                {{-- * Collapse 3: Ficha Técnica --}}
+
+
+                {{-- * Collapse 4: Opcionais (Ficha Técnica) --}}
+
 
             </form>
 
