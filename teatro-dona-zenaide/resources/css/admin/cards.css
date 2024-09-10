@@ -241,6 +241,18 @@
     top: 2px;
 }
 
+/* Input de Temporada */
+
+#neweditModal .input-group-text {
+    /* Cor de fundo do espaço pro ícone de temporada */
+    background-color: var(--vermelho-geral);
+}
+
+#neweditModal #season:focus {
+    /* Sobrepondo estilos para manter a cor padrão do Bootstrap ao dar foco no input de temporada */
+    border-color: var(--bs-border-color) !important;
+}
+
 /* Modal Delete and Modal Visibility */
 
 #deleteModal .modal-body h2, #visibilityModal .modal-body h2 {

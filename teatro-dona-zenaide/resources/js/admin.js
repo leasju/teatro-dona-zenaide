@@ -67,3 +67,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// * Script Input de Temporada
+
+flatpickr("#season", {
+    mode: "range",
+    dateFormat: "d/m/Y"
+});

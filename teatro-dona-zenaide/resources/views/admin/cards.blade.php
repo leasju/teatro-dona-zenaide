@@ -41,12 +41,21 @@
                 {{-- Input de Nome da Peça --}}
                 <div class="mb-3">
                     <label class="form-label">Nome da Peça</label>
-                    <input type="text" class="form-control" placeholder="Nome" value="" required>
+                    <input type="text" class="form-control" placeholder="Insira um nome" value="" required>
+                </div>
+
+                {{-- Temporada da Peça --}}
+                <label class="form-label">Temporada da Peça</label>
+                <div class="mb-3 input-group">
+                    <input type="date" class="form-control" id="season" placeholder="Selecione uma temporada..." value="" required>
+                    <span class="input-group-text">
+                        <span class="fluent-mdl2--date-time"></span>
+                    </span>
                 </div>
 
                 {{-- Inputs de Sessões de Apresentação --}}
                 <div class="mb-3 d-flex flex-column gap-2">
-                    <label>Dias e Horários das Sessões de Apresentação</label>
+                    <label>Dias e Horários das Sessões de Apresentação da Peça</label>
                     @foreach(['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'] as $day)
                         {{-- Looping pelos dias da semana (de Domingo a Sábado) para criar checkboxes e inputs de horários --}}
                     
@@ -82,8 +91,8 @@
 
                 {{-- Input de Duração da Peça --}}
                 <div class="mb-3">
-                    <label class="form-label">Duração da Peça</label>
-                    <input type="text" class="form-control" placeholder="Duração" required>
+                    <label class="form-label">Duração da Peça (em minutos)</label>
+                    <input type="number" step="5" class="form-control" placeholder="Insira uma duração (em minutos)" required>
                 </div>
 
                 {{-- Select de Classificação da Peça --}}
@@ -112,7 +121,7 @@
                 </div>
 
                 {{-- * Collapse 2: Imagens da Peça --}}
-                
+
                 {{-- Input de Imagem da Peça --}}
                 <div class="mb-3">
                     <label class="form-label">Imagem da Peça</label>
