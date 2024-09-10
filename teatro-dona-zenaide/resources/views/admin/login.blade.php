@@ -31,7 +31,11 @@
 
                             {{-- Mensagem de erro para o usuário --}}
                             @error('user')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center mt-3" role="alert">
+                                    <span class="jam--triangle-danger-f bi flex-shrink-0 me-2"></span>
+                                    {{ $message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
                             @enderror
 
                         </div>
@@ -46,7 +50,11 @@
 
                             {{-- Mensagem de erro para a senha --}}
                             @error('pass')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center mt-3" role="alert">
+                                    <span class="jam--triangle-danger-f bi flex-shrink-0 me-2"></span>
+                                    {{ $message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
                             @enderror
                         
                         </div>
@@ -60,14 +68,14 @@
 
                     {{-- Verificação e exibição de mensagem de sucesso --}} 
                     @if(session('success'))
-                       <div class="alert alert-success">
+                       <div class="alert alert-success" role="alert">
                             {{ session('success') }}
                        </div>
                     @endif
 
                     {{-- Verificação e exibição de mensagem de erro --}}
                     @if(session('error'))
-                        <div class="alert alert-danger">
+                        <div class="alert alert-danger" role="alert">
                             {{ session('error') }}
                         </div>
                     @endif
