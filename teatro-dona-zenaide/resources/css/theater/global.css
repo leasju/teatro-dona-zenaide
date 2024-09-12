@@ -148,8 +148,9 @@ html {
 
     /* Colors */
     --vermelho-geral: #D5321D;
-    --semibranco: #F2F2F2;
-    --branco-preto: #F2F2F2;
+    --branco: #FFFFFF;
+    --semibranco: #F8F9FA;
+    --branco-preto: #F8F9FA;
     --texto-primario: #212121;
     --texto-secundario: #757575;
     --cinza: #999;
@@ -174,13 +175,13 @@ html {
 [data-theme="dark"] {
     /* Definição de variáveis para o tema escuro */
     --branco-preto: #0d0d0d;
-    --texto-primario: #F2F2F2;
+    --texto-primario: #F8F9FA;
     --divider: #BDBDBD;
     --branco-preto-transparente: rgba(13, 13, 13, 0.85);
 
     --footer-text-area-border-color: #212121;
     --footer-input-active-border-color: #333333;
-    --footer-input-color: #F2F2F2;
+    --footer-input-color: #F8F9FA;
     --footer-placeholder-color: #333333;
     --card-border-color: none;
     --theme-changer-hover-color: #1a1a1a;

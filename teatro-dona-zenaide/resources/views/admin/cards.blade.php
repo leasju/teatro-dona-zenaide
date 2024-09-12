@@ -36,75 +36,308 @@
                 
                 @csrf
 
-                {{-- Input de Nome da Peça --}}
-                <div class="mb-3">
-                    <label class="form-label">Nome da Peça</label>
-                    <input type="text" class="form-control" id="nomeEsp" name="nomeEsp" placeholder="Nome" value="" required>
-                </div>
+                <div class="accordion" id="accordionForm">
+                
+                    {{-- * Collapse 1: Informações da Peça --}}
 
-                {{-- Input de Imagem da Peça --}}
-                <div class="mb-3">
-                    <label class="form-label">Imagem da Peça</label>
-                    <input type="file" class="form-control" aria-label="Escolher arquivo" required>
-                </div>
+                    <div class="accordion-item">
 
-                {{-- Select de Dias de Apresentação da Peça --}}
-                <div class="mb-3">
-                    <label class="form-label">Dias de Apresentação da Peça</label>
-                    <h2 class="roboto-regular">Segure Ctrl (ou Cmd no Mac) para selecionar múltiplos dias.</h2>
-                    <select class="form-select" size="9" multiple aria-label="Dias de Apresentação" required>
-                        <option value="1" class="mb-1">Domingo</option>
-                        <option value="2" class="mb-1">Segunda</option>
-                        <option value="3" class="mb-1">Terça</option>
-                        <option value="4" class="mb-1">Quarta</option>
-                        <option value="5" class="mb-1">Quinta</option>
-                        <option value="6" class="mb-1">Sexta</option>
-                        <option value="7" class="mb-1">Sábado</option>
-                    </select>
-                </div>
+                        {{-- Header do Collapse 1 --}}
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInformacoesPeca" aria-expanded="true" aria-controls="collapseInformacoesPeca">
+                                Informações da Peça
+                            </button>
+                        </h2>
+                        
+                        {{-- Conteúdo do Collapse 1: Informações da Peça --}}
+                        <div id="collapseInformacoesPeca" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionForm">
+                            <div class="accordion-body">
 
-                {{-- Input de Duração da Peça --}}
-                <div class="mb-3">
-                    <label class="form-label">Duração da Peça</label>
-                    <input type="text" class="form-control" placeholder="Duração" required>
-                </div>
+                                {{-- Input de Nome da Peça --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Nome da Peça</label>
+                                    <input type="text" class="form-control" placeholder="Insira um nome" value="" required>
+                                </div>
+                
+                                {{-- Temporada da Peça --}}
+                                <label class="form-label">Temporada da Peça</label>
+                                <div class="mb-3 input-group">
+                                    <input type="date" class="form-control" id="season" placeholder="Selecione uma temporada..." value="" required>
+                                    <span class="input-group-text">
+                                        <span class="fluent-mdl2--date-time"></span>
+                                    </span>
+                                </div>
+                
+                                {{-- Inputs de Sessões de Apresentação --}}
+                                <div class="mb-3 d-flex flex-column gap-2">
+                                    <label>Dias e Horários das Sessões de Apresentação da Peça</label>
+                                    @foreach(['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'] as $day)
+                                        {{-- Looping pelos dias da semana (de Domingo a Sábado) para criar checkboxes e inputs de horários --}}
 
-                {{-- Select de Classificação da Peça --}}
-                <div class="mb-3">
-                    <label class="form-label">Classificação da Peça</label>
-                    <select class="form-select" aria-label="Classificação" id="classifEsp" name="classifEsp" required>
-                        <option selected>Livre</option>
-                        <option value="1">10</option>
-                        <option value="2">12</option>
-                        <option value="3">14</option>
-                        <option value="4">16</option>
-                        <option value="5">18</option>
-                    </select>
-                </div>
+                                        {{-- Inputs Checkbox para selecionar os dias das sessões de apresentação --}}
+                                        <div class="form-check ms-2">
+                                            {{-- Checkbox para cada dia da semana, com o valor sendo o nome do dia (ex: Domingo) --}}
+                                            <input class="form-check-input checkbox-day" type="checkbox" value="{{ $day }}" id="check{{ $day }}" name="days[]">
 
-                {{-- Input de Descrição da Peça --}}
-                <div class="mb-3">
-                    <label class="form-label">Descrição da Peça</label>
-                    <textarea class="form-control" rows="3" id="descEsp" name="descEsp" placeholder="Descrição"></textarea>
-                </div>
+                                            {{-- Label para o checkbox, associada ao respectivo checkbox pelo atributo "for" --}}
+                                            <label class="form-check-label" for="check{{ $day }}">
+                                                {{ $day }} {{-- O nome do dia é exibido na interface --}}
+                                            </label>
+                                        </div>
 
-                {{-- Input de URL/Link de Compra da Peça --}}
-                <div class="mb-3">
-                    <label class="form-label">URL/Link de Compra da Peça</label>
-                    <input type="url" class="form-control" id="urlCompra" name="urlCompra" placeholder="https://exemplo.com" required>
-                </div>
+                                        {{-- Div que contém os campos de horário para o respectivo dia de apresentação --}}
+                                        {{-- Inicialmente está oculta (classe d-none) e só será exibida quando o checkbox correspondente for marcado --}}
+                                        <div id="schedules-{{ $day }}" class="mt-2 ms-2 d-none">
+                                            {{-- Div para agrupar os inputs de horário --}}
+                                            <div class="schedule-wrapper mb-3">
+                                                <div class="d-flex align-items-center mb-2">
+                                                    {{-- Input para inserir o horário da sessão (formato de tempo) --}}
+                                                    <input type="time" class="form-control me-2" name="schedules[{{ $day }}][]" placeholder="Horário">
 
-            </form>
+                                                    {{-- Botão de remover horários --}}
+                                                    <button type="button" class="btn btn-remove-schedule">Remover</button>
+                                                </div>
+                                            </div>
+
+                                            {{-- Botão para adicionar mais horários para o respectivo dia de apresentação --}}
+                                            {{-- O atributo "day-date" contém o nome do dia, para que o JavaScript saiba a qual dia esse botão se refere --}}
+                                            <button type="button" class="btn btn-add-schedule add-schedule d-flex align-items-center mb-3" day-date="{{ $day }}">
+                                                <span class="ic--baseline-plus"></span>
+                                                <span class="roboto-regular">Novo horário</span>
+                                            </button>
+                                        </div>
+                                    @endforeach
+                                </div>
+
+
+                                {{-- Input de Duração da Peça --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Duração da Peça (em minutos)</label>
+                                    <input type="number" step="5" min="0" class="form-control" placeholder="Insira uma duração (em minutos)" required>
+                                </div>
+
+                                {{-- Select de Classificação da Peça --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Classificação da Peça</label>
+                                    <select class="form-select" aria-label="Classificação" required>
+                                        <option selected>Livre</option>
+                                        <option value="1">10</option>
+                                        <option value="2">12</option>
+                                        <option value="3">14</option>
+                                        <option value="4">16</option>
+                                        <option value="5">18</option>
+                                    </select>
+                                </div>
+
+                                {{-- Input de Descrição da Peça --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Descrição da Peça</label>
+                                    <textarea class="form-control" rows="3" placeholder="Descrição" required></textarea>
+                                </div>
+
+                                {{-- Input de URL/Link de Compra da Peça --}}
+                                <div class="mb-3">
+                                    <label class="form-label">URL/Link de Compra da Peça</label>
+                                    <input type="url" class="form-control" placeholder="https://exemplo.com" required>
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+                
+                    {{-- * Collapse 2: Imagens da Peça --}}
+
+                    <div class="accordion-item">
+
+                        {{-- Header do Collapse 2 --}}
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseImagensPeca" aria-expanded="false" aria-controls="collapseImagensPeca">
+                                Imagens da Peça
+                            </button>
+                        </h2>
+                        
+                        {{-- Conteúdo do Collapse 2: Imagens da Peça --}}
+                        <div id="collapseImagensPeca" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionForm">
+                            <div class="accordion-body">
+
+                                {{-- Input de Imagem da Peça (Card) --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Imagem do Cartão da Peça</label>
+                                    <input type="file" class="form-control" aria-label="Escolher arquivo" required>
+                                </div>
+
+                                {{-- Inputs do Banner --}}
+
+                                {{-- Input do Banner 1 --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Imagem do Banner da Peça 1</label>
+                                    <input type="file" class="form-control" aria-label="Escolher arquivo">
+                                </div>
+
+                                {{-- Input do Banner 2 --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Imagem do Banner da Peça 2</label>
+                                    <input type="file" class="form-control" aria-label="Escolher arquivo">
+                                </div>
+
+                                {{-- Input do Banner 3 --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Imagem do Banner da Peça 3</label>
+                                    <input type="file" class="form-control" aria-label="Escolher arquivo">
+                                </div>
+
+                                {{-- Input do Banner 4 --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Imagem do Banner da Peça 4</label>
+                                    <input type="file" class="form-control" aria-label="Escolher arquivo">
+                                </div>
+
+                                {{-- Input do Banner 5 --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Imagem do Banner da Peça 5</label>
+                                    <input type="file" class="form-control" aria-label="Escolher arquivo">
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                
+                    {{-- * Collapse 3: Ficha Técnica --}}
+
+                    <div class="accordion-item">
+
+                        {{-- Header do Collapse 3 --}}
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFichaTecnica" aria-expanded="false" aria-controls="collapseFichaTecnica">
+                                Ficha Técnica
+                            </button>
+                        </h2>
+
+                        {{-- Conteúdo do Collapse 3: Ficha Técnica --}}
+                        <div id="collapseFichaTecnica" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionForm">
+                            <div class="accordion-body">
+
+                                {{-- Input de Texto --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Texto</label>
+                                    <input type="text" class="form-control" placeholder="Insira um ou mais representantes para texto" value="" required>
+                                </div>
+                                
+                                {{-- Input de Elenco --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Elenco</label>
+                                    <input type="text" class="form-control" placeholder="Insira um ou mais representantes para elenco" value="" required>
+                                </div>
+
+                                {{-- Input de Direção --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Direção</label>
+                                    <input type="text" class="form-control" placeholder="Insira um ou mais representantes para direção" value="" required>
+                                </div>
+
+                                {{-- Input de Figurino --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Figurino</label>
+                                    <input type="text" class="form-control" placeholder="Insira um ou mais representantes para figurino" value="" required>
+                                </div>
+                                
+                                {{-- Input de Cenografia --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Cenografia</label>
+                                    <input type="text" class="form-control" placeholder="Insira um ou mais representantes para cenografia" value="" required>
+                                </div>
+                                
+                                {{-- Input de Iluminação --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Iluminação</label>
+                                    <input type="text" class="form-control" placeholder="Insira um ou mais representantes para iluminação" value="" required>
+                                </div>
+
+                                {{-- Input de Sonorização --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Sonorização</label>
+                                    <input type="text" class="form-control" placeholder="Insira um ou mais representantes para sonorização" value="" required>
+                                </div>
+                                
+                                {{-- Input de Produção --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Produção</label>
+                                    <input type="text" class="form-control" placeholder="Insira um ou mais representantes para produção" value="" required>
+                                </div>                                
+
+                            </div>
+                        </div>
+
+                    </div>
+                
+                    {{-- * Collapse 4: Opcionais (Ficha Técnica) --}}
+
+                    <div class="accordion-item">
+
+                        {{-- Header do Collapse 4 --}}
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOpcionaisFichaTecnica" aria-expanded="false" aria-controls="collapseOpcionaisFichaTecnica">
+                                Opcionais (Ficha Técnica)
+                            </button>
+                        </h2>
+
+                        {{-- Conteúdo do Collapse 4: Opcionais (Ficha Técnica) --}}
+                        <div id="collapseOpcionaisFichaTecnica" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionForm">
+                            <div class="accordion-body">
+                                
+                                {{-- Input de Costureira --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Costureira</label>
+                                    <input type="text" class="form-control" placeholder="Insira um ou mais representantes para costureira" value="">
+                                </div>
+
+                                {{-- Input de Assistente de cenografia --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Assistente de cenografia</label>
+                                    <input type="text" class="form-control" placeholder="Insira um ou mais representantes para assistente de cenografia" value="">
+                                </div>
+
+                                {{-- Input de Cenotécnico --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Cenotécnico</label>
+                                    <input type="text" class="form-control" placeholder="Insira um ou mais representantes para cenotécnico" value="">
+                                </div>
+                                
+                                {{-- Input de Consultoria de Design --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Consultoria de Design</label>
+                                    <input type="text" class="form-control" placeholder="Insira um ou mais representantes para consultoria de design" value="">
+                                </div>
+                                
+                                {{-- Input de Co-produção --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Co-produção</label>
+                                    <input type="text" class="form-control" placeholder="Insira um ou mais representantes para co-produção" value="">
+                                </div>
+
+                                {{-- Input de Agradecimentos --}}
+                                <div class="mb-3">
+                                    <label class="form-label">Agradecimentos</label>
+                                    <input type="text" class="form-control" placeholder="Insira um ou mais representantes para agradecimentos" value="">
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                {{-- O fechamento do form ficará no Footer do Modal --}}
 
         </x-slot>
 
         {{-- Footer do Modal --}}
         <x-slot name="footer">
 
-            {{-- Botões do Footer --}}
-            <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Fechar</button>
-            <form action="">
+                {{-- Botões do Footer --}}
+                <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-clear-modal" id="clearModalButton">Limpar</button>
                 <button type="submit" class="btn btn-confirm-action">Salvar</button>
+
             </form>
 
         </x-slot>

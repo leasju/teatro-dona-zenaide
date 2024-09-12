@@ -66,11 +66,11 @@ class CardsController extends Controller
 
     // CARDS MENU
     public function cardsMenu()
-{
-    // Seleciona todos os "cards" e armazena no array $menuCardsList
-    $menuCardsList = cards::all();
-    return view('cards/cards_menu', ['menuCardsList' => $menuCardsList]);
-}
+    {
+        // Seleciona todos os "cards" e armazena no array $menuCardsList
+        $menuCardsList = cards::all();
+        return view('cards/cards_menu', ['menuCardsList' => $menuCardsList]);
+    }
     
 
 

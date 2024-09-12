@@ -65,3 +65,22 @@ input:focus, input:active, textarea:focus, textarea:active {
     /* Tornando o background color da label transparente */
     background-color: transparent !important;
 }
+
+/* Alerts */
+
+#login-box .alert .btn-close {
+    /* Alterando o SVG do botão de fechar dos Alerts da Box de Login */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ea868f' %3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+
+    /* Removendo os efeitos do botão de fechar dos Alerts da Box de Login */
+    outline: none;
+    box-shadow: none;
+}
+
+#login-box .alert-danger {
+    /* Alterando as classes do Bootstrap para estilizar o Alert Danger da Box de Login */
+    --bs-alert-color: #ea868f;
+    --bs-alert-bg: #2c0b0e;
+    --bs-alert-border-color: #842029;
+    --bs-alert-link-color: #ea868f;
+}

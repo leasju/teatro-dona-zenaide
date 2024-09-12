@@ -143,7 +143,7 @@
 
 #neweditModal .modal-body input, #neweditModal .modal-body select, #neweditModal .modal-body textarea {
     /* Definindo a cor de fundo dos inputs do Corpo do Modal de Novo/Editar */
-    background-color: var(--semibranco);
+    background-color: var(--branco);
 }
 
 #neweditModal .modal-body input:focus, #neweditModal .modal-body input:active,
@@ -166,10 +166,113 @@
     color: var(--semibranco) !important;
 }
 
-#neweditModal .modal-body h2 {
-    /* Cor e font size do texto de dica no Copo do Modal de Novo/Editar */
-    color: var(--cinza);
-    font-size: 14px;
+/* Accordion/Collapse Styles */
+
+#neweditModal .accordion .accordion-item {
+    /* Cor de fundo e cor do texto */
+    background-color: var(--branco);
+    color: var(--preto);
+}
+
+#neweditModal .accordion-button:focus {
+    /* Removendo os estilos do Bootstrap */
+    box-shadow: none;
+}
+
+#neweditModal .accordion-button:not(.collapsed) {
+    /* Alterando a cor de fundo e do texto quando o item do accordion for clicado */
+    --bs-accordion-active-bg: var(--vermelho-geral);
+    --bs-accordion-active-color: var(--branco);
+
+    /* Removendo os estilos do Bootstrap */
+    outline: none;
+    box-shadow: none;
+}
+
+#neweditModal .accordion-button:not(.collapsed)::after {
+    /* Alterando a cor do ícone de seta quando o item do accordion for clicado */
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 16' fill='none' stroke='%23F8F9FA' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+}
+
+/* Checkbox de Horários dos Dias de Sessões */
+
+#neweditModal .checkbox-day {
+    /* Remove a aparência padrão do checkbox (nativa do navegador) */
+    appearance: none;
+
+    /* Largura e altura do checkbox */
+    width: 20px;
+    height: 20px;
+
+    /* Borda do checkbox */
+    border: 2px solid var(--vermelho-geral); 
+    border-radius: 5px; 
+    
+    /* Cor de fundo do checkbox */
+    background-color: transparent; /* Torna o fundo transparente */
+
+    /* Posicionamento do checkbox */
+    display: inline-block;
+    position: relative; /* Torna a posição do checkbox relativa, necessária para posicionar o elemento `before` */
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Estilo para o "before", que representa o preenchimento do checkbox ao ser selecionado */
+#neweditModal .checkbox-day:before {
+    /* Define um conteúdo vazio para criar o preenchimento */
+    content: "";
+
+    /* Cor de fundo do preenchimento */
+    background-color: var(--vermelho-geral);
+
+    /* Posicionamento do preenchimento */
+    display: block;
+    position: absolute; /* Posiciona o preenchimento de forma absoluta em relação ao checkbox */
+    top: 50%; /* Centraliza verticalmente o preenchimento */
+    left: 50%; /* Centraliza horizontalmente o preenchimento */
+
+    /* Transforma o preenchimento para ficar inicialmente invisível (escala 0) e o centraliza */
+    transform: translate(-50%, -50%) scale(0);
+
+    /* Largura e altura do preenchimento */
+    width: 10px; 
+    height: 10px; 
+
+    /* Border radius do preenchimento */
+    border-radius: 3px;
+
+    /* Anima a transição da escala do preenchimento quando o checkbox é marcado */
+    transition: all 0.3s ease-in-out; 
+}
+  
+/* Quando o checkbox está marcado, o preenchimento "before" escala para o tamanho completo */
+#neweditModal .checkbox-day:checked:before {
+    /* Aumenta a escala para 1, exibindo o preenchimento completo */
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#neweditModal .checkbox-day:checked, #neweditModal .checkbox-day:focus, #neweditModal .checkbox-day:active {
+    /* Cor da borda da checkbox dos horários das sessões */
+    border-color: var(--vermelho-geral) !important;
+}
+
+#neweditModal .form-check-label {
+    /* Centralizando o texto com a checkbox dos horários das sessões */
+    position: relative;
+    top: 2px;
+}
+
+/* Input de Temporada */
+
+#neweditModal .input-group-text {
+    /* Cor de fundo do espaço pro ícone de temporada */
+    background-color: var(--vermelho-geral);
+}
+
+#neweditModal #season:focus {
+    /* Sobrepondo estilos para manter a cor padrão do Bootstrap ao dar foco no input de temporada */
+    border-color: var(--bs-border-color) !important;
 }
 
 /* Modal Delete and Modal Visibility */
@@ -221,6 +324,25 @@
 .modal-footer .btn-confirm-action--visibility, .modal-footer .btn-confirm-action--visibility:active {
     /* Variável de cor de fundo do botão de confirmação */
     --modal-button-background-color: var(--azul);
+}
+
+/* Botão de Limpar Modal */
+
+#neweditModal .btn-clear-modal {
+    /* Cor de fundo e cor do texto do botão de 'Limpar'*/
+    background-color: var(--amarelo);
+    color: var(--semibranco);
+
+    /* Removendo a borda do botão de 'Limpar' */
+    border: none;
+}
+
+/* Botão de Adicionar e Remover Horários */
+
+#neweditModal .btn-add-schedule, #neweditModal .btn-remove-schedule {
+    /* Cor de fundo e cor do texto do botão de 'Novo horário' e do botão de 'Remover' */
+    background-color: var(--vermelho-geral);
+    color: var(--semibranco);
 }
 
 /* 
