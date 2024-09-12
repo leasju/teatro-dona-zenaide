@@ -38,4 +38,4 @@ Route::get('/admin/cards', function() {
 });
 
 // Rota por POST para executar o método "login_adm" da classe "LoginController"
-Route::post('/login', [LoginController::class,'loginAdm']);
+Route::post('/admin/login', [LoginController::class,'loginAdm']);

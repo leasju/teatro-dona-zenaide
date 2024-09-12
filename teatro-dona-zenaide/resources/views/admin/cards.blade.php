@@ -39,7 +39,7 @@
                 {{-- Input de Nome da Peça --}}
                 <div class="mb-3">
                     <label class="form-label">Nome da Peça</label>
-                    <input type="text" class="form-control" placeholder="Nome" value="" required>
+                    <input type="text" class="form-control" id="nomeEsp" name="nomeEsp" placeholder="Nome" value="" required>
                 </div>
 
                 {{-- Input de Imagem da Peça --}}
@@ -72,7 +72,7 @@
                 {{-- Select de Classificação da Peça --}}
                 <div class="mb-3">
                     <label class="form-label">Classificação da Peça</label>
-                    <select class="form-select" aria-label="Classificação" required>
+                    <select class="form-select" aria-label="Classificação" id="classifEsp" name="classifEsp" required>
                         <option selected>Livre</option>
                         <option value="1">10</option>
                         <option value="2">12</option>
@@ -85,13 +85,13 @@
                 {{-- Input de Descrição da Peça --}}
                 <div class="mb-3">
                     <label class="form-label">Descrição da Peça</label>
-                    <textarea class="form-control" rows="3" placeholder="Descrição"></textarea>
+                    <textarea class="form-control" rows="3" id="descEsp" name="descEsp" placeholder="Descrição"></textarea>
                 </div>
 
                 {{-- Input de URL/Link de Compra da Peça --}}
                 <div class="mb-3">
                     <label class="form-label">URL/Link de Compra da Peça</label>
-                    <input type="url" class="form-control" placeholder="https://exemplo.com" required>
+                    <input type="url" class="form-control" id="urlCompra" name="urlCompra" placeholder="https://exemplo.com" required>
                 </div>
 
             </form>
