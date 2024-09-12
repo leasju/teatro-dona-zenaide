@@ -205,7 +205,7 @@
 
 #cards-section .card {
     /* Sobrepondo variáveis do card do bootstrap */
-    --bs-card-bg: var(--semibranco);
+    --bs-card-bg: var(--branco);
     --bs-card-border-color: var(--card-border-color);
 
     /* Largura do card */

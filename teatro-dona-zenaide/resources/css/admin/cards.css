@@ -143,7 +143,7 @@
 
 #neweditModal .modal-body input, #neweditModal .modal-body select, #neweditModal .modal-body textarea {
     /* Definindo a cor de fundo dos inputs do Corpo do Modal de Novo/Editar */
-    background-color: var(--semibranco);
+    background-color: var(--branco);
 }
 
 #neweditModal .modal-body input:focus, #neweditModal .modal-body input:active,
@@ -166,10 +166,32 @@
     color: var(--semibranco) !important;
 }
 
-#neweditModal .modal-body h2 {
-    /* Cor e font size do texto de dica no Copo do Modal de Novo/Editar */
-    color: var(--cinza);
-    font-size: 14px;
+/* Accordion/Collapse Styles */
+
+#neweditModal .accordion .accordion-item {
+    /* Cor de fundo e cor do texto */
+    background-color: var(--branco);
+    color: var(--preto);
+}
+
+#neweditModal .accordion-button:focus {
+    /* Removendo os estilos do Bootstrap */
+    box-shadow: none;
+}
+
+#neweditModal .accordion-button:not(.collapsed) {
+    /* Alterando a cor de fundo e do texto quando o item do accordion for clicado */
+    --bs-accordion-active-bg: var(--vermelho-geral);
+    --bs-accordion-active-color: var(--branco);
+
+    /* Removendo os estilos do Bootstrap */
+    outline: none;
+    box-shadow: none;
+}
+
+#neweditModal .accordion-button:not(.collapsed)::after {
+    /* Alterando a cor do ícone de seta quando o item do accordion for clicado */
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 16' fill='none' stroke='%23F8F9FA' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
 }
 
 /* Checkbox de Horários dos Dias de Sessões */
@@ -304,18 +326,23 @@
     --modal-button-background-color: var(--azul);
 }
 
-/* Mais botões */
+/* Botão de Limpar Modal */
 
-#neweditModal .btn-add-schedule {
-    /* Cor de fundo e cor do texto do botão de 'Novo horário' */
-    background-color: var(--vermelho-geral);
+#neweditModal .btn-clear-modal {
+    /* Cor de fundo e cor do texto do botão de 'Limpar'*/
+    background-color: var(--amarelo);
     color: var(--semibranco);
+
+    /* Removendo a borda do botão de 'Limpar' */
+    border: none;
 }
 
-#neweditModal .btn-add-schedule .roboto-regular {
-    /* Centralizando a span de 'Novo' do botão para igualar com o ícone */
-    position: relative;
-    top: 1.5px;
+/* Botão de Adicionar e Remover Horários */
+
+#neweditModal .btn-add-schedule, #neweditModal .btn-remove-schedule {
+    /* Cor de fundo e cor do texto do botão de 'Novo horário' e do botão de 'Remover' */
+    background-color: var(--vermelho-geral);
+    color: var(--semibranco);
 }
 
 /* 
