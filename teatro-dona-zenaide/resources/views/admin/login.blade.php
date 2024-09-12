@@ -17,8 +17,9 @@
                     <h1 class="roboto-medium text-center mb-5">Login</h1>
 
                     {{-- Form Login --}}
-                    <form action="/login" method="POST">
 
+                    <form action="/admin/login" method="POST">
+                    
                         @csrf
 
                         {{-- Input de Email --}}

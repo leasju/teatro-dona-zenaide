@@ -13,6 +13,7 @@ return new class extends Migration
     {
            //Criação da tabela "Login" no banco de dados
         Schema::create('login', function (Blueprint $table) {
+            
             $table->increments('id'); //ID é definido como auto-incremento
             $table->string('adm_user', 255)->unique(); //Unique usado para evitar que tenha mais de um registro de user
             $table->string('adm_pass', 255);
