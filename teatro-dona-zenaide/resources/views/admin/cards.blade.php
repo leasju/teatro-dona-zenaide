@@ -325,6 +325,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
                 {{-- O fechamento do form ficará no Footer do Modal --}}
 
