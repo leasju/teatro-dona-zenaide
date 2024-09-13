@@ -55,12 +55,12 @@
 
                                 {{-- Input de Nome da Peça --}}
                                 <div class="mb-3">
-                                    <label class="form-label">Nome da Peça</label>
+                                    <label class="form-label">Nome da Peça <span style="color: red;" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" placeholder="Insira um nome" value="" required>
                                 </div>
                 
                                 {{-- Temporada da Peça --}}
-                                <label class="form-label">Temporada da Peça</label>
+                                <label class="form-label">Temporada da Peça  <span style="color: red;" title="Campo obrigatório">*</span></label>
                                 <div class="mb-3 input-group">
                                     <input type="date" class="form-control" id="season" placeholder="Selecione uma temporada..." value="" required>
                                     <span class="input-group-text">
@@ -70,7 +70,7 @@
                 
                                 {{-- Inputs de Sessões de Apresentação --}}
                                 <div class="mb-3 d-flex flex-column gap-2">
-                                    <label>Dias e Horários das Sessões de Apresentação da Peça</label>
+                                    <label>Dias e Horários das Sessões de Apresentação da Peça  <span style="color: red;" title="Campo obrigatório">*</span></label>
                                     @foreach(['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'] as $day)
                                         {{-- Looping pelos dias da semana (de Domingo a Sábado) para criar checkboxes e inputs de horários --}}
 
@@ -112,13 +112,13 @@
 
                                 {{-- Input de Duração da Peça --}}
                                 <div class="mb-3">
-                                    <label class="form-label">Duração da Peça (em minutos)</label>
+                                    <label class="form-label">Duração da Peça (em minutos) <span style="color: red;" title="Campo obrigatório">*</span></label>
                                     <input type="number" step="5" min="0" class="form-control" placeholder="Insira uma duração (em minutos)" required>
                                 </div>
 
                                 {{-- Select de Classificação da Peça --}}
                                 <div class="mb-3">
-                                    <label class="form-label">Classificação da Peça</label>
+                                    <label class="form-label">Classificação da Peça <span style="color: red;" title="Campo obrigatório">*</span></label>
                                     <select class="form-select" aria-label="Classificação" required>
                                         <option selected>Livre</option>
                                         <option value="1">10</option>
