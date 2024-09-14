@@ -32,7 +32,7 @@
         <x-slot name="content">
 
             {{-- Form New/Edit --}}
-            <form action="">
+            <form action="" method="POST" enctype="multipart/form-data">
                 
                 @csrf
 
