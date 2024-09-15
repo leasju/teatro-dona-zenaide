@@ -161,3 +161,52 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 });
+
+// * Script para o Back to Top Button
+
+// Variável que armazena o estado atual da visibilidade do botão
+let isButtonVisible = false;
+
+// Função que é executada quando o usuário rola a página
+window.onscroll = function() {
+    scrollFunction();
+};
+
+// Função que verifica a posição de rolagem da página e exibe/esconde o botão
+function scrollFunction() {
+    const backToTopBtn = document.getElementById("backToTop");
+    const scrollPosition = document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000;
+
+    // Exibe o botão se o scroll for maior que 1000px e o botão estiver invisível
+    if (scrollPosition && !isButtonVisible) {
+        backToTopBtn.classList.add("show");  // Adiciona a classe 'show'
+        backToTopBtn.classList.remove("hide");  // Remove a classe 'hide'
+        isButtonVisible = true;  // Atualiza o estado para visível
+    } 
+    // Esconde o botão se o scroll for menor que 1000px e o botão estiver visível
+    else if (!scrollPosition && isButtonVisible) {
+        backToTopBtn.classList.add("hide");  // Adiciona a classe 'hide' para animação de fade
+        setTimeout(() => {
+            backToTopBtn.classList.remove("show");  // Remove a classe 'show' após a animação de fade
+        }, 500);  // Define o tempo para corresponder à animação do CSS
+        isButtonVisible = false;  // Atualiza o estado para invisível
+    }
+}
+
+// Função que volta para o topo da página quando o botão for clicado
+document.getElementById("backToTop").addEventListener("click", function() {
+    // Faz rolagem suave para o topo
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    // Adiciona a animação de esconder o botão após o clique
+    const backToTopBtn = document.getElementById("backToTop");
+    backToTopBtn.classList.add("hide");  // Adiciona a classe 'hide' para animação de fade
+    setTimeout(() => {
+        backToTopBtn.classList.remove("show");  // Remove a classe 'show' após a animação de fade
+    }, 500);  // Define o tempo para corresponder à animação do CSS
+
+    isButtonVisible = false;  // Atualiza o estado para invisível
+});
