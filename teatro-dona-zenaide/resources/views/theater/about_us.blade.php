@@ -60,7 +60,7 @@
     </div>
 
     {{-- * Technical Characteristics Section * --}}
-    <div id="technical-characteristics-section">
+    <div id="technical-characteristics-section" class="hidden-element">
         <div class="container">
             <div class="row">
 

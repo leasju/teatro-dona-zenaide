@@ -31,7 +31,7 @@
     </div>
 
     {{-- * Cards Section * --}}
-    <div id="cards-section">
+    <div id="cards-section" class="hidden-element">
         <div class="container-fluid">
 
                 {{-- Title: Em Cartaz --}}
@@ -41,7 +41,7 @@
                 <div class="cards d-flex justify-content-center row">
                     
                     {{-- Forelse aqui dentro, para cada peça no BD, mais um card --}}
-                    <div class="card col-md-4 col-sm-12"">
+                    <div class="card col-md-4 col-sm-12">
                         <img src="{{ Vite::asset('resources/img/tela-home/img-card.jpg') }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             {{-- Data do Card e Divider --}}
@@ -63,7 +63,7 @@
     </div>
 
     {{-- * About Us Section * --}}
-    <div id="about-us-section">
+    <div id="about-us-section" class="hidden-element">
         <div class="container-fluid">
             <div class="row d-flex justify-content-center">
 

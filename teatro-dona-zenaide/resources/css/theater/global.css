@@ -455,6 +455,24 @@ html {
 }
 
 /* 
+ * Animação de Visualização dos Elementos
+*/
+
+/* Estilo inicial dos elementos (ocultos e com opacidade zero) */
+.hidden-element {
+    opacity: 0;
+    transform: translateY(100px);  /* Movido para baixo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Classe que será adicionada para mostrar os elementos */
+.show-section {
+    opacity: 1;
+    transform: translateY(0);  /* Volta à posição original */
+}
+
+
+/* 
  *  Dividers
 */
 

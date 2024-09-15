@@ -210,3 +210,29 @@ document.getElementById("backToTop").addEventListener("click", function() {
 
     isButtonVisible = false;  // Atualiza o estado para invisível
 });
+
+// * Script para a animação de visualização dos elementos com a API Intersection Observer
+
+// Função que usa IntersectionObserver para animar os elementos quando entram na viewport
+document.addEventListener("DOMContentLoaded", function () {
+    // Seleciona todos os elementos que serão animados
+    const hiddenElements = document.querySelectorAll('.hidden-element');
+    
+    // Configuração do IntersectionObserver
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            // Se o elemento estiver visível, adiciona a classe 'show'
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show-section');
+                observer.unobserve(entry.target);  // Para de observar após animar
+            }
+        });
+    }, {
+        threshold: 0.1  // Inicia a animação quando 10% do elemento estiver visível
+    });
+    
+    // Observa cada elemento oculto
+    hiddenElements.forEach(element => {
+        observer.observe(element);
+    });
+});
