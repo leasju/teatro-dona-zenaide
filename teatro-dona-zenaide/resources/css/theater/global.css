@@ -109,23 +109,23 @@ html {
 }
 
 /* Sun Icon */
-.fa-solid--sun {
+.heroicons--sun {
     display: inline-block;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23d1b423' d='M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96s96-43.1 96-96s-43.1-96-96-96m246.4 80.5l-94.7-47.3l33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5l-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4l-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3l-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5l47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7l100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4l94.7-47.3c13-6.5 13-24.7.2-31.1m-155.9 106c-49.9 49.9-131.1 49.9-181 0s-49.9-131.1 0-181s131.1-49.9 181 0s49.9 131.1 0 181'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23D5321D' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0a3.75 3.75 0 0 1 7.5 0'/%3E%3C/svg%3E");
 }
 
 /* Moon Icon */
-.fa6-solid--moon {
+.ep--moon {
     display: inline-block;
-    width: 24px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='%23b5b5b5' d='M223.5 32C100 32 0 132.3 0 256s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath fill='%23D5321D' d='M240.448 240.448a384 384 0 1 0 559.424 525.696a448 448 0 0 1-542.016-542.08a391 391 0 0 0-17.408 16.384m181.056 362.048a384 384 0 0 0 525.632 16.384A448 448 0 1 1 405.056 76.8a384 384 0 0 0 16.448 525.696'/%3E%3C/svg%3E");
 }
 
 /* Icon Effects */
@@ -277,8 +277,12 @@ html {
     user-select: none;
 
     margin-left: auto; /* Empurra o botão de tema para a direita */
-    padding: 25px;
-    border-radius: 8px;
+    padding: 20px;
+
+    border: 2px solid var(--vermelho-geral);
+    border-radius: 100%;
+
+    background-color: var(--branco-preto);
 }
 
 /* Quando o cursor passar pela checkbox de troca de tema, aplicar uma background color */
@@ -328,28 +332,6 @@ html {
     }
 }
 
-/* `xl` applies to large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {
-
-    /* Diminuindo o padding do checkbox de alternar o tema entre claro e escuro */
-    .theme-container {
-        padding: 20px;
-    }
-
-    /* Diminuindo a largura e altura do ícone de lua */
-    .fa6-solid--moon {
-        width: 18px;
-        height: 26px;
-    }
-
-    /* Diminuindo a largura e altura do ícone de sol */
-    .fa-solid--sun {
-        width: 26px;
-        height: 26px;
-    }
-
-}
-
 /* `lg` applies to medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
 
@@ -360,7 +342,19 @@ html {
 
     /* Diminuindo o padding do checkbox de alternar o tema entre claro e escuro */
     .theme-container {
-        padding: 15px;
+        padding: 17.5px;
+    }
+
+    /* Diminuindo a largura e altura do ícone de lua */
+    .ep--moon {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Diminuindo a largura e altura do ícone de sol */
+    .heroicons--sun {
+        width: 24px;
+        height: 24px;
     }
 
 }
@@ -560,6 +554,16 @@ html {
 header {
     /* Espaçamento da fixed navbar */
     margin-bottom: 100px;
+}
+
+header .navbar-brand {
+    /* Zerando a margin da logo do Teatro Dona Zenaide e colocando 5px à direita */
+    margin: 0 5px 0 0;
+}
+
+header .navbar-brand img {
+    /* Altura da logo do Teatro Dona Zenaide */
+    height: 75px;
 }
 
 header .navbar {
@@ -768,6 +772,16 @@ header .nav-item:hover::after {
 
 }
 
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    header .navbar {
+        /* Retirando a posição de fixed da Navbar em telas menores do que Tablet (768px) */
+        position: absolute !important;
+    }
+
+}
+
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
 
@@ -777,9 +791,32 @@ header .nav-item:hover::after {
         padding-right: 30px;
     }
 
-    /* Diminuindo o font size do título da Navbar (enquanto está sem a logo) */
-    header .navbar-brand {
-        font-size: 18px;
+}
+
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    /* Diminuindo o espaçamento lateral da NavBar */
+    header .navbar .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    header .navbar-brand img {
+        /* Diminuindo o tamanho da imagem da Navbar Brand em largura e altura em 10% */
+        width: 190px;
+        height: 67.5px;
+    }
+
+    header .navbar-toggler {
+        /* Zerando o espaçamento na lateral direita do ícone de menu */
+        padding-right: 0;
+    }
+
+    header .offcanvas {
+        /* Removendo a borda da OffCanvas Navbar */
+        border: none !important;
     }
 
 }

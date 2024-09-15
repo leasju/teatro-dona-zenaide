@@ -225,6 +225,11 @@ header .navbar {
     background-color: var(--preto);
 }
 
+header .navbar-brand img {
+    /* Altura da logo do Teatro Dona Zenaide */
+    height: 75px;
+}
+
 header .navbar .container-fluid {
     /* Espaçamento lateral da navbar */
     padding-left: 100px;
@@ -237,17 +242,6 @@ header .navbar-nav {
     
     /* Gap entre os itens da navbar de 10px */
     gap: 10px;
-}
-
-header .navbar-brand {
-    /* Cor para o logo da navbar */
-    color: var(--vermelho-geral);
-}
-
-header .navbar-brand:hover, header .navbar-brand:visited {
-    /* Sobrepondo o estilo do bootstrap, para que ao passar o mouse pela logo, mantenha sua cor padrão, assim como depois de visitar o link da logo */
-    color: var(--vermelho-geral);
-    text-decoration: none;
 }
 
 header #admin-indicator {

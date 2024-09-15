@@ -29,13 +29,15 @@
                 <div class="container-fluid">
         
                     {{-- Logo do Teatro Dona Zenaide --}}
-                    <a class="navbar-brand" href="#">Teatro Dona Zenaide</a> {{-- o Logo oficial será colocado aqui posteriormente --}}
+                    <a class="navbar-brand d-flex align-items-center" href="/">
+                        <img src="{{ Vite::asset('resources/img/logo/logo-teatro-dona-zenaide.png') }}" class="img-fluid" alt="Logo Teatro Dona Zenaide">
+                    </a>
                     
                     {{-- Theme Changer (Light/Dark) --}}
                     <label class="theme-container" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Aparência: Tema Claro" data-bs-delay='{"show":500,"hide":100}' data-bs-trigger="hover">
                         <input checked="checked" type="checkbox" id="chk">
-                        <span class="fa6-solid--moon moon"></span>
-                        <span class="fa-solid--sun sun"></span>
+                        <span class="heroicons--sun sun"></span>
+                        <span class="ep--moon moon"></span>
                     </label>
         
                     {{-- Botão de Menu da Navbar (o botão aparece apenas em dimensões menores de tela) --}}
@@ -102,7 +104,9 @@
 
                         {{-- Logo do Teatro Dona Zenaide --}}
                         <div class="col-md-12">
-                            <a class="logo-brand" href="#">Teatro Dona Zenaide</a> {{-- o Logo oficial será colocado aqui posteriormente --}}
+                            <a class="navbar-brand d-flex align-items-center" href="/">
+                                <img src="{{ Vite::asset('resources/img/logo/logo-teatro-dona-zenaide.png') }}" class="img-fluid" alt="Logo Teatro Dona Zenaide">
+                            </a>
                         </div>
         
                         {{-- Divider do footer --}}
