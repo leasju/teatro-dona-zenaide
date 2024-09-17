@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cards extends Model
+class EspDiaHora extends Model
 {
     use HasFactory;
-    protected $table = "cards";
+    protected $table = 'esp_dia_hora';
 }
