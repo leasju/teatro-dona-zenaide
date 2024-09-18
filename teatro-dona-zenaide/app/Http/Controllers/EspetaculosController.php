@@ -10,16 +10,14 @@ use App\Models\Images;
 use App\Models\Dias;
 use App\Models\EspDiaHora;
 
-
-
 class EspetaculosController extends Controller
 {
     // Validar dos dados inseridos no formulário de criação de espetáculo
     public function store(Request $request)
     {
-        
+        // dd($request->all());
 {
-    // Valida os dados da solicitação
+    // Validação dos solicitados no formulário de criação de espetáculo
     $validatedData = $request->validate([
         'nomeEsp' => 'required|string|max:255',
         'tempEsp' => 'required|string|max:255',
@@ -42,8 +40,8 @@ class EspetaculosController extends Controller
         'coProduçãoEsp' => 'nullable|string|max:255',
         'agradecimentos' => 'nullable|string',
         'image_id' => 'required|exists:images,id',
-        'dia_id' => 'required|exists:dias,id',
-        'horario_id' => 'required|exists:horarios,id',
+        'dia_id' => 'required|array',
+        'horario_id' => 'required|array',
     ]);
 
     // Cria uma nova instância de Espetaculo
@@ -72,6 +70,7 @@ class EspetaculosController extends Controller
 
     // Salva a instância de Espetaculo
     $espetaculo->save();
+    //dd($espetaculo); 
 
     // Cria uma nova instância de EspetaculoImage
     $espetaculoImage = new Images();
@@ -79,6 +78,7 @@ class EspetaculosController extends Controller
     $espetaculoImage->image_id = $validatedData['image_id'];
     $espetaculoImage->ordem = 1; // Ordem padrão
     $espetaculoImage->save();
+    //dd($espetaculoImage); 
 
     // Cria uma nova instância de EspDiaHora
     $espDiaHora = new EspDiaHora();
@@ -87,8 +87,24 @@ class EspetaculosController extends Controller
     $espDiaHora->horario_id = $validatedData['horario_id'];
     $espDiaHora->save();
 
+    //dd($espDiaHora);
+    // Salva os horários
+    $datetime = [];
+    foreach ($request->input('dia_id') as $day) {
+        foreach ($request->input('horario_id')[$day] as $schedule) {
+            $datetime[] = [
+                'esp_id' => $espetaculo->id,
+                'dia_id' => $day,
+                'horario_id' => $schedule,
+            ];
+        }
+    }
+    EspDiaHora::insert($datetime);
+
+
+    return redirect()->route('/sobre-nos')->with('success', 'Espetáculo cadastrado com sucesso!'); 
     // Retorna uma resposta de sucesso
-    return response()->json(['message' => 'Espetáculo criado com sucesso'], 201);
+    /*return response()->json(['message' => 'Espetáculo criado com sucesso'], 201);*/
 }
 
         /* Armazenar a imagem da peça
@@ -120,9 +136,9 @@ class EspetaculosController extends Controller
         return redirect()->route('/sobre-nos')->with('success', 'Peça cadastrada com sucesso!'); */
     }
 
-    // INDEX
+    /* INDEX
     public function index(){
         $indexCardsList = Espetaculos::all(); // Seleciona todos os "espetaculos" e armazena no array $indexCardsList
-        return view('admin/cards', ['indexCardsList' => $indexCardsList]);
-    }
+        return view('admin/cards', ['indexCardsList' => $indexCardsList]); 
+    }*/
 }

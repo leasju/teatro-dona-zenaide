@@ -24,9 +24,9 @@ class Espetaculos extends Model
     }
 
     // Imagens do carrossel
-    public function carImages()
+    public function images()
     {
-        return $this->belongsToMany(Images::class, 'espetaculo_imagem');
+        return $this->belongsToMany(Images::class, 'esp_image');
     }
     
 }

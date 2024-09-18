@@ -14,7 +14,7 @@ class Images extends Model
 // Relaçaõ imagens
 public function espetaculos()
 {
-    return $this->belongsToMany(Espetaculos::class, 'espetaculo_imagem');
+    return $this->belongsToMany(Espetaculos::class, 'esp_image');
 }
 
 }

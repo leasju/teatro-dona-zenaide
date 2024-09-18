@@ -9,4 +9,8 @@ class EspDiaHora extends Model
 {
     use HasFactory;
     protected $table = 'esp_dia_hora';
+    protected $fillable = [
+        'dia_id',
+        'horario_id',
+    ];
 }

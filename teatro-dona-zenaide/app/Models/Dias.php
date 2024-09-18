@@ -12,7 +12,7 @@ class Dias extends Model
 
     public function espetaculos()
     {
-        return $this->belongsToMany(espetaculos::class, 'peca_dia_horario')
+        return $this->belongsToMany(espetaculos::class, 'esp_dia_hora')
                     ->withPivot('horario_id')
                     ->withTimestamps();
     }

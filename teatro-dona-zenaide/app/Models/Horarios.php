@@ -13,7 +13,7 @@ class Horarios extends Model
     //Criação de uma relação entre o model Horários e o model Espetáculos
     public function espetaculos()
     {
-            return $this->belongsToMany(espetaculos::class, 'peca_dia_horario') // Busca todas as peças relacionadas a esse horário
+            return $this->belongsToMany(espetaculos::class, 'esp_dia_hora') // Busca todas as peças relacionadas a esse horário
                         ->withPivot('dia_id') // O campo 'dia_id' da tabela de pivot 'esp_dia_hora' deve ser incluído
                         ->withTimestamps();
         }
