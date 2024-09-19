@@ -60,7 +60,7 @@
                                 </div>
                 
                                 {{-- Temporada da Peça --}}
-                                <label for="tempEsp" class="form-label">Temporada da Peça  <span style="color: red;" title="Campo obrigatório">*</span></label>
+                                <label for="tempEsp" class="form-label">Temporada da Peça <span style="color: red;" title="Campo obrigatório">*</span></label>
                                 <div class="mb-3 input-group">
                                     <input type="date" class'="form-control" id="tempEsp" name="tempEsp" placeholder="Selecione uma temporada..." value="" required>
                                     <span class="input-group-text">
@@ -162,8 +162,8 @@
 
                                 {{-- Input de Imagem da Peça (Card) --}}
                                 <div class="mb-3">
-                                    <label for="image_id" class="form-label">Imagem do Cartão da Peça</label>
-                                    <input type="file" class="form-control"  id="image_id" name="image_id" aria-label="Escolher arquivo" required>
+                                    <label for="img" class="form-label">Imagem do Cartão da Peça</label>
+                                    <input type="file" class="form-control"  id="img" name="img" aria-label="Escolher arquivo" required>
                                 </div>
 
                                 {{-- Inputs do Banner --}}

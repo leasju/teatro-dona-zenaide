@@ -10,7 +10,7 @@ class EspImagem extends Model
 {
     protected $fillable = [
         'espetaculo_id',
-        'imagem',
+        'img',
         'principal',
     ];
 
