@@ -6,9 +6,8 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    
+    // Criação da tabela 'espetaculos' 
     public function up(): void
     {
         // Criação da tabela "Cards" no banco de dados

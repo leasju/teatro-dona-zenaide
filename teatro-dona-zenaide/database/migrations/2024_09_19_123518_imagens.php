@@ -6,19 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    // Criação da tabela "imagens" 
+    public function up()
     {
-        //
+        Schema::create('imagens', function (Blueprint $table) {
+            $table->id();
+            $table->string('url');
+            $table->unsignedBigInteger('espetaculo_id');
+            $table->foreign('espetaculo_id')->references('id')->on('espetaculos');
+            $table->timestamps();
+        });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    
+    public function down()
     {
-        //
+        Schema::dropIfExists('imagens');
     }
 };
