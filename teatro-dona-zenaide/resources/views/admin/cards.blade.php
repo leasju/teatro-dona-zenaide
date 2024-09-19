@@ -62,7 +62,7 @@
                                 {{-- Temporada da Peça --}}
                                 <label for="tempEsp" class="form-label">Temporada da Peça  <span style="color: red;" title="Campo obrigatório">*</span></label>
                                 <div class="mb-3 input-group">
-                                    <input type="date" class="form-control" id="tempEsp" name="tempEsp" placeholder="Selecione uma temporada..." value="" required>
+                                    <input type="date" class'="form-control" id="tempEsp" name="tempEsp" placeholder="Selecione uma temporada..." value="" required>
                                     <span class="input-group-text">
                                         <span class="fluent-mdl2--date-time"></span>
                                     </span>
