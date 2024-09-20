@@ -30,27 +30,65 @@ class EspetaculoController extends Controller
             'coProduçãoEsp' => 'required',
             'agradecimentos' => 'required',
             'imagem_principal' => 'required|image',
-            'imagens' => 'nullable|array',
-            'imagens.*' => 'image',
+            'imagem_opcional_1' => 'nullable|image',
+            'imagem_opcional_2' => 'nullable|image',
+            'imagem_opcional_3' => 'nullable|image',
+            'imagem_opcional_4' => 'nullable|image',
+            'imagem_opcional_5' => 'nullable|image',
         ]);
 
         $espetaculo = Espetaculo::create($request->all());
+     
 
-        // Salvar imagens
-        if ($request->hasFile('imagem_principal')) {
-            $espetaculo->imagens()->create([
-                'imagem' => $request->file('imagem_principal')->store('espetaculos', 'public'),
-                'principal' => true,
-            ]);
-        }
+        // Salvar imagem principal
+    if ($request->hasFile('imagem_principal')) {
+        $imagemPrincipal = $request->file('imagem_principal')->store('espetaculos', 'public');
+        $espetaculo->imagens()->create([
+            'img' => $imagemPrincipal,
+            'principal' => true,
+        ]);
+    }
 
-        if ($request->has('imagens')) {
-            foreach ($request->file('imagens') as $imagem) {
-                $espetaculo->imagens()->create([
-                    'imagem' => $imagem->store('espetaculos', 'public'),
-                ]);
-            }
-        }
+    // Salvar imagens opcionais
+    if ($request->hasFile('imagem_opcional_1')) {
+        $imagemOpicional1 = $request->file('imagem_opcional_1')->store('espetaculos', 'public');
+        $espetaculo->imagens()->create([
+            'img' => $imagemOpicional1,
+            'principal' => false,
+        ]);
+    }
+
+    if ($request->hasFile('imagem_opcional_2')) {
+        $imagemOpicional2 = $request->file('imagem_opcional_2')->store('espetaculos', 'public');
+        $espetaculo->imagens()->create([
+            'img' => $imagemOpicional2,
+            'principal' => false,
+        ]);
+    }
+
+    if ($request->hasFile('imagem_opcional_3')) {
+        $imagemOpicional3 = $request->file('imagem_opcional_3')->store('espetaculos', 'public');
+        $espetaculo->imagens()->create([
+            'img' => $imagemOpicional3,
+            'principal' => false,
+        ]);
+    }
+
+    if ($request->hasFile('imagem_opcional_4')) {
+        $imagemOpicional4 = $request->file('imagem_opcional_4')->store('espetaculos', 'public');
+        $espetaculo->imagens()->create([
+            'img' => $imagemOpicional4,
+            'principal' => false,
+        ]);
+    }
+
+    if ($request->hasFile('imagem_opcional_5')) {
+        $imagemOpicional5 = $request->file('imagem_opcional_5')->store('espetaculos', 'public');
+        $espetaculo->imagens()->create([
+            'img' => $imagemOpicional5,
+            'principal' => false,
+        ]);
+    }
 
         // Salvar dias e horários
         if ($request->has('dias')) {

@@ -10,12 +10,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('imagens', function (Blueprint $table) {
-            $table->id();
-            $table->string('img');
-            $table->unsignedBigInteger('espetaculo_id');
-            $table->foreign('espetaculo_id')->references('id')->on('espetaculos');
-            $table->timestamps();
-        });
+        $table->id();
+        $table->string('img');
+        $table->unsignedBigInteger('espetaculo_id');
+        $table->boolean('principal')->default(false);
+        $table->foreign('espetaculo_id')->references('id')->on('espetaculos')->onDelete('cascade');
+        $table->timestamps();
+    
+     
+    });
+    
     }
 
     

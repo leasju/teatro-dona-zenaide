@@ -162,40 +162,40 @@
 
                                 {{-- Input de Imagem da Peça (Card) --}}
                                 <div class="mb-3">
-                                    <label for="img" class="form-label">Imagem do Cartão da Peça</label>
-                                    <input type="file" class="form-control"  id="img" name="img" aria-label="Escolher arquivo" required>
+                                    <label for="imagem_principal" class="form-label">Imagem do Cartão Principal da Peça</label>
+                                    <input type="file" class="form-control"  id="imagem_principal" name="imagem_principal" aria-label="Escolher arquivo" required>
                                 </div>
 
                                 {{-- Inputs do Banner --}}
 
                                 {{-- Input do Banner 1 --}}
                                 <div class="mb-3">
-                                    <label for="image_id" class="form-label">Imagem do Banner da Peça 1</label>
-                                    <input type="file" class="form-control"  aria-label="Escolher arquivo">
+                                    <label for="imagem_opcional_1" class="form-label">Imagem do Banner da Peça 1</label>
+                                    <input type="file" class="form-control" id="imagem_opcional_1" name="imagem_opcional_1" aria-label="Escolher arquivo">
                                 </div>
 
                                 {{-- Input do Banner 2 --}}
                                 <div class="mb-3">
-                                    <label for="image_id"  class="form-label">Imagem do Banner da Peça 2</label>
-                                    <input type="file" class="form-control" aria-label="Escolher arquivo">
+                                    <label for="imagem_opcional_2"  class="form-label">Imagem do Banner da Peça 2</label>
+                                    <input type="file" class="form-control" id="imagem_opcional_2" name="imagem_opcional_2" aria-label="Escolher arquivo">
                                 </div>
 
                                 {{-- Input do Banner 3 --}}
                                 <div class="mb-3">
-                                    <label for="image_id"  class="form-label">Imagem do Banner da Peça 3</label>
-                                    <input type="file" class="form-control" aria-label="Escolher arquivo">
+                                    <label for="imagem_opcional_3"  class="form-label">Imagem do Banner da Peça 3</label>
+                                    <input type="file" class="form-control" id="imagem_opcional_3" name="imagem_opcional_3" aria-label="Escolher arquivo">
                                 </div>
 
                                 {{-- Input do Banner 4 --}}
                                 <div class="mb-3">
-                                    <label for="image_id"  class="form-label">Imagem do Banner da Peça 4</label>
-                                    <input type="file" class="form-control" aria-label="Escolher arquivo">
+                                    <label for="imagem_opcional_4" class="form-label">Imagem do Banner da Peça 4</label>
+                                    <input type="file" class="form-control" id="imagem_opcional_4" name="imagem_opcional_4" aria-label="Escolher arquivo">
                                 </div>
 
                                 {{-- Input do Banner 5 --}}
                                 <div class="mb-3">
-                                    <label for="image_id"  class="form-label">Imagem do Banner da Peça 5</label>
-                                    <input type="file" class="form-control" aria-label="Escolher arquivo">
+                                    <label for="imagem_opcional_5"  class="form-label">Imagem do Banner da Peça 5</label>
+                                    <input type="file" class="form-control" id="imagem_opcional_5" name="imagem_opcional_5" aria-label="Escolher arquivo">
                                 </div>
 
                             </div>
