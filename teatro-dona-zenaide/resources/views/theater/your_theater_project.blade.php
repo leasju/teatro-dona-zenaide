@@ -37,7 +37,7 @@
     </div>
 
     {{-- * Hold Your Event Section * --}}
-    <div id="hold-your-event-section">
+    <div id="hold-your-event-section" class="hidden-element">
         <div class="container">
             <div class="row">
 
