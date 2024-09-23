@@ -1,8 +1,10 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\Espetaculo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use App\Models\Espetaculo;
+
 
 class EspetaculoController extends Controller
 {
@@ -23,12 +25,14 @@ class EspetaculoController extends Controller
             'luzEsp' => 'required',
             'sonoEsp' => 'required',
             'producaoEsp' => 'required',
-            'costEsp' => 'required',
-            'cenoAssistEsp' => 'required',
-            'cenoTec' => 'required',
-            'designEsp' => 'required',
-            'coProduçãoEsp' => 'required',
-            'agradecimentos' => 'required',
+
+            // Ficha técnica (não-obrigatória)
+            'costEsp' => 'nullable',
+            'cenoAssistEsp' => 'nullable',
+            'cenoTec' => 'nullable',
+            'designEsp' => 'nullable',
+            'coProduçãoEsp' => 'nullable',
+            'agradecimentos' => 'nullable',
             'imagem_principal' => 'required|image',
             'imagem_opcional_1' => 'nullable|image',
             'imagem_opcional_2' => 'nullable|image',
@@ -38,7 +42,8 @@ class EspetaculoController extends Controller
         ]);
 
         $espetaculo = Espetaculo::create($request->all());
-     
+   
+
 
         // Salvar imagem principal
     if ($request->hasFile('imagem_principal')) {
@@ -106,6 +111,12 @@ class EspetaculoController extends Controller
                 }
             }
         }
+
+        Log::info('Espetáculo criado com sucesso.', [
+            'espetaculo_id' => $espetaculo->id,
+            'nomeEsp' => $espetaculo->nomeEsp,
+            'tempEsp' => $espetaculo->tempEsp,
+        ]);
 
         return redirect()->route('espetaculos.index');
     }
