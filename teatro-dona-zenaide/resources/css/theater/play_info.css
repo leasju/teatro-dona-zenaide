@@ -1,14 +1,11 @@
 /* ------------------------------------------------ TELA PLAY INFO ---------------------------------------------------------- */
 
 /* 
- * Play Banner Section
+ * Play Slider Section
 */
 
-#play-banner-section .img-fluid {
-    /* Largura do banner da peça */
-    width: 100%;
-
-    /* Altura do banner da peça */
+#play-slider-section .carousel-item .d-block {
+    /* Altura dos slides da peça */
     max-height: 500px;
     height: auto;
 }

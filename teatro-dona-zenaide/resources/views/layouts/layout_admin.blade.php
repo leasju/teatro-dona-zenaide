@@ -32,7 +32,9 @@
                 <div class="container-fluid">
                     
                     {{-- Logo do Teatro Dona Zenaide --}}
-                    <a class="navbar-brand" href="/">Teatro Dona Zenaide</a>
+                    <a class="navbar-brand d-flex align-items-center" href="/">
+                        <img src="{{ Vite::asset('resources/img/logo/logo-teatro-dona-zenaide.png') }}" class="img-fluid" alt="Logo Teatro Dona Zenaide">
+                    </a>
 
                     {{-- Corpo da Navbar --}}
                     @yield('navbar-content')
