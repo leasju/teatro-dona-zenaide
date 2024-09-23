@@ -70,14 +70,16 @@
                 
                                 {{-- Inputs de Sessões de Apresentação --}}
                                 <div class="mb-3 d-flex flex-column gap-2">
-                                    <legend>Dias e Horários das Sessões de Apresentação da Peça  <span style="color: red;" title="Campo obrigatório">*</span></leg>
+                                    <legend>Dias e Horários das Sessões de Apresentação da Peça  <span style="color: red;" title="Campo obrigatório">*</span></legend>
+
                                     @foreach(['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'] as $day)
+
                                         {{-- Looping pelos dias da semana (de Domingo a Sábado) para criar checkboxes e inputs de horários --}}
 
                                         {{-- Inputs Checkbox para selecionar os dias das sessões de apresentação --}}
                                         <div class="form-check ms-2">
                                             {{-- Checkbox para cada dia da semana, com o valor sendo o nome do dia (ex: Domingo) --}}
-                                            <input class="form-check-input checkbox-day" type="checkbox" value="{{ $day }}" id="check{{ $day }}" name="day[]">
+                                            <input class="form-check-input checkbox-day" type="checkbox" value="{{ $day }}" id="check{{ $day }}" name="days[]">
 
                                             {{-- Label para o checkbox, associada ao respectivo checkbox pelo atributo "for" --}}
                                             <label class="form-check-label" for="check{{ $day }}">
@@ -92,7 +94,7 @@
                                             <div class="schedule-wrapper mb-3">
                                                 <div class="d-flex align-items-center mb-2">
                                                     {{-- Input para inserir o horário da sessão (formato de tempo) --}}
-                                                    <input type="time" class="form-control me-2" id="schedule" name="schedule[{{ $day }}][]" placeholder="Horário">
+                                                    <input type="time" class="form-control me-2" name="schedules[{{ $day }}][]" placeholder="Horário">
 
                                                     {{-- Botão de remover horários --}}
                                                     <button type="button" class="btn btn-remove-schedule">Remover</button>

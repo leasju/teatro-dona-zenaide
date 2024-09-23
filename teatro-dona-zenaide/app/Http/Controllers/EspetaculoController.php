@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Redirect;
 use App\Models\Espetaculo;
 
 
@@ -26,6 +27,9 @@ class EspetaculoController extends Controller
             'sonoEsp' => 'required',
             'producaoEsp' => 'required',
 
+            'days' => 'required|array',
+            'schedules' => 'required|array',
+
             // Ficha técnica (não-obrigatória)
             'costEsp' => 'nullable',
             'cenoAssistEsp' => 'nullable',
@@ -45,7 +49,7 @@ class EspetaculoController extends Controller
    
 
 
-        // Salvar imagem principal
+        // Salvar imagem do card principal da peça
     if ($request->hasFile('imagem_principal')) {
         $imagemPrincipal = $request->file('imagem_principal')->store('espetaculos', 'public');
         $espetaculo->imagens()->create([
@@ -54,7 +58,7 @@ class EspetaculoController extends Controller
         ]);
     }
 
-    // Salvar imagens opcionais
+    // Salvar imagens opcionais do carrossel (Banner)
     if ($request->hasFile('imagem_opcional_1')) {
         $imagemOpicional1 = $request->file('imagem_opcional_1')->store('espetaculos', 'public');
         $espetaculo->imagens()->create([
@@ -95,29 +99,24 @@ class EspetaculoController extends Controller
         ]);
     }
 
-        // Salvar dias e horários
-        if ($request->has('dias')) {
-            foreach ($request->input('dias') as $dia) {
-                $espetaculoDia = $espetaculo->dias()->create([
-                    'dia' => $dia,
-                ]);
+    // Salvar dias e horários
+    foreach ($request->input('days') as $day) {
+        // Cria o registro de dia no banco
 
-                if ($request->has('horarios')) {
-                    foreach ($request->input('horarios') as $horario) {
-                        $espetaculoDia->horarios()->create([
-                            'horario' => $horario,
-                        ]);
-                    }
-                }
-            }
-        }
-
-        Log::info('Espetáculo criado com sucesso.', [
-            'espetaculo_id' => $espetaculo->id,
-            'nomeEsp' => $espetaculo->nomeEsp,
-            'tempEsp' => $espetaculo->tempEsp,
+        // $espetaculoDia = $espetaculo->days()->create([
+        $espetaculoDia = $espetaculo->dias()->create([
+            'dia' => $day, // Salva o dia (ex: Domingo, Segunda)
         ]);
 
-        return redirect()->route('espetaculos.index');
+        // Verifica se há horários para esse dia e os associa ao espetáculo
+        if (isset($request->schedules[$day])) {
+            foreach ($request->schedules[$day] as $schedule) {
+                $espetaculoDia->horarios()->create([
+                    'horario' => $schedule, // Salva o horário (ex: 14:00, 18:00)
+                ]);
+            }
+        }
+    }
+        return redirect()->route('/sobre-nos');
     }
 }
