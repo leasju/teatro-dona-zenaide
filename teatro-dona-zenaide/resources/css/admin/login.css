@@ -66,6 +66,27 @@ input:focus, input:active, textarea:focus, textarea:active {
     background-color: transparent !important;
 }
 
+#login-box .password-input {
+    /* Position relative para a div do input de senha */
+    position: relative;
+}
+
+#login-box .password-input .togglePassword {
+    /* Position absolute para o ícone de mostrar/esconder a senha */
+    position: absolute;
+    cursor: pointer;
+
+    /* Posicionando o ícone dentro do input */
+    right: 20px;
+    top: calc(50% - 10px);
+}
+
+#login-box .main-btn:hover {
+    /* Efeito de hover no botão de 'Entrar' */
+    background-color: var(--vermelho-hover);
+    transition: 0.25s;
+}
+
 /* Alerts */
 
 #login-box .alert .btn-close {

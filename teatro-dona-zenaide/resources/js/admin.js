@@ -12,6 +12,37 @@ import '../css/admin/cards.css';
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
+// * Mostrar/Esconder a senha no Modo Administrador
+
+// Garante que o código seja executado após o carregamento completo do DOM
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Seleciona o botão para toggle a senha
+    const togglePassword = document.querySelector('.togglePassword');
+
+    // Seleciona o input de senha
+    const password = document.querySelector('#pass');
+
+    // Adiciona um evento de clique ao botão de toggle
+    togglePassword.addEventListener("click", function () {
+
+        // Verifica se o tipo do input de senha é "password" ou "text"
+        const type = password.type === "password" ? "text" : "password";
+
+        // Altera o tipo do input de senha para mostrar ou esconder a senha
+        password.type = type;
+
+        // Altera o ícone do botão de toggle
+        this.classList.toggle("ri--eye-line");
+        this.classList.toggle("ri--eye-off-line");
+
+        // Altera a propriedade title do botão de toggle
+        this.title = type === "password" ? "Mostrar senha" : "Esconder senha";
+
+    });
+
+});
+
 // * Script das Sessões de Apresentação das Peças
 
 // Garante que o código seja executado após o carregamento completo do DOM

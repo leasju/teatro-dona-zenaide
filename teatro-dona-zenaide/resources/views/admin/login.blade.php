@@ -43,10 +43,12 @@
 
                         {{-- Input de Senha --}}
                         <h2 class="roboto-regular mb-3">Senha</h2>
-                        <div class="form-floating mb-5">
+                        <div class="form-floating mb-5 password-input">
 
                             {{-- Input e Label de Senha --}}
                             <input type="password" class="form-control" id="pass" name="pass" placeholder="Senha" required>
+                            <span class="ri--eye-line togglePassword" title="Mostrar senha"></span>
+
                             <label for="pass">Insira sua senha</label>
 
                             {{-- Mensagem de erro para a senha --}}

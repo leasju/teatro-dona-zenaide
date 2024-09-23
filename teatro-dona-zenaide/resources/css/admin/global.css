@@ -42,6 +42,9 @@ html {
     --cinza-escuro: #333333;
     --input-active-color: #555555;
     --gradient-background: linear-gradient(180deg, #404040 0%, #000 100%);
+
+    /* Colors for Effects */
+    --vermelho-hover: #b42b18;
 }
 
 /*
@@ -188,6 +191,7 @@ html {
 
     border-radius: 5px;
     border: none;
+    transition: 0.25s;
 
     background-color: var(--vermelho-geral);
     color: var(--semibranco);
