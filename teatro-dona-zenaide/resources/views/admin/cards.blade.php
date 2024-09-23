@@ -13,7 +13,7 @@
                 <a class="nav-link roboto-regular" id="admin-indicator" aria-current="page" href="#">Modo Administrador</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link roboto-regular" id="logout-icon" aria-current="page" href="#"><span class="material-symbols--logout" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Logout"></span></a>
+                <a class="nav-link roboto-regular d-flex align-items-center gap-1" id="logout-icon" aria-current="page" href="#">Sair<span class="material-symbols--logout"></span></a>
             </li>
         </ul>
     </div>

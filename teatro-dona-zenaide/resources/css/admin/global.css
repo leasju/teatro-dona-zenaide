@@ -51,8 +51,8 @@ html {
 /* Logout Icon */
 .material-symbols--logout {
     display: inline-block;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h7v2zm11-4l-1.375-1.45l2.55-2.55H9v-2h8.175l-2.55-2.55L16 7l5 5z'/%3E%3C/svg%3E");
@@ -265,6 +265,15 @@ header #admin-indicator:hover, #admin-indicator:visited, #admin-indicator:link {
 }
 
 header #logout-icon {
+    /* Cor e font size do texto se logout da Navbar */
+    color: var(--semibranco);
+    font-size: 18px;
+
     /* Centralizando o ícone de logout na Navbar */
     padding-top: 16px;
+}
+
+header #logout-icon:hover {
+    /* Adicionando um underline no texto de sair ao hover para melhorar a experiência do usuário */
+    text-decoration: underline;
 }
