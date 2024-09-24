@@ -5,6 +5,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Espetaculo;
+use App\Models\EspDia;
+use App\Models\EspHorario;
+use App\Models\EspImagem;
 
 
 class EspetaculoController extends Controller
@@ -12,12 +15,16 @@ class EspetaculoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+
+            // Informações da peça 
             'nomeEsp' => 'required',
             'tempEsp' => 'required',
             'duracaoEsp' => 'required',
             'classifEsp' => 'required',
             'descEsp' => 'required',
             'urlCompra' => 'required|url',
+
+            // (obrigatório) Ficha-técnica
             'roteiristaEsp' => 'required',
             'elencoEsp' => 'required',
             'direcaoEsp' => 'required',
@@ -27,16 +34,21 @@ class EspetaculoController extends Controller
             'sonoEsp' => 'required',
             'producaoEsp' => 'required',
 
+            // Classificados como 'array' para armazenarem mais de um dia e horário 
+            'horario' => 'required',
+            'dia' => 'required',
             'days' => 'required|array',
             'schedules' => 'required|array',
 
-            // Ficha técnica (não-obrigatória)
+            // (não-obrigatório) Ficha técnica 
             'costEsp' => 'nullable',
             'cenoAssistEsp' => 'nullable',
             'cenoTec' => 'nullable',
             'designEsp' => 'nullable',
             'coProduçãoEsp' => 'nullable',
             'agradecimentos' => 'nullable',
+
+            // Imagens
             'imagem_principal' => 'required|image',
             'imagem_opcional_1' => 'nullable|image',
             'imagem_opcional_2' => 'nullable|image',
@@ -48,8 +60,7 @@ class EspetaculoController extends Controller
         $espetaculo = Espetaculo::create($request->all());
    
 
-
-        // Salvar imagem do card principal da peça
+        // SALVA IMAGEM PRINCIPAL (obrigatória)
     if ($request->hasFile('imagem_principal')) {
         $imagemPrincipal = $request->file('imagem_principal')->store('espetaculos', 'public');
         $espetaculo->imagens()->create([
@@ -58,7 +69,7 @@ class EspetaculoController extends Controller
         ]);
     }
 
-    // Salvar imagens opcionais do carrossel (Banner)
+    // SALVAR IMAGENS OPCIONAIS DO CARROSSEL (Banner)
     if ($request->hasFile('imagem_opcional_1')) {
         $imagemOpicional1 = $request->file('imagem_opcional_1')->store('espetaculos', 'public');
         $espetaculo->imagens()->create([
@@ -99,19 +110,19 @@ class EspetaculoController extends Controller
         ]);
     }
 
-    // Salvar dias e horários
+    // SALVAR DIAS E HORÁRIOS
     foreach ($request->input('days') as $day) {
         // Cria o registro de dia no banco
 
         // $espetaculoDia = $espetaculo->days()->create([
-        $espetaculoDia = $espetaculo->dias()->create([
+        $espDia = $espetaculo->dias()->create([
             'dia' => $day, // Salva o dia (ex: Domingo, Segunda)
         ]);
 
         // Verifica se há horários para esse dia e os associa ao espetáculo
         if (isset($request->schedules[$day])) {
             foreach ($request->schedules[$day] as $schedule) {
-                $espetaculoDia->horarios()->create([
+                $espDia->horarios()->create([
                     'horario' => $schedule, // Salva o horário (ex: 14:00, 18:00)
                 ]);
             }

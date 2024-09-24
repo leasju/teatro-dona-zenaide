@@ -7,21 +7,23 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     
-    // Criação da tabela 'dias'
         public function up()
     {
+         // Criação da tabela 'dias'
         Schema::create('dias', function (Blueprint $table) {
-            $table->id();
-            $table->date('data');
-            $table->unsignedBigInteger('espetaculo_id');
-            $table->foreign('espetaculo_id')->references('id')->on('espetaculos');
+            $table->id('dia_id');
+            $table->date('dia');
+            $table->unsignedBigInteger('fk_espetaculo_id');
+
+            // FK da tabela espetáculos
+            $table->foreign('fk_espetaculo_id')->
+                    references('espetaculo_id')->
+                    on('espetaculos');
+
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down()
     {
         Schema::dropIfExists('dias');

@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class EspDia extends Model
 {
     protected $fillable = [
-        'espetaculo_id',
+        'fk_espetaculo_id',
         'dia',
     ];
 

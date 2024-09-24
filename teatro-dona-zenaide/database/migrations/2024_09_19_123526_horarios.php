@@ -10,10 +10,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('horarios', function (Blueprint $table) {
-            $table->id();
+            $table->id('hora_id');
             $table->time('hora');
-            $table->unsignedBigInteger('dia_id');
-            $table->foreign('dia_id')->references('id')->on('dias'); 
+            $table->unsignedBigInteger('fk_dia_id');
+
+
+            // FK da tabela "dias"
+            $table->foreign('fk_dia_id')->
+                    references('dia_id')->
+                    on('dias'); 
+            
             $table->timestamps();
         });
     }

@@ -29,6 +29,8 @@ class Espetaculo extends Model
         'designEsp',
         'coProduçãoEsp',
         'agradecimentos',
+        'fk_dia_id',
+        'fk_hora_id'
     ];
 
     public function dias(): HasMany

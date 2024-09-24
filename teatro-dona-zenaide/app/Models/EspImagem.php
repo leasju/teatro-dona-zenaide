@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class EspImagem extends Model
 {
     protected $fillable = [
-        'espetaculo_id',
+        'fk_espetaculo_id',
+        'img_id',
         'img',
         'principal',
     ];

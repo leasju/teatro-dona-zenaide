@@ -9,11 +9,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class EspHorario extends Model
 {
     protected $fillable = [
-        'espetaculo_dia_id',
+        'fk_espetaculo_dia_id',
+        'hora_id',
         'horario',
     ];
 
-    public function espetaculoDia(): BelongsTo
+    public function espDia(): BelongsTo
     {
         return $this->belongsTo(EspDia::class);
     }
