@@ -6,40 +6,16 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    
-    // Criação da tabela 'espetaculos' 
     public function up(): void
     {
-        // Criação da tabela "Cards" no banco de dados
+        // Criação da tabela "Espetaculos" no banco de dados
         Schema::create('espetaculos', function (Blueprint $table) {
             
             $table->id('espetaculo_id'); 
 
-            $table->unsignedBigInteger('fk_dia_id');
-            $table->unsignedBigInteger('fk_hora_id');
-
-            // Referência da FK da tabela "dias"
-            $table->foreign('fk_dia_id')-> // FK
-                    references('dia_id')-> // id normal
-                    on('dias')-> // tabela
-                    onDelete('cascade');
-
-            
-
-            // Referência da FK da tabela "horarios"
-            $table->foreign('fk_hora_id')->
-                    references('hora_id')->
-                    on('horarios')->
-                    onDelete('cascade');
-
-
-            
-
-
-
             // INFORMAÇÕES DA PEÇA ------------------------------------------------------------------
             $table->string('nomeEsp', 255); // Nome do espetáculo
-            $table->date('tempEsp'); //Temporada do espetáculo
+            $table->date('tempEsp'); // Temporada do espetáculo
             $table->integer('duracaoEsp'); // Duração do espetáculo
             $table->string('classifEsp', 255); // Classificação indicativa
             $table->text('descEsp'); // Descrição do espetáculo
@@ -60,16 +36,14 @@ return new class extends Migration
             $table->string('cenoAssistEsp', 255); // Assistente de cenografia
             $table->string('cenoTec', 255); // Cenotécnico do espetáculo
             $table->string('designEsp', 255); // Consultoria de Design do espetáculo
-            $table->string('coProduçãoEsp', 255); // Co-produção do espetáculo
+            $table->string('coProducaoEsp', 255); // Co-produção do espetáculo
             $table->text('agradecimentos'); // Agradecimentos
   
             $table->timestamps();  
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+
     public function down(): void
     {
         Schema::dropIfExists('espetaculos');

@@ -14,13 +14,15 @@ class EspDia extends Model
         'dia',
     ];
 
+ // Um dia pertence a um espetáculo
     public function espetaculo(): BelongsTo
     {
         return $this->belongsTo(Espetaculo::class);
     }
 
+    // Um dia tem muitos horários
     public function horarios(): HasMany
     {
-        return $this->hasMany(EspHorario::class);
+        return $this->hasMany(EspHorario::class, 'fk_dia_id');
     }
 }

@@ -18,7 +18,7 @@ class EspetaculoController extends Controller
 
             // Informações da peça 
             'nomeEsp' => 'required',
-            'tempEsp' => 'required',
+            'tempEsp' => 'required|date',
             'duracaoEsp' => 'required',
             'classifEsp' => 'required',
             'descEsp' => 'required',
@@ -45,7 +45,7 @@ class EspetaculoController extends Controller
             'cenoAssistEsp' => 'nullable',
             'cenoTec' => 'nullable',
             'designEsp' => 'nullable',
-            'coProduçãoEsp' => 'nullable',
+            'coProducaoEsp' => 'nullable',
             'agradecimentos' => 'nullable',
 
             // Imagens
@@ -71,63 +71,53 @@ class EspetaculoController extends Controller
 
     // SALVAR IMAGENS OPCIONAIS DO CARROSSEL (Banner)
     if ($request->hasFile('imagem_opcional_1')) {
-        $imagemOpicional1 = $request->file('imagem_opcional_1')->store('espetaculos', 'public');
+        $imagemOpcional1 = $request->file('imagem_opcional_1')->store('espetaculos', 'public');
         $espetaculo->imagens()->create([
-            'img' => $imagemOpicional1,
+            'img' => $imagemOpcional1,
             'principal' => false,
         ]);
     }
 
     if ($request->hasFile('imagem_opcional_2')) {
-        $imagemOpicional2 = $request->file('imagem_opcional_2')->store('espetaculos', 'public');
+        $imagemOpcional2 = $request->file('imagem_opcional_2')->store('espetaculos', 'public');
         $espetaculo->imagens()->create([
-            'img' => $imagemOpicional2,
+            'img' => $imagemOpcional2,
             'principal' => false,
         ]);
     }
 
     if ($request->hasFile('imagem_opcional_3')) {
-        $imagemOpicional3 = $request->file('imagem_opcional_3')->store('espetaculos', 'public');
+        $imagemOpcional3 = $request->file('imagem_opcional_3')->store('espetaculos', 'public');
         $espetaculo->imagens()->create([
-            'img' => $imagemOpicional3,
+            'img' => $imagemOpcional3,
             'principal' => false,
         ]);
     }
 
     if ($request->hasFile('imagem_opcional_4')) {
-        $imagemOpicional4 = $request->file('imagem_opcional_4')->store('espetaculos', 'public');
+        $imagemOpcional4 = $request->file('imagem_opcional_4')->store('espetaculos', 'public');
         $espetaculo->imagens()->create([
-            'img' => $imagemOpicional4,
+            'img' => $imagemOpcional4,
             'principal' => false,
         ]);
     }
 
     if ($request->hasFile('imagem_opcional_5')) {
-        $imagemOpicional5 = $request->file('imagem_opcional_5')->store('espetaculos', 'public');
+        $imagemOpcional5 = $request->file('imagem_opcional_5')->store('espetaculos', 'public');
         $espetaculo->imagens()->create([
-            'img' => $imagemOpicional5,
+            'img' => $imagemOpcional5,
             'principal' => false,
         ]);
     }
 
-    // SALVAR DIAS E HORÁRIOS
-    foreach ($request->input('days') as $day) {
-        // Cria o registro de dia no banco
-
-        // $espetaculoDia = $espetaculo->days()->create([
-        $espDia = $espetaculo->dias()->create([
-            'dia' => $day, // Salva o dia (ex: Domingo, Segunda)
+    foreach ($request->days as $index => $day) {
+        $espetaculo->dias()->create([
+            'dia' => $day,
+            'horario' => $request->schedules[$index],
         ]);
-
-        // Verifica se há horários para esse dia e os associa ao espetáculo
-        if (isset($request->schedules[$day])) {
-            foreach ($request->schedules[$day] as $schedule) {
-                $espDia->horarios()->create([
-                    'horario' => $schedule, // Salva o horário (ex: 14:00, 18:00)
-                ]);
-            }
-        }
     }
-        return redirect()->route('/sobre-nos');
+        
+    
+    return redirect('/sobre-nos');
     }
 }

@@ -326,9 +326,9 @@
                                 
                                 {{-- Input de Co-produção --}}
                                 <div class="mb-3">
-                                    <label for="coProduçãoEsp" class="form-label">Co-produção</label>
+                                    <label for="coProducaoEsp" class="form-label">Co-produção</label>
                                     <input type="text" class="form-control" 
-                                    id="coProduçãoEsp" name="coProduçãoEsp" placeholder="Insira um ou mais representantes para co-produção" value="">
+                                    id="coProducaoEsp" name="coProducaoEsp" placeholder="Insira um ou mais representantes para co-produção" value="">
                                 </div>
 
                                 {{-- Input de Agradecimentos --}}
@@ -487,5 +487,19 @@
             </div>
         </div>
     </div>
+
+    @section('content')
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="alert alert-danger">   
+
+            {{ session('error') }}
+        </div>
+    @endif
 
 @endsection

@@ -17,6 +17,6 @@ class EspImagem extends Model
 
     public function espetaculo(): BelongsTo
     {
-        return $this->belongsTo(Espetaculo::class);
+        return $this->belongsTo(Espetaculo::class, 'fk_espetaculo_id');
     }
 }
