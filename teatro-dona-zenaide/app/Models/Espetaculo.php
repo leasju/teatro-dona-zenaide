@@ -35,7 +35,7 @@ class Espetaculo extends Model
    // Um espetáculo tem muitos dias
    public function dias(): HasMany
    {
-       return $this->hasMany(EspDia::class, 'fk_dia_id');
+       return $this->hasMany(EspDia::class, 'fk_espetaculo_id');
    }
 
    // Um espetáculo tem muitos horários através dos dias (indiretamente)
@@ -51,6 +51,11 @@ class Espetaculo extends Model
              'dia_id' // Chave primária em EspDia
          );
      }
+
+     public function imagens(): HasMany
+    {
+        return $this->hasMany(EspImagem::class, 'fk_espetaculo_id');
+    }
 
 }
 
