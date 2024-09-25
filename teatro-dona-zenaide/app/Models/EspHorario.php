@@ -9,13 +9,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class EspHorario extends Model
 {
     protected $fillable = [
-        'fk_espetaculo_dia_id',
-        'hora_id'
+        'fk_id_esp',
+        'hora'
     ];
 
     // Um horário pertence a um dia
-    public function espDia(): BelongsTo
+    public function dia()
     {
-        return $this->belongsTo(EspDia::class, 'fk_dia_id');
+        return $this->belongsTo(EspDia::class, 'fk_id_esp');
     }
-}
+}// fk_id_dia

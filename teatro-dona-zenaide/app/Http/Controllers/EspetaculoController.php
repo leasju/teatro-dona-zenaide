@@ -15,8 +15,8 @@ class EspetaculoController extends Controller
     public function store(Request $request)
     {
 
-      /*  dd($request->all()); */
-        $dataSaved = [];
+        /*dd($request->all());*/
+        
         $request->validate([
 
             // Informações da peça 
@@ -37,11 +37,11 @@ class EspetaculoController extends Controller
             'sonoEsp' => 'required',
             'producaoEsp' => 'required',
 
-            // Classificados como 'array' para armazenarem mais de um dia e horário 
-            'horario' => 'required',
-            'dia' => 'required',
-            'days' => 'required|array',
-            'schedules' => 'required|array',
+            // Validação dos dias e horários
+            // .* usado para permitir mais de um horário 
+            'hora.*' => 'required|array',
+            'dia' => 'required|array',
+            
 
             // (não-obrigatório) Ficha técnica 
             'costEsp' => 'nullable',
@@ -51,7 +51,7 @@ class EspetaculoController extends Controller
             'coProducaoEsp' => 'nullable',
             'agradecimentos' => 'nullable',
 
-            // Imagens
+            // Validação das imagens
             'imagem_principal' => 'required|image',
             'imagem_opcional_1' => 'nullable|image',
             'imagem_opcional_2' => 'nullable|image',
@@ -60,114 +60,80 @@ class EspetaculoController extends Controller
             'imagem_opcional_5' => 'nullable|image',
         ]);
         
+    // Criação do espetáculo (somente os campos que pertencem ao Espetaculo)
+    $espetaculo = Espetaculo::create([
+        'nomeEsp' => $request->input('nomeEsp'),
+        'tempEsp' => $request->input('tempEsp'),
+        'duracaoEsp' => $request->input('duracaoEsp'),
+        'classifEsp' => $request->input('classifEsp'),
+        'descEsp' => $request->input('descEsp'),
+        'urlCompra' => $request->input('urlCompra'),
+        'roteiristaEsp' => $request->input('roteiristaEsp'),
+        'elencoEsp' => $request->input('elencoEsp'),
+        'direcaoEsp' => $request->input('direcaoEsp'),
+        'figurinoEsp' => $request->input('figurinoEsp'),
+        'cenoEsp' => $request->input('cenoEsp'),
+        'luzEsp' => $request->input('luzEsp'),
+        'sonoEsp' => $request->input('sonoEsp'),
+        'producaoEsp' => $request->input('producaoEsp'),
+        'costEsp' => $request->input('costEsp'),
+        'cenoAssistEsp' => $request->input('cenoAssistEsp'),
+        'cenoTec' => $request->input('cenoTec'),
+        'designEsp' => $request->input('designEsp'),
+        'coProducaoEsp' => $request->input('coProducaoEsp'),
+        'agradecimentos' => $request->input('agradecimentos'),
+    ]);
 
-    // Crie uma nova instância de Espetaculo
-    $espetaculo = new Espetaculo();
-        $espetaculo->nomeEsp = $request->input('nomeEsp');
-        $espetaculo->tempEsp = $request->input('tempEsp');
-        $espetaculo->duracaoEsp = $request->input('duracaoEsp');
-        $espetaculo->classifEsp = $request->input('classifEsp');
-        $espetaculo->descEsp = $request->input('descEsp');
-        $espetaculo->urlCompra = $request->input('urlCompra');
-        $espetaculo->roteiristaEsp = $request->input('roteiristaEsp');
-        $espetaculo->elencoEsp = $request->input('elencoEsp');
-        $espetaculo->direcaoEsp = $request->input('direcaoEsp');
+ 
+   // Criação dos dias e horários
+   foreach ($request->input('days') as $dayIndex => $day) {
+    // Cria o dia para o espetáculo
+    $espDia = EspDia::create([
+        'fk_id_esp' => $espetaculo->id,
+        'dia' => $day,
+    ]);
 
-        $espetaculo->figurinoEsp = $request->input('figurinoEsp');
-        $espetaculo->cenoEsp = $request->input('cenoEsp');
-        $espetaculo->luzEsp = $request->input('luzEsp');
-        $espetaculo->sonoEsp = $request->input('sonoEsp');
-        $espetaculo->producaoEsp = $request->input('producaoEsp');
-        $espetaculo->costEsp = $request->input('costEsp');
-
-        $espetaculo->cenoAssistEsp = $request->input('cenoAssistEsp');
-        $espetaculo->cenoTec = $request->input('cenoTec');
-        $espetaculo->designEsp = $request->input('designEsp');
-        $espetaculo->coProducaoEsp = $request->input('coProducaoEsp');
-        $espetaculo->agradecimentos = $request->input('agradecimentos');
-
-        // Salve o Espetaculo
-        $espetaculo->save();
-        $dataSaved['espetaculo'] = $espetaculo->toArray();
-
-    // Crie uma nova instância de EspDia para cada dia
-    foreach ($request->input('days') as $index => $day) {
-        $espDia = new EspDia();
-        $espDia->fk_espetaculo_id = $espetaculo->id;
-        $espDia->dia = $day;
-        $espDia->save();
-        $dataSaved['espDia'][] = $espDia->toArray();
-
-
-        // Crie uma nova instância de EspHorario para cada horário
-        $espHorario = new EspHorario();
-        $espHorario->fk_espetaculo_dia_id = $espDia->id;
-        $espHorario->hora_id = $request->input('schedules')[$index];
-        $espHorario->save();
-        $dataSaved['espHorario'][] = $espHorario->toArray();
+    // Para cada dia, cria os horários correspondentes
+    if (isset($request->input("schedules")[$day])) {
+        foreach ($request->input("schedules.$day") as $horario) {
+            EspHorario::create([
+                'fk_espetaculo_dia_id' => $espDia->id,
+                'hora' => $horario,
+            ]);
+        }
     }
+}
 
-    // Crie uma nova instância de EspImagem para cada imagem principal
-    if ($request->hasFile('imagem_principal')) {
+     // Salvando a imagem principal do espetáculo
+     if ($request->hasFile('imagem_principal')) {
         $imagemPrincipal = $request->file('imagem_principal')->store('espetaculos', 'public');
-        $espetaculo->imagens()->create([
+        EspImagem::create([
+            'fk_id_esp' => $espetaculo->id,
             'img' => $imagemPrincipal,
             'principal' => true,
         ]);
-        $dataSaved['imagem_principal'] = $espetaculo->imagens()->get()->toArray();
     }
 
     // SALVA IMAGEM OPCIONAL (não-obrigatória)
 
-    $imagensOpcionais = [];
 
-    if ($request->hasFile('imagem_opcional_1')) {
-        $imagemOpcional1 = $request->file('imagem_opcional_1')->store('espetaculos', 'public');
-        $espetaculo->imagens()->create([
-            'img' => $imagemOpcional1,
-            'principal' => false,
-        ]);
-        $imagensOpcionais[] = $espetaculo->imagens()->get()->toArray();
-    }
+    // Salvando as imagens opcionais do espetáculo (caso existam)
+    for ($i = 1; $i <= 5; $i++) {
+        // Nomes fixos para os campos de imagens opcionais
+        $imagemOpcional = "imagem_opcional_" . $i;
 
-    // SALVA IMAGEM OPCIONAL (não-obrigatória)
-    if ($request->hasFile('imagem_opcional_2')) {
-        $imagemOpcional2 = $request->file('imagem_opcional_2')->store('espetaculos', 'public');
-        $espetaculo->imagens()->create([
-            'img' => $imagemOpcional2,
-            'principal' => false,
-        ]);
-        $imagensOpcionais[] = $espetaculo->imagens()->get()->toArray();
-    }
-
-    // SALVA IMAGEM OPCIONAL (não-obrigatória)
-    if ($request->hasFile('imagem_opcional_3')) {
-        $imagemOpcional3 = $request->file('imagem_opcional_3')->store('espetaculos', 'public');
-        $espetaculo->imagens()->create([
-            'img' => $imagemOpcional3,
-            'principal' => false,
-        ]);
-        $imagensOpcionais[] = $espetaculo->imagens()->get()->toArray();
-    }
-
-    // SALVA IMAGEM OPCIONAL (não-obrigatória)
-    if ($request->hasFile('imagem_opcional_4')) {
-        $imagemOpcional4 = $request->file('imagem_opcional_4')->store('espetaculos', 'public');
-        $espetaculo->imagens()->create([
-            'img' => $imagemOpcional4,
-            'principal' => false,
-        ]);
-        $imagensOpcionais[] = $espetaculo->imagens()->get()->toArray();
-    }
-
-    // SALVA IMAGEM OPCIONAL (não-obrigatória)
-    if ($request->hasFile('imagem_opcional_5')) {
-        $imagemOpcional5 = $request->file('imagem_opcional_5')->store('espetaculos', 'public');
-        $espetaculo->imagens()->create([
-            'img' => $imagemOpcional5,
-            'principal' => false,
-        ]);
-        $imagensOpcionais[] = $espetaculo->imagens()->get()->toArray();
+        // Verifica se o arquivo foi enviado para este campo
+        if ($request->hasFile($imagemOpcional)) {
+            // Armazena a imagem no sistema de arquivos e obtém o caminho
+            $imagem = $request->file($imagemOpcional)->store('espetaculos', 'public');
+            
+            // Cria o registro da imagem no banco de dados
+            EspImagem::create([
+                'fk_id_esp' => $espetaculo->id,
+                'img' => $imagem,
+                'principal' => false,  // As imagens opcionais não são principais
+            ]);
+        }
     }
 
     return redirect('/sobre-nos')->with('success', 'Dados salvos com sucesso!');

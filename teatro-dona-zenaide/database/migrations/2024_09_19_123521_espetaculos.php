@@ -11,7 +11,7 @@ return new class extends Migration
         // Criação da tabela "Espetaculos" no banco de dados
         Schema::create('espetaculos', function (Blueprint $table) {
             
-            $table->id('espetaculo_id'); 
+            $table->id(); 
 
             // INFORMAÇÕES DA PEÇA ------------------------------------------------------------------
             $table->string('nomeEsp', 255); // Nome do espetáculo

@@ -11,18 +11,9 @@ return new class extends Migration
     {
         // Criação da tabela "imagens" 
         Schema::create('imagens', function (Blueprint $table) {
-        $table->id('img_id');
+        $table->id();;
         $table->string('img');
-        $table->unsignedBigInteger('fk_espetaculo_id');
         $table->boolean('principal')->default(false);
-
-
-        // FK da tabela "espetaculos"
-        $table->foreign('fk_espetaculo_id')->
-                references('espetaculo_id')->
-                on('espetaculos')->
-                onDelete('cascade');
-
         $table->timestamps();
 
         });

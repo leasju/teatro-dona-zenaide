@@ -10,19 +10,20 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class EspDia extends Model
 {
     protected $fillable = [
-        'fk_espetaculo_id',
+        'fk_id_esp',
         'dia',
     ];
 
- // Um dia pertence a um espetáculo
-    public function espetaculo(): BelongsTo
+    // Um dia pertence a um espetáculo
+    // Um dia pertence a um espetáculo
+    public function espetaculo()
     {
-        return $this->belongsTo(Espetaculo::class);
+        return $this->belongsTo(Espetaculo::class, 'fk_id_esp');
     }
 
-    // Um dia tem muitos horários
-    public function horarios(): HasMany
+    // Um dia pode ter muitos horários
+    public function horarios()
     {
-        return $this->hasMany(EspHorario::class, 'fk_dia_id');
-    }
+        return $this->hasMany(EspHorario::class, 'fk_id_esp');
+    }// fk_id_dia
 }

@@ -9,14 +9,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class EspImagem extends Model
 {
     protected $fillable = [
-        'fk_espetaculo_id',
-        'img_id',
         'img',
         'principal',
     ];
 
-    public function espetaculo(): BelongsTo
+    public function espetaculos()
     {
-        return $this->belongsTo(Espetaculo::class, 'fk_espetaculo_id');
-    }
+        return $this->belongsToMany(Espetaculo::class, 'fk_id_esp');
+    }// fk_id_img
 }

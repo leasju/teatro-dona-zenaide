@@ -12,16 +12,8 @@ return new class extends Migration
          // Criação da tabela 'dias'
         Schema::create('dias', function (Blueprint $table) {
 
-            $table->id('dia_id'); // ID do dia
+            $table->id(); // ID do dia
             $table->date('dia');
-
-            $table->unsignedBigInteger('fk_espetaculo_id'); 
-
-            // FK da tabela espetáculos
-            $table->foreign('fk_espetaculo_id')->
-                    references('espetaculo_id')->
-                    on('espetaculos')->onDelete('cascade');
-
             $table->timestamps();
         });
     }
