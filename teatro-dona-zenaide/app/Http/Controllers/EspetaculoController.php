@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
 use App\Models\Espetaculo;
 use App\Models\EspDia;
 use App\Models\EspHorario;
@@ -15,8 +16,9 @@ class EspetaculoController extends Controller
     public function store(Request $request)
     {
 
-        dd($request->all());
-        
+        //dd($request->all());        
+        \DB::enableQueryLog();
+
         $request->validate([
 
             // Informações da peça 
@@ -77,8 +79,8 @@ class EspetaculoController extends Controller
     ]);
 
     // Para cada dia, cria os horários correspondentes
-    if (isset($request->input("schedules")[$day])) {
-        foreach ($request->input("schedules.$day") as $hora) {
+    if (isset($request->input("schedules")[$dayIndex])) {
+        foreach ($request->input("schedules.$dayIndex") as $hora) {
             EspHorario::create([
                 'fk_id_dia' => $espDia->id,
                 'hora' => $hora,
@@ -116,9 +118,12 @@ class EspetaculoController extends Controller
         }
     }
 
-    // Retorna para a página "sobre nós"
+   
+
+}
+        dd(\DB::getQueryLog());
+         // Retorna para a página "sobre nós"
     return redirect('/sobre-nos')->with('success', 'Dados salvos com sucesso!');
 
-        }
     }
 }
