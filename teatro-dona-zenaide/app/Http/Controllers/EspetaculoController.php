@@ -17,8 +17,6 @@ class EspetaculoController extends Controller
     {
 
         //dd($request->all());        
-        \DB::enableQueryLog();
-
         $request->validate([
 
             // Informações da peça 
@@ -117,13 +115,10 @@ class EspetaculoController extends Controller
             ]);
         }
     }
-
+        // Retorna para a página "sobre nós"
+        return redirect('/sobre-nos')->with('success', 'Dados salvos com sucesso!');
    
-
-}
-        dd(\DB::getQueryLog());
-         // Retorna para a página "sobre nós"
-    return redirect('/sobre-nos')->with('success', 'Dados salvos com sucesso!');
-
+        }
+ 
     }
 }
