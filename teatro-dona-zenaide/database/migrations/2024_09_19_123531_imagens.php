@@ -9,8 +9,10 @@ return new class extends Migration
     
     public function up()
     {
-        // Criação da tabela "imagens" 
+        // Criação da tabela 'imagens' no banco de dados
         Schema::create('imagens', function (Blueprint $table) {
+        
+        // ID da imagem 
         $table->id();;
         $table->string('img');
         $table->boolean('principal')->default(false);

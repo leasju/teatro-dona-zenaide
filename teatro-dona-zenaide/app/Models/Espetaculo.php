@@ -34,12 +34,12 @@ class Espetaculo extends Model
    // Um espetáculo tem muitos dias
    public function dias()
 {
-    return $this->hasMany(EspDia::class, 'fk_espetaculo_id');
+    return $this->hasMany(EspDia::class, 'fk_id_esp');
 }
 
 public function imagens()
 {
-    return $this->hasMany(EspImagem::class, 'fk_espetaculo_id');
+    return $this->hasMany(EspImagem::class, 'fk_id_esp');
 }
 
    

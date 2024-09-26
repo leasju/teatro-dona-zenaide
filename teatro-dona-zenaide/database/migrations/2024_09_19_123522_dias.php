@@ -9,11 +9,16 @@ return new class extends Migration
     
         public function up()
     {
-         // Criação da tabela 'dias'
+         // Criação da tabela 'dias' no banco de dados
         Schema::create('dias', function (Blueprint $table) {
 
-            $table->id(); // ID do dia
+            // ID do dia
+            $table->id(); 
             $table->date('dia');
+            // FK para tabela espetaculos
+            $table->foreignId('fk_id_esp')->
+                    constrained('espetaculos')->
+                    onDelete('cascade'); 
             $table->timestamps();
         });
     }

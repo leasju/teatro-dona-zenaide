@@ -15,7 +15,7 @@ class EspetaculoController extends Controller
     public function store(Request $request)
     {
 
-        /*dd($request->all());*/
+        dd($request->all());
         
         $request->validate([
 
@@ -61,28 +61,11 @@ class EspetaculoController extends Controller
         ]);
         
     // Criação do espetáculo (somente os campos que pertencem ao Espetaculo)
-    $espetaculo = Espetaculo::create([
-        'nomeEsp' => $request->input('nomeEsp'),
-        'tempEsp' => $request->input('tempEsp'),
-        'duracaoEsp' => $request->input('duracaoEsp'),
-        'classifEsp' => $request->input('classifEsp'),
-        'descEsp' => $request->input('descEsp'),
-        'urlCompra' => $request->input('urlCompra'),
-        'roteiristaEsp' => $request->input('roteiristaEsp'),
-        'elencoEsp' => $request->input('elencoEsp'),
-        'direcaoEsp' => $request->input('direcaoEsp'),
-        'figurinoEsp' => $request->input('figurinoEsp'),
-        'cenoEsp' => $request->input('cenoEsp'),
-        'luzEsp' => $request->input('luzEsp'),
-        'sonoEsp' => $request->input('sonoEsp'),
-        'producaoEsp' => $request->input('producaoEsp'),
-        'costEsp' => $request->input('costEsp'),
-        'cenoAssistEsp' => $request->input('cenoAssistEsp'),
-        'cenoTec' => $request->input('cenoTec'),
-        'designEsp' => $request->input('designEsp'),
-        'coProducaoEsp' => $request->input('coProducaoEsp'),
-        'agradecimentos' => $request->input('agradecimentos'),
-    ]);
+    $espetaculo = Espetaculo::create($request->only([
+        'nomeEsp', 'tempEsp', 'duracaoEsp', 'classifEsp', 'descEsp', 'urlCompra',
+        'roteiristaEsp', 'elencoEsp', 'direcaoEsp', 'figurinoEsp', 'cenoEsp',
+        'luzEsp', 'sonoEsp', 'producaoEsp', 'costEsp', 'cenoAssistEsp', 'cenoTec', 'designEsp','coProducaoEsp','agradecimentos',
+    ]));
 
  
    // Criação dos dias e horários
@@ -95,14 +78,13 @@ class EspetaculoController extends Controller
 
     // Para cada dia, cria os horários correspondentes
     if (isset($request->input("schedules")[$day])) {
-        foreach ($request->input("schedules.$day") as $horario) {
+        foreach ($request->input("schedules.$day") as $hora) {
             EspHorario::create([
-                'fk_espetaculo_dia_id' => $espDia->id,
-                'hora' => $horario,
+                'fk_id_dia' => $espDia->id,
+                'hora' => $hora,
             ]);
         }
     }
-}
 
      // Salvando a imagem principal do espetáculo
      if ($request->hasFile('imagem_principal')) {
@@ -114,11 +96,9 @@ class EspetaculoController extends Controller
         ]);
     }
 
-    // SALVA IMAGEM OPCIONAL (não-obrigatória)
-
-
     // Salvando as imagens opcionais do espetáculo (caso existam)
     for ($i = 1; $i <= 5; $i++) {
+
         // Nomes fixos para os campos de imagens opcionais
         $imagemOpcional = "imagem_opcional_" . $i;
 
@@ -136,7 +116,9 @@ class EspetaculoController extends Controller
         }
     }
 
+    // Retorna para a página "sobre nós"
     return redirect('/sobre-nos')->with('success', 'Dados salvos com sucesso!');
 
+        }
     }
 }

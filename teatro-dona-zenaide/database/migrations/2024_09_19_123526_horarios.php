@@ -6,13 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    // Criação da tabela 'horarios'
+    
     public function up()
     {
+        // Criação da tabela 'horarios' no banco de dados
         Schema::create('horarios', function (Blueprint $table) {
 
-            $table->id(); // ID do horário
+            // ID do horário
+            $table->id(); 
             $table->time('hora');
+            // FK para tabela dias
+            $table->foreignId('fk_id_dia')->
+                    constrained('dias')->
+                    onDelete('cascade'); 
             $table->timestamps();
         });
     }

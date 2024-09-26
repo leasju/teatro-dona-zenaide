@@ -24,6 +24,6 @@ class EspDia extends Model
     // Um dia pode ter muitos horários
     public function horarios()
     {
-        return $this->hasMany(EspHorario::class, 'fk_id_esp');
+        return $this->hasMany(EspHorario::class, 'fk_id_dia');
     }// fk_id_dia
 }

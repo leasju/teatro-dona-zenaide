@@ -8,9 +8,10 @@ return new class extends Migration
 {
     public function up(): void
     {
-        // Criação da tabela "Espetaculos" no banco de dados
+        // Criação da tabela 'espetaculos' no banco de dados
         Schema::create('espetaculos', function (Blueprint $table) {
             
+            // ID do espetáculo
             $table->id(); 
 
             // INFORMAÇÕES DA PEÇA ------------------------------------------------------------------
