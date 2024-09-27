@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class EspHorario extends Model
 {
+    protected $table = 'horarios';
+
+    public $timestamps = true;
     protected $fillable = [
         'fk_id_esp',
         'fk_id_dia',

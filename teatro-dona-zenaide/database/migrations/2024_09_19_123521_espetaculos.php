@@ -33,12 +33,12 @@ return new class extends Migration
             $table->string('producaoEsp', 255); // Produção do espetáculo
   
             // (OPCIONAL) FICHA TÉCNICA  -------------------------------------------------------------
-            $table->string('costEsp', 255); // Costureira do espetáculo
-            $table->string('cenoAssistEsp', 255); // Assistente de cenografia
-            $table->string('cenoTec', 255); // Cenotécnico do espetáculo
-            $table->string('designEsp', 255); // Consultoria de Design do espetáculo
-            $table->string('coProducaoEsp', 255); // Co-produção do espetáculo
-            $table->text('agradecimentos'); // Agradecimentos
+            $table->string('costEsp', 255)->nullable(); // Costureira do espetáculo
+            $table->string('cenoAssistEsp', 255)->nullable(); // Assistente de cenografia
+            $table->string('cenoTec', 255)->nullable(); // Cenotécnico do espetáculo
+            $table->string('designEsp', 255)->nullable(); // Consultoria de Design do espetáculo
+            $table->string('coProducaoEsp', 255)->nullable(); // Co-produção do espetáculo
+            $table->text('agradecimentos')->nullable(); // Agradecimentos
   
             $table->timestamps();  
         });

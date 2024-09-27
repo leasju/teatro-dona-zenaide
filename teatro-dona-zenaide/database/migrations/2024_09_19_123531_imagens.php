@@ -16,6 +16,12 @@ return new class extends Migration
         $table->id();;
         $table->string('img');
         $table->boolean('principal')->default(false);
+        
+        // FK para tabela 'espetaculos'
+        $table->foreignId('fk_id_esp')->
+                constrained('espetaculos')->
+                onDelete('cascade'); 
+
         $table->timestamps();
 
         });

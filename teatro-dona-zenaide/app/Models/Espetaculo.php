@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Espetaculo extends Model
 {
+    protected $table = 'espetaculos';
+
+    public $timestamps = true;
     protected $fillable = [
         'nomeEsp',
         'tempEsp',

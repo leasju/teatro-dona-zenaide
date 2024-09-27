@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class EspDia extends Model
 {
+    protected $table = 'dias';
+
+    public $timestamps = true;
     protected $fillable = [
         'fk_id_esp',
         'dia',
