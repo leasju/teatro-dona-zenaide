@@ -14,7 +14,7 @@ return new class extends Migration
 
             // ID do dia
             $table->id(); 
-            $table->date('dia');
+            $table->string('dia');
             // FK para tabela espetaculos
             $table->foreignId('fk_id_esp')->
                     constrained('espetaculos')->

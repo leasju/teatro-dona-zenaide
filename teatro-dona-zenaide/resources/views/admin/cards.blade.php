@@ -32,8 +32,8 @@
         <x-slot name="content">
 
             {{-- Form New/Edit --}}
-            <form action="/admin/cards" method="POST">
-                
+            <form action="/admin/cards" method="POST" enctype="multipart/form-data">
+
                 @csrf
 
                 <div class="accordion" id="accordionForm">

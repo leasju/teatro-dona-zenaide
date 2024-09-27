@@ -39,8 +39,12 @@ class EspetaculoController extends Controller
 
             // Validação dos dias e horários
             // .* usado para permitir mais de um horário 
-            'hora.*' => 'required|array',
-            'dia' => 'required|array',
+            /*'hora.*' => 'required|array',
+            'dia.*' => 'required|array',*/
+
+            'days' => 'required|array', 
+            'schedules.*' => 'required|array',
+
             
 
             // (não-obrigatório) Ficha técnica 
@@ -68,24 +72,29 @@ class EspetaculoController extends Controller
     ]));
 
  
-   // Criação dos dias e horários
-   foreach ($request->input('days') as $dayIndex => $day) {
-    // Cria o dia para o espetáculo
-    $espDia = EspDia::create([
-        'fk_id_esp' => $espetaculo->id,
-        'dia' => $day,
-    ]);
+    foreach ($request->input('days') as $dayIndex => $day) {
+        $dia = EspDia::create([
+            'fk_id_esp' => $espetaculo->id,
+            'dia' => $day, // Aqui armazenamos o dia
+        ]);
 
-    // Para cada dia, cria os horários correspondentes
-    if (isset($request->input("schedules")[$dayIndex])) {
+        // Verifica se existem horários para o dia atual
+        $schedules = $request->input("schedules.$dayIndex");
+    
+        // Se schedules não for um array, transforme em um array para evitar erros
+        if (!is_array($schedules)) {
+            $schedules = [$schedules]; // Coloque o valor único em um array
+        }
+    
+        // Inserir os horários relacionados ao dia
         foreach ($request->input("schedules.$dayIndex") as $hora) {
             EspHorario::create([
-                'fk_id_dia' => $espDia->id,
-                'hora' => $hora,
+                'fk_id_dia' => $dia->id,
+                'hora' => $hora, // Aqui armazenamos o horário
             ]);
         }
     }
-
+    
      // Salvando a imagem principal do espetáculo
      if ($request->hasFile('imagem_principal')) {
         $imagemPrincipal = $request->file('imagem_principal')->store('espetaculos', 'public');
@@ -121,4 +130,4 @@ class EspetaculoController extends Controller
         }
  
     }
-}
+
