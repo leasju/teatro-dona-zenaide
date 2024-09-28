@@ -87,6 +87,11 @@ input:focus, input:active, textarea:focus, textarea:active {
     transition: 0.25s;
 }
 
+#login-box #btn-login-div {
+    /* Espaçamento entre o botão de login e o input de senha */
+    margin-top: 48px;
+}
+
 /* Alerts */
 
 #login-box .alert .btn-close {
@@ -106,6 +111,16 @@ input:focus, input:active, textarea:focus, textarea:active {
     --bs-alert-link-color: #ea868f;
 }
 
+#login-box .alert-password {
+    /* Zerando a margin botton do alert de erro de senha */
+    margin-bottom: 0;
+}
+
+#login-box .alert p {
+    /* Zerando a margin bottom dos parágrafos dos alerts */
+    margin-bottom: 0;
+}
+
 /* 
  * @media Sections
 */
@@ -123,9 +138,19 @@ input:focus, input:active, textarea:focus, textarea:active {
         font-size: 14px;
     }
 
+    #login-box label {
+        /* Diminuindo o font size das label */
+        font-size: 14px;
+    }
+
     #login-box .main-btn {
         /* Diminuindo o font size do botão de entrar da Box de Login */
         --btn-font-size: 14px;
+    }
+
+    #login-box .alert p {
+        /* Diminuindo o font size dos parágrafos dos alerts */
+        font-size: 14px;
     }
 
 }
