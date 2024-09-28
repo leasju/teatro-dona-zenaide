@@ -81,27 +81,52 @@ class EspetaculoController extends Controller
         // Verifica se existem horários para o dia atual
         $schedules = $request->input("schedules.$dayIndex");
     
-        // Se schedules não for um array, transforme em um array para evitar erros
+        // Se schedules não for um array, transforma em um array para evitar erros
         if (!is_array($schedules)) {
-            $schedules = [$schedules]; // Coloque o valor único em um array
+            $schedules = [$schedules]; // Coloca o valor único em um array
         }
     
-        // Inserir os horários relacionados ao dia
-        foreach ($request->input("schedules.$dayIndex") as $hora) {
-            EspHorario::create([
-                'fk_id_dia' => $dia->id,
-                'hora' => $hora, // Aqui armazenamos o horário
-            ]);
+        // Insere os horários
+        foreach ($schedules as $hora) {  
+
+            // Verifica se 'hora' não é nulo ou vazio
+            if (!empty($hora)) {
+                // Cria o horário e obtém o ID
+                $horario = EspHorario::create([
+                    'fk_id_dia' => $dia->id,
+                    'hora' => $hora, // Aqui armazenamos o horário
+                ]);
+
+                // Inserir na tabela associativa esp_dia_hora para manter a relação
+                DB::table('esp_dia_hora')->insert([
+                    'fk_id_esp' => $espetaculo->id,
+                    'fk_id_dia' => $dia->id,
+                    'fk_id_hora' => $horario->id, // ID do horário recém-criado
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            } else {
+                Log::warning("Horário nulo ou vazio no dia $dayIndex");  // Loga a situação de horário nulo
+            }
         }
     }
+
     
      // Salvando a imagem principal do espetáculo
      if ($request->hasFile('imagem_principal')) {
         $imagemPrincipal = $request->file('imagem_principal')->store('espetaculos', 'public');
-        EspImagem::create([
+        $imgPrincipal = EspImagem::create([  // Armazenar o resultado da criação
             'fk_id_esp' => $espetaculo->id,
             'img' => $imagemPrincipal,
             'principal' => true,
+        ]);
+
+        // Inserir na tabela associativa esp_img para manter a relação com o espetáculo
+        DB::table('esp_img')->insert([
+            'fk_id_esp' => $espetaculo->id,
+            'fk_id_img' => $imgPrincipal->id,
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
     }
 
@@ -111,19 +136,28 @@ class EspetaculoController extends Controller
         // Nomes fixos para os campos de imagens opcionais
         $imagemOpcional = "imagem_opcional_" . $i;
 
-        // Verifica se o arquivo foi enviado para este campo
-        if ($request->hasFile($imagemOpcional)) {
-            // Armazena a imagem no sistema de arquivos e obtém o caminho
-            $imagem = $request->file($imagemOpcional)->store('espetaculos', 'public');
-            
-            // Cria o registro da imagem no banco de dados
-            EspImagem::create([
-                'fk_id_esp' => $espetaculo->id,
-                'img' => $imagem,
-                'principal' => false,  // As imagens opcionais não são principais
-            ]);
-        }
-    }
+                  // Verifica se o arquivo foi enviado para este campo
+                  if ($request->hasFile($imagemOpcional)) {
+                    // Armazena a imagem no sistema de arquivos e obtém o caminho
+                    $imagem = $request->file($imagemOpcional)->store('espetaculos', 'public');
+                    
+                    // Cria o registro da imagem no banco de dados
+                    $imgOpcional = EspImagem::create([
+                        'fk_id_esp' => $espetaculo->id,
+                        'img' => $imagem,
+                        'principal' => false,  // As imagens opcionais não são principais
+                    ]);
+    
+                    // Inserir na tabela associativa esp_img para manter a relação
+                    DB::table('esp_img')->insert([
+                        'fk_id_esp' => $espetaculo->id,
+                        'fk_id_img' => $imgOpcional->id, // ID da imagem opcional
+                        'created_at' => now(),
+                        'updated_at' => now(),
+                    ]);
+                }
+            }
+    
         // Retorna para a página "sobre nós"
         return redirect('/sobre-nos')->with('success', 'Dados salvos com sucesso!');
    
