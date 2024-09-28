@@ -56,6 +56,10 @@ class EspetaculoController extends Controller
             'imagem_opcional_3' => 'nullable|image',
             'imagem_opcional_4' => 'nullable|image',
             'imagem_opcional_5' => 'nullable|image',
+        ], [
+            // Mensagens personalizadas
+            'required' => 'Os dados preenchidos estão incorretos ou incompletos.',
+            'image' => 'Por favor, envie apenas arquivos de imagem (.jpeg, .png, etc.).',
         ]);
         
     // Criação do espetáculo (somente os campos que pertencem ao Espetaculo)

@@ -35,7 +35,7 @@
             <form action="/admin/cards" method="POST" enctype="multipart/form-data">
 
                 @csrf
-
+ 
                 <div class="accordion" id="accordionForm">
                 
                     {{-- * Collapse 1: Informações da Peça --}}
@@ -133,13 +133,13 @@
 
                                 {{-- Input de Descrição da Peça --}}
                                 <div class="mb-3">
-                                    <label for="descEsp" class="form-label">Descrição da Peça</label>
+                                    <label for="descEsp" class="form-label">Descrição da Peça <span style="color: red;" title="Campo obrigatório">*</span></label>
                                     <textarea class="form-control" rows="3" id="descEsp" name="descEsp" placeholder="Descrição" required></textarea>
                                 </div>
 
                                 {{-- Input de URL/Link de Compra da Peça --}}
                                 <div class="mb-3">
-                                    <label for="urlCompra" class="form-label">URL/Link de Compra da Peça</label>
+                                    <label for="urlCompra" class="form-label">URL/Link de Compra da Peça <span style="color: red;" title="Campo obrigatório">*</span></label>
                                     <input type="url" class="form-control" id="urlCompra" name="urlCompra" placeholder="https://exemplo.com" required>
                                 </div>
                 
@@ -164,8 +164,9 @@
 
                                 {{-- Input de Imagem da Peça (Card) --}}
                                 <div class="mb-3">
-                                    <label for="imagem_principal" class="form-label">Imagem do Cartão Principal da Peça</label>
-                                    <input type="file" class="form-control"  id="imagem_principal" name="imagem_principal" aria-label="Escolher arquivo" required>
+                                    <label for="imagem_principal" class="form-label">Imagem do Cartão Principal da Peça <span style="color: red;" title="Campo obrigatório">*</span></label>
+                                    <input type="file" class="form-control"  id="imagem_principal" name="imagem_principal" accept="image/*" aria-label="Escolher arquivo" required>
+                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .png, .bmp, .gif, .svg ou .webp</small>
                                 </div>
 
                                 {{-- Inputs do Banner --}}
@@ -173,31 +174,36 @@
                                 {{-- Input do Banner 1 --}}
                                 <div class="mb-3">
                                     <label for="imagem_opcional_1" class="form-label">Imagem do Banner da Peça 1</label>
-                                    <input type="file" class="form-control" id="imagem_opcional_1" name="imagem_opcional_1" aria-label="Escolher arquivo">
+                                    <input type="file" class="form-control" id="imagem_opcional_1" name="imagem_opcional_1" accept="image/*" aria-label="Escolher arquivo">
+                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .png, .bmp, .gif, .svg ou .webp</small>
                                 </div>
 
                                 {{-- Input do Banner 2 --}}
                                 <div class="mb-3">
                                     <label for="imagem_opcional_2"  class="form-label">Imagem do Banner da Peça 2</label>
-                                    <input type="file" class="form-control" id="imagem_opcional_2" name="imagem_opcional_2" aria-label="Escolher arquivo">
+                                    <input type="file" class="form-control" id="imagem_opcional_2" name="imagem_opcional_2" accept="image/*" aria-label="Escolher arquivo">
+                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .png, .bmp, .gif, .svg ou .webp</small>
                                 </div>
 
                                 {{-- Input do Banner 3 --}}
                                 <div class="mb-3">
                                     <label for="imagem_opcional_3"  class="form-label">Imagem do Banner da Peça 3</label>
-                                    <input type="file" class="form-control" id="imagem_opcional_3" name="imagem_opcional_3" aria-label="Escolher arquivo">
+                                    <input type="file" class="form-control" id="imagem_opcional_3" name="imagem_opcional_3" accept="image/*" aria-label="Escolher arquivo">
+                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .png, .bmp, .gif, .svg ou .webp</small>
                                 </div>
 
                                 {{-- Input do Banner 4 --}}
                                 <div class="mb-3">
                                     <label for="imagem_opcional_4" class="form-label">Imagem do Banner da Peça 4</label>
-                                    <input type="file" class="form-control" id="imagem_opcional_4" name="imagem_opcional_4" aria-label="Escolher arquivo">
+                                    <input type="file" class="form-control" id="imagem_opcional_4" name="imagem_opcional_4" accept="image/*" aria-label="Escolher arquivo">
+                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .png, .bmp, .gif, .svg ou .webp</small>
                                 </div>
 
                                 {{-- Input do Banner 5 --}}
                                 <div class="mb-3">
                                     <label for="imagem_opcional_5"  class="form-label">Imagem do Banner da Peça 5</label>
-                                    <input type="file" class="form-control" id="imagem_opcional_5" name="imagem_opcional_5" aria-label="Escolher arquivo">
+                                    <input type="file" class="form-control" id="imagem_opcional_5" name="imagem_opcional_5" accept="image/*" aria-label="Escolher arquivo">
+                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .png, .bmp, .gif, .svg ou .webp</small>
                                 </div>
 
                             </div>
@@ -222,13 +228,13 @@
 
                                 {{-- Input de Texto --}}
                                 <div class="mb-3">
-                                    <label for="roteiristaEsp" class="form-label">Roteiro</label>
+                                    <label for="roteiristaEsp" class="form-label">Roteiro <span style="color: red;" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" id="roteiristaEsp" name="roteiristaEsp" placeholder="Insira um ou mais representantes para roteiro" value="" required>
                                 </div>
                                 
                                 {{-- Input de Elenco --}}
                                 <div class="mb-3">
-                                    <label for="elencoEsp" class="form-label">Elenco</label>
+                                    <label for="elencoEsp" class="form-label">Elenco <span style="color: red;" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
                                     id="elencoEsp" name="elencoEsp"  placeholder="Insira um ou mais representantes para elenco" value="" required>
                                     
@@ -236,34 +242,34 @@
 
                                 {{-- Input de Direção --}}
                                 <div class="mb-3">
-                                    <label for="direcaoEsp" class="form-label">Direção</label>
+                                    <label for="direcaoEsp" class="form-label">Direção <span style="color: red;" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" id="direcaoEsp" name="direcaoEsp" placeholder="Insira um ou mais representantes para direção" value="" required>
                                 </div>
 
                                 {{-- Input de Figurino --}}
                                 <div class="mb-3">
-                                    <label for="figurinoEsp" class="form-label">Figurino</label>
+                                    <label for="figurinoEsp" class="form-label">Figurino <span style="color: red;" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
                                     id="figurinoEsp" name="figurinoEsp" placeholder="Insira um ou mais representantes para figurino" value="" required>
                                 </div>
                                 
                                 {{-- Input de Cenografia --}}
                                 <div class="mb-3">
-                                    <label for="cenoEsp" class="form-label">Cenografia</label>
+                                    <label for="cenoEsp" class="form-label">Cenografia <span style="color: red;" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
                                     id="cenoEsp" name="cenoEsp" placeholder="Insira um ou mais representantes para cenografia" value="" required>
                                 </div>
                                 
                                 {{-- Input de Iluminação --}}
                                 <div class="mb-3">
-                                    <label for="luzEsp" class="form-label">Iluminação</label>
+                                    <label for="luzEsp" class="form-label">Iluminação <span style="color: red;" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
                                     id="luzEsp" name="luzEsp" placeholder="Insira um ou mais representantes para iluminação" value="" required>
                                 </div>
 
                                 {{-- Input de Sonorização --}}
                                 <div class="mb-3">
-                                    <label for="sonoEsp" class="form-label">Sonorização</label>
+                                    <label for="sonoEsp" class="form-label">Sonorização <span style="color: red;" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
                                     id="sonoEsp" name="sonoEsp" placeholder="Insira um ou mais representantes para sonorização" value="" required>
                                     
@@ -271,7 +277,7 @@
                                 
                                 {{-- Input de Produção --}}
                                 <div class="mb-3">
-                                    <label for="producaoEsp" class="form-label">Produção</label>
+                                    <label for="producaoEsp" class="form-label">Produção <span style="color: red;" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
                                     id="producaoEsp" name="producaoEsp" placeholder="Insira um ou mais representantes para produção" value="" required>
                                 </div>                                
