@@ -16,7 +16,7 @@ class EspetaculoController extends Controller
     public function store(Request $request)
     {
 
-        //dd($request->all());        
+        // dd($request->all());        
         $request->validate([
 
             // Informações da peça 
@@ -72,42 +72,43 @@ class EspetaculoController extends Controller
     ]));
 
  
-    foreach ($request->input('days') as $dayIndex => $day) {
-        $dia = EspDia::create([
-            'fk_id_esp' => $espetaculo->id,
-            'dia' => $day, // Aqui armazenamos o dia
-        ]);
+// Loop dos dias 
+foreach ($request->input('days') as $dayIndex => $day) {
+    // Cria o registro do dia
+    $dia = EspDia::create([
+        'fk_id_esp' => $espetaculo->id,
+        'dia' => $day, // Aqui armazenamos o dia
+    ]);
 
-        // Verifica se existem horários para o dia atual
-        $schedules = $request->input("schedules.$dayIndex");
-    
-        // Se schedules não for um array, transforma em um array para evitar erros
-        if (!is_array($schedules)) {
-            $schedules = [$schedules]; // Coloca o valor único em um array
+    // Verifica se existem horários para o dia atual
+    $schedules = $request->input("schedules.$day");
+
+    // Se schedules não for um array, transforma em um array para evitar erros
+    if (!is_array($schedules)) {
+        $schedules = [$schedules]; // Coloca o valor único em um array
+    }
+
+    // Insere os horários
+    foreach ($schedules as $hora) {
+        // Verificação se 'hora' não é nulo ou vazio
+        if (!empty($hora)) {
+            // Cria o horário e armazena o ID do horário criado
+            $horario = EspHorario::create([
+                'fk_id_dia' => $dia->id,
+                'hora' => $hora, // Aqui armazenamos o horário
+            ]);
+
+            // Inserir na tabela associativa esp_dia_hora para manter a relação
+            DB::table('esp_dia_hora')->insert([
+                'fk_id_esp' => $espetaculo->id,
+                'fk_id_dia' => $dia->id,
+                'fk_id_hora' => $horario->id, // ID do horário recém-criado
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        } else {
+            Log::warning("Horário nulo ou vazio no dia $day");  // Loga a situação de horário nulo
         }
-    
-        // Insere os horários
-        foreach ($schedules as $hora) {  
-
-            // Verifica se 'hora' não é nulo ou vazio
-            if (!empty($hora)) {
-                // Cria o horário e obtém o ID
-                $horario = EspHorario::create([
-                    'fk_id_dia' => $dia->id,
-                    'hora' => $hora, // Aqui armazenamos o horário
-                ]);
-
-                // Inserir na tabela associativa esp_dia_hora para manter a relação
-                DB::table('esp_dia_hora')->insert([
-                    'fk_id_esp' => $espetaculo->id,
-                    'fk_id_dia' => $dia->id,
-                    'fk_id_hora' => $horario->id, // ID do horário recém-criado
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                ]);
-            } else {
-                Log::warning("Horário nulo ou vazio no dia $dayIndex");  // Loga a situação de horário nulo
-            }
         }
     }
 
