@@ -56,11 +56,11 @@ class EspetaculoController extends Controller
             'imagem_opcional_3' => 'nullable|image',
             'imagem_opcional_4' => 'nullable|image',
             'imagem_opcional_5' => 'nullable|image',
-        ], [
-            // Mensagens personalizadas
-            'required' => 'Os dados preenchidos estão incorretos ou incompletos.',
-            'image' => 'Por favor, envie apenas arquivos de imagem (.jpeg, .png, etc.).',
-        ]);
+ ], [
+        // Mensagens personalizadas
+        'required' => 'Os dados preenchidos estão incorretos ou incompletos.',
+        'image' => 'Por favor, envie apenas arquivos de imagem (.jpeg, .png, etc.).',
+    ]);
         
     // Criação do espetáculo (somente os campos que pertencem ao Espetaculo)
     $espetaculo = Espetaculo::create($request->only([
@@ -157,7 +157,7 @@ class EspetaculoController extends Controller
                 }
             }
     
-        // Retorna para a página "sobre nós"
+        // Retorna para a página "/admin/cards"
         return redirect('/admin/cards')->with('success', 'Dados salvos com sucesso!');
    
         } // Fim da funcão store
