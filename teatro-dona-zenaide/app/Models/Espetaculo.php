@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class Espetaculo extends Model
 {
     protected $table = 'espetaculos';
-
     public $timestamps = true;
     protected $fillable = [
         'nomeEsp',
@@ -39,7 +38,7 @@ class Espetaculo extends Model
 {
     return $this->hasMany(EspDia::class, 'fk_id_esp');
 }
-
+    // Um espetáculo tem várias imagens
 public function imagens()
 {
     return $this->hasMany(EspImagem::class, 'fk_id_esp');

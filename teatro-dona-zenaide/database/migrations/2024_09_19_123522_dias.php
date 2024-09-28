@@ -11,7 +11,6 @@ return new class extends Migration
     {
          // Criação da tabela 'dias' no banco de dados
         Schema::create('dias', function (Blueprint $table) {
-
             // ID do dia
             $table->id(); 
             $table->string('dia');

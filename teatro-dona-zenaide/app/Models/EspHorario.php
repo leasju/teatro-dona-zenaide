@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class EspHorario extends Model
 {
     protected $table = 'horarios';
-
     public $timestamps = true;
     protected $fillable = [
         'fk_id_esp',
@@ -22,4 +21,4 @@ class EspHorario extends Model
     {
         return $this->belongsTo(EspDia::class, 'fk_id_dia');
     }
-}// fk_id_dia
+}

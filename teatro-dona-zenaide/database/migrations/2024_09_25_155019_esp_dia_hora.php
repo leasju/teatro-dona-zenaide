@@ -15,17 +15,17 @@ return new class extends Migration
             $table->unsignedBigInteger('fk_id_dia'); // FK da tabela dias
             $table->unsignedBigInteger('fk_id_hora'); // FK da tabela horarios
 
-            // Referência pra Espetaculo
+            // Referência para Espetaculos
             $table->foreign('fk_id_esp')->
                     references('id')->
                     on('espetaculos');
     
-            // Referência pra Dias
+            // Referência para Dias
             $table->foreign('fk_id_dia')->
                     references('id')->
                     on('dias');
 
-            // Referência pra Horarios
+            // Referência para Horarios
             $table->foreign('fk_id_hora')->
                     references('id')->
                     on('horarios');

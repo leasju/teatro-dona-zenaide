@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class EspImagem extends Model
 {
     protected $table = 'imagens';
-
     public $timestamps = true;
     protected $fillable = [
         'fk_id_esp',
@@ -17,8 +16,9 @@ class EspImagem extends Model
         'principal',
     ];
 
+    // Uma imagem pertence a um espetáculo
     public function espetaculos()
     {
         return $this->belongsTo(Espetaculo::class, 'fk_id_esp');
-    }// fk_id_img
+    }
 }

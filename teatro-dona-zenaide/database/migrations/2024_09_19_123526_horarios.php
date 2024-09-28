@@ -11,7 +11,6 @@ return new class extends Migration
     {
         // Criação da tabela 'horarios' no banco de dados
         Schema::create('horarios', function (Blueprint $table) {
-
             // ID do horário
             $table->id(); 
             $table->time('hora');

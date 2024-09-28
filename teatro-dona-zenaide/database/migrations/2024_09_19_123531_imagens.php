@@ -11,19 +11,16 @@ return new class extends Migration
     {
         // Criação da tabela 'imagens' no banco de dados
         Schema::create('imagens', function (Blueprint $table) {
-        
         // ID da imagem 
         $table->id();;
         $table->string('img');
         $table->boolean('principal')->default(false);
-        
         // FK para tabela 'espetaculos'
         $table->foreignId('fk_id_esp')->
                 constrained('espetaculos')->
                 onDelete('cascade'); 
 
         $table->timestamps();
-
         });
     }
 

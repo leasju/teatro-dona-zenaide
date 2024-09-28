@@ -10,14 +10,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class EspDia extends Model
 {
     protected $table = 'dias';
-
     public $timestamps = true;
     protected $fillable = [
         'fk_id_esp',
         'dia',
     ];
 
-    // Um dia pertence a um espetáculo
     // Um dia pertence a um espetáculo
     public function espetaculo()
     {
@@ -28,5 +26,5 @@ class EspDia extends Model
     public function horarios()
     {
         return $this->hasMany(EspHorario::class, 'fk_id_dia');
-    }// fk_id_dia
+    }
 }

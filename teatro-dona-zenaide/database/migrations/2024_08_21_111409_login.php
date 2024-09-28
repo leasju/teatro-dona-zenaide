@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('adm_pass', 255);
             $table->timestamps();
         });
-
     }
 
     public function down(): void

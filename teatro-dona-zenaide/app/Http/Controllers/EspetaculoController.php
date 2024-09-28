@@ -15,7 +15,6 @@ class EspetaculoController extends Controller
 {
     public function store(Request $request)
     {
-
         // dd($request->all());        
         $request->validate([
 
@@ -39,13 +38,8 @@ class EspetaculoController extends Controller
 
             // Validação dos dias e horários
             // .* usado para permitir mais de um horário 
-            /*'hora.*' => 'required|array',
-            'dia.*' => 'required|array',*/
-
             'days' => 'required|array', 
             'schedules.*' => 'required|array',
-
-            
 
             // (não-obrigatório) Ficha técnica 
             'costEsp' => 'nullable',
@@ -72,45 +66,45 @@ class EspetaculoController extends Controller
     ]));
 
  
-// Loop dos dias 
-foreach ($request->input('days') as $dayIndex => $day) {
-    // Cria o registro do dia
-    $dia = EspDia::create([
-        'fk_id_esp' => $espetaculo->id,
-        'dia' => $day, // Aqui armazenamos o dia
-    ]);
+    // Loop dos dias 
+    foreach ($request->input('days') as $dayIndex => $day) {
+        // Cria o registro do dia
+        $dia = EspDia::create([
+            'fk_id_esp' => $espetaculo->id,
+            'dia' => $day, // Aqui armazenamos o dia
+        ]);
 
-    // Verifica se existem horários para o dia atual
-    $schedules = $request->input("schedules.$day");
+        // Verifica se existem horários para o dia atual
+        $schedules = $request->input("schedules.$day");
 
-    // Se schedules não for um array, transforma em um array para evitar erros
-    if (!is_array($schedules)) {
-        $schedules = [$schedules]; // Coloca o valor único em um array
-    }
-
-    // Insere os horários
-    foreach ($schedules as $hora) {
-        // Verificação se 'hora' não é nulo ou vazio
-        if (!empty($hora)) {
-            // Cria o horário e armazena o ID do horário criado
-            $horario = EspHorario::create([
-                'fk_id_dia' => $dia->id,
-                'hora' => $hora, // Aqui armazenamos o horário
-            ]);
-
-            // Inserir na tabela associativa esp_dia_hora para manter a relação
-            DB::table('esp_dia_hora')->insert([
-                'fk_id_esp' => $espetaculo->id,
-                'fk_id_dia' => $dia->id,
-                'fk_id_hora' => $horario->id, // ID do horário recém-criado
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
-        } else {
-            Log::warning("Horário nulo ou vazio no dia $day");  // Loga a situação de horário nulo
+        // Se schedules não for um array, transforma em um array para evitar erros
+        if (!is_array($schedules)) {
+            $schedules = [$schedules]; // Coloca o valor único em um array
         }
+
+        // Insere os horários
+        foreach ($schedules as $hora) {
+            // Verificação se 'hora' não é nulo ou vazio
+            if (!empty($hora)) {
+                // Cria o horário e armazena o ID do horário criado
+                $horario = EspHorario::create([
+                    'fk_id_dia' => $dia->id,
+                    'hora' => $hora, // Aqui armazenamos o horário
+                ]);
+
+                // Inserir na tabela associativa esp_dia_hora para manter a relação
+                DB::table('esp_dia_hora')->insert([
+                    'fk_id_esp' => $espetaculo->id,
+                    'fk_id_dia' => $dia->id,
+                    'fk_id_hora' => $horario->id, // ID do horário recém-criado
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            } else {
+                Log::warning("Horário nulo ou vazio no dia $day");  // Loga a situação de horário nulo
+                }
+            }
         }
-    }
 
     
      // Salvando a imagem principal do espetáculo
@@ -149,7 +143,7 @@ foreach ($request->input('days') as $dayIndex => $day) {
                         'principal' => false,  // As imagens opcionais não são principais
                     ]);
     
-                    // Inserir na tabela associativa esp_img para manter a relação
+                    // Inserior na tabela associativa esp_img para manter a relação
                     DB::table('esp_img')->insert([
                         'fk_id_esp' => $espetaculo->id,
                         'fk_id_img' => $imgOpcional->id, // ID da imagem opcional
@@ -167,7 +161,7 @@ foreach ($request->input('days') as $dayIndex => $day) {
         public function index()
         {
             $espetaculos = Espetaculo::all(); // Pega todos os espetáculos
-            return view('/admin/cards', compact('espetaculos')); // Substitua 'sua_view' pelo nome da sua view
+            return view('/admin/cards', compact('espetaculos')); 
         } 
  
     }
