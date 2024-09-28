@@ -282,6 +282,13 @@
     font-size: 24px;
 }
 
+/* Red Star - Campo Obrigatório */
+
+.red-star {
+    /* Cor do asterisco nos campos obrigatórios */
+    color: var(--vermelho-geral);
+}
+
 /* 
  * Modal Buttons
 */
