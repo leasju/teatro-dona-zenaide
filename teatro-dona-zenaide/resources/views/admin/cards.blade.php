@@ -433,54 +433,54 @@
                         </button>
                     </div>
 
-                    {{-- Tabela de Peças --}}
-                    <table class="table table-striped table-bordered text-center align-middle">
+    {{-- Tabela de Peças --}}
+    <table class="table table-striped table-bordered text-center align-middle">
+        {{-- Cabeçalho da Tabela de Peças --}}
+        <thead>
+            <tr>
+                <th scope="col" class="roboto-regular">ID</th>
+                <th scope="col" class="roboto-regular">Nome da Peça</th>
+                <th scope="col" class="roboto-regular">Data</th>
+                <th scope="col" class="roboto-regular">Ação</th>
+            </tr>
+        </thead>
 
-                        {{-- Cabeçalho da Tabela de Peças --}}
-                        <thead>
-                            <tr>
-                                <th scope="col" class="roboto-regular">ID</th>
-                                <th scope="col" class="roboto-regular">Nome da Peça</th>
-                                <th scope="col" class="roboto-regular">Data</th>
-                                <th scope="col" class="roboto-regular">Ação</th>
-                            </tr>
-                        </thead>
+        {{-- Corpo da Tabela - Conteúdo dinâmico conforme as peças cadastradas no Banco de Dados --}}
+        <tbody>
+            @forelse($espetaculos as $espetaculo)
+                <tr>
+                    <td>{{ $espetaculo->id }}</td>
+                    <td>{{ $espetaculo->nomeEsp }}</td>
+                    <td>{{ date('d/m/Y', strtotime($espetaculo->tempEsp)) }}</td> <!-- Alterando para o campo de data que você possui -->
+                    
+                    {{-- Botões de Ação (editar, excluir e alterar visibilidade) --}}
+                    <td id="action-buttons">
+                        {{-- Botão de Editar Peça --}}
+                        <button class="action-buttons-style action-buttons-style--edit">
+                            <span class="bx--edit"></span>
+                        </button>
 
-                       
-                        {{-- Corpo da Tabela - Conteúdo dinâmico conforme as peças cadastradas no Banco de Dados --}}
-                        <tbody>
-                        
+                        {{-- Botão de Excluir Peça --}}
+                        <button class="action-buttons-style" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                            <span class="ph--trash-bold"></span>
+                        </button>
 
-                            {{-- Linhas da Tabela - Conteúdo dinâmico conforme as peças cadastradas no Banco de Dados --}}
-                            <tr>
-                                {{-- Campos da Peça --}}
-                                <th scope="row">N°ID</th>
-                                <td>Dinâmico</td>
-                                <td>Dinâmico</td>
-                               
-                                {{-- Botões de Ação (editar, excluir e alterar visibilidade) --}}
-                                <td id="action-buttons">
+                        {{-- Botão de Visibilidade da Peça --}}
+                        <label class="action-buttons-style action-buttons-style--visibility" data-bs-toggle="modal" data-bs-target="#visibilityModal">
+                            <input type="checkbox" id="visibility" name="visibility" >
+                            <span class="d-flex justify-content-center align-items-center"><span class="ri--eye-line"></span></span>
+                        </label>
+                    </td>
+                </tr>
+            @empty
+                <tr>
+                    <td colspan="4">Nenhum espetáculo cadastrado.</td>
+                </tr>
+            @endforelse
+        </tbody>
 
-                                    {{-- Botão de Editar Peça --}}
-                                    <button class="action-buttons-style action-buttons-style--edit"><span class="bx--edit"></span></button>
-
-                                    {{-- Botão de Excluir Peça --}}
-                                    <button class="action-buttons-style" data-bs-toggle="modal" data-bs-target="#deleteModal"><span class="ph--trash-bold"></span></button>
-
-                                    {{-- Botão de Visibilidade da Peça --}}
-                                    <label class="action-buttons-style action-buttons-style--visibility" data-bs-toggle="modal" data-bs-target="#visibilityModal">
-                                        <input type="checkbox" id="visibility" name="visibility" >
-                                        <span class="d-flex justify-content-center align-items-center"><span class="ri--eye-line"></span></span>
-                                    </label>
-
-                                </td>
-                            </tr>
-
-                        </tbody>
-
-                        {{-- Paginação das peças será feito posteriormente, ao estar com o Banco de Dados e Back-End (usando laravel e bootstrap para isso) --}}
-
-                      </table>
+        {{-- Paginação das peças será feito posteriormente, ao estar com o Banco de Dados e Back-End (usando Laravel e bootstrap para isso) --}}
+    </table>
 
                 </div>
 

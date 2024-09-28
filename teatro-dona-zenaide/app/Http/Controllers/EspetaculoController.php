@@ -162,7 +162,13 @@ foreach ($request->input('days') as $dayIndex => $day) {
         // Retorna para a página "sobre nós"
         return redirect('/sobre-nos')->with('success', 'Dados salvos com sucesso!');
    
-        }
+        } // Fim da funcão store
+
+        public function index()
+        {
+            $espetaculos = Espetaculo::all(); // Pega todos os espetáculos
+            return view('/admin/cards', compact('espetaculos')); // Substitua 'sua_view' pelo nome da sua view
+        } 
  
     }
 

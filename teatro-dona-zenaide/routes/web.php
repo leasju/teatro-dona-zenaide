@@ -44,5 +44,6 @@ Route::post('/admin/login', [LoginController::class,'loginAdm']);
 // Rota para o método "store" da classe "EspetaculosController" 
 Route::post('/admin/cards', [EspetaculoController::class,'store']);
 
-/* Rota para o método "index"
-Route::post('/admin/cards', [EspetaculosController::class, 'index']); */
+// Rota para o método "index" da classe "EspetaculosController"
+Route::get('/admin/cards', [EspetaculoController::class,'index']);
+
