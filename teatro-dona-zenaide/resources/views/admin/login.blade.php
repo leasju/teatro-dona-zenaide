@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row d-flex justify-content-center align-items-center vh-100">
 
-                <div id="login-box" class="col-md-6">
+                <div id="login-box" class="col-xxl-6 col-xl-7 col-lg-9 col-md-10 col-sm-12">
 
                     {{-- Título de Login --}}
                     <h1 class="roboto-medium text-center mb-5">Login</h1>

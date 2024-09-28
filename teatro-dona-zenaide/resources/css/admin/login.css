@@ -105,3 +105,74 @@ input:focus, input:active, textarea:focus, textarea:active {
     --bs-alert-border-color: #842029;
     --bs-alert-link-color: #ea868f;
 }
+
+/* 
+ * @media Sections
+*/
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    #login-box h1 {
+        /* Diminuindo o font size do título de Login da Box de Login */
+        font-size: 30px;
+    }
+    
+    #login-box h2 {
+        /* Diminuindo o font size do h2 acima dos inputs da Box de Login */
+        font-size: 14px;
+    }
+
+    #login-box .main-btn {
+        /* Diminuindo o font size do botão de entrar da Box de Login */
+        --btn-font-size: 14px;
+    }
+
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    header .navbar .container-fluid {
+        /* Diminuindo o espaçamento lateral da navbar */
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    #login-area {
+        /* Espaçamento nas laterais da box de login para desgrudar dos cantos da tela */
+        padding: 0 20px;
+    }
+
+    #login-box {
+        /* Diminuindio o espaçamento interno da box de login */
+        padding: 60px 30px 90px 30px;
+    }
+
+}
+
+/* Custom @media */
+@media (max-width: 399.98px) {
+
+    header .navbar .container-fluid {
+        /* Diminuindo o espaçamento lateral da navbar */
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    #login-area {
+        /* Dimninuindo o espaçamento nas laterais da box de login para desgrudar dos cantos da tela */
+        padding: 0 10px;
+    }
+
+    #login-box {
+        /* Diminuindio o espaçamento interno da box de login */
+        padding: 30px 20px 60px 20px;
+    }
+
+    #login-box h1, #login-box .password-input {
+        /* Diminuindo o espaçamento inferior do h1 e do input de senha */
+        margin-bottom: 24px !important;
+    }
+
+}
