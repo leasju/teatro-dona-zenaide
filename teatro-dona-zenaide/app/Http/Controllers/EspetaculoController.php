@@ -154,7 +154,7 @@ class EspetaculoController extends Controller
             }
     
         // Retorna para a página "sobre nós"
-        return redirect('/sobre-nos')->with('success', 'Dados salvos com sucesso!');
+        return redirect('/admin/cards')->with('success', 'Dados salvos com sucesso!');
    
         } // Fim da funcão store
 
