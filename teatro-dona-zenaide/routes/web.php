@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\EspetaculosController;
+use App\Http\Controllers\EspetaculoController;
 
 // * Views Teatro
 
@@ -38,11 +38,12 @@ Route::get('/admin/cards', function() {
     return view('admin/cards');
 });
 
-// Rota por POST para o método "login_adm" da classe "LoginController"
+// Rota por POST para o método "loginAdm" da classe "LoginController"
 Route::post('/admin/login', [LoginController::class,'loginAdm']);
 
 // Rota para o método "store" da classe "EspetaculosController" 
-Route::post('/admin/cards', [EspetaculosController::class,'store']);
+Route::post('/admin/cards', [EspetaculoController::class,'store']);
 
-/* Rota para o método "index"
-Route::post('/admin/cards', [EspetaculosController::class, 'index']); */
+// Rota para o método "index" da classe "EspetaculosController"
+Route::get('/admin/cards', [EspetaculoController::class,'index']);
+

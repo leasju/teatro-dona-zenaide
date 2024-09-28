@@ -32,9 +32,8 @@
         <x-slot name="content">
 
             {{-- Form New/Edit --}}
+            <form action="/admin/cards" method="POST" enctype="multipart/form-data">
 
-            <form action="/admin/cards" method="POST" enctype="multipart/form-data>
-                
                 @csrf
 
                 <div class="accordion" id="accordionForm">
@@ -61,7 +60,7 @@
                                 </div>
                 
                                 {{-- Temporada da Peça --}}
-                                <label for="tempEsp" class="form-label">Temporada da Peça  <span style="color: red;" title="Campo obrigatório">*</span></label>
+                                <label for="tempEsp" class="form-label">Temporada da Peça <span style="color: red;" title="Campo obrigatório">*</span></label>
                                 <div class="mb-3 input-group">
                                     <input type="date" class="form-control" id="tempEsp" name="tempEsp" placeholder="Selecione uma temporada..." value="" required>
                                     <span class="input-group-text">
@@ -71,14 +70,16 @@
                 
                                 {{-- Inputs de Sessões de Apresentação --}}
                                 <div class="mb-3 d-flex flex-column gap-2">
-                                    <legend>Dias e Horários das Sessões de Apresentação da Peça  <span style="color: red;" title="Campo obrigatório">*</span></leg>
+                                    <legend>Dias e Horários das Sessões de Apresentação da Peça  <span style="color: red;" title="Campo obrigatório">*</span></legend>
+
                                     @foreach(['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'] as $day)
+
                                         {{-- Looping pelos dias da semana (de Domingo a Sábado) para criar checkboxes e inputs de horários --}}
 
                                         {{-- Inputs Checkbox para selecionar os dias das sessões de apresentação --}}
                                         <div class="form-check ms-2">
                                             {{-- Checkbox para cada dia da semana, com o valor sendo o nome do dia (ex: Domingo) --}}
-                                            <input class="form-check-input checkbox-day" type="checkbox" value="{{ $day }}" id="check{{ $day }}" name="day[]">
+                                            <input class="form-check-input checkbox-day" type="checkbox" value="{{ $day }}" id="check{{ $day }}" name="days[]">
 
                                             {{-- Label para o checkbox, associada ao respectivo checkbox pelo atributo "for" --}}
                                             <label class="form-check-label" for="check{{ $day }}">
@@ -93,7 +94,7 @@
                                             <div class="schedule-wrapper mb-3">
                                                 <div class="d-flex align-items-center mb-2">
                                                     {{-- Input para inserir o horário da sessão (formato de tempo) --}}
-                                                    <input type="time" class="form-control me-2" id="schedule" name="schedule[{{ $day }}][]" placeholder="Horário">
+                                                    <input type="time" class="form-control me-2" name="schedules[{{ $day }}][]" placeholder="Horário">
 
                                                     {{-- Botão de remover horários --}}
                                                     <button type="button" class="btn btn-remove-schedule">Remover</button>
@@ -163,40 +164,40 @@
 
                                 {{-- Input de Imagem da Peça (Card) --}}
                                 <div class="mb-3">
-                                    <label for="image_id" class="form-label">Imagem do Cartão da Peça</label>
-                                    <input type="file" class="form-control"  id="image_id" name="image_id" aria-label="Escolher arquivo" required>
+                                    <label for="imagem_principal" class="form-label">Imagem do Cartão Principal da Peça</label>
+                                    <input type="file" class="form-control"  id="imagem_principal" name="imagem_principal" aria-label="Escolher arquivo" required>
                                 </div>
 
                                 {{-- Inputs do Banner --}}
 
                                 {{-- Input do Banner 1 --}}
                                 <div class="mb-3">
-                                    <label for="image_id" class="form-label">Imagem do Banner da Peça 1</label>
-                                    <input type="file" class="form-control"  aria-label="Escolher arquivo">
+                                    <label for="imagem_opcional_1" class="form-label">Imagem do Banner da Peça 1</label>
+                                    <input type="file" class="form-control" id="imagem_opcional_1" name="imagem_opcional_1" aria-label="Escolher arquivo">
                                 </div>
 
                                 {{-- Input do Banner 2 --}}
                                 <div class="mb-3">
-                                    <label for="image_id"  class="form-label">Imagem do Banner da Peça 2</label>
-                                    <input type="file" class="form-control" aria-label="Escolher arquivo">
+                                    <label for="imagem_opcional_2"  class="form-label">Imagem do Banner da Peça 2</label>
+                                    <input type="file" class="form-control" id="imagem_opcional_2" name="imagem_opcional_2" aria-label="Escolher arquivo">
                                 </div>
 
                                 {{-- Input do Banner 3 --}}
                                 <div class="mb-3">
-                                    <label for="image_id"  class="form-label">Imagem do Banner da Peça 3</label>
-                                    <input type="file" class="form-control" aria-label="Escolher arquivo">
+                                    <label for="imagem_opcional_3"  class="form-label">Imagem do Banner da Peça 3</label>
+                                    <input type="file" class="form-control" id="imagem_opcional_3" name="imagem_opcional_3" aria-label="Escolher arquivo">
                                 </div>
 
                                 {{-- Input do Banner 4 --}}
                                 <div class="mb-3">
-                                    <label for="image_id"  class="form-label">Imagem do Banner da Peça 4</label>
-                                    <input type="file" class="form-control" aria-label="Escolher arquivo">
+                                    <label for="imagem_opcional_4" class="form-label">Imagem do Banner da Peça 4</label>
+                                    <input type="file" class="form-control" id="imagem_opcional_4" name="imagem_opcional_4" aria-label="Escolher arquivo">
                                 </div>
 
                                 {{-- Input do Banner 5 --}}
                                 <div class="mb-3">
-                                    <label for="image_id"  class="form-label">Imagem do Banner da Peça 5</label>
-                                    <input type="file" class="form-control" aria-label="Escolher arquivo">
+                                    <label for="imagem_opcional_5"  class="form-label">Imagem do Banner da Peça 5</label>
+                                    <input type="file" class="form-control" id="imagem_opcional_5" name="imagem_opcional_5" aria-label="Escolher arquivo">
                                 </div>
 
                             </div>
@@ -325,9 +326,9 @@
                                 
                                 {{-- Input de Co-produção --}}
                                 <div class="mb-3">
-                                    <label for="coProduçãoEsp" class="form-label">Co-produção</label>
+                                    <label for="coProducaoEsp" class="form-label">Co-produção</label>
                                     <input type="text" class="form-control" 
-                                    id="coProduçãoEsp" name="coProduçãoEsp" placeholder="Insira um ou mais representantes para co-produção" value="">
+                                    id="coProducaoEsp" name="coProducaoEsp" placeholder="Insira um ou mais representantes para co-produção" value="">
                                 </div>
 
                                 {{-- Input de Agradecimentos --}}
@@ -432,59 +433,73 @@
                         </button>
                     </div>
 
-                    {{-- Tabela de Peças --}}
-                    <table class="table table-striped table-bordered text-center align-middle">
+    {{-- Tabela de Peças --}}
+    <table class="table table-striped table-bordered text-center align-middle">
+        {{-- Cabeçalho da Tabela de Peças --}}
+        <thead>
+            <tr>
+                <th scope="col" class="roboto-regular">ID</th>
+                <th scope="col" class="roboto-regular">Nome da Peça</th>
+                <th scope="col" class="roboto-regular">Data</th>
+                <th scope="col" class="roboto-regular">Ação</th>
+            </tr>
+        </thead>
 
-                        {{-- Cabeçalho da Tabela de Peças --}}
-                        <thead>
-                            <tr>
-                                <th scope="col" class="roboto-regular">ID</th>
-                                <th scope="col" class="roboto-regular">Nome da Peça</th>
-                                <th scope="col" class="roboto-regular">Data</th>
-                                <th scope="col" class="roboto-regular">Ação</th>
-                            </tr>
-                        </thead>
+        {{-- Corpo da Tabela - Conteúdo dinâmico conforme as peças cadastradas no Banco de Dados --}}
+        <tbody>
+            @forelse($espetaculos as $espetaculo)
+                <tr>
+                    <td>{{ $espetaculo->id }}</td>
+                    <td>{{ $espetaculo->nomeEsp }}</td>
+                    <td>{{ date('d/m/Y', strtotime($espetaculo->tempEsp)) }}</td> <!-- Alterando para o campo de data que você possui -->
+                    
+                    {{-- Botões de Ação (editar, excluir e alterar visibilidade) --}}
+                    <td id="action-buttons">
+                        {{-- Botão de Editar Peça --}}
+                        <button class="action-buttons-style action-buttons-style--edit">
+                            <span class="bx--edit"></span>
+                        </button>
 
-                       
-                        {{-- Corpo da Tabela - Conteúdo dinâmico conforme as peças cadastradas no Banco de Dados --}}
-                        <tbody>
-                        
+                        {{-- Botão de Excluir Peça --}}
+                        <button class="action-buttons-style" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                            <span class="ph--trash-bold"></span>
+                        </button>
 
-                            {{-- Linhas da Tabela - Conteúdo dinâmico conforme as peças cadastradas no Banco de Dados --}}
-                            <tr>
-                                {{-- Campos da Peça --}}
-                                <th scope="row">N°ID</th>
-                                <td>Dinâmico</td>
-                                <td>Dinâmico</td>
-                               
-                                {{-- Botões de Ação (editar, excluir e alterar visibilidade) --}}
-                                <td id="action-buttons">
+                        {{-- Botão de Visibilidade da Peça --}}
+                        <label class="action-buttons-style action-buttons-style--visibility" data-bs-toggle="modal" data-bs-target="#visibilityModal">
+                            <input type="checkbox" id="visibility" name="visibility" >
+                            <span class="d-flex justify-content-center align-items-center"><span class="ri--eye-line"></span></span>
+                        </label>
+                    </td>
+                </tr>
+            @empty
+                <tr>
+                    <td colspan="4">Nenhum espetáculo cadastrado.</td>
+                </tr>
+            @endforelse
+        </tbody>
 
-                                    {{-- Botão de Editar Peça --}}
-                                    <button class="action-buttons-style action-buttons-style--edit"><span class="bx--edit"></span></button>
-
-                                    {{-- Botão de Excluir Peça --}}
-                                    <button class="action-buttons-style" data-bs-toggle="modal" data-bs-target="#deleteModal"><span class="ph--trash-bold"></span></button>
-
-                                    {{-- Botão de Visibilidade da Peça --}}
-                                    <label class="action-buttons-style action-buttons-style--visibility" data-bs-toggle="modal" data-bs-target="#visibilityModal">
-                                        <input type="checkbox" id="visibility" name="visibility" >
-                                        <span class="d-flex justify-content-center align-items-center"><span class="ri--eye-line"></span></span>
-                                    </label>
-
-                                </td>
-                            </tr>
-
-                        </tbody>
-
-                        {{-- Paginação das peças será feito posteriormente, ao estar com o Banco de Dados e Back-End (usando laravel e bootstrap para isso) --}}
-
-                      </table>
+        {{-- Paginação das peças será feito posteriormente, ao estar com o Banco de Dados e Back-End (usando Laravel e bootstrap para isso) --}}
+    </table>
 
                 </div>
 
             </div>
         </div>
     </div>
+
+    @section('content')
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="alert alert-danger">   
+
+            {{ session('error') }}
+        </div>
+    @endif
 
 @endsection

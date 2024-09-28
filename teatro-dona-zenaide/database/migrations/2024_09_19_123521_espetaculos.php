@@ -6,25 +6,22 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        // Criação da tabela "Cards" no banco de dados
+        // Criação da tabela 'espetaculos' no banco de dados
         Schema::create('espetaculos', function (Blueprint $table) {
             
-            $table->bigIncrements('id'); // ID é definido como auto-incremento
-            $table->foreignId('image_id')->constrained('images')->onDelete('cascade'); // FK para a imagem do card
+            // ID do espetáculo
+            $table->id(); 
 
             // INFORMAÇÕES DA PEÇA ------------------------------------------------------------------
             $table->string('nomeEsp', 255); // Nome do espetáculo
-            $table->date('tempEsp'); //Temporada do espetáculo
+            $table->date('tempEsp'); // Temporada do espetáculo
             $table->integer('duracaoEsp'); // Duração do espetáculo
             $table->string('classifEsp', 255); // Classificação indicativa
             $table->text('descEsp'); // Descrição do espetáculo
             $table->text('urlCompra'); // URL de compra de ingresso para o espetáculo 
-
+  
             // (OBRIGATÓRIO) FICHA TÉCNICA  ----------------------------------------------------------
             $table->string('roteiristaEsp', 255); // Roteirista (Responsável pelo texto)
             $table->text('elencoEsp'); // Elenco do espetáculo
@@ -34,33 +31,21 @@ return new class extends Migration
             $table->string('luzEsp', 255); // Responsável pela iluminação
             $table->string('sonoEsp', 255); // Responsável pela sonorização
             $table->string('producaoEsp', 255); // Produção do espetáculo
-
-             // (OPCIONAL) FICHA TÉCNICA  -------------------------------------------------------------
-             $table->string('costEsp', 255); // Costureira do espetáculo
-             $table->string('cenoAssistEsp', 255); // Assistente de cenografia
-             $table->string('cenoTec', 255); // Cenotécnico do espetáculo
-             $table->string('designEsp', 255); // Consultoria de Design do espetáculo
-             $table->string('coProduçãoEsp', 255); // Co-produção do espetáculo
-             $table->text('agradecimentos'); // Agradecimentos
-
-            $table->timestamps(); 
+  
+            // (OPCIONAL) FICHA TÉCNICA  -------------------------------------------------------------
+            $table->string('costEsp', 255)->nullable(); // Costureira do espetáculo
+            $table->string('cenoAssistEsp', 255)->nullable(); // Assistente de cenografia
+            $table->string('cenoTec', 255)->nullable(); // Cenotécnico do espetáculo
+            $table->string('designEsp', 255)->nullable(); // Consultoria de Design do espetáculo
+            $table->string('coProducaoEsp', 255)->nullable(); // Co-produção do espetáculo
+            $table->text('agradecimentos')->nullable(); // Agradecimentos
+  
+            $table->timestamps();  
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('espetaculos');
     }
 };
-
-
- /*Horários
-            $table->time('horaEsp_1'); // Horário 1
-            $table->time('horaEsp_2'); // Horário 2
-            $table->time('horaEsp_3'); // Horário 3
-            $table->time('horaEsp_4'); // Horário 4
-            $table->time('horaEsp_5'); // Horário 5
-            */
