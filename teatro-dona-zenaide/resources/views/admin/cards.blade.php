@@ -461,6 +461,7 @@
                     
                     {{-- Botões de Ação (editar, excluir e alterar visibilidade) --}}
                     <td id="action-buttons">
+                        
                         {{-- Botão de Editar Peça --}}
                         <button class="action-buttons-style action-buttons-style--edit">
                             <span class="bx--edit"></span>

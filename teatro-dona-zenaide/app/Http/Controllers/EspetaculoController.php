@@ -172,6 +172,7 @@ class EspetaculoController extends Controller
             return view('/admin/cards', compact('espetaculos'));
         }
 
+        /* BOTÕES DE AÇÃO: não configurados 
         // INDEX PARA O SITE PÚBLICO
         public function indexPublic()
         {
@@ -209,7 +210,8 @@ class EspetaculoController extends Controller
             // Retorna uma mensagem de sucesso
             $message = $espetaculo->oculto ? 'Espetáculo ocultado com sucesso!' : 'Espetáculo exibido com sucesso!';
             return redirect('/admin/cards')->with('success', $message);
-        }
+        }*/
+
  
     }
 

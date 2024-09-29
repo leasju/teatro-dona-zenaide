@@ -51,7 +51,7 @@ Route::post('/admin/cards', [EspetaculoController::class,'store']);
 Route::get('/admin/cards', [EspetaculoController::class,'index']);
 
 
-// * Botões de ação da lista de cards cadastrados
+/* * Botões de ação da lista de cards cadastrados
 
 // Rota para edição de espetáculo
 Route::get('/espetaculos/{id}/edit', [EspetaculoController::class,'edit']);
@@ -65,4 +65,4 @@ Route::delete('/espetaculos/{id}', [EspetaculoController::class,'destroy']);
 // Rota para ocultar/exibir espetáculo 
 Route::put('/espetaculos/{id}/ocultar', [EspetaculoController::class,'ocultar']);
 
-
+*/
