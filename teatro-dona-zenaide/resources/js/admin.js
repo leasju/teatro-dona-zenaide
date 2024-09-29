@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function () {
 
     // Inicializa o flatpickr para o input de temporada
-    const seasonPicker = flatpickr("#season", {
+    const seasonPicker = flatpickr("#tempEsp", {
         mode: "range",
         dateFormat: "d/m/Y",
     });
