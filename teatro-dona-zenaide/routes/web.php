@@ -44,6 +44,9 @@ Route::get('/admin/cards', function() {
 // Rota por POST para o método "loginAdm" da classe "LoginController"
 Route::post('/admin/login', [LoginController::class,'loginAdm']);
 
+// Rota por GET para o método "logout" da classe "LoginController"
+Route::get('/admin/logout', [LoginController::class, 'logout']);
+
 // Rota para o método "store" da classe "EspetaculosController" 
 Route::post('/admin/cards', [EspetaculoController::class,'store']);
 

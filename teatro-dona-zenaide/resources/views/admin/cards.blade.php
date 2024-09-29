@@ -13,7 +13,10 @@
                 <a class="nav-link roboto-regular" id="admin-indicator" aria-current="page" href="#">Modo Administrador</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link roboto-regular" id="logout-icon" aria-current="page" href="#"><span class="material-symbols--logout" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Logout"></span></a>
+                {{-- Botão de Logout --}}
+                <a class="nav-link roboto-regular" id="logout-icon" aria-current="page" href="/admin/logout">
+                    <span class="material-symbols--logout" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Logout"></span>
+                </a>
             </li>
         </ul>
     </div>
