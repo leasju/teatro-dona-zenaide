@@ -457,7 +457,7 @@
                 <tr>
                     <td>{{ $espetaculo->id }}</td>
                     <td>{{ $espetaculo->nomeEsp }}</td>
-                    <td>{{ date('d/m/Y', strtotime($espetaculo->tempEsp)) }}</td> <!-- Alterando para o campo de data que você possui -->
+                    <td>{{ date('d/m/Y', strtotime($espetaculo->tempEsp)) }}</td> 
                     
                     {{-- Botões de Ação (editar, excluir e alterar visibilidade) --}}
                     <td id="action-buttons">

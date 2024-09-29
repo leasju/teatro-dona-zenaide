@@ -13,6 +13,7 @@ use App\Models\EspImagem;
 
 class EspetaculoController extends Controller
 {
+    // STORE:  Salvar dados do Espetaculo
     public function store(Request $request)
     {
         // dd($request->all());        
@@ -162,11 +163,53 @@ class EspetaculoController extends Controller
    
         } // Fim da funcão store
 
+
+        // INDEX:  Mostrar todos os espetáculos
         public function index()
         {
-            $espetaculos = Espetaculo::all(); // Pega todos os espetáculos
-            return view('/admin/cards', compact('espetaculos')); 
-        } 
+            // Exibe todos os espetáculos para o administrador (inclusive os ocultos)
+            $espetaculos = Espetaculo::all(); 
+            return view('/admin/cards', compact('espetaculos'));
+        }
+
+        // INDEX PARA O SITE PÚBLICO
+        public function indexPublic()
+        {
+            // Exibe apenas os espetáculos não ocultos para o site público
+            $espetaculos = Espetaculo::where('oculto', false)->get();
+            return view('/', compact('espetaculos'));
+        }
+
+        // EDIT:  Editar um espetáculo
+        public function edit($id)
+        {
+            $espetaculo = Espetaculo::findOrFail($id); // Busca o espetáculo pelo ID
+            return view('/admin/cards', compact('espetaculo')); // Carrega o formulário de edição
+        }
+
+        // DESTROY:  Deletar um espetáculo
+        public function destroy($id)
+        {
+            $espetaculo = Espetaculo::findOrFail($id);
+            $espetaculo->delete(); 
+
+            return redirect('/admin/cards')->with('success', 'Espetáculo excluído com sucesso!');
+        }
+
+        // OCULTAR:   Ocultar um espetáculo
+        public function ocultar($id)
+        {
+            // Busca o espetáculo pelo ID
+            $espetaculo = Espetaculo::findOrFail($id);
+
+            // Alterna o estado de ocultação
+            $espetaculo->oculto = !$espetaculo->oculto;
+            $espetaculo->save(); // Salva a mudança no banco de dados
+
+            // Retorna uma mensagem de sucesso
+            $message = $espetaculo->oculto ? 'Espetáculo ocultado com sucesso!' : 'Espetáculo exibido com sucesso!';
+            return redirect('/admin/cards')->with('success', $message);
+        }
  
     }
 
