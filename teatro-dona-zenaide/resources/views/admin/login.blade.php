@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row d-flex justify-content-center align-items-center vh-100">
 
-                <div id="login-box" class="col-md-6">
+                <div id="login-box" class="col-xxl-6 col-xl-7 col-lg-9 col-md-10 col-sm-12">
 
                     {{-- Título de Login --}}
                     <h1 class="roboto-medium text-center mb-5">Login</h1>
@@ -34,7 +34,7 @@
                             @error('user')
                                 <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center mt-3" role="alert">
                                     <span class="jam--triangle-danger-f bi flex-shrink-0 me-2"></span>
-                                    {{ $message }}
+                                    <p class="roboto-regular">{{ $message }}</p>
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
                             @enderror
@@ -43,25 +43,27 @@
 
                         {{-- Input de Senha --}}
                         <h2 class="roboto-regular mb-3">Senha</h2>
-                        <div class="form-floating mb-5">
+                        <div class="form-floating password-input">
 
                             {{-- Input e Label de Senha --}}
                             <input type="password" class="form-control" id="pass" name="pass" placeholder="Senha" required>
-                            <label for="pass">Insira sua senha</label>
+                            <span class="ri--eye-line togglePassword" title="Mostrar senha"></span>
 
-                            {{-- Mensagem de erro para a senha --}}
-                            @error('pass')
-                                <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center mt-3" role="alert">
-                                    <span class="jam--triangle-danger-f bi flex-shrink-0 me-2"></span>
-                                    {{ $message }}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                            @enderror
+                            <label for="pass">Insira sua senha</label>
                         
                         </div>
 
+                        {{-- Mensagem de erro para a senha --}}
+                        @error('pass')
+                            <div class="alert alert-danger alert-password alert-dismissible fade show d-flex align-items-center mt-3" role="alert">
+                                <span class="jam--triangle-danger-f bi flex-shrink-0 me-2"></span>
+                                <p class="roboto-regular">{{ $message }}</p>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @enderror
+
                         {{-- Botão de Entrar --}}
-                        <div class="d-flex justify-content-center">
+                        <div id="btn-login-div" class="d-flex justify-content-center">
                             <button class="main-btn" type="submit" name="submit">Entrar</button> 
                         </div>
                         
