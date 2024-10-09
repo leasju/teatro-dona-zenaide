@@ -16,6 +16,11 @@ html {
     background-color: var(--branco-preto);
 }
 
+main {
+    /* Background color da main */
+    background-color: var(--branco-preto);
+}
+
 /* 
  * Icons Iconify CSS
 */
@@ -470,7 +475,6 @@ html {
     opacity: 1;
     transform: translateY(0);  /* Volta à posição original */
 }
-
 
 /* 
  *  Dividers

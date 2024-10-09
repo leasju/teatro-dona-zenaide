@@ -14,8 +14,9 @@
             </li>
             <li class="nav-item">
                 {{-- Botão de Logout --}}
-                <a class="nav-link roboto-regular" id="logout-icon" aria-current="page" href="/admin/logout">
-                    <span class="material-symbols--logout" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="Logout"></span>
+                <a class="nav-link roboto-regular d-flex align-items-center gap-1" id="logout-icon" aria-current="page" data-bs-title="Logout" href="/admin/logout">
+                  Sair
+                  <span class="material-symbols--logout"></span>
                 </a>
             </li>
         </ul>
@@ -58,12 +59,13 @@
 
                                 {{-- Input de Nome da Peça --}}
                                 <div class="mb-3">
-                                    <label for="nomeEsp" class="form-label">Nome da Peça <span style="color: red;" title="Campo obrigatório">*</span></label>
+                                    <label for="nomeEsp" class="form-label">Nome da Peça <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" id="nomeEsp" name="nomeEsp" placeholder="Insira um nome" value="" required>
                                 </div>
                 
                                 {{-- Temporada da Peça --}}
-                                <label for="tempEsp" class="form-label">Temporada da Peça <span style="color: red;" title="Campo obrigatório">*</span></label>
+
+                                <label for="tempEsp" class="form-label">Temporada da Peça  <span class="red-star" title="Campo obrigatório">*</span></label>
                                 <div class="mb-3 input-group">
                                     <input type="text" class="form-control" id="tempEsp" name="tempEsp" placeholder="Selecione uma temporada..." value="" required>
                                     <span class="input-group-text">
@@ -73,8 +75,8 @@
                 
                                 {{-- Inputs de Sessões de Apresentação --}}
                                 <div class="mb-3 d-flex flex-column gap-2">
-                                    <legend>Dias e Horários das Sessões de Apresentação da Peça  <span style="color: red;" title="Campo obrigatório">*</span></legend>
 
+                                    <label>Dias e Horários das Sessões de Apresentação da Peça  <span class="red-star" title="Campo obrigatório">*</span></label>
                                     @foreach(['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'] as $day)
 
                                         {{-- Looping pelos dias da semana (de Domingo a Sábado) para criar checkboxes e inputs de horários --}}
@@ -117,13 +119,13 @@
 
                                 {{-- Input de Duração da Peça --}}
                                 <div class="mb-3">
-                                    <label for="duracaoEsp" class="form-label">Duração da Peça (em minutos) <span style="color: red;" title="Campo obrigatório">*</span></label>
+                                    <label for="duracaoEsp" class="form-label">Duração da Peça (em minutos) <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="number" step="5" min="0" class="form-control" id="duracaoEsp" name="duracaoEsp" placeholder="Insira uma duração (em minutos)" required>
                                 </div>
 
                                 {{-- Select de Classificação da Peça --}}
                                 <div class="mb-3">
-                                    <label for="classifEsp" class="form-label">Classificação da Peça <span style="color: red;" title="Campo obrigatório">*</span></label>
+                                    <label for="classifEsp" class="form-label">Classificação da Peça <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <select class="form-select" id="classifEsp" name="classifEsp" aria-label="Classificação" required>
                                         <option selected>Livre</option>
                                         <option value="1">10</option>
@@ -136,13 +138,13 @@
 
                                 {{-- Input de Descrição da Peça --}}
                                 <div class="mb-3">
-                                    <label for="descEsp" class="form-label">Descrição da Peça <span style="color: red;" title="Campo obrigatório">*</span></label>
-                                    <textarea class="form-control" rows="3" id="descEsp" name="descEsp" placeholder="Descrição" required></textarea>
+                                    <label for="descEsp" class="form-label">Descrição da Peça</label>
+                                    <textarea class="form-control" rows="3" id="descEsp" name="descEsp" placeholder="Descrição"></textarea>
                                 </div>
 
                                 {{-- Input de URL/Link de Compra da Peça --}}
                                 <div class="mb-3">
-                                    <label for="urlCompra" class="form-label">URL/Link de Compra da Peça <span style="color: red;" title="Campo obrigatório">*</span></label>
+                                    <label for="urlCompra" class="form-label">URL/Link de Compra da Peça <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="url" class="form-control" id="urlCompra" name="urlCompra" placeholder="https://exemplo.com" required>
                                 </div>
                 
@@ -167,7 +169,7 @@
 
                                 {{-- Input de Imagem da Peça (Card) --}}
                                 <div class="mb-3">
-                                    <label for="imagem_principal" class="form-label">Imagem do Cartão Principal da Peça <span style="color: red;" title="Campo obrigatório">*</span></label>
+                                    <label for="imagem_principal" class="form-label">Imagem do Cartão Principal da Peça <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="file" class="form-control"  id="imagem_principal" name="imagem_principal" accept="image/*" aria-label="Escolher arquivo" required>
                                     <small class="text-muted">Formatos de imagem aceitos: .jpeg, .png, .bmp, .gif, .svg ou .webp</small>
                                 </div>
@@ -231,48 +233,47 @@
 
                                 {{-- Input de Texto --}}
                                 <div class="mb-3">
-                                    <label for="roteiristaEsp" class="form-label">Roteiro <span style="color: red;" title="Campo obrigatório">*</span></label>
+                                    <label for="roteiristaEsp" class="form-label">Roteiro <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" id="roteiristaEsp" name="roteiristaEsp" placeholder="Insira um ou mais representantes para roteiro" value="" required>
                                 </div>
                                 
                                 {{-- Input de Elenco --}}
                                 <div class="mb-3">
-                                    <label for="elencoEsp" class="form-label">Elenco <span style="color: red;" title="Campo obrigatório">*</span></label>
+                                    <label for="elencoEsp" class="form-label">Elenco <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
-                                    id="elencoEsp" name="elencoEsp"  placeholder="Insira um ou mais representantes para elenco" value="" required>
-                                    
+                                    id="elencoEsp" name="elencoEsp"  placeholder="Insira um ou mais representantes para elenco" value="" required>   
                                 </div>
 
                                 {{-- Input de Direção --}}
                                 <div class="mb-3">
-                                    <label for="direcaoEsp" class="form-label">Direção <span style="color: red;" title="Campo obrigatório">*</span></label>
+                                    <label for="direcaoEsp" class="form-label">Direção <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" id="direcaoEsp" name="direcaoEsp" placeholder="Insira um ou mais representantes para direção" value="" required>
                                 </div>
 
                                 {{-- Input de Figurino --}}
                                 <div class="mb-3">
-                                    <label for="figurinoEsp" class="form-label">Figurino <span style="color: red;" title="Campo obrigatório">*</span></label>
+                                    <label for="figurinoEsp" class="form-label">Figurino <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
                                     id="figurinoEsp" name="figurinoEsp" placeholder="Insira um ou mais representantes para figurino" value="" required>
                                 </div>
                                 
                                 {{-- Input de Cenografia --}}
                                 <div class="mb-3">
-                                    <label for="cenoEsp" class="form-label">Cenografia <span style="color: red;" title="Campo obrigatório">*</span></label>
+                                    <label for="cenoEsp" class="form-label">Cenografia <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
                                     id="cenoEsp" name="cenoEsp" placeholder="Insira um ou mais representantes para cenografia" value="" required>
                                 </div>
                                 
                                 {{-- Input de Iluminação --}}
                                 <div class="mb-3">
-                                    <label for="luzEsp" class="form-label">Iluminação <span style="color: red;" title="Campo obrigatório">*</span></label>
+                                    <label for="luzEsp" class="form-label">Iluminação <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
                                     id="luzEsp" name="luzEsp" placeholder="Insira um ou mais representantes para iluminação" value="" required>
                                 </div>
 
                                 {{-- Input de Sonorização --}}
                                 <div class="mb-3">
-                                    <label for="sonoEsp" class="form-label">Sonorização <span style="color: red;" title="Campo obrigatório">*</span></label>
+                                    <label for="sonoEsp" class="form-label">Sonorização <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
                                     id="sonoEsp" name="sonoEsp" placeholder="Insira um ou mais representantes para sonorização" value="" required>
                                     
@@ -280,7 +281,7 @@
                                 
                                 {{-- Input de Produção --}}
                                 <div class="mb-3">
-                                    <label for="producaoEsp" class="form-label">Produção <span style="color: red;" title="Campo obrigatório">*</span></label>
+                                    <label for="producaoEsp" class="form-label">Produção <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
                                     id="producaoEsp" name="producaoEsp" placeholder="Insira um ou mais representantes para produção" value="" required>
                                 </div>                                
