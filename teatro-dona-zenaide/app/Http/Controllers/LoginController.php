@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
-
-
 use App\Models\Login;
 
 class LoginController extends Controller
 {
+
+    // Login
     public function loginAdm(Request $request)
     {
         // Verificar se os dados foram recebidos
@@ -40,5 +41,12 @@ class LoginController extends Controller
             Log::error('Senha inválida');
             return back()->withErrors(['pass' => 'Senha inválida']);
         }
+    }
+
+        // Logout 
+        public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect('/admin/login');
     }
 }

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\EspetaculosController;
+use App\Http\Controllers\EspetaculoController;
 
 // * Views Teatro
 
@@ -38,11 +38,34 @@ Route::get('/admin/cards', function() {
     return view('admin/cards');
 });
 
-// Rota por POST para o método "login_adm" da classe "LoginController"
+
+// * Rotas para métodos do controller (administrador)
+
+// Rota por POST para o método "loginAdm" da classe "LoginController"
 Route::post('/admin/login', [LoginController::class,'loginAdm']);
 
-// Rota para o método "store" da classe "EspetaculosController" 
-Route::post('/admin/cards', [EspetaculosController::class,'store']);
+// Rota por GET para o método "logout" da classe "LoginController"
+Route::get('/admin/logout', [LoginController::class, 'logout']);
 
-/* Rota para o método "index"
-Route::post('/admin/cards', [EspetaculosController::class, 'index']); */
+// Rota para o método "store" da classe "EspetaculosController" 
+Route::post('/admin/cards', [EspetaculoController::class,'store']);
+
+// Rota para o método "index" da classe "EspetaculosController"
+Route::get('/admin/cards', [EspetaculoController::class,'index']);
+
+
+/* * Botões de ação da lista de cards cadastrados
+
+// Rota para edição de espetáculo
+Route::get('/espetaculos/{id}/edit', [EspetaculoController::class,'edit']);
+
+// Rota para atualização de espetáculo 
+Route::put('/espetaculos/{id}', [EspetaculoController::class,'update']);
+
+// Rota para exclusão de espetáculo 
+Route::delete('/espetaculos/{id}', [EspetaculoController::class,'destroy']);
+
+// Rota para ocultar/exibir espetáculo 
+Route::put('/espetaculos/{id}/ocultar', [EspetaculoController::class,'ocultar']);
+
+*/
