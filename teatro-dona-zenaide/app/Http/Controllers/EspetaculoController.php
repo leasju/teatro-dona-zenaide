@@ -21,7 +21,7 @@ class EspetaculoController extends Controller
 
             // Informações da peça 
             'nomeEsp' => 'required',
-            'tempEsp' => 'required|date',
+            'tempEsp' => 'required',
             'duracaoEsp' => 'required',
             'classifEsp' => 'required',
             'descEsp' => 'required',

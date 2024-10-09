@@ -16,7 +16,7 @@ return new class extends Migration
 
             // INFORMAÇÕES DA PEÇA ------------------------------------------------------------------
             $table->string('nomeEsp', 255); // Nome do espetáculo
-            $table->date('tempEsp'); // Temporada do espetáculo
+            $table->string('tempEsp'); // Temporada do espetáculo
             $table->integer('duracaoEsp'); // Duração do espetáculo
             $table->string('classifEsp', 255); // Classificação indicativa
             $table->text('descEsp'); // Descrição do espetáculo
