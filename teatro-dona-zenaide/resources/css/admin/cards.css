@@ -282,6 +282,13 @@
     font-size: 24px;
 }
 
+/* Red Star - Campo Obrigatório */
+
+.red-star {
+    /* Cor do asterisco nos campos obrigatórios */
+    color: var(--vermelho-geral);
+}
+
 /* 
  * Modal Buttons
 */
@@ -361,4 +368,49 @@
     width: 64px;
     height: 64px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000000' d='M12 3c5.392 0 9.878 3.88 10.819 9c-.94 5.12-5.427 9-10.819 9s-9.878-3.88-10.818-9C2.122 6.88 6.608 3 12 3m0 16a9.005 9.005 0 0 0 8.778-7a9.005 9.005 0 0 0-17.555 0A9.005 9.005 0 0 0 12 19m0-2.5a4.5 4.5 0 1 1 0-9a4.5 4.5 0 0 1 0 9m0-2a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5'/%3E%3C/svg%3E");
+}
+
+/* 
+ * @media Sections
+*/
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    #table-cards-box .table-top-content h1 {
+        /* Diminuindo o font size do título da tabela */
+        font-size: 28px;
+    }
+
+    header #admin-indicator {
+        /* Diminuindo o font size do texto de indicação do Modo Administrador */
+        font-size: 16px;
+    }
+
+    header #logout-icon {
+        /* Diminuindo o font size do texto de sair */
+        font-size: 14px;
+    }
+
+    .material-symbols--logout {
+        /* Diminuindo a largura e altura do ícone de logout */
+        width: 24px;
+        height: 24px;
+    }
+
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    #table-cards-box .table thead tr th {
+        /* Diminuindo o font size para os itens do cabeçalho da tabela */
+        font-size: 16px;
+    }
+    
+    #table-cards-box .table tbody tr {
+        /* Diminuindo o font size das linhas do corpo da tabela */
+        font-size: 14px;
+    }
+
 }
