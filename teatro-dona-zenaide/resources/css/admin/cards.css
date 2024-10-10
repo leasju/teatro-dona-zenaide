@@ -130,8 +130,8 @@
 
 .modal-header .btn-close {
     /* Removendo o efeito ao clicar no ícone de fechar do Modal */
-    outline: none;
-    box-shadow: none;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .modal-body {
@@ -164,6 +164,20 @@
     /* Cor de fundo e cor do texto do seletor de Escolher Arquivo do Input de Tipo File do Modal de Novo/Editar */
     background-color: var(--vermelho-geral) !important;
     color: var(--semibranco) !important;
+}
+
+input[type="time"] {
+    position: relative;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: block;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: transparent;
 }
 
 /* Accordion/Collapse Styles */
