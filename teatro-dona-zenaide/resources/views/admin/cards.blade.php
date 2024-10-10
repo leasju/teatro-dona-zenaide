@@ -67,7 +67,7 @@
 
                                 <label for="tempEsp" class="form-label">Temporada da Peça  <span class="red-star" title="Campo obrigatório">*</span></label>
                                 <div class="mb-3 input-group">
-                                    <input type="date" class="form-control" id="tempEsp" name="tempEsp" placeholder="Selecione uma temporada..." value="" required>
+                                    <input type="text" class="form-control" id="tempEsp" name="tempEsp" placeholder="Selecione uma temporada..." value="" required>
                                     <span class="input-group-text">
                                         <span class="fluent-mdl2--date-time"></span>
                                     </span>
@@ -461,7 +461,7 @@
                 <tr>
                     <td>{{ $espetaculo->id }}</td>
                     <td>{{ $espetaculo->nomeEsp }}</td>
-                    <td>{{ date('d/m/Y', strtotime($espetaculo->tempEsp)) }}</td> 
+                    <td>{{$espetaculo->tempEsp}}</td> 
                     
                     {{-- Botões de Ação (editar, excluir e alterar visibilidade) --}}
                     <td id="action-buttons">
