@@ -30,15 +30,6 @@
                             <input type="email" class="form-control" id="user" name="user" placeholder="nome@exemplo.com" required>
                             <label for="user">Insira seu e-mail</label>
 
-                            {{-- Mensagem de erro para o usuário --}}
-                            @error('user')
-                                <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center mt-3" role="alert">
-                                    <span class="jam--triangle-danger-f bi flex-shrink-0 me-2"></span>
-                                    <p class="roboto-regular">{{ $message }}</p>
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                            @enderror
-
                         </div>
 
                         {{-- Input de Senha --}}
@@ -53,9 +44,9 @@
                         
                         </div>
 
-                        {{-- Mensagem de erro para a senha --}}
-                        @error('pass')
-                            <div class="alert alert-danger alert-password alert-dismissible fade show d-flex align-items-center mt-3" role="alert">
+                        {{-- Mensagem de erro para login inválido --}}
+                        @error('error')
+                            <div class="alert alert-danger alert-password alert-dismissible fade show d-flex align-items-center mt-4" role="alert">
                                 <span class="jam--triangle-danger-f bi flex-shrink-0 me-2"></span>
                                 <p class="roboto-regular">{{ $message }}</p>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

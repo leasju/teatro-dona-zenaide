@@ -28,8 +28,8 @@ class LoginController extends Controller
         $ologin = Login::where('adm_user', $request->input('user'))->first();
 
         if (!$ologin) {
-            Log::error('Usuário não encontrado');
-            return back()->withErrors(['user' => 'Usuário não encontrado']);
+            Log::error('Usuário ou senha inválidos');
+            return back()->withErrors(['error' => 'Usuário ou senha inválidos']);
         }
 
         // Validação da senha inserida no forms de acordo com a registrada no banco de dados
@@ -38,13 +38,13 @@ class LoginController extends Controller
             return redirect('/admin/cards')->with('success', 'Login realizado com sucesso!');
             
         } else {
-            Log::error('Senha inválida');
-            return back()->withErrors(['pass' => 'Senha inválida']);
+            Log::error('Usuário ou senha inválidos');
+            return back()->withErrors(['error' => 'Usuário ou senha inválidos']);
         }
     }
 
-        // Logout 
-        public function logout(Request $request)
+    // Logout 
+    public function logout(Request $request)
     {
         Auth::logout();
         return redirect('/admin/login');
