@@ -332,17 +332,17 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     border: none;
 }
 
-.modal-footer .btn-confirm-action--edit, .modal-footer .btn-confirm-action--edit:active {
+.modal-footer .btn-confirm-action--edit, .modal-footer .btn-confirm-action--edit:hover, .modal-footer .btn-confirm-action--edit:active {
     /* Variável de cor de fundo do botão de confirmação */
     --modal-button-background-color: var(--amarelo);
 }
 
-.modal-footer .btn-confirm-action--delete, .modal-footer .btn-confirm-action--delete:active {
+.modal-footer .btn-confirm-action--delete, .modal-footer .btn-confirm-action--delete:hover, .modal-footer .btn-confirm-action--delete:active {
     /* Variável de cor de fundo do botão de confirmação */
     --modal-button-background-color: var(--vermelho-geral);
 }
 
-.modal-footer .btn-confirm-action--visibility, .modal-footer .btn-confirm-action--visibility:active {
+.modal-footer .btn-confirm-action--visibility, .modal-footer .btn-confirm-action--visibility:hover, .modal-footer .btn-confirm-action--visibility:active {
     /* Variável de cor de fundo do botão de confirmação */
     --modal-button-background-color: var(--azul);
 }
