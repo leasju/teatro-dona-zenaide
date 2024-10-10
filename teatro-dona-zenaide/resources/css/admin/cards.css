@@ -295,10 +295,10 @@
 
 /* Botão de Fechar Ação do Modal */
 
-.modal-footer .btn-exit, .modal-footer .btn-exit:active {
+.modal-footer .btn-exit, .modal-footer .btn-exit:hover, .modal-footer .btn-exit:active {
     /* Definindo a cor de fundo do botão de fechar do Modal */
-    background-color: var(--cinza);
-    color: var(--semibranco);
+    background-color: var(--cinza) !important;
+    color: var(--semibranco) !important;
 
     /* Removendo a borda do botão de fechar do Modal */
     border: none;
@@ -306,13 +306,13 @@
 
 /* Botão de Confirmar Ação do Modal */
 
-.modal-footer .btn-confirm-action, .modal-footer .btn-confirm-action:active {
+.modal-footer .btn-confirm-action, .modal-footer .btn-confirm-action:hover, .modal-footer .btn-confirm-action:active {
     /* Variável de cor de fundo do botão de confirmação */
     --modal-button-background-color: var(--verde);
 
     /* Definindo a cor de fundo do botão de confirmação do Modal */
-    background-color: var(--modal-button-background-color);
-    color: var(--semibranco);
+    background-color: var(--modal-button-background-color)  !important;
+    color: var(--semibranco) !important;
 
     /* Removendo a borda do botão de confirmação do Modal */
     border: none;

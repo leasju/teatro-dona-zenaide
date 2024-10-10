@@ -138,8 +138,8 @@
 
                                 {{-- Input de Descrição da Peça --}}
                                 <div class="mb-3">
-                                    <label for="descEsp" class="form-label">Descrição da Peça</label>
-                                    <textarea class="form-control" rows="3" id="descEsp" name="descEsp" placeholder="Descrição"></textarea>
+                                    <label for="descEsp" class="form-label">Descrição da Peça <span class="red-star" title="Campo obrigatório">*</span></label>
+                                    <textarea class="form-control" rows="3" id="descEsp" name="descEsp" placeholder="Descrição" required></textarea>
                                 </div>
 
                                 {{-- Input de URL/Link de Compra da Peça --}}
@@ -171,7 +171,7 @@
                                 <div class="mb-3">
                                     <label for="imagem_principal" class="form-label">Imagem do Cartão Principal da Peça <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="file" class="form-control"  id="imagem_principal" name="imagem_principal" accept="image/*" aria-label="Escolher arquivo" required>
-                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .png, .bmp, .gif, .svg ou .webp</small>
+                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .jpg, .png, .bmp, .gif, .svg ou .webp</small>
                                 </div>
 
                                 {{-- Inputs do Banner --}}
@@ -180,35 +180,35 @@
                                 <div class="mb-3">
                                     <label for="imagem_opcional_1" class="form-label">Imagem do Banner da Peça 1</label>
                                     <input type="file" class="form-control" id="imagem_opcional_1" name="imagem_opcional_1" accept="image/*" aria-label="Escolher arquivo">
-                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .png, .bmp, .gif, .svg ou .webp</small>
+                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .jpg, .png, .bmp, .gif, .svg ou .webp</small>
                                 </div>
 
                                 {{-- Input do Banner 2 --}}
                                 <div class="mb-3">
                                     <label for="imagem_opcional_2"  class="form-label">Imagem do Banner da Peça 2</label>
                                     <input type="file" class="form-control" id="imagem_opcional_2" name="imagem_opcional_2" accept="image/*" aria-label="Escolher arquivo">
-                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .png, .bmp, .gif, .svg ou .webp</small>
+                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .jpg, .png, .bmp, .gif, .svg ou .webp</small>
                                 </div>
 
                                 {{-- Input do Banner 3 --}}
                                 <div class="mb-3">
                                     <label for="imagem_opcional_3"  class="form-label">Imagem do Banner da Peça 3</label>
                                     <input type="file" class="form-control" id="imagem_opcional_3" name="imagem_opcional_3" accept="image/*" aria-label="Escolher arquivo">
-                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .png, .bmp, .gif, .svg ou .webp</small>
+                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .jpg, .png, .bmp, .gif, .svg ou .webp</small>
                                 </div>
 
                                 {{-- Input do Banner 4 --}}
                                 <div class="mb-3">
                                     <label for="imagem_opcional_4" class="form-label">Imagem do Banner da Peça 4</label>
                                     <input type="file" class="form-control" id="imagem_opcional_4" name="imagem_opcional_4" accept="image/*" aria-label="Escolher arquivo">
-                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .png, .bmp, .gif, .svg ou .webp</small>
+                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .jpg, .png, .bmp, .gif, .svg ou .webp</small>
                                 </div>
 
                                 {{-- Input do Banner 5 --}}
                                 <div class="mb-3">
                                     <label for="imagem_opcional_5"  class="form-label">Imagem do Banner da Peça 5</label>
                                     <input type="file" class="form-control" id="imagem_opcional_5" name="imagem_opcional_5" accept="image/*" aria-label="Escolher arquivo">
-                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .png, .bmp, .gif, .svg ou .webp</small>
+                                    <small class="text-muted">Formatos de imagem aceitos: .jpeg, .jpg, .png, .bmp, .gif, .svg ou .webp</small>
                                 </div>
 
                             </div>
