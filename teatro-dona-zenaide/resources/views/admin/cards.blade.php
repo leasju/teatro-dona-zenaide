@@ -699,7 +699,7 @@
                     {{-- Conteúdo do Topo da Tabela de Peças --}}
                     <div class="table-top-content d-flex justify-content-between align-items-center mb-5">
                         {{-- Título da Tabela --}}
-                        <h1 class="roboto-regular">Crie, Edite ou Exclua uma Peça</h1>
+                        <h1 class="roboto-regular">Crie, Edite, Exclua ou Altere a Visualização de uma Peça</h1>
 
                         {{-- Botão de Adicionar Peça --}}
                         <button class="main-btn main-btn--new" data-bs-toggle="modal" data-bs-target="#newModal">
@@ -708,58 +708,59 @@
                         </button>
                     </div>
 
-    {{-- Tabela de Peças --}}
-    <table class="table table-striped table-bordered text-center align-middle">
-        {{-- Cabeçalho da Tabela de Peças --}}
-        <thead>
-            <tr>
-                <th scope="col" class="roboto-regular">ID</th>
-                <th scope="col" class="roboto-regular">Nome da Peça</th>
-                <th scope="col" class="roboto-regular">Data</th>
-                <th scope="col" class="roboto-regular">Ação</th>
-            </tr>
-        </thead>
+                    {{-- Tabela de Peças --}}
+                    <table class="table table-striped table-bordered text-center align-middle">
+                        {{-- Cabeçalho da Tabela de Peças --}}
+                        <thead>
+                            <tr>
+                                <th scope="col" class="roboto-regular">ID</th>
+                                <th scope="col" class="roboto-regular">Nome da Peça</th>
+                                <th scope="col" class="roboto-regular">Data</th>
+                                <th scope="col" class="roboto-regular">Ação</th>
+                            </tr>
+                        </thead>
 
-        {{-- Corpo da Tabela - Conteúdo dinâmico conforme as peças cadastradas no Banco de Dados --}}
-        <tbody>
-            @forelse($espetaculos as $espetaculo)
-                <tr>
-                    <td>{{ $espetaculo->id }}</td>
-                    <td>{{ $espetaculo->nomeEsp }}</td>
-                    <td>{{$espetaculo->tempEsp}}</td> 
-                    
-                    {{-- Botões de Ação (editar, excluir e alterar visibilidade) --}}
-                    <td id="action-buttons">
-                        
-                        {{-- Botão de Editar Peça --}}
-                        <button class="action-buttons-style action-buttons-style--edit" data-bs-toggle="modal" data-bs-target="#editModal">
-                            <span class="bx--edit"></span>
-                        </button>
+                        {{-- Corpo da Tabela - Conteúdo dinâmico conforme as peças cadastradas no Banco de Dados --}}
+                        <tbody>
+                            @forelse($espetaculos as $espetaculo)
+                                <tr>
+                                    <td>{{ $espetaculo->id }}</td>
+                                    <td>{{ $espetaculo->nomeEsp }}</td>
+                                    <td>{{$espetaculo->tempEsp}}</td> 
+                                    
+                                    {{-- Botões de Ação (editar, excluir e alterar visibilidade) --}}
+                                    <td id="action-buttons">
+                                        
+                                        {{-- Botão de Editar Peça --}}
+                                        <button class="action-buttons-style action-buttons-style--edit" data-bs-toggle="modal" data-bs-target="#editModal">
+                                            <span class="bx--edit"></span>
+                                        </button>
 
-                        {{-- Botão de Excluir Peça --}}
-                        <button class="action-buttons-style" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                            <span class="ph--trash-bold"></span>
-                        </button>
+                                        {{-- Botão de Excluir Peça --}}
+                                        <button class="action-buttons-style" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <span class="ph--trash-bold"></span>
+                                        </button>
 
-                        {{-- Botão de Visibilidade da Peça --}}
-                        <label class="action-buttons-style action-buttons-style--visibility" data-bs-toggle="modal" data-bs-target="#visibilityModal">
-                            <input type="checkbox" id="visibility" name="visibility" >
-                            <span class="d-flex justify-content-center align-items-center"><span class="ri--eye-line"></span></span>
-                        </label>
-                    </td>
-                </tr>
-            @empty
-                <tr>
-                    <td colspan="4">Nenhum espetáculo cadastrado.</td>
-                </tr>
-            @endforelse
-        </tbody>
+                                        {{-- Botão de Visibilidade da Peça --}}
+                                        <label class="action-buttons-style action-buttons-style--visibility" data-bs-toggle="modal" data-bs-target="#visibilityModal">
+                                            <input type="checkbox" id="visibility" name="visibility" >
+                                            <span class="d-flex justify-content-center align-items-center"><span class="ri--eye-line"></span></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="4">Nenhum espetáculo cadastrado.</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
 
-        {{-- Paginação das peças será feito posteriormente, ao estar com o Banco de Dados e Back-End (usando Laravel e bootstrap para isso) --}}
-    </table>
+                    </table>
+
+                    {{-- Paginação dos Espetáculos --}}
+                    {{ $espetaculos->links() }}
 
                 </div>
-
             </div>
         </div>
     </div>

@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 use App\Models\Espetaculo;
 use App\Models\EspDia;
 use App\Models\EspHorario;
@@ -165,11 +166,15 @@ class EspetaculoController extends Controller
 
 
         // INDEX:  Mostrar todos os espetáculos
-        public function index()
+        public function index() : View
         {
             // Exibe todos os espetáculos para o administrador (inclusive os ocultos)
             $espetaculos = Espetaculo::all(); 
-            return view('/admin/cards', compact('espetaculos'));
+
+            // Retorna para a view '/admin/cards' e faz a paginação de 5 em 5 espetáculos por página
+            return view('/admin/cards', [
+                'espetaculos' => DB::table('espetaculos')->paginate(5)
+            ]); 
         }
 
         /* BOTÕES DE AÇÃO: não configurados 

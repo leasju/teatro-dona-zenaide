@@ -401,6 +401,58 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 /* 
+ * Pagination Classes
+*/
+
+/* Cor de texto para o texto de paginação com os resultados */
+.paginator-text {
+    color: var(--cinza);
+}
+
+/* Cor das variáveis de hover e focus nos links da paginação */
+.page-item {
+    --bs-pagination-hover-color: var(--preto);
+    --bs-pagination-focus-color: var(--preto);
+}
+
+/* Cor dos links de paginação (números) e sem borda e efeito */
+.page-item .page-link {
+    color: var(--preto);
+    border: none;
+
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Quando hover no link da página em número, manter a cor preta no número */
+.page-item .page-link:hover .page-link-hover {
+    color: var(--preto);
+    text-decoration: underline;
+}
+
+/* Cor de fundo e borda do link ativo da página em número */
+.page-item.active .page-link {
+    background-color: var(--vermelho-geral) !important;
+    border-color: var(--vermelho-geral) !important;
+}
+
+/* Manter a cor e sem underline no link ativo após hover */
+.page-item.active .page-link:hover .page-link-hover {
+    color: var(--semibranco) !important;
+    text-decoration: none;
+}
+
+/* Borda direita no botão de 'Anterior' na cor cinza */
+.page-item-prev {
+    border-right: 2px solid var(--cinza) !important;
+}
+
+/* Borda esquerda no botão de 'Próximo' na cor cinza */
+.page-item-next {
+    border-left: 2px solid var(--cinza) !important;
+}
+
+/* 
  * @media Sections
 */
 
