@@ -236,3 +236,30 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(element);
     });
 });
+
+// * Script para corrigir erro de "pulo" no link de contatos em telas menores que 768px
+
+document.addEventListener('DOMContentLoaded', function () {
+    const footerLink = document.querySelector('a[href="#contatos"]');
+    const footer = document.querySelector('#contatos');
+    const navbar = document.querySelector('.navbar');
+
+    if (footerLink && footer && navbar) {
+        footerLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Scroll inicial para revelar elementos ocultos
+            footer.scrollIntoView({ behavior: 'smooth' });
+            
+            // Recalcula e ajusta a posição após um breve atraso
+            setTimeout(() => {
+                const navbarHeight = navbar.offsetHeight;
+                const footerPosition = footer.getBoundingClientRect().top + window.scrollY;
+                window.scrollTo({
+                    top: footerPosition - navbarHeight,
+                    behavior: 'smooth'
+                });
+            }, 500); // Ajuste este valor conforme necessário
+        });
+    }
+});

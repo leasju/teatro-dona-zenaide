@@ -15,7 +15,7 @@
                 {{-- Conteúdo do Hero --}}
                 <div class="hero-content col-md-12">
                     <div class="hero-text">
-                        <h1 class="tnr-bold tnr-title-size tnr-title-size--xlg">TEATRO DONA <br>ZENAIDE</h1>
+                        <h1 class="tnr-bold tnr-title-size tnr-title-size--lg">TEATRO DONA <br>ZENAIDE</h1>
                         <p class="roboto-regular">Entre no palco da imaginação e deixe-se envolver pelas histórias que ganham vida sob os holofotes. Bem-vindo ao nosso universo teatral, onde cada cena é uma jornada única e emocionante. Descubra conosco a magia das artes cênicas e embarque em uma experiência que transcende o tempo e o espaço. O espetáculo está prestes a começar. Você está pronto para ser parte dessa história?</p>
                     </div>
 
@@ -35,7 +35,7 @@
         <div class="container-fluid">
 
                 {{-- Title: Em Cartaz --}}
-                <h2 class="tnr-bold tnr-title-size tnr-title-size--lg">EM CARTAZ</h2>
+                <h2 class="tnr-bold tnr-title-size">EM CARTAZ</h2>
 
                 {{-- Cards: Posteriormente, com o Banco de Dados, englobar os cards em um forelse de acordo com os dados vindos --}}
                 <div class="cards d-flex justify-content-center row">
@@ -73,7 +73,7 @@
                 {{-- Conteúdo do Sobre Nós --}}
                 <div class="col-lg-6 col-sm-12 d-flex justify-content-center align-items-center">
                     <div id="about-us-content">
-                        <h2 class="tnr-bold tnr-title-size tnr-title-size--lg">SEJA BEM VINDO AO TEATRO DONA ZENAIDE</h2>
+                        <h2 class="tnr-bold tnr-title-size">SEJA BEM VINDO AO TEATRO DONA ZENAIDE</h2>
                         <p class="roboto-light">Dê uma olhada em toda a estrutura de nosso local e fique a par de como as coisas funcionam por aqui!</p>
                         <a class="main-btn main-btn--about roboto-light" href="/sobre-nos">
                             <span>SAIBA MAIS SOBRE O TEATRO</span>

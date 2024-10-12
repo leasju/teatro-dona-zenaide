@@ -16,16 +16,6 @@
  * @media Sections - Your Theater Project Title Section
 */
 
-/* `xl` applies to large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {
-
-    /* Diminuindo o font size do título da seção de Título de Seu Projeto No Teatro */
-    #your-theater-project-title-section h1 {
-        font-size: 54px;
-    }
-
-}
-
 /* `md` applies to small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
 
@@ -94,29 +84,13 @@
 
 #call-to-action-banner-section #call-to-action-box p {
     /* Font size e cor do parágrafo do chamado ao artista */
-    font-size: 18px;
+    font-size: 16px;
     color: var(--texto-primario);
 }
 
 /* 
  * @media Sections - Call To Action Banner Section
 */
-
-/* `xl` applies to large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {
-
-    /* Diminuindo o font size do título da seção de Chamado ao Artista */
-    #call-to-action-banner-section #call-to-action-box h2 {
-        font-size: 40px;
-    }
-
-    /* Diminuindo o font size do parágrafo e do botão project da seção de Chamado ao Artista */
-    #call-to-action-banner-section #call-to-action-box p, .main-btn--project {
-        font-size: 16px;
-        --btn-font-size: 16px;
-    }
-
-}
 
 /* `lg` applies to medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
@@ -211,7 +185,7 @@
     margin: 0;
 
     /* Font size do subtítulo introdutório e bold */
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
 }
 
@@ -222,7 +196,7 @@
 
 #hold-your-event-section .hold-your-event-list h2 {
     /* Font size dos subtítulos da seção de Faça Seu Evento e bold */
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 700;
 
     /* Espaçamento embaixo do título da lista da seção de Faça Seu Evento */
@@ -230,8 +204,8 @@
 }
 
 #hold-your-event-section p, #hold-your-event-section li {
-    /* Font size do p e do li de 18px da seção de Faça Seu Evento */
-    font-size: 18px;
+    /* Font size do p e do li de 16px da seção de Faça Seu Evento */
+    font-size: 16px;
 }
 
 #hold-your-event-section h2, #hold-your-event-section p, #hold-your-event-section li {
@@ -243,31 +217,6 @@
  * @media Sections - Hold Your Event Section
 */
 
-/* `xl` applies to large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {
-
-    /* Diminuindo o font size do título de Faça Seu Evento da seção de Faça Seu Evento */
-    #hold-your-event-section .hold-your-event-introduction h1 {
-        font-size: 40px;
-    }
-
-    /* Diminuindo o font size do subtítulo introdutório da seção de Faça Seu Evento */
-    #hold-your-event-section .hold-your-event-introduction h2 {
-        font-size: 24px;
-    }
-
-    /* Diminuindo o font size dos subtítulos da seção de Faça Seu Evento */
-    #hold-your-event-section .hold-your-event-list h2 {
-        font-size: 20px;
-    }
-
-    /* Diminuindo o font size do p e do li da seção de Faça Seu Evento */
-    #hold-your-event-section p, #hold-your-event-section li {
-        font-size: 16px;
-    }
-
-}
-
 /* `md` applies to small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
 
@@ -278,12 +227,12 @@
 
     /* Diminuindo o font size do subtítulo introdutório da seção de Faça Seu Evento */
     #hold-your-event-section .hold-your-event-introduction h2 {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     /* Diminuindo o font size dos subtítulos da seção de Faça Seu Evento */
     #hold-your-event-section .hold-your-event-list h2 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     /* Diminuindo o font size do p e do li da seção de Faça Seu Evento */
@@ -313,13 +262,13 @@
 
     /* Diminuindo o font size e aumentando a altura de cada linha do subtítulo introdutório da seção de Faça Seu Evento */
     #hold-your-event-section .hold-your-event-introduction h2 {
-        font-size: 20px;
+        font-size: 18px;
         line-height: 30px;
     }
 
     /* Diminuindo o font size dos subtítulos da seção de Faça Seu Evento */
     #hold-your-event-section .hold-your-event-list h2 {
-        font-size: 16px;
+        font-size: 14px;
     }
     
 }

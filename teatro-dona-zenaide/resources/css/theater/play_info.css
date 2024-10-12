@@ -30,7 +30,7 @@
 
 #play-info-section h1 {
     /* Font size */
-    font-size: 48px;
+    font-size: 40px;
 
     /* Cor do título da peça teatral */
     color: var(--vermelho-geral);
@@ -41,7 +41,7 @@
 
 #play-info-section #play-info h2 {
     /* Font size e cor do texto */
-    font-size: 24px;
+    font-size: 20px;
     color: var(--vermelho-geral);
 
     /* Alinhamento centralizado */
@@ -62,8 +62,8 @@
 }
 
 #play-info-section p {
-    /* Font size de 24px para os parágrafos */
-    font-size: 24px;
+    /* Font size de 20px para os parágrafos */
+    font-size: 20px;
 
     /* Zerando a margin bottom dos parágrafos */
     margin-bottom: 0;
@@ -74,7 +74,7 @@
 
 #play-info-section #play-ticket-info {
     /* Font size e cor do parágrafo de aviso sobre a compra dos ingressos */
-    font-size: 20px;
+    font-size: 16px;
     color: var(--texto-secundario);
     
     /* Espaçamento do botão de 20px */
@@ -91,22 +91,6 @@
     /* Diminuindo o espaçamento entre os itens com os subtítulos da seção de Informações da Peça */
     #play-info-section .row {
         --bs-gutter-x: 50px;
-    }
-
-    /* Diminuindo o font size do título da seção de Informações da Peça */
-    #play-info-section h1 {
-        font-size: 40px
-    }
-
-    /* Diminuindo o font size dos subtítulos, parágrafos e botão play da seção de Informações da Peça */
-    #play-info-section #play-info h2, #play-info-section p, .main-btn--play {
-        font-size: 22px;
-        --btn-font-size: 22px;
-    }
-
-    /* Diminuindo o font size do parágrafo de aviso do Sympla da seção de Informações da Peça */
-    #play-info-section #play-ticket-info {
-        font-size: 18px;
     }
 
 }
@@ -139,8 +123,8 @@
         font-size: 30px
     }
 
-    /* Diminuindo o font size dos subtítulos, parágrafos e botão play da seção de Informações da Peça */
-    #play-info-section #play-info h2, #play-info-section p, .main-btn--play {
+    /* Diminuindo o font size dos subtítulos e parágrafos */
+    #play-info-section #play-info h2, #play-info-section p {
         font-size: 18px;
         --btn-font-size: 18px;
     }
@@ -154,12 +138,6 @@
     /* Diminuindo a largura do botão play da seção de Informações da Peça */
     .main-btn--play {
         --btn-width: 300px;
-    }
-
-    /* Diminuindo a largura e altura do ícone do botão play da seção de Informações da Peça */
-    .tabler--arrow-right {
-        width: 28px;
-        height: 28px;
     }
 
     /* Diminuindo o font size do parágrafo de aviso do Sympla da seção de Informações da Peça */
@@ -189,20 +167,24 @@
 
     /* Diminuindo o font size do título e o espaçamento das informações sobre a peça da seção de Informações da Peça */
     #play-info-section h1 {
-        font-size: 26px;
+        font-size: 24px;
         margin-bottom: 22.5px;
     }
 
-    /* Diminuindo o font size dos subtítulos, parágrafos e botão play da seção de Informações da Peça */
-    #play-info-section #play-info h2, #play-info-section p, .main-btn--play {
-        font-size: 16px;
-        --btn-font-size: 16px;
+    /* Diminuindo o font size dos subtítulos e parágrafos */
+    #play-info-section #play-info h2, #play-info-section p {
+        font-size: 14px;
+    }
+
+    /* Diminuindo o font size do botão de play */
+    .main-btn--play {
+        --btn-font-size: 14px;
     }
 
     /* Diminuindo a largura e altura do ícone do botão play da seção de Informações da Peça */
     .tabler--arrow-right {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
     }
 
     /* Diminuindo o font size do parágrafo de aviso do Sympla da seção de Informações da Peça */
@@ -237,7 +219,7 @@
 
 #datasheet-section #datasheet-content p {
     /* Font size e cor do parágrafo da ficha técnica */
-    font-size: 24px;
+    font-size: 22px;
     color: var(--semibranco);
 }
 

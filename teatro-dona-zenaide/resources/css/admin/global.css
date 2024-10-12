@@ -250,7 +250,7 @@ header .navbar-nav {
 
 header #admin-indicator {
     /* Fonte, cor e espaçamento entre as letras do item do Modo Administrador da navbar */
-    font-size: 20px;
+    font-size: 16px;
     color: var(--semibranco);
     letter-spacing: 2px;
 
@@ -271,10 +271,10 @@ header #admin-indicator:hover, #admin-indicator:visited, #admin-indicator:link {
 header #logout-icon {
     /* Cor e font size do texto se logout da Navbar */
     color: var(--semibranco);
-    font-size: 18px;
+    font-size: 16px;
 
     /* Centralizando o ícone de logout na Navbar */
-    padding-top: 16px;
+    padding-top: 10px;
 }
 
 header #logout-icon:hover {

@@ -22,7 +22,7 @@
 #hero-section p {
     /* Cor e tamanho do texto do parágrafo */
     color: var(--semibranco);
-    font-size: 20px;
+    font-size: 18px;
 
     /* Espaçamento do título */
     margin-top: 25px;
@@ -64,21 +64,6 @@
         width: 60%;
     }
 
-    /* Diminuindo o font size do título da seção de Hero */
-    #hero-section .hero-text h1 {
-        font-size: 54px;
-    }
-
-    /* Diminuindo o font size do parágrafo da seção de Hero */
-    #hero-section .hero-text p {
-        font-size: 18px;
-    }
-
-    /* Diminuindo o font size do botão da seção de Hero */
-    #hero-section .main-btn--hero {
-        --btn-font-size: 18px
-    }
-
     /* Diminuindo a largura e altura do ícone do botão da seção de Hero */
     .ri--arrow-down-s-line {
         width: 24px;
@@ -118,11 +103,6 @@
     /* Diminuindo o font size do parágrafo da seção de Hero */
     #hero-section .hero-text p {
         font-size: 16px;
-    }
-
-    /* Diminuindo o font size do botão da seção de Hero */
-    #hero-section .main-btn--hero {
-        --btn-font-size: 16px
     }
 
 }
@@ -238,7 +218,7 @@
     color: var(--texto-secundario);
 
     /* Tamanho do texto */
-    font-size: 18px;
+    font-size: 14px;
 }
 
 #cards-section .card-title {
@@ -249,7 +229,7 @@
     margin-top: 20px;
 
     /* Font Size do título do card */
-    font-size: 28px;
+    font-size: 24px;
 
     /* Centralizando o título */
     text-align: center;
@@ -290,27 +270,6 @@
     #cards-section h2 {
         font-size: 40px;
         padding: 95px 0 95px 50px;
-    }
-
-    /* Diminuindo o font size do horário do card da seção de Cards */
-    #cards-section .card-text {
-        font-size: 16px;
-    }
-
-    /* Diminuindo o font size do título do card da seção de Cards */
-    #cards-section .card-title {
-        font-size: 24px;
-    }
-
-    /* Diminuindo o font size do botão do card da seção de Cards */
-    #cards-section .main-btn--card {
-        --btn-font-size: 18px;
-    }
-
-    /* Diminuindo a largura e altura do ícone do botão do card da seção de Cards */
-    .fontisto--ticket {
-        width: 24px;
-        height: 24px;
     }
 
 }
@@ -373,19 +332,13 @@
         min-height: 400px;
     }
 
-    /* Diminuindo o font size do horário do card da seção de Cards */
-    #cards-section .card-text {
-        font-size: 14px;
-    }
-
     /* Diminuindo o font size do título do card da seção de Cards */
     #cards-section .card-title {
         font-size: 20px;
     }
 
-    /* Diminuindo o font size e zerando a margin do título do botão do card da seção de Cards */
+    /* Zerando a margin do título do botão do card da seção de Cards */
     #cards-section .main-btn--card {
-        --btn-font-size: 16px;
         margin-top: 0;
     }
 
@@ -478,7 +431,7 @@
 #about-us-section p {
     /* Cor e font size do parágrafo da seção de sobre nós */
     color: var(--semibranco);
-    font-size: 22px;
+    font-size: 18px;
 
     /* Espaçamento entre o título e o botão */
     margin: 40px 0;
@@ -512,15 +465,13 @@
         font-size: 40px;
     }
 
-    /* Diminuindo o font size e a margin top e bottom do parágrafo da seção de Sobre Nós */
+    /* Diminuindo a margin top e bottom do parágrafo da seção de Sobre Nós */
     #about-us-section #about-us-content p {
-        font-size: 20px;
         margin: 20px 0;
     }
 
-    /* Diminuindo o font size e o padding do botão about da seção de Sobre Nós */
+    /* Diminuindo o padding do botão about da seção de Sobre Nós */
     #about-us-section #about-us-content .main-btn--about {
-        --btn-font-size: 16px;
         --btn-padding: 20px 25px;
     }
 
@@ -555,9 +506,8 @@
         padding: 50px 0 50px 30px;
     }
 
-    /* Diminuindo o font size e a margin top e bottom do parágrafo da seção de Sobre Nós */
+    /* Diminuindo a margin top e bottom do parágrafo da seção de Sobre Nós */
     #about-us-section #about-us-content p {
-        font-size: 18px;
         margin: 15px 0;
     }
 
