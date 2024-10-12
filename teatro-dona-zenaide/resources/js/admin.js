@@ -286,10 +286,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    // Selecionando o input de temporada
+    let seasonInput = document.querySelector("#tempEsp");
+
     // Inicializa o flatpickr para o input de temporada
-    const seasonPicker = flatpickr("#tempEsp", {
+    let seasonPicker = flatpickr(seasonInput, {
         mode: "range",
         dateFormat: "d/m/Y",
+        locale: {
+          rangeSeparator: " até ",
+        },
     });
 
     // Função para mostrar/ocultar inputs de horários com base no checkbox
