@@ -9,7 +9,7 @@
 
     {{-- * About Banner Section * --}}
     <div class="d-flex justify-content-center align-items-center" id="about-banner-section">
-        <h1 class="tnr-bold tnr-title-size tnr-title-size--xlg">SOBRE NÓS</h1>
+        <h1 class="tnr-bold tnr-title-size tnr-title-size--lg">SOBRE NÓS</h1>
     </div>
 
     {{-- * About Content Section * --}}
@@ -66,7 +66,7 @@
 
                 {{-- Title: Características Técnicas --}}
                 <div class="technical-characteristics-title-div col-md-12 d-flex justify-content-center text-center">
-                    <h1 class="tnr-bold tnr-title-size tnr-title-size--xlg">Características Técnicas</h1>
+                    <h1 class="tnr-bold tnr-title-size tnr-title-size--lg">Características Técnicas</h1>
                 </div>
 
                 {{-- Menu de Navegação com Conteúdo Dinâmico --}}

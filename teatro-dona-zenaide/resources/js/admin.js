@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // * Script das Sessões de Apresentação das Peças
 
+// * Modal New
+
 // Garante que o código seja executado após o carregamento completo do DOM
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -115,14 +117,138 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// * Modal Edit
+
+// Garante que o código seja executado após o carregamento completo do DOM
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Mostrar ou ocultar o campo de horário quando marcar ou desmarcar o checkbox
+    document.querySelectorAll('.edit-form-check-input').forEach(function(checkbox) {  
+        checkbox.addEventListener('change', function() {  
+            let day = this.value;  
+            let schedulesDiv = document.getElementById('edit-schedules-' + day);  
+
+            if (this.checked) {  
+                schedulesDiv.classList.remove('d-none');  // Mostra a div de horários
+
+                // Verifica se já existe um input de horário
+                if (schedulesDiv.querySelector('.edit-schedule-wrapper').childElementCount === 0) {
+                    // Cria o primeiro input de horário sem o botão de remover
+                    let firstScheduleDiv = document.createElement('div');
+                    firstScheduleDiv.classList.add('d-flex', 'align-items-center', 'mb-2');
+
+                    let firstScheduleInput = document.createElement('input');
+                    firstScheduleInput.type = 'time';
+                    firstScheduleInput.name = 'edit-schedules[' + day + '][]';
+                    firstScheduleInput.classList.add('form-control', 'me-2');
+
+                    firstScheduleDiv.appendChild(firstScheduleInput);
+                    schedulesDiv.querySelector('.edit-schedule-wrapper').appendChild(firstScheduleDiv);
+                }
+            } else {  
+                schedulesDiv.classList.add('d-none');  
+                schedulesDiv.querySelector('.edit-schedule-wrapper').innerHTML = '';  // Remove todos os horários
+            }
+        });
+    });
+
+    // Função para adicionar eventos de remoção de horário
+    function addRemoveScheduleEvent(button) {
+        button.addEventListener('click', function() {  
+            this.parentElement.remove();  // Remove o horário ao clicar no botão de remover
+        });
+    }
+
+    // Função para adicionar um novo horário
+    function addSchedule(day) {
+        let scheduleWrapper = document.querySelector('#edit-schedules-' + day + ' .edit-schedule-wrapper');  
+
+        let scheduleDiv = document.createElement('div');
+        scheduleDiv.classList.add('d-flex', 'align-items-center', 'mb-2');  
+
+        let newSchedule = document.createElement('input');
+        newSchedule.type = 'time';  
+        newSchedule.name = 'edit-schedules[' + day + '][]';  
+        newSchedule.classList.add('form-control', 'me-2');  
+
+        let removeButton = document.createElement('button');
+        removeButton.type = 'button';  
+        removeButton.classList.add('btn', 'btn-danger', 'edit-btn-remove-schedule');  
+        removeButton.textContent = 'Remover';  
+
+        scheduleDiv.appendChild(newSchedule);
+        scheduleDiv.appendChild(removeButton);
+
+        scheduleWrapper.appendChild(scheduleDiv);
+
+        addRemoveScheduleEvent(removeButton);  // Adiciona o evento de remoção ao botão
+    }
+
+    // Adicionar mais horários
+    document.querySelectorAll('.edit-btn-add-schedule').forEach(function(button) {  
+        button.addEventListener('click', function() {  
+            let day = this.getAttribute('day-date');  
+            addSchedule(day);  
+        });
+    });
+
+    // Adiciona o evento de remover horário aos botões já existentes
+    document.querySelectorAll('.edit-btn-remove-schedule').forEach(function(button) {  
+        addRemoveScheduleEvent(button);  
+    });
+});
+
 // * Script para manter o primeiro item do accordion aberto por default
+
+// * Modal New
 
 // Garante que o código seja executado após o carregamento completo do DOM
 document.addEventListener('DOMContentLoaded', function() {
 
     // Adiciona um listener para o evento 'shown.bs.modal', que é disparado quando o modal é exibido
-    var neweditModal = document.getElementById('neweditModal');
-    neweditModal.addEventListener('shown.bs.modal', function () {
+    var editModal = document.getElementById('editModal');
+    editModal.addEventListener('shown.bs.modal', function () {
+        // Abre o primeiro item do accordion
+        var firstAccordionItem = document.querySelector('#accordionFormEdit .accordion-item:first-child .accordion-collapse');
+        
+        if (firstAccordionItem) {
+            // Certifica-se de que o item está visível
+            if (!firstAccordionItem.classList.contains('show')) {
+                var bsCollapse = new bootstrap.Collapse(firstAccordionItem, {
+                    toggle: true // Garante que o primeiro item do accordion seja exibido
+                });
+            }
+        }
+    });
+
+    // Adiciona um listener para o evento 'hidden.bs.modal', que é disparado quando o modal é fechado
+    editModal.addEventListener('hidden.bs.modal', function () {
+        // Opcional: Se você quiser garantir que o primeiro item do accordion seja fechado quando o modal é fechado,
+        // você pode adicionar o código abaixo. Caso contrário, você pode remover esta parte.
+
+        // Encontra o primeiro item do accordion
+        var firstAccordionItem = document.querySelector('#accordionFormEdit .accordion-item:first-child .accordion-collapse');
+        
+        if (firstAccordionItem) {
+            // Certifica-se de que o item está oculto ao fechar o modal
+            if (firstAccordionItem.classList.contains('show')) {
+                var bsCollapse = new bootstrap.Collapse(firstAccordionItem, {
+                    toggle: false // Fecha o primeiro item do accordion
+                });
+            }
+        }
+    });
+
+});
+
+// * Modal Edit
+
+// Garante que o código seja executado após o carregamento completo do DOM
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Adiciona um listener para o evento 'shown.bs.modal', que é disparado quando o modal é exibido
+    var newModal = document.getElementById('newModal');
+    newModal.addEventListener('shown.bs.modal', function () {
         // Abre o primeiro item do accordion
         var firstAccordionItem = document.querySelector('#accordionForm .accordion-item:first-child .accordion-collapse');
         
@@ -137,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Adiciona um listener para o evento 'hidden.bs.modal', que é disparado quando o modal é fechado
-    neweditModal.addEventListener('hidden.bs.modal', function () {
+    newModal.addEventListener('hidden.bs.modal', function () {
         // Opcional: Se você quiser garantir que o primeiro item do accordion seja fechado quando o modal é fechado,
         // você pode adicionar o código abaixo. Caso contrário, você pode remover esta parte.
 
@@ -156,14 +282,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-// * Script para resetar o Modal de Novo/Editar
+// * Script para resetar o Modal de Novo
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    // Selecionando o input de temporada
+    let seasonInput = document.querySelector("#tempEsp");
+
     // Inicializa o flatpickr para o input de temporada
-    const seasonPicker = flatpickr("#tempEsp", {
+    let seasonPicker = flatpickr(seasonInput, {
         mode: "range",
         dateFormat: "d/m/Y",
+        locale: {
+          rangeSeparator: " até ",
+        },
     });
 
     // Função para mostrar/ocultar inputs de horários com base no checkbox
@@ -210,11 +342,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Função para resetar o formulário
     function resetForm() {
         // Reseta todos os campos de input, textarea e select
-        const form = document.querySelector('#neweditModal form');
+        const form = document.querySelector('#newModal form');
         form.reset();
 
         // Reverte os checkboxes e campos dinâmicos
-        document.querySelectorAll('.form-check-input').forEach(checkbox => {
+        document.querySelectorAll('.clear-checkbox-day').forEach(checkbox => {
             checkbox.checked = false;
             toggleScheduleInputs(checkbox.value); // Reverte visibilidade dos inputs de horários
         });
@@ -241,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function () {
         resetForm();
 
         // Recria a instância do modal e mostra-o
-        const modal = document.getElementById('neweditModal');
+        const modal = document.getElementById('newModal');
         const modalInstance = bootstrap.Modal.getInstance(modal) || new bootstrap.Modal(modal);
         modalInstance.show();
     });

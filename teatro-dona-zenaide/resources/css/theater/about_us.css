@@ -24,16 +24,6 @@
  * @media Sections - About Banner Section
 */
 
-/* `xl` applies to large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {
-
-    /* Diminuindo o font size do título de Sobre Nós da seção de banner */
-    #about-banner-section h1 {
-        font-size: 54px;
-    }
-
-}
-
 /* `lg` applies to medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
 
@@ -113,13 +103,13 @@
 
 #about-content-section h2 {
     /* Font size e cor do título de introdução aos textos do conteúdo do sobre nós */
-    font-size: 32px;
+    font-size: 28px;
     color: var(--vermelho-geral);
 }
 
 #about-content-section p {
     /* Font size e justificando o parágrafo do conteúdo do sobre nós */
-    font-size: 18px;
+    font-size: 16px;
     text-align: justify;
 
     /* Cor do parágrafo */
@@ -148,16 +138,6 @@
     #about-content-section .row {
         justify-content: center !important;
         column-gap: 100px;
-    }
-
-    /* Diminuindo o font size do título de introdução aos textos do Conteúdo do Sobre Nós  */
-    #about-content-section h2 {
-        font-size: 28px;
-    }
-
-    /* Diminuindo o font size do parágrafo do Conteúdo do Sobre Nós */
-    #about-content-section p {
-        font-size: 16px;
     }
 
 }
@@ -274,7 +254,7 @@
 
 #technical-characteristics-section .nav-link {
     /* Font size e cor do texto do item da navbar */
-    font-size: 20px;
+    font-size: 16px;
     color: var(--semibranco);
 
     /* Sobrepondo a variável de border radius do bootstrap para manter a visualização quadrada */
@@ -303,7 +283,7 @@
 
 #technical-characteristics-section .technical-characteristics-ul {
     /* Font size e cor de texto da lista não ordenada do conteúdo das características técnicas */
-    font-size: 20px;
+    font-size: 16px;
     color: var(--semibranco);
 
     /* Gap entre os itens da lista de 20px */
@@ -319,21 +299,6 @@
 /* 
  * @media Sections - Technical Characteristics Section
 */
-
-/* `xl` applies to large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {
-
-    /* Diminuindo o font size do título da seção de Características Técnicas */
-    #technical-characteristics-section h1 {
-        font-size: 54px;
-    }
-
-    /* Diminuindo o font size dos itens da barra de navegação e dos itens da lista não ordenada da seção de Características Técnicas */
-    #technical-characteristics-section .nav-link, #technical-characteristics-section .technical-characteristics-ul {
-        font-size: 18px;
-    }
-    
-}
 
 /* `lg` applies to medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {

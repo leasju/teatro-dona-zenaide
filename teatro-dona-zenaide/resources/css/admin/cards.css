@@ -130,8 +130,8 @@
 
 .modal-header .btn-close {
     /* Removendo o efeito ao clicar no ícone de fechar do Modal */
-    outline: none;
-    box-shadow: none;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .modal-body {
@@ -141,14 +141,14 @@
 
 /* Modal New/Edit */
 
-#neweditModal .modal-body input, #neweditModal .modal-body select, #neweditModal .modal-body textarea {
+.neweditModal .modal-body input, .neweditModal .modal-body select, .neweditModal .modal-body textarea {
     /* Definindo a cor de fundo dos inputs do Corpo do Modal de Novo/Editar */
     background-color: var(--branco);
 }
 
-#neweditModal .modal-body input:focus, #neweditModal .modal-body input:active,
-#neweditModal .modal-body select:focus, #neweditModal .modal-body select:active,
-#neweditModal .modal-body textarea:focus, #neweditModal .modal-body textarea:active {
+.neweditModal .modal-body input:focus, .neweditModal .modal-body input:active,
+.neweditModal .modal-body select:focus, .neweditModal .modal-body select:active,
+.neweditModal .modal-body textarea:focus, .neweditModal .modal-body textarea:active {
     /* Removendo o efeito ao interagir com os inputs e os selects do Corpo do Modal de Novo/Editar */
     outline: none;
     box-shadow: none;
@@ -160,26 +160,40 @@
     border-color: var(--preto);
 }
 
-#neweditModal .modal-body input[type="file"]::file-selector-button, #neweditModal .modal-body input[type="file"]::file-selector-button:hover {
+.neweditModal .modal-body input[type="file"]::file-selector-button, .neweditModal .modal-body input[type="file"]::file-selector-button:hover {
     /* Cor de fundo e cor do texto do seletor de Escolher Arquivo do Input de Tipo File do Modal de Novo/Editar */
     background-color: var(--vermelho-geral) !important;
     color: var(--semibranco) !important;
 }
 
+input[type="time"] {
+    position: relative;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: block;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: transparent;
+}
+
 /* Accordion/Collapse Styles */
 
-#neweditModal .accordion .accordion-item {
+.neweditModal .accordion .accordion-item {
     /* Cor de fundo e cor do texto */
     background-color: var(--branco);
     color: var(--preto);
 }
 
-#neweditModal .accordion-button:focus {
+.neweditModal .accordion-button:focus {
     /* Removendo os estilos do Bootstrap */
     box-shadow: none;
 }
 
-#neweditModal .accordion-button:not(.collapsed) {
+.neweditModal .accordion-button:not(.collapsed) {
     /* Alterando a cor de fundo e do texto quando o item do accordion for clicado */
     --bs-accordion-active-bg: var(--vermelho-geral);
     --bs-accordion-active-color: var(--branco);
@@ -189,14 +203,14 @@
     box-shadow: none;
 }
 
-#neweditModal .accordion-button:not(.collapsed)::after {
+.neweditModal .accordion-button:not(.collapsed)::after {
     /* Alterando a cor do ícone de seta quando o item do accordion for clicado */
     --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 16' fill='none' stroke='%23F8F9FA' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
 }
 
 /* Checkbox de Horários dos Dias de Sessões */
 
-#neweditModal .checkbox-day {
+.neweditModal .checkbox-day {
     /* Remove a aparência padrão do checkbox (nativa do navegador) */
     appearance: none;
 
@@ -219,7 +233,7 @@
 }
 
 /* Estilo para o "before", que representa o preenchimento do checkbox ao ser selecionado */
-#neweditModal .checkbox-day:before {
+.neweditModal .checkbox-day:before {
     /* Define um conteúdo vazio para criar o preenchimento */
     content: "";
 
@@ -247,17 +261,17 @@
 }
   
 /* Quando o checkbox está marcado, o preenchimento "before" escala para o tamanho completo */
-#neweditModal .checkbox-day:checked:before {
+.neweditModal .checkbox-day:checked:before {
     /* Aumenta a escala para 1, exibindo o preenchimento completo */
     transform: translate(-50%, -50%) scale(1);
 }
 
-#neweditModal .checkbox-day:checked, #neweditModal .checkbox-day:focus, #neweditModal .checkbox-day:active {
+.neweditModal .checkbox-day:checked, .neweditModal .checkbox-day:focus, .neweditModal .checkbox-day:active {
     /* Cor da borda da checkbox dos horários das sessões */
     border-color: var(--vermelho-geral) !important;
 }
 
-#neweditModal .form-check-label {
+.neweditModal .form-check-label {
     /* Centralizando o texto com a checkbox dos horários das sessões */
     position: relative;
     top: 2px;
@@ -265,12 +279,22 @@
 
 /* Input de Temporada */
 
-#neweditModal .input-group-text {
+#newModal .input-group-text {
     /* Cor de fundo do espaço pro ícone de temporada */
     background-color: var(--vermelho-geral);
 }
 
-#neweditModal #season:focus {
+#newModal #season:focus {
+    /* Sobrepondo estilos para manter a cor padrão do Bootstrap ao dar foco no input de temporada */
+    border-color: var(--bs-border-color) !important;
+}
+
+#editModal .input-group-text {
+    /* Cor de fundo do espaço pro ícone de temporada */
+    background-color: var(--vermelho-geral);
+}
+
+#editModal #editSeason:focus {
     /* Sobrepondo estilos para manter a cor padrão do Bootstrap ao dar foco no input de temporada */
     border-color: var(--bs-border-color) !important;
 }
@@ -295,10 +319,10 @@
 
 /* Botão de Fechar Ação do Modal */
 
-.modal-footer .btn-exit, .modal-footer .btn-exit:active {
+.modal-footer .btn-exit, .modal-footer .btn-exit:hover, .modal-footer .btn-exit:active {
     /* Definindo a cor de fundo do botão de fechar do Modal */
-    background-color: var(--cinza);
-    color: var(--semibranco);
+    background-color: var(--cinza) !important;
+    color: var(--semibranco) !important;
 
     /* Removendo a borda do botão de fechar do Modal */
     border: none;
@@ -306,36 +330,36 @@
 
 /* Botão de Confirmar Ação do Modal */
 
-.modal-footer .btn-confirm-action, .modal-footer .btn-confirm-action:active {
+.modal-footer .btn-confirm-action, .modal-footer .btn-confirm-action:hover, .modal-footer .btn-confirm-action:active {
     /* Variável de cor de fundo do botão de confirmação */
     --modal-button-background-color: var(--verde);
 
     /* Definindo a cor de fundo do botão de confirmação do Modal */
-    background-color: var(--modal-button-background-color);
-    color: var(--semibranco);
+    background-color: var(--modal-button-background-color)  !important;
+    color: var(--semibranco) !important;
 
     /* Removendo a borda do botão de confirmação do Modal */
     border: none;
 }
 
-.modal-footer .btn-confirm-action--edit, .modal-footer .btn-confirm-action--edit:active {
+.modal-footer .btn-confirm-action--edit, .modal-footer .btn-confirm-action--edit:hover, .modal-footer .btn-confirm-action--edit:active {
     /* Variável de cor de fundo do botão de confirmação */
     --modal-button-background-color: var(--amarelo);
 }
 
-.modal-footer .btn-confirm-action--delete, .modal-footer .btn-confirm-action--delete:active {
+.modal-footer .btn-confirm-action--delete, .modal-footer .btn-confirm-action--delete:hover, .modal-footer .btn-confirm-action--delete:active {
     /* Variável de cor de fundo do botão de confirmação */
     --modal-button-background-color: var(--vermelho-geral);
 }
 
-.modal-footer .btn-confirm-action--visibility, .modal-footer .btn-confirm-action--visibility:active {
+.modal-footer .btn-confirm-action--visibility, .modal-footer .btn-confirm-action--visibility:hover, .modal-footer .btn-confirm-action--visibility:active {
     /* Variável de cor de fundo do botão de confirmação */
     --modal-button-background-color: var(--azul);
 }
 
 /* Botão de Limpar Modal */
 
-#neweditModal .btn-clear-modal {
+#newModal .btn-clear-modal {
     /* Cor de fundo e cor do texto do botão de 'Limpar'*/
     background-color: var(--amarelo);
     color: var(--semibranco);
@@ -346,7 +370,13 @@
 
 /* Botão de Adicionar e Remover Horários */
 
-#neweditModal .btn-add-schedule, #neweditModal .btn-remove-schedule {
+#newModal .btn-add-schedule, #newModal .btn-remove-schedule {
+    /* Cor de fundo e cor do texto do botão de 'Novo horário' e do botão de 'Remover' */
+    background-color: var(--vermelho-geral);
+    color: var(--semibranco);
+}
+
+#editModal .edit-btn-add-schedule, #editModal .edit-btn-remove-schedule {
     /* Cor de fundo e cor do texto do botão de 'Novo horário' e do botão de 'Remover' */
     background-color: var(--vermelho-geral);
     color: var(--semibranco);
@@ -368,6 +398,58 @@
     width: 64px;
     height: 64px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000000' d='M12 3c5.392 0 9.878 3.88 10.819 9c-.94 5.12-5.427 9-10.819 9s-9.878-3.88-10.818-9C2.122 6.88 6.608 3 12 3m0 16a9.005 9.005 0 0 0 8.778-7a9.005 9.005 0 0 0-17.555 0A9.005 9.005 0 0 0 12 19m0-2.5a4.5 4.5 0 1 1 0-9a4.5 4.5 0 0 1 0 9m0-2a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5'/%3E%3C/svg%3E");
+}
+
+/* 
+ * Pagination Classes
+*/
+
+/* Cor de texto para o texto de paginação com os resultados */
+.paginator-text {
+    color: var(--cinza);
+}
+
+/* Cor das variáveis de hover e focus nos links da paginação */
+.page-item {
+    --bs-pagination-hover-color: var(--preto);
+    --bs-pagination-focus-color: var(--preto);
+}
+
+/* Cor dos links de paginação (números) e sem borda e efeito */
+.page-item .page-link {
+    color: var(--preto);
+    border: none;
+
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Quando hover no link da página em número, manter a cor preta no número */
+.page-item .page-link:hover .page-link-hover {
+    color: var(--preto);
+    text-decoration: underline;
+}
+
+/* Cor de fundo e borda do link ativo da página em número */
+.page-item.active .page-link {
+    background-color: var(--vermelho-geral) !important;
+    border-color: var(--vermelho-geral) !important;
+}
+
+/* Manter a cor e sem underline no link ativo após hover */
+.page-item.active .page-link:hover .page-link-hover {
+    color: var(--semibranco) !important;
+    text-decoration: none;
+}
+
+/* Borda direita no botão de 'Anterior' na cor cinza */
+.page-item-prev {
+    border-right: 2px solid var(--cinza) !important;
+}
+
+/* Borda esquerda no botão de 'Próximo' na cor cinza */
+.page-item-next {
+    border-left: 2px solid var(--cinza) !important;
 }
 
 /* 

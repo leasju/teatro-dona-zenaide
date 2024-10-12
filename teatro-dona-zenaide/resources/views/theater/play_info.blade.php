@@ -128,7 +128,7 @@
                 <div id="datasheet-content" class="col-md-12">
 
                     <div class="datasheet-item">
-                        <h2 class="tnr-bold tnr-title-size tnr-title-size--sm">Texto</h2>
+                        <h2 class="tnr-bold tnr-title-size tnr-title-size--md">Texto</h2>
                         <p class="roboto-regular">Wiesa Zanoda</p>
                     </div>
 

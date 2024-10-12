@@ -48,9 +48,11 @@
                     {{-- Offcanvas Navbar --}}
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
         
-                        {{-- Título e o Botão de Fechar da Offcanvas (menu lateral) --}}
+                        {{-- Logo e o Botão de Fechar da Offcanvas (menu lateral) --}}
                         <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Teatro Dona Zenaide</h5>
+                            <a class="navbar-brand d-flex align-items-center" href="/">
+                                <img src="{{ Vite::asset('resources/img/logo/logo-teatro-dona-zenaide.png') }}" class="img-fluid" alt="Logo Teatro Dona Zenaide">
+                            </a>
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         
@@ -114,7 +116,7 @@
     
                         {{-- Seção: Onde nos encontrar --}}
                         <div class="col-md-4 col-sm-12 footer-section-center">
-                            <h2 class="tnr-bold tnr-title-size tnr-title-size--xsm">ONDE NOS ENCONTRAR</h2>
+                            <h2 class="tnr-bold tnr-title-size tnr-title-size--sm">ONDE NOS ENCONTRAR</h2>
                             <div id="contact-icons" class="d-flex">
                                 <a href="https://wa.me/551938375160"><span class="ic--baseline-whatsapp icon-effect-wobble whatsapp-icon" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="(19) 3837-5160"></span></a>
                                 <a href="https://www.instagram.com/teatrodejaguariunaoficial/"><span class="mdi--instagram icon-effect-wobble instagram-icon" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="@teatrodejaguariunaoficial"></span></a>
@@ -123,13 +125,13 @@
 
                         {{-- Seção: Localização --}}
                         <div class="col-md-4 col-sm-12 footer-section-center">
-                            <h2 class="tnr-bold tnr-title-size tnr-title-size--xsm">LOCALIZAÇÃO</h2>
+                            <h2 class="tnr-bold tnr-title-size tnr-title-size--sm">LOCALIZAÇÃO</h2>
                             <p class="roboto-regular">R. Alfredo Bueno, 1151 - Centro, Jaguariúna - SP, 13820-000</p>
                         </div>
                         
                         {{-- Seção: Fale conosco --}}
                         <div class="col-md-4 col-sm-12 footer-section-text-center">
-                            <h2 class="tnr-bold tnr-title-size tnr-title-size--xsm">FALE CONOSCO</h2>
+                            <h2 class="tnr-bold tnr-title-size tnr-title-size--sm">FALE CONOSCO</h2>
                             <div class="form-inputs">
                                 <form action="">
                                     <div class="form-floating mb-3">

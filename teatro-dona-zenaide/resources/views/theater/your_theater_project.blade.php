@@ -10,7 +10,7 @@
     {{-- * Your Theater Project Title Section * --}}
     <div class="d-flex justify-content-center" id="your-theater-project-title-section">
         {{-- Title: Seu Projeto No Teatro --}}
-        <h1 class="tnr-bold tnr-title-size tnr-title-size--xlg text-center">SEU PROJETO NO TEATRO</h1>
+        <h1 class="tnr-bold tnr-title-size tnr-title-size--lg text-center">SEU PROJETO NO TEATRO</h1>
     </div>
 
     {{-- * Call To Action Banner Section * --}}
@@ -22,7 +22,7 @@
                 <div id="call-to-action-box" class="col-lg-6 col-sm-12 d-flex flex-column">
 
                     {{-- Title: Entre Em Cartaz --}}
-                    <h2 class="tnr-bold tnr-title-size tnr-title-size--lg">ENTRE EM CARTAZ</h2>
+                    <h2 class="tnr-bold tnr-title-size">ENTRE EM CARTAZ</h2>
 
                     {{-- Parágrafo de introdução aos artistas --}}
                     <p class="roboto-regular">Venha conosco dar vida as suas ideias, tira-las do papel. No palco do Dona Zenaide tudo isso é possivel!</p>
@@ -44,7 +44,7 @@
                 {{-- Introdução de Faça Seu Evento --}}
                 <div class="hold-your-event-introduction col-md-12 d-flex flex-column">
                     {{-- Title: Faça Seu Evento --}}
-                    <h1 class="tnr-bold tnr-title-size tnr-title-size--lg">FAÇA SEU EVENTO</h1>
+                    <h1 class="tnr-bold tnr-title-size">FAÇA SEU EVENTO</h1>
 
                     {{-- Subtitle: Torne o evento da sua empresa um grande espetáculo! --}}
                     <h2 class="roboto-regular">Torne o evento da sua empresa um grande espetáculo!</h2>

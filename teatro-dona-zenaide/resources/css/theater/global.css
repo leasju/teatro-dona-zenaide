@@ -66,8 +66,8 @@ main {
 /* Arrow Down Icon */
 .ri--arrow-down-s-line {
     display: inline-block;
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='m12 13.171l4.95-4.95l1.414 1.415L12 16L5.636 9.636L7.05 8.222z'/%3E%3C/svg%3E");
@@ -86,8 +86,8 @@ main {
 /* Ticket Icon */
 .fontisto--ticket {
     display: inline-block;
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='m13.817 5.669l4.504 4.501l-8.15 8.15l-4.501-4.504zm-3.006 13.944l8.8-8.8a.894.894 0 0 0 .001-1.28l-5.156-5.156a.926.926 0 0 0-1.28.001l-8.8 8.8a.894.894 0 0 0-.001 1.28l5.156 5.156a.926.926 0 0 0 1.28-.001m12.663-9.073L10.556 23.473c-.332.326-.787.527-1.289.527s-.957-.201-1.289-.527L6.184 21.68a2.74 2.74 0 0 0-3.875-3.874l.001-.001l-1.781-1.794c-.326-.332-.527-.787-.527-1.289s.201-.957.527-1.289L13.448.527C13.78.201 14.235 0 14.737 0s.957.201 1.289.527l1.781 1.781a2.74 2.74 0 1 0 3.874 3.874l.001-.001l1.794 1.781c.326.332.527.787.527 1.289s-.201.957-.527 1.289z'/%3E%3C/svg%3E");
@@ -106,8 +106,8 @@ main {
 /* Arrow Right Icon */
 .tabler--arrow-right {
     display: inline-block;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23f2f2f2' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 12h14m-6 6l6-6m-6-6l6 6'/%3E%3C/svg%3E");
@@ -242,20 +242,16 @@ main {
     font-size: var(--font-size);
 }
 
-.tnr-title-size--xlg {
-    --font-size: 64px;
+.tnr-title-size--lg {
+    --font-size: 54px;
 }
 
-.tnr-title-size--lg {
-    --font-size: 48px;
+.tnr-title-size--md {
+    --font-size: 28px;
 }
 
 .tnr-title-size--sm {
-    --font-size: 32px;
-}
-
-.tnr-title-size--xsm {
-    --font-size: 20px;
+    --font-size: 16px;
 }
 
 /* 
@@ -550,7 +546,7 @@ main {
     /* Variáveis do botão */
     --btn-width: 100%;
     --btn-padding: 10px 30px;
-    --btn-font-size: 18px;
+    --btn-font-size: 16px;
 
     /* Estilização do botão */
     width: var(--btn-width);
@@ -584,7 +580,6 @@ main {
     /* Alterando as variáveis do botão */
     --btn-width: 40%;
     --btn-padding: 7px 30px;
-    --btn-font-size: 20px;
     
     /* Espaçamento do parágrafo */
     margin-top: 15px;
@@ -594,7 +589,6 @@ main {
     /* Alterando as variáveis do botão */
     --btn-width: 90%;
     --btn-padding: 10px 30px;
-    --btn-font-size: 20px;
 
     /* Espaçamento do título */
     margin-top: 30px;
@@ -619,7 +613,7 @@ main {
 
 .main-btn--play {
     /* Alterando as variáveis do botão */
-    --btn-font-size: 24px;
+    --btn-font-size: 20px;
     --btn-width: 400px;
 }
 
@@ -749,14 +743,14 @@ header .navbar .container-fluid {
 
 header .navbar-nav {
     /* Espaçamento entre os itens da navbar */
-    column-gap: 100px;
+    column-gap: 50px;
     /* Alinhando os itens navbar ao centro */
     align-items: center;
 }
 
 header .nav-item a {
     /* Fonte e cor dos itens da navbar (exceto o item ativo) */
-    font-size: 20px;
+    font-size: 16px;
     color: var(--vermelho-geral);
 }
 
@@ -824,11 +818,6 @@ header .nav-item:hover::after {
 /* `xxl` applies to x-large devices (large desktops, less than 1400px) */
 @media (max-width: 1399.98px) { 
 
-    /* Diminuindo o espaçamento entre os itens da NavBar */
-    header .navbar-nav {
-        column-gap: 50px;
-    }
-
     /* Diminuindo o espaçamento lateral da NavBar */
     header .navbar .container-fluid {
         padding-left: 75px;
@@ -845,15 +834,10 @@ header .nav-item:hover::after {
         column-gap: 40px;
     }
 
-    /* Diminuindo a font size dos itens da NavBar */
-    header .nav-item a {
-        font-size: 16px;
-    }
-
     /* Diminuindo o espaçamento lateral da NavBar */
     header .navbar .container-fluid {
-        padding-left: 50px;
-        padding-right: 50px;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
 }
@@ -908,6 +892,11 @@ header .nav-item:hover::after {
         padding-right: 30px;
     }
 
+    header .nav-item a {
+        /* Diminuindo o font size dos links da Offcanvas Navbar */
+        font-size: 14px;
+    }
+
 }
 
 
@@ -941,12 +930,6 @@ header .nav-item:hover::after {
 /* 
  * Footer
 */
-
-.logo-brand, .navbar-brand {
-    /* Estilos da logo do projeto da navbar e do footer */
-    text-decoration: none;
-    color: var(--vermelho-geral) !important;
-}
 
 footer {
     /* Display flex e centralizando o footer no centro */
@@ -1044,11 +1027,6 @@ input:focus, input:active, textarea:focus, textarea:active {
     /* Aumentando a largura do footer para 80% da página */
     #footer-area {
         width: 80%;
-    }
-
-    /* Diminuindo o font size dos títulos de cada seção do Footer */
-    #footer-area h2 {
-        font-size: 18px;
     }
 
     /* Zerando o padding das colunas de cada seção do Footer */
