@@ -14,18 +14,16 @@ class Modal extends Component
     public $labelledby;
     public $title;
     public $modalclasswidth;
-    public $modalclass;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($id, $labelledby, $title, $modalclasswidth, $modalclass)
+    public function __construct($id, $labelledby, $title, $modalclasswidth)
     {
         $this->id = $id;
         $this->labelledby = $labelledby;
         $this->title = $title;
         $this->modalclasswidth = $modalclasswidth;
-        $this->modalclass = $modalclass;
     }
 
     /**
