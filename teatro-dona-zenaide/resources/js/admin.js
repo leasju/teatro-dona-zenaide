@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const oculto = document.getElementById('oculto')
 
     // Form do Modal de Visibilidade
-    const formModal = document.getElementById('formModal')
+    const formModal = document.getElementById('formModalVisibility')
 
     // Evento que é executado toda vez que o modal de visibilidade é aberto
     if (visibilityModal) {
@@ -192,12 +192,21 @@ document.addEventListener("DOMContentLoaded", function() {
             // O botão que abriu o modal
             const buttonModalOpen = event.relatedTarget;
 
+            // ID da peça relacionada ao botão que abriu o Modal de Visibilidade
+            const id = buttonModalOpen.getAttribute('data-espetaculo-id')
+
+            // Adiciona o ID do espetaculo na rota do form
+            formModal.action = `/admin/cards/${id}/visible`
+
+            // Nome da peça relacionada ao botão que abriu o Modal de Visibilidade
+            const nome = buttonModalOpen.getAttribute('data-espetaculo-name')
+
             // Verificar se o botão possui a classe "visivel"
             if (buttonModalOpen.classList.contains('visivel')) {
 
                 // Troca os textos do modal para o modo de "Ocultar"
                 btnModalVisibility.innerText = "Ocultar"
-                titleModalVisibility.innerText = "Esconder Peça"
+                titleModalVisibility.innerHTML = `Esconder Peça: <p class="modalNomeEsp">${nome}</p>`
                 textModalVisibility.innerHTML = "Deseja ocultar a peça?"
 
                 // Troca o ícone de olho do conteúdo do Modal de Visibilidade
@@ -214,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // Troca os textos do modal para o modo de "Exibir"
                 btnModalVisibility.innerText = "Exibir"
-                titleModalVisibility.innerText = "Mostrar Peça"
+                titleModalVisibility.innerHTML = `Mostrar Peça: <p class="modalNomeEsp">${nome}</p>`
                 textModalVisibility.innerHTML = "Deseja exibir a peça?"
 
                 // Troca o ícone de olho do conteúdo do Modal de Visibilidade
@@ -225,10 +234,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 oculto.value = 0
                 
             }
-
-            // Adiciona o ID do espetaculo na rota do form
-            // const id = buttonModalOpen.getAttribute('data-espetaculo-id')
-            // formModal.action = `/admin/cards/${id}/visible`
 
             btnModalVisibility.onclick = () => {
 
@@ -257,6 +262,46 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 });
+
+// * Script para o Modal de Exclusão
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Selecionando o Modal Delete
+    const deleteModal = document.getElementById("deleteModal")
+
+    // Selecionando o form do Modal Delete
+    const formModalDelete = document.getElementById("formModalDelete")
+
+    // Título do Modal de Visibilidade
+    const titleModalDelete = document.getElementById("deleteModalLabel")
+
+    // Se existe o Modal Delete...
+    if (deleteModal) {
+
+        // Lógica para ao abrir o Modal de Exclusão
+        deleteModal.addEventListener("show.bs.modal", event => {
+
+            // O botão que abriu o modal
+            const buttonModalOpen = event.relatedTarget;
+
+            // ID da peça relacionada ao botão que abriu o Modal de Exclusão
+            const id = buttonModalOpen.getAttribute('data-espetaculo-id')
+
+            // Adiciona o ID do espetaculo na rota do form
+            formModalDelete.action = `/admin/cards/${id}/delete`
+
+            // Nome da peça relacionada ao botão que abriu o Modal de Visibilidade
+            const nome = buttonModalOpen.getAttribute('data-espetaculo-name')
+
+            // Inserindo o texto no título do Modal com o nome da peça relacionada ao botão que abriu o Modal
+            titleModalDelete.innerHTML = `Deletar Peça: <p class="modalNomeEsp">${nome}</p>`
+
+        });
+
+    }
+
+})
 
 // * Script para resetar o Modal de Novo
 

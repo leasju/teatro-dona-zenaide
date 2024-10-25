@@ -296,6 +296,15 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     font-size: 24px;
 }
 
+.modalNomeEsp {
+    /* Font weight e underline no texto do nome do espetáculo nos Modais de Deletar e Visibilidade */
+    font-weight: 400;
+    text-decoration: underline;
+
+    /* Espaçemento na esquerda no texto do nome do espetáculo nos Modais de Deletar e Visibilidade */
+    margin-left: 7px;
+}
+
 /* Red Star - Campo Obrigatório */
 
 .red-star {

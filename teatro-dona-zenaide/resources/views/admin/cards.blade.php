@@ -341,8 +341,9 @@
 
             {{-- Botões do Footer --}}
             <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Fechar</button>
-            <form action="">
-                <button type="submit" class="btn btn-confirm-action btn-confirm-action--delete">Excluir</button>
+            <form action="" method="post" id="formModalDelete">
+                @method('delete')
+                <button type="submit" class="btn btn-confirm-action btn-confirm-action--delete" data-bs-dismiss="modal">Excluir</button>
             </form>
 
         </x-slot>
@@ -372,7 +373,7 @@
             {{-- Form para alterar a visibilidade da peça --}} 
             <form action="" method="post" id="formModalVisibility">
                 <input type="hidden" name="oculto" id="oculto">
-                <button type="button" class="btn btn-confirm-action btn-confirm-action--visibility" data-bs-dismiss="modal" id="btnModalVisibility">Ocultar</button>
+                <button type="submit" class="btn btn-confirm-action btn-confirm-action--visibility" data-bs-dismiss="modal" id="btnModalVisibility">Ocultar</button>
             </form>
 
         </x-slot>
@@ -428,12 +429,12 @@
                                         </button>
 
                                         {{-- Botão de Excluir Peça --}}
-                                        <button class="action-buttons-style" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                        <button class="action-buttons-style" data-bs-toggle="modal" data-bs-target="#deleteModal" data-espetaculo-id="{{ $espetaculo->id }}" data-espetaculo-name="{{ $espetaculo->nomeEsp }}">
                                             <span class="ph--trash-bold"></span>
                                         </button>
 
                                         {{-- Botão de Visibilidade da Peça --}}
-                                        <button type="button" class="action-buttons-style action-buttons-style--visibility visivel" data-bs-toggle="modal" data-bs-target="#visibilityModal" data-espetaculo-id="{{ $espetaculo->id }}">
+                                        <button type="button" class="action-buttons-style action-buttons-style--visibility visivel" data-bs-toggle="modal" data-bs-target="#visibilityModal" data-espetaculo-id="{{ $espetaculo->id }}" data-espetaculo-name="{{ $espetaculo->nomeEsp }}">
                                             <span class="d-flex justify-content-center align-items-center"><span class="eye-icon ri--eye-line"></span></span>
                                         </button>
 
