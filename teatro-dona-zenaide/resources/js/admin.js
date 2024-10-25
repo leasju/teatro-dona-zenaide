@@ -156,6 +156,108 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+// * Script para o Modal de Visibilidade
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    // Modal de Visibilidade
+    const visibilityModal = document.getElementById('visibilityModal')
+
+    // Ícone do Modal de Visibilidade
+    const visibilityContentIconModal = document.getElementById('eye-icon-modal')
+
+    // Botão do Modal de Visibilidade
+    const btnModalVisibility = document.getElementById('btnModalVisibility')
+
+    // Título do Modal de Visibilidade
+    const titleModalVisibility = document.getElementById("visibilityModalLabel")
+
+    // Texto do Modal de Visibilidade
+    const textModalVisibility = document.getElementById('textModalVisibility')
+
+    // Ícone do botão de abrir o Modal de Visibilidade
+    const iconModalVisibility = document.querySelector('.eye-icon')
+
+    // Campo do form "oculto"
+    const oculto = document.getElementById('oculto')
+
+    // Form do Modal de Visibilidade
+    const formModal = document.getElementById('formModal')
+
+    // Evento que é executado toda vez que o modal de visibilidade é aberto
+    if (visibilityModal) {
+
+        visibilityModal.addEventListener('show.bs.modal', event => {
+            
+            // O botão que abriu o modal
+            const buttonModalOpen = event.relatedTarget;
+
+            // Verificar se o botão possui a classe "visivel"
+            if (buttonModalOpen.classList.contains('visivel')) {
+
+                // Troca os textos do modal para o modo de "Ocultar"
+                btnModalVisibility.innerText = "Ocultar"
+                titleModalVisibility.innerText = "Esconder Peça"
+                textModalVisibility.innerHTML = "Deseja ocultar a peça?"
+
+                // Troca o ícone de olho do conteúdo do Modal de Visibilidade
+                visibilityContentIconModal.classList.remove("ri--eye-line")
+                visibilityContentIconModal.classList.add("ri--eye-off-line")
+
+                // Atribui 1 (invisível) para o campo oculto
+                oculto.value = 1
+                
+            }
+
+            // Verificar se o botão possui a classe "invisivel"
+            if (buttonModalOpen.classList.contains('invisivel')) {
+
+                // Troca os textos do modal para o modo de "Exibir"
+                btnModalVisibility.innerText = "Exibir"
+                titleModalVisibility.innerText = "Mostrar Peça"
+                textModalVisibility.innerHTML = "Deseja exibir a peça?"
+
+                // Troca o ícone de olho do conteúdo do Modal de Visibilidade
+                visibilityContentIconModal.classList.remove("ri--eye-off-line")
+                visibilityContentIconModal.classList.add("ri--eye-line")
+
+                // Atribui 0 (visível) para o campo oculto
+                oculto.value = 0
+                
+            }
+
+            // Adiciona o ID do espetaculo na rota do form
+            // const id = buttonModalOpen.getAttribute('data-espetaculo-id')
+            // formModal.action = `/admin/cards/${id}/visible`
+
+            btnModalVisibility.onclick = () => {
+
+                if (buttonModalOpen.classList.contains('visivel')) {
+                    buttonModalOpen.classList.remove('visivel');
+                    buttonModalOpen.classList.add('invisivel');
+
+                    // Altera o ícone de olho do botão de abrir o Modal de Visibilidade
+                    iconModalVisibility.classList.remove("ri--eye-line")
+                    iconModalVisibility.classList.add("ri--eye-off-line")
+                } 
+                
+                else {
+                    buttonModalOpen.classList.remove('invisivel');
+                    buttonModalOpen.classList.add('visivel');
+
+                    // Altera o ícone de olho do botão de abrir o Modal de Visibilidade
+                    iconModalVisibility.classList.remove("ri--eye-off-line")
+                    iconModalVisibility.classList.add("ri--eye-line")
+                }
+
+            }
+
+        })
+
+    }
+
+});
+
 // * Script para resetar o Modal de Novo
 
 document.addEventListener('DOMContentLoaded', function () {

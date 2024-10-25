@@ -357,8 +357,8 @@
 
             {{-- Texto de Confirmação da Ação --}}
             <div class="d-flex flex-column justify-content-center align-items-center">
-                <span class="ri--eye-line modal-icon mb-3"></span>
-                <h2 class="roboto-medium">Deseja ocultar a Peça?</h2>
+                <span id="eye-icon-modal" class="ri--eye-line modal-icon mb-3"></span>
+                <h2 id="textModalVisibility" class="roboto-medium">Deseja ocultar a Peça?</h2>
             </div>
 
         </x-slot>
@@ -368,7 +368,12 @@
 
             {{-- Botões do Footer --}}
             <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-confirm-action btn-confirm-action--visibility">Ocultar</button>
+
+            {{-- Form para alterar a visibilidade da peça --}} 
+            <form action="" method="post" id="formModalVisibility">
+                <input type="hidden" name="oculto" id="oculto">
+                <button type="button" class="btn btn-confirm-action btn-confirm-action--visibility" data-bs-dismiss="modal" id="btnModalVisibility">Ocultar</button>
+            </form>
 
         </x-slot>
 
@@ -412,13 +417,13 @@
                                 <tr>
                                     <td>{{ $espetaculo->id }}</td>
                                     <td>{{ $espetaculo->nomeEsp }}</td>
-                                    <td>{{$espetaculo->tempEsp}}</td> 
+                                    <td>{{ $espetaculo->tempEsp }}</td> 
                                     
                                     {{-- Botões de Ação (editar, excluir e alterar visibilidade) --}}
                                     <td id="action-buttons">
                                         
                                         {{-- Botão de Editar Peça --}}
-                                        <button class="action-buttons-style action-buttons-style--edit" data-bs-toggle="modal" data-bs-target="#editModal">
+                                        <button class="action-buttons-style action-buttons-style--edit" data-bs-toggle="modal">
                                             <span class="bx--edit"></span>
                                         </button>
 
@@ -428,10 +433,10 @@
                                         </button>
 
                                         {{-- Botão de Visibilidade da Peça --}}
-                                        <label class="action-buttons-style action-buttons-style--visibility" data-bs-toggle="modal" data-bs-target="#visibilityModal">
-                                            <input type="checkbox" id="visibility" name="visibility" >
-                                            <span class="d-flex justify-content-center align-items-center"><span class="ri--eye-line"></span></span>
-                                        </label>
+                                        <button type="button" class="action-buttons-style action-buttons-style--visibility visivel" data-bs-toggle="modal" data-bs-target="#visibilityModal" data-espetaculo-id="{{ $espetaculo->id }}">
+                                            <span class="d-flex justify-content-center align-items-center"><span class="eye-icon ri--eye-line"></span></span>
+                                        </button>
+
                                     </td>
                                 </tr>
                             @empty
@@ -459,7 +464,6 @@
 
     @if (session('error'))
         <div class="alert alert-danger">   
-
             {{ session('error') }}
         </div>
     @endif
