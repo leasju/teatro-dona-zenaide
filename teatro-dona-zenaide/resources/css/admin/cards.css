@@ -69,6 +69,11 @@
     color: var(--preto);
 }
 
+#table-cards-box #editLink {
+    /* Removendo da decoração de underline do link de editar peça */
+    text-decoration: none;
+}
+
 /* 
  * Action Buttons
 */
@@ -139,16 +144,16 @@
     padding: 25px;
 }
 
-/* Modal New/Edit */
+/* Modal New */
 
-.neweditModal .modal-body input, .neweditModal .modal-body select, .neweditModal .modal-body textarea {
+#newModal .modal-body input, #newModal .modal-body select, #newModal .modal-body textarea {
     /* Definindo a cor de fundo dos inputs do Corpo do Modal de Novo/Editar */
     background-color: var(--branco);
 }
 
-.neweditModal .modal-body input:focus, .neweditModal .modal-body input:active,
-.neweditModal .modal-body select:focus, .neweditModal .modal-body select:active,
-.neweditModal .modal-body textarea:focus, .neweditModal .modal-body textarea:active {
+#newModal .modal-body input:focus, #newModal .modal-body input:active,
+#newModal .modal-body select:focus, #newModal .modal-body select:active,
+#newModal .modal-body textarea:focus, #newModal .modal-body textarea:active {
     /* Removendo o efeito ao interagir com os inputs e os selects do Corpo do Modal de Novo/Editar */
     outline: none;
     box-shadow: none;
@@ -160,7 +165,7 @@
     border-color: var(--preto);
 }
 
-.neweditModal .modal-body input[type="file"]::file-selector-button, .neweditModal .modal-body input[type="file"]::file-selector-button:hover {
+#newModal .modal-body input[type="file"]::file-selector-button, #newModal .modal-body input[type="file"]::file-selector-button:hover {
     /* Cor de fundo e cor do texto do seletor de Escolher Arquivo do Input de Tipo File do Modal de Novo/Editar */
     background-color: var(--vermelho-geral) !important;
     color: var(--semibranco) !important;
@@ -182,18 +187,18 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 /* Accordion/Collapse Styles */
 
-.neweditModal .accordion .accordion-item {
+#newModal .accordion .accordion-item {
     /* Cor de fundo e cor do texto */
     background-color: var(--branco);
     color: var(--preto);
 }
 
-.neweditModal .accordion-button:focus {
+#newModal .accordion-button:focus {
     /* Removendo os estilos do Bootstrap */
     box-shadow: none;
 }
 
-.neweditModal .accordion-button:not(.collapsed) {
+#newModal .accordion-button:not(.collapsed) {
     /* Alterando a cor de fundo e do texto quando o item do accordion for clicado */
     --bs-accordion-active-bg: var(--vermelho-geral);
     --bs-accordion-active-color: var(--branco);
@@ -203,14 +208,14 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     box-shadow: none;
 }
 
-.neweditModal .accordion-button:not(.collapsed)::after {
+#newModal .accordion-button:not(.collapsed)::after {
     /* Alterando a cor do ícone de seta quando o item do accordion for clicado */
     --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 16' fill='none' stroke='%23F8F9FA' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
 }
 
 /* Checkbox de Horários dos Dias de Sessões */
 
-.neweditModal .checkbox-day {
+#newModal .checkbox-day {
     /* Remove a aparência padrão do checkbox (nativa do navegador) */
     appearance: none;
 
@@ -233,7 +238,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 /* Estilo para o "before", que representa o preenchimento do checkbox ao ser selecionado */
-.neweditModal .checkbox-day:before {
+#newModal .checkbox-day:before {
     /* Define um conteúdo vazio para criar o preenchimento */
     content: "";
 
@@ -261,17 +266,17 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
   
 /* Quando o checkbox está marcado, o preenchimento "before" escala para o tamanho completo */
-.neweditModal .checkbox-day:checked:before {
+#newModal .checkbox-day:checked:before {
     /* Aumenta a escala para 1, exibindo o preenchimento completo */
     transform: translate(-50%, -50%) scale(1);
 }
 
-.neweditModal .checkbox-day:checked, .neweditModal .checkbox-day:focus, .neweditModal .checkbox-day:active {
+#newModal .checkbox-day:checked, #newModal .checkbox-day:focus, #newModal .checkbox-day:active {
     /* Cor da borda da checkbox dos horários das sessões */
     border-color: var(--vermelho-geral) !important;
 }
 
-.neweditModal .form-check-label {
+#newModal .form-check-label {
     /* Centralizando o texto com a checkbox dos horários das sessões */
     position: relative;
     top: 2px;
@@ -289,21 +294,25 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     border-color: var(--bs-border-color) !important;
 }
 
-#editModal .input-group-text {
-    /* Cor de fundo do espaço pro ícone de temporada */
-    background-color: var(--vermelho-geral);
-}
-
-#editModal #editSeason:focus {
-    /* Sobrepondo estilos para manter a cor padrão do Bootstrap ao dar foco no input de temporada */
-    border-color: var(--bs-border-color) !important;
-}
-
 /* Modal Delete and Modal Visibility */
 
 #deleteModal .modal-body h2, #visibilityModal .modal-body h2 {
     /* Font size do título de confirmação do Modal de Deletar e do Modal de Visibilidade */
     font-size: 24px;
+}
+
+.opacity-invisivel {
+    /* Opacidade para quando o botão que abriu o Modal de Visibilidade estiver no modo invisível, ele aplica uma opacidade */
+    opacity: 0.5;
+}
+
+.modalNomeEsp {
+    /* Font weight e underline no texto do nome do espetáculo nos Modais de Deletar e Visibilidade */
+    font-weight: 400;
+    text-decoration: underline;
+
+    /* Espaçemento na esquerda no texto do nome do espetáculo nos Modais de Deletar e Visibilidade */
+    margin-left: 7px;
 }
 
 /* Red Star - Campo Obrigatório */
@@ -376,12 +385,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     color: var(--semibranco);
 }
 
-#editModal .edit-btn-add-schedule, #editModal .edit-btn-remove-schedule {
-    /* Cor de fundo e cor do texto do botão de 'Novo horário' e do botão de 'Remover' */
-    background-color: var(--vermelho-geral);
-    color: var(--semibranco);
-}
-
 /* 
  * Modal Icons 
 */
@@ -398,6 +401,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     width: 64px;
     height: 64px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000000' d='M12 3c5.392 0 9.878 3.88 10.819 9c-.94 5.12-5.427 9-10.819 9s-9.878-3.88-10.818-9C2.122 6.88 6.608 3 12 3m0 16a9.005 9.005 0 0 0 8.778-7a9.005 9.005 0 0 0-17.555 0A9.005 9.005 0 0 0 12 19m0-2.5a4.5 4.5 0 1 1 0-9a4.5 4.5 0 0 1 0 9m0-2a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5'/%3E%3C/svg%3E");
+}
+
+.ri--eye-off-line.modal-icon {
+    width: 64px;
+    height: 64px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000000' d='M17.883 19.297A10.95 10.95 0 0 1 12 21c-5.392 0-9.878-3.88-10.818-9A11 11 0 0 1 4.52 5.935L1.394 2.808l1.414-1.414l19.799 19.798l-1.414 1.415zM5.936 7.35A8.97 8.97 0 0 0 3.223 12a9.005 9.005 0 0 0 13.201 5.838l-2.028-2.028A4.5 4.5 0 0 1 8.19 9.604zm6.978 6.978l-3.242-3.241a2.5 2.5 0 0 0 3.241 3.241m7.893 2.265l-1.431-1.431A8.9 8.9 0 0 0 20.778 12A9.005 9.005 0 0 0 9.552 5.338L7.974 3.76C9.221 3.27 10.58 3 12 3c5.392 0 9.878 3.88 10.819 9a10.95 10.95 0 0 1-2.012 4.593m-9.084-9.084Q11.86 7.5 12 7.5a4.5 4.5 0 0 1 4.492 4.778z'/%3E%3C/svg%3E");
 }
 
 /* 

@@ -37,25 +37,39 @@
                 {{-- Title: Em Cartaz --}}
                 <h2 class="tnr-bold tnr-title-size">EM CARTAZ</h2>
 
-                {{-- Cards: Posteriormente, com o Banco de Dados, englobar os cards em um forelse de acordo com os dados vindos --}}
+                {{-- Espetáculos --}}
                 <div class="cards d-flex justify-content-center row">
                     
-                    {{-- Forelse aqui dentro, para cada peça no BD, mais um card --}}
-                    <div class="card col-md-4 col-sm-12">
-                        <img src="{{ Vite::asset('resources/img/tela-home/img-card.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            {{-- Data do Card e Divider --}}
-                            <p class="card-text roboto-regular">SAB, 31 DE MAR - 13:00</p>
-                            <hr class="divider divider--card">
+                    {{-- Verifica se há pelo menos um espetáculo visível --}}
+                    @php
+                        $espetaculosVisiveis = $espetaculos->filter(function($espetaculo) {
+                            return $espetaculo->oculto === 0;
+                        });
+                    @endphp
 
-                            {{-- Título e Botão --}}
-                            <h3 class="card-title">Lorem Ipsum</h3>
-                            <a class="main-btn main-btn--card" href="#">
-                                <span class="fontisto--ticket"></span>
-                                <span>INGRESSOS</span>                                
-                            </a>
+                    {{-- Exibe a mensagem se não houver espetáculos visíveis ou cadastrados no Banco de Dados --}}
+                    @if ($espetaculosVisiveis->isEmpty())
+                        <div class="col-md-12 text-center">
+                            <p class="roboto-regular" id="isEmptyText">Nenhum espetáculo encontrado.</p>
                         </div>
-                    </div>
+                    @else
+                        {{-- Foreach para cada espetáculo visível --}}
+                        @foreach ($espetaculosVisiveis as $espetaculo)
+                            <div class="card col-md-4 col-sm-12">
+                                {{-- <img src="{{ asset('img/espetaculos/' . $espetaculo->imagemPrincipal->img) }}" class="card-img-top" alt="Imagem {{ $espetaculo->nomeEsp }}"> --}}
+                                <div class="card-body">
+                                    <p class="card-text roboto-regular">{{ $espetaculo->tempEsp }}</p>
+                                    <hr class="divider divider--card">
+
+                                    <h3 class="card-title">{{ $espetaculo->nomeEsp }}</h3>
+                                    <a class="main-btn main-btn--card" href="{{ url('/espetaculos/' . $espetaculo->id) }}">
+                                        <span class="fontisto--ticket"></span>
+                                        <span>INGRESSOS</span>
+                                    </a>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
                     
                 </div>
 

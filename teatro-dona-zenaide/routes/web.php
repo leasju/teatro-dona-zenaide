@@ -7,14 +7,10 @@ use App\Http\Controllers\EspetaculoController;
 // * Views Teatro
 
 // Rota por GET para a tela home
-Route::get('/', function () {
-    return view('theater/home');
-});
+Route::get('/', [EspetaculoController::class, 'showHomePage']);
 
-// Rota por GET para a tela play (apenas por enquanto, futuramente será chamado a view play (peça teatral) preenchida com a peça requisitada de acordo com o card da tela home)
-Route::get('/espetaculos', function() {
-    return view('theater/play_info');
-});
+// Rota por GET para a tela play
+Route::get('/espetaculos/{id}', [EspetaculoController::class, 'show']);
 
 // Rota por GET para tela sobre nós
 Route::get('/sobre-nos', function() {
@@ -38,34 +34,31 @@ Route::get('/admin/cards', function() {
     return view('admin/cards');
 });
 
-
 // * Rotas para métodos do controller (administrador)
 
 // Rota por POST para o método "loginAdm" da classe "LoginController"
-Route::post('/admin/login', [LoginController::class,'loginAdm']);
+Route::post('/admin/login', [LoginController::class, 'loginAdm']);
 
 // Rota por GET para o método "logout" da classe "LoginController"
 Route::get('/admin/logout', [LoginController::class, 'logout']);
 
 // Rota para o método "store" da classe "EspetaculosController" 
-Route::post('/admin/cards', [EspetaculoController::class,'store']);
+Route::post('/admin/cards', [EspetaculoController::class, 'store']);
 
 // Rota para o método "index" da classe "EspetaculosController"
-Route::get('/admin/cards', [EspetaculoController::class,'index']);
+Route::get('/admin/cards', [EspetaculoController::class, 'index']);
 
 
-/* * Botões de ação da lista de cards cadastrados
+// * Botões de ação da lista de cards cadastrados
 
 // Rota para edição de espetáculo
-Route::get('/espetaculos/{id}/edit', [EspetaculoController::class,'edit']);
+Route::get('/admin/cards/{id}/editar', [EspetaculoController::class, 'edit']);
 
 // Rota para atualização de espetáculo 
-Route::put('/espetaculos/{id}', [EspetaculoController::class,'update']);
+// Route::put('/espetaculos/{id}', [EspetaculoController::class,'update']);
 
 // Rota para exclusão de espetáculo 
-Route::delete('/espetaculos/{id}', [EspetaculoController::class,'destroy']);
+Route::delete('/espetaculos/{id}/delete', [EspetaculoController::class, 'destroy'])->name('espetaculos.destroy');
 
-// Rota para ocultar/exibir espetáculo 
-Route::put('/espetaculos/{id}/ocultar', [EspetaculoController::class,'ocultar']);
-
-*/
+// Rota para atualizar a visibilidade
+Route::put('/espetaculos/{id}/ocultar', [EspetaculoController::class, 'ocultar'])->name('espetaculos.ocultar');

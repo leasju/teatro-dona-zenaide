@@ -1,0 +1,268 @@
+/* ------------------------------------------------ CARDS EDIT ---------------------------------------------------------- */
+
+/* 
+ * Table Cards Box Edit
+*/
+
+#table-cards-box-edit {
+    /* Background color da Box de Tabela dos Cards */
+    background-color: var(--semibranco);
+
+    /* Posição relativa */
+    position: relative;
+
+    /* Altura máxima para quando abrir o collapse e margin top */
+    margin-top: 100px;
+    max-height: 800px;
+
+    /* Adiciona uma barra de rolagem vertical */
+    overflow-y: auto;
+
+    /* Espaçamento interno e arredondamento das bordas */
+    border-radius: 5px;
+
+    /* Zerando o padding */
+    padding: 0;
+}
+
+/* 
+ * FormEdit
+*/
+
+#formEditAccordion {
+    /* Espaçamento interno do form de edição */
+    padding: 0 50px 50px 50px;
+}
+
+/* Accordion/Collapse Styles */
+
+#formEdit .accordion .accordion-item {
+    /* Cor de fundo e cor do texto */
+    background-color: var(--branco);
+    color: var(--preto);
+}
+
+#formEdit .accordion-button:focus {
+    /* Removendo os estilos do Bootstrap */
+    box-shadow: none;
+}
+
+#formEdit .accordion-button:not(.collapsed) {
+    /* Alterando a cor de fundo e do texto quando o item do accordion for clicado */
+    --bs-accordion-active-bg: var(--vermelho-geral);
+    --bs-accordion-active-color: var(--branco);
+
+    /* Removendo os estilos do Bootstrap */
+    outline: none;
+    box-shadow: none;
+}
+
+#formEdit .accordion-button:not(.collapsed)::after {
+    /* Alterando a cor do ícone de seta quando o item do accordion for clicado */
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 16' fill='none' stroke='%23F8F9FA' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+}
+
+/* Inputs */
+
+#formEdit input, #formEdit select, #formEdit textarea {
+    /* Definindo a cor de fundo dos inputs do Corpo do Modal de Novo/Editar */
+    background-color: var(--branco);
+}
+
+#formEdit input:focus, #formEdit input:active,
+#formEdit select:focus, #formEdit select:active,
+#formEdit textarea:focus, #formEdit textarea:active {
+    /* Removendo o efeito ao interagir com os inputs e os selects do Corpo do Modal de Novo/Editar */
+    outline: none;
+    box-shadow: none;
+
+    /* Cor de fundo quando os inputs e os selects do Corpo do Modal de Novo/Editar estiverem ativos */
+    background-color: var(--semibranco);
+
+    /* Cor da borda quando os inputs e os selects do Corpo do Modal de Novo/Editar estiverem ativos */
+    border-color: var(--preto);
+}
+
+#formEdit input[type="file"]::file-selector-button, #formEdit input[type="file"]::file-selector-button:hover {
+    /* Cor de fundo e cor do texto do seletor de Escolher Arquivo do Input de Tipo File do Modal de Novo/Editar */
+    background-color: var(--vermelho-geral) !important;
+    color: var(--semibranco) !important;
+}
+
+/* Checkbox de Horários dos Dias de Sessões */
+
+#formEdit .checkbox-day {
+    /* Remove a aparência padrão do checkbox (nativa do navegador) */
+    appearance: none;
+
+    /* Largura e altura do checkbox */
+    width: 20px;
+    height: 20px;
+
+    /* Borda do checkbox */
+    border: 2px solid var(--vermelho-geral); 
+    border-radius: 5px; 
+    
+    /* Cor de fundo do checkbox */
+    background-color: transparent; /* Torna o fundo transparente */
+
+    /* Posicionamento do checkbox */
+    display: inline-block;
+    position: relative; /* Torna a posição do checkbox relativa, necessária para posicionar o elemento `before` */
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Estilo para o "before", que representa o preenchimento do checkbox ao ser selecionado */
+#formEdit .checkbox-day:before {
+    /* Define um conteúdo vazio para criar o preenchimento */
+    content: "";
+
+    /* Cor de fundo do preenchimento */
+    background-color: var(--vermelho-geral);
+
+    /* Posicionamento do preenchimento */
+    display: block;
+    position: absolute; /* Posiciona o preenchimento de forma absoluta em relação ao checkbox */
+    top: 50%; /* Centraliza verticalmente o preenchimento */
+    left: 50%; /* Centraliza horizontalmente o preenchimento */
+
+    /* Transforma o preenchimento para ficar inicialmente invisível (escala 0) e o centraliza */
+    transform: translate(-50%, -50%) scale(0);
+
+    /* Largura e altura do preenchimento */
+    width: 10px; 
+    height: 10px; 
+
+    /* Border radius do preenchimento */
+    border-radius: 3px;
+
+    /* Anima a transição da escala do preenchimento quando o checkbox é marcado */
+    transition: all 0.3s ease-in-out; 
+}
+  
+/* Quando o checkbox está marcado, o preenchimento "before" escala para o tamanho completo */
+#formEdit .checkbox-day:checked:before {
+    /* Aumenta a escala para 1, exibindo o preenchimento completo */
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#formEdit .checkbox-day:checked, #formEdit .checkbox-day:focus, #formEdit .checkbox-day:active {
+    /* Cor da borda da checkbox dos horários das sessões */
+    border-color: var(--vermelho-geral) !important;
+}
+
+#formEdit .form-check-label {
+    /* Centralizando o texto com a checkbox dos horários das sessões */
+    position: relative;
+    top: 2px;
+}
+
+/* Input de Temporada */
+
+#formEdit .input-group-text {
+    /* Cor de fundo do espaço pro ícone de temporada */
+    background-color: var(--vermelho-geral);
+}
+
+#formEdit #season:focus {
+    /* Sobrepondo estilos para manter a cor padrão do Bootstrap ao dar foco no input de temporada */
+    border-color: var(--bs-border-color) !important;
+}
+
+/* Botão de Adicionar e Remover Horários */
+
+#formEdit .btn-add-schedule, #formEdit .btn-remove-schedule {
+    /* Cor de fundo e cor do texto do botão de 'Novo horário' e do botão de 'Remover' */
+    background-color: var(--vermelho-geral);
+    color: var(--semibranco);
+}
+
+/*  
+ * Title Edit Esp
+*/
+
+#title-edit-esp {
+    /* Posicionamento do título com o nome da edição de qual espetáculo */
+    position: sticky; 
+    text-align: center;
+    top: 0; 
+    
+    /* Cor de fundo */
+    background-color: var(--semibranco);
+
+    /* Borda inferior */
+    border-bottom: 1px solid var(--divider);
+    
+    /* Espaçamento inferior e espaçento interno */
+    margin-bottom: 50px;
+    padding: 10px;
+    
+    /* Z index */
+    z-index: 10; 
+}
+
+#title-edit-esp h1 {
+    /* Font size e cor do texto do título */
+    font-size: 28px;
+    color: var(--preto);
+
+    /* Decoração para o texto de underline */
+    text-decoration: underline;
+}
+
+/* 
+ * Footer Edit Esp
+*/
+
+#footer-edit-esp {
+    /* Posicionamento do footer contendo os botões */
+    position: sticky; 
+    text-align: end;
+    bottom: -1px;
+    
+    /* Cor de fundo */
+    background-color: var(--semibranco); 
+
+    /* Borda superior */
+    border-top: 1px solid var(--divider);
+    
+    /* Espaçamento interno */
+    padding: 10px;
+    
+    /* Z index */
+    z-index: 10; 
+}
+
+/* Botão de Voltar */
+
+#footer-edit-esp .btn-back, #footer-edit-esp .btn-back:hover, #footer-edit-esp .btn-back:active {
+    /* Definindo a cor de fundo do botão de fechar do Modal */
+    background-color: var(--cinza) !important;
+    color: var(--semibranco) !important;
+
+    /* Removendo a borda do botão de fechar do Modal */
+    border: none;
+    
+    /* Espamento do botão de confirmar */
+    margin-right: 5px;
+}
+
+#footer-edit-esp #linkVoltar {
+    /* Removendo a decoração do lnik de voltar para a tela de cards */
+    text-decoration: none;
+}
+
+/* Botão de Confirmar Edição */
+
+#footer-edit-esp .btn-confirm-edit, #footer-edit-esp .btn-confirm-edit:hover, #footer-edit-esp .btn-confirm-edit:active {
+    /* Variável de cor de fundo do botão de confirmação */
+    --modal-button-background-color: var(--amarelo);
+
+    /* Definindo a cor de fundo do botão de confirmação do Modal */
+    background-color: var(--modal-button-background-color)  !important;
+    color: var(--semibranco) !important;
+
+    /* Removendo a borda do botão de confirmação do Modal */
+    border: none;
+}

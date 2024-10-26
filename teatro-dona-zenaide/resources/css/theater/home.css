@@ -248,6 +248,11 @@
     border-radius: 0 !important;
 }
 
+#cards-section #isEmptyText {
+    /* Font size do texto de empty */
+    font-size: 20px;
+}
+
 /* 
  * @media Sections - Cards Section
 */
