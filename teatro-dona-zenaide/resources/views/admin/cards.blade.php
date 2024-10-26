@@ -35,7 +35,7 @@
         {{-- Conteúdo do Modal --}}
         <x-slot name="content">
 
-            {{-- Form New/Edit --}}
+            {{-- Form New --}}
             <form action="/admin/cards" method="POST" enctype="multipart/form-data">
 
                 @csrf

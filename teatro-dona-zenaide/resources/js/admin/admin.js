@@ -6,6 +6,7 @@ import '../../css/admin/global.css';
 
 import '../../css/admin/login.css';
 import '../../css/admin/cards.css';
+import '../../css/admin/cards_edit.css';
 
 // * ---------------------------------------------------------BOOTSTRAP---------------------------------------------------------------
 
@@ -53,52 +54,76 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // * ----------------------------------------------------------MODAIS-----------------------------------------------------------------
 
-// * Script das Sessões de Apresentação das Peças no Modal New
+// * Script das Sessões de Apresentação das Peças no Modal New e no formEdit
 
-// Garante que o código seja executado após o carregamento completo do DOM
 document.addEventListener('DOMContentLoaded', function() {
 
     // Mostrar ou ocultar o campo de horário quando marcar ou desmarcar o checkbox
-    document.querySelectorAll('.form-check-input').forEach(function(checkbox) {  // Seleciona todos os checkboxes com a classe "form-check-input"
-        checkbox.addEventListener('change', function() {  // Adiciona um evento de mudança para cada checkbox
-            let day = this.value;  // Obtém o valor do checkbox, que representa o dia
-            let schedulesDiv = document.getElementById('schedules-' + day);  // Seleciona a div que contém os horários para o dia
+    document.querySelectorAll('.form-check-input').forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            let day = this.value;
+            let schedulesDiv = document.getElementById('schedules-' + day);
 
-            if (this.checked) {  // Se o checkbox estiver marcado
-                schedulesDiv.classList.remove('d-none');  // Remove a classe "d-none" para mostrar a div
-            } else {  // Se o checkbox estiver desmarcado
-                schedulesDiv.classList.add('d-none');  // Adiciona a classe "d-none" para ocultar a div
-                schedulesDiv.querySelector('.schedule-wrapper').innerHTML = '';  // Remove todos os horários da div
+            if (this.checked) {
+                schedulesDiv.classList.remove('d-none');
+                // Adicionar input padrão se a div de horários estiver vazia
+                if (schedulesDiv.querySelector('.schedule-wrapper').children.length === 0) {
+                    addDefaultSchedule(day); // Adiciona o input padrão
+                }
+            } else {
+                schedulesDiv.classList.add('d-none');
+                // Remove todos os horários ao desmarcar
+                schedulesDiv.querySelector('.schedule-wrapper').innerHTML = '';
             }
         });
     });
 
+    function addDefaultSchedule(day) {
+        let scheduleWrapper = document.querySelector('#schedules-' + day + ' .schedule-wrapper');
+
+        // Cria um novo div para o horário padrão
+        let scheduleDiv = document.createElement('div');
+        scheduleDiv.classList.add('d-flex', 'align-items-center', 'mb-2');
+
+        // Cria o input de horário padrão
+        let newSchedule = document.createElement('input');
+        newSchedule.type = 'time';
+        newSchedule.name = 'schedules[' + day + '][]';
+        newSchedule.classList.add('form-control', 'me-2');
+
+        // Adiciona o input ao div
+        scheduleDiv.appendChild(newSchedule);
+
+        // Adiciona o novo div ao wrapper de horários
+        scheduleWrapper.appendChild(scheduleDiv);
+    }
+
     // Função para adicionar eventos de remoção de horário
     function addRemoveScheduleEvent(button) {
-        button.addEventListener('click', function() {  // Adiciona um evento de clique ao botão
+        button.addEventListener('click', function() {
             this.parentElement.remove();  // Remove o div pai que contém o input de horário e o botão
         });
     }
 
     // Função para adicionar um novo horário
     function addSchedule(day) {
-        let scheduleWrapper = document.querySelector('#schedules-' + day + ' .schedule-wrapper');  // Seleciona o wrapper onde os horários serão adicionados
-        
+        let scheduleWrapper = document.querySelector('#schedules-' + day + ' .schedule-wrapper');
+
         // Cria um novo div para o horário e o botão de remoção
         let scheduleDiv = document.createElement('div');
-        scheduleDiv.classList.add('d-flex', 'align-items-center', 'mb-2');  // Adiciona classes de estilo ao div
+        scheduleDiv.classList.add('d-flex', 'align-items-center', 'mb-2');
 
         // Cria o input de horário
         let newSchedule = document.createElement('input');
-        newSchedule.type = 'time';  // Define o tipo do input como "time"
-        newSchedule.name = 'schedules[' + day + '][]';  // Define o nome do input para o envio dos dados do formulário
-        newSchedule.classList.add('form-control', 'me-2');  // Adiciona classes de estilo ao input
+        newSchedule.type = 'time';
+        newSchedule.name = 'schedules[' + day + '][]';
+        newSchedule.classList.add('form-control', 'me-2');
 
         // Cria o botão de remover
         let removeButton = document.createElement('button');
-        removeButton.type = 'button';  // Define o tipo do botão como "button"
-        removeButton.classList.add('btn', 'btn-danger', 'btn-remove-schedule');  // Adiciona classes de estilo ao botão
-        removeButton.textContent = 'Remover';  // Define o texto do botão como "Remover"
+        removeButton.type = 'button';
+        removeButton.classList.add('btn', 'btn-danger', 'btn-remove-schedule');
+        removeButton.textContent = 'Remover';
 
         // Adiciona o input e o botão de remover ao div
         scheduleDiv.appendChild(newSchedule);
@@ -112,16 +137,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Adicionar mais horários
-    document.querySelectorAll('.btn-add-schedule').forEach(function(button) {  // Seleciona todos os botões para adicionar horários
-        button.addEventListener('click', function() {  // Adiciona um evento de clique a cada botão
-            let day = this.getAttribute('day-date');  // Obtém o dia associado ao botão através do atributo "day-date"
-            addSchedule(day);  // Chama a função para adicionar um novo horário para o dia especificado
+    document.querySelectorAll('.btn-add-schedule').forEach(function(button) {
+        button.addEventListener('click', function() {
+            let day = this.getAttribute('day-date');
+            addSchedule(day);
         });
     });
 
     // Adiciona o evento de remover horário aos botões já existentes
-    document.querySelectorAll('.btn-remove-schedule').forEach(function(button) {  // Seleciona todos os botões de remover horários já existentes
-        addRemoveScheduleEvent(button);  // Adiciona o evento de remoção a cada botão
+    document.querySelectorAll('.btn-remove-schedule').forEach(function(button) {
+        addRemoveScheduleEvent(button);
     });
 });
 
@@ -432,6 +457,27 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.form-check-input:checked').forEach(checkbox => {
         addDefaultSchedule(checkbox.value);
     });
+});
+
+// * ---------------------------------------------------------------------------------------------------------------------------------
+
+// * ---------------------------------------------------------FORM EDIT---------------------------------------------------------------
+
+// * Script para manter o primeiro item do accordion aberto por default no Form Edit específico
+
+// Garante que o código seja executado após o carregamento completo do DOM
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona o primeiro item do accordion dentro do form com id 'formEdit'
+    var firstAccordionItem = document.querySelector('#formEdit #accordionForm .accordion-item:first-child .accordion-collapse');
+    
+    if (firstAccordionItem) {
+        // Certifica-se de que o item está visível
+        if (!firstAccordionItem.classList.contains('show')) {
+            var bsCollapse = new bootstrap.Collapse(firstAccordionItem, {
+                toggle: true // Garante que o primeiro item do accordion seja exibido
+            });
+        }
+    }
 });
 
 // * ---------------------------------------------------------------------------------------------------------------------------------

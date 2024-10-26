@@ -38,6 +38,11 @@ Route::get('/admin/cards', function() {
     return view('admin/cards');
 });
 
+// Rota por GET para tela de Edição dos Cards do Admin
+Route::get('/admin/cards/editar', function() {
+    return view('admin/cards_edit');
+});
+
 
 // * Rotas para métodos do controller (administrador)
 
