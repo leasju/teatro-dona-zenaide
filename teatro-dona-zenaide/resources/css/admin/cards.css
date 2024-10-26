@@ -69,6 +69,11 @@
     color: var(--preto);
 }
 
+#table-cards-box #editLink {
+    /* Removendo da decoração de underline do link de editar peça */
+    text-decoration: none;
+}
+
 /* 
  * Action Buttons
 */
@@ -139,7 +144,7 @@
     padding: 25px;
 }
 
-/* Modal New/Edit */
+/* Modal New */
 
 #newModal .modal-body input, #newModal .modal-body select, #newModal .modal-body textarea {
     /* Definindo a cor de fundo dos inputs do Corpo do Modal de Novo/Editar */

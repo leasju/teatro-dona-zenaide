@@ -38,12 +38,6 @@ Route::get('/admin/cards', function() {
     return view('admin/cards');
 });
 
-// Rota por GET para tela de Edição dos Cards do Admin
-Route::get('/admin/cards/editar', function() {
-    return view('admin/cards_edit');
-});
-
-
 // * Rotas para métodos do controller (administrador)
 
 // Rota por POST para o método "loginAdm" da classe "LoginController"
@@ -62,13 +56,13 @@ Route::get('/admin/cards', [EspetaculoController::class, 'index']);
 // * Botões de ação da lista de cards cadastrados
 
 // Rota para edição de espetáculo
-// Route::get('/espetaculos/{id}/edit', [EspetaculoController::class,'edit']);
+Route::get('/admin/cards/{id}/editar', [EspetaculoController::class, 'edit']);
 
 // Rota para atualização de espetáculo 
 // Route::put('/espetaculos/{id}', [EspetaculoController::class,'update']);
 
 // Rota para exclusão de espetáculo 
-Route::delete('/espetaculos/{id}/delete', [EspetaculoController::class,'destroy'])->name('espetaculos.destroy');
+Route::delete('/espetaculos/{id}/delete', [EspetaculoController::class, 'destroy'])->name('espetaculos.destroy');
 
 // Rota para atualizar a visibilidade
 Route::put('/espetaculos/{id}/ocultar', [EspetaculoController::class, 'ocultar'])->name('espetaculos.ocultar');

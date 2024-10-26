@@ -429,9 +429,11 @@
                                     <td id="action-buttons">
                                         
                                         {{-- Botão de Editar Peça --}}
-                                        <button class="action-buttons-style action-buttons-style--edit" data-bs-toggle="modal">
-                                            <span class="bx--edit"></span>
-                                        </button>
+                                        <a href="/admin/cards/{{$espetaculo->id}}/editar" id="editLink">
+                                            <button class="action-buttons-style action-buttons-style--edit">
+                                                <span class="bx--edit"></span>
+                                            </button>
+                                        </a>
 
                                         {{-- Botão de Excluir Peça --}}
                                         <button class="action-buttons-style" data-bs-toggle="modal" data-bs-target="#deleteModal" data-espetaculo-id="{{ $espetaculo->id }}" data-espetaculo-name="{{ $espetaculo->nomeEsp }}">

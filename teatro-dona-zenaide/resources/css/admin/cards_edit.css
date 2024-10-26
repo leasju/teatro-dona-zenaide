@@ -12,8 +12,8 @@
     position: relative;
 
     /* Altura máxima para quando abrir o collapse e margin top */
-    margin-top: 80px;
-    max-height: 700px;
+    margin-top: 100px;
+    max-height: 800px;
 
     /* Adiciona uma barra de rolagem vertical */
     overflow-y: auto;
@@ -29,7 +29,7 @@
  * FormEdit
 */
 
-#formEdit {
+#formEditAccordion {
     /* Espaçamento interno do form de edição */
     padding: 0 50px 50px 50px;
 }
@@ -62,7 +62,26 @@
     --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 16' fill='none' stroke='%23F8F9FA' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
 }
 
-/* Input de Arquivo */
+/* Inputs */
+
+#formEdit input, #formEdit select, #formEdit textarea {
+    /* Definindo a cor de fundo dos inputs do Corpo do Modal de Novo/Editar */
+    background-color: var(--branco);
+}
+
+#formEdit input:focus, #formEdit input:active,
+#formEdit select:focus, #formEdit select:active,
+#formEdit textarea:focus, #formEdit textarea:active {
+    /* Removendo o efeito ao interagir com os inputs e os selects do Corpo do Modal de Novo/Editar */
+    outline: none;
+    box-shadow: none;
+
+    /* Cor de fundo quando os inputs e os selects do Corpo do Modal de Novo/Editar estiverem ativos */
+    background-color: var(--semibranco);
+
+    /* Cor da borda quando os inputs e os selects do Corpo do Modal de Novo/Editar estiverem ativos */
+    border-color: var(--preto);
+}
 
 #formEdit input[type="file"]::file-selector-button, #formEdit input[type="file"]::file-selector-button:hover {
     /* Cor de fundo e cor do texto do seletor de Escolher Arquivo do Input de Tipo File do Modal de Novo/Editar */
@@ -227,6 +246,11 @@
     
     /* Espamento do botão de confirmar */
     margin-right: 5px;
+}
+
+#footer-edit-esp #linkVoltar {
+    /* Removendo a decoração do lnik de voltar para a tela de cards */
+    text-decoration: none;
 }
 
 /* Botão de Confirmar Edição */
