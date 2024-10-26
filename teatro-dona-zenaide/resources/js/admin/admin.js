@@ -1,16 +1,22 @@
 // Imports JS
-import './bootstrap';
+import '../bootstrap';
 
 // Imports CSS
-import '../css/admin/global.css';
+import '../../css/admin/global.css';
 
-import '../css/admin/login.css';
-import '../css/admin/cards.css';
+import '../../css/admin/login.css';
+import '../../css/admin/cards.css';
+
+// * ---------------------------------------------------------BOOTSTRAP---------------------------------------------------------------
 
 // * Ativando os tooltips do Bootstrap
 
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+// * ---------------------------------------------------------------------------------------------------------------------------------
+
+// * -----------------------------------------------------------LOGIN-----------------------------------------------------------------
 
 // * Mostrar/Esconder a senha no Modo Administrador
 
@@ -42,6 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+// * ---------------------------------------------------------------------------------------------------------------------------------
+
+// * ----------------------------------------------------------MODAIS-----------------------------------------------------------------
 
 // * Script das Sessões de Apresentação das Peças no Modal New
 
@@ -423,6 +433,8 @@ document.addEventListener('DOMContentLoaded', function () {
         addDefaultSchedule(checkbox.value);
     });
 });
+
+// * ---------------------------------------------------------------------------------------------------------------------------------
 
 /* Caso não dê certo com o BD e Back-End o jeito de resetar o Modal acima
     document.addEventListener('DOMContentLoaded', function () {

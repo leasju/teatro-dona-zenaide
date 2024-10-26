@@ -1,7 +1,13 @@
+// * ---------------------------------------------------------BOOTSTRAP---------------------------------------------------------------
+
 // * Ativando os tooltips do Bootstrap
 
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+// * ---------------------------------------------------------------------------------------------------------------------------------
+
+// * -------------------------------------------------------THEME CHANGER-------------------------------------------------------------
 
 // * Script para a alteração de temas (claro e escuro)
 
@@ -138,6 +144,10 @@ document.addEventListener("DOMContentLoaded", function() {
     updateTooltip();
 });
 
+// * ---------------------------------------------------------------------------------------------------------------------------------
+
+// * -------------------------------------------------------LINK CONTATOS-------------------------------------------------------------
+
 // * Script para fechar a OffCanvas NavBar ao interagir com o link de 'CONTATOS'
 
 // Este evento garante que o código JavaScript só será executado após todo o conteúdo da página ter sido completamente carregado.
@@ -161,6 +171,37 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 });
+
+// * Script para corrigir erro de "pulo" no link de contatos em telas menores que 768px
+
+document.addEventListener('DOMContentLoaded', function () {
+    const footerLink = document.querySelector('a[href="#contatos"]');
+    const footer = document.querySelector('#contatos');
+    const navbar = document.querySelector('.navbar');
+
+    if (footerLink && footer && navbar) {
+        footerLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Scroll inicial para revelar elementos ocultos
+            footer.scrollIntoView({ behavior: 'smooth' });
+            
+            // Recalcula e ajusta a posição após um breve atraso
+            setTimeout(() => {
+                const navbarHeight = navbar.offsetHeight;
+                const footerPosition = footer.getBoundingClientRect().top + window.scrollY;
+                window.scrollTo({
+                    top: footerPosition - navbarHeight,
+                    behavior: 'smooth'
+                });
+            }, 500); // Ajuste este valor conforme necessário
+        });
+    }
+});
+
+// * ---------------------------------------------------------------------------------------------------------------------------------
+
+// * ----------------------------------------------------BACK TO TOP BUTTON-----------------------------------------------------------
 
 // * Script para o Back to Top Button
 
@@ -211,6 +252,10 @@ document.getElementById("backToTop").addEventListener("click", function() {
     isButtonVisible = false;  // Atualiza o estado para invisível
 });
 
+// * ---------------------------------------------------------------------------------------------------------------------------------
+
+// * ------------------------------------------------ANIMAÇÃO DOS ELEMENTOS-----------------------------------------------------------
+
 // * Script para a animação de visualização dos elementos com a API Intersection Observer
 
 // Função que usa IntersectionObserver para animar os elementos quando entram na viewport
@@ -237,29 +282,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// * Script para corrigir erro de "pulo" no link de contatos em telas menores que 768px
-
-document.addEventListener('DOMContentLoaded', function () {
-    const footerLink = document.querySelector('a[href="#contatos"]');
-    const footer = document.querySelector('#contatos');
-    const navbar = document.querySelector('.navbar');
-
-    if (footerLink && footer && navbar) {
-        footerLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Scroll inicial para revelar elementos ocultos
-            footer.scrollIntoView({ behavior: 'smooth' });
-            
-            // Recalcula e ajusta a posição após um breve atraso
-            setTimeout(() => {
-                const navbarHeight = navbar.offsetHeight;
-                const footerPosition = footer.getBoundingClientRect().top + window.scrollY;
-                window.scrollTo({
-                    top: footerPosition - navbarHeight,
-                    behavior: 'smooth'
-                });
-            }, 500); // Ajuste este valor conforme necessário
-        });
-    }
-});
+// * ---------------------------------------------------------------------------------------------------------------------------------

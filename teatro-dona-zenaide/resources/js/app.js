@@ -1,6 +1,6 @@
 // Imports JS
 import './bootstrap';
-import './scripts';
+import './theater/scripts.js';
 
 // Imports CSS
 import '../css/theater/global.css';

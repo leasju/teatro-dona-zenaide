@@ -8,7 +8,7 @@
         <title>@yield('view-title')</title>
 
         {{-- Importando o arquivo JS com o Vite que contém os arquivos CSS e JS --}}
-        @vite('resources/js/admin.js')
+        @vite('resources/js/admin/admin.js')
 
         {{-- Icons - Iconify: Implementando os ícones no CSS e utilizando a tag <span> para mostrar os ícones --}}
 
