@@ -202,57 +202,57 @@
 
                                 {{-- Input de Texto --}}
                                 <div class="mb-3">
-                                    <label for="roteiristaEsp" class="form-label">Roteiro</label>
-                                    <input type="text" class="form-control" id="roteiristaEsp" name="roteiristaEsp" placeholder="Insira um ou mais representantes para roteiro" value="">
+                                    <label for="roteiristaEsp" class="form-label">Roteiro <span class="red-star" title="Campo obrigatório">*</span></label>
+                                    <input type="text" class="form-control" id="roteiristaEsp" name="roteiristaEsp" placeholder="Insira um ou mais representantes para roteiro" value="" required>
                                 </div>
                                 
                                 {{-- Input de Elenco --}}
                                 <div class="mb-3">
-                                    <label for="elencoEsp" class="form-label">Elenco</label>
+                                    <label for="elencoEsp" class="form-label">Elenco <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
-                                    id="elencoEsp" name="elencoEsp"  placeholder="Insira um ou mais representantes para elenco" value="">   
+                                    id="elencoEsp" name="elencoEsp"  placeholder="Insira um ou mais representantes para elenco" value="" required>   
                                 </div>
 
                                 {{-- Input de Direção --}}
                                 <div class="mb-3">
-                                    <label for="direcaoEsp" class="form-label">Direção</label>
-                                    <input type="text" class="form-control" id="direcaoEsp" name="direcaoEsp" placeholder="Insira um ou mais representantes para direção" value="">
+                                    <label for="direcaoEsp" class="form-label">Direção <span class="red-star" title="Campo obrigatório">*</span></label>
+                                    <input type="text" class="form-control" id="direcaoEsp" name="direcaoEsp" placeholder="Insira um ou mais representantes para direção" value="" required>
                                 </div>
 
                                 {{-- Input de Figurino --}}
                                 <div class="mb-3">
-                                    <label for="figurinoEsp" class="form-label">Figurino</label>
+                                    <label for="figurinoEsp" class="form-label">Figurino <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
-                                    id="figurinoEsp" name="figurinoEsp" placeholder="Insira um ou mais representantes para figurino" value="">
+                                    id="figurinoEsp" name="figurinoEsp" placeholder="Insira um ou mais representantes para figurino" value="" required>
                                 </div>
                                 
                                 {{-- Input de Cenografia --}}
                                 <div class="mb-3">
-                                    <label for="cenoEsp" class="form-label">Cenografia</label>
+                                    <label for="cenoEsp" class="form-label">Cenografia <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
-                                    id="cenoEsp" name="cenoEsp" placeholder="Insira um ou mais representantes para cenografia" value="">
+                                    id="cenoEsp" name="cenoEsp" placeholder="Insira um ou mais representantes para cenografia" value="" required>
                                 </div>
                                 
                                 {{-- Input de Iluminação --}}
                                 <div class="mb-3">
-                                    <label for="luzEsp" class="form-label">Iluminação</label>
+                                    <label for="luzEsp" class="form-label">Iluminação <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
-                                    id="luzEsp" name="luzEsp" placeholder="Insira um ou mais representantes para iluminação" value="">
+                                    id="luzEsp" name="luzEsp" placeholder="Insira um ou mais representantes para iluminação" value="" required>
                                 </div>
 
                                 {{-- Input de Sonorização --}}
                                 <div class="mb-3">
-                                    <label for="sonoEsp" class="form-label">Sonorização</label>
+                                    <label for="sonoEsp" class="form-label">Sonorização <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
-                                    id="sonoEsp" name="sonoEsp" placeholder="Insira um ou mais representantes para sonorização" value="">
+                                    id="sonoEsp" name="sonoEsp" placeholder="Insira um ou mais representantes para sonorização" value="" required>
                                     
                                 </div>
                                 
                                 {{-- Input de Produção --}}
                                 <div class="mb-3">
-                                    <label for="producaoEsp" class="form-label">Produção</label>
+                                    <label for="producaoEsp" class="form-label">Produção <span class="red-star" title="Campo obrigatório">*</span></label>
                                     <input type="text" class="form-control" 
-                                    id="producaoEsp" name="producaoEsp" placeholder="Insira um ou mais representantes para produção" value="">
+                                    id="producaoEsp" name="producaoEsp" placeholder="Insira um ou mais representantes para produção" value="" required>
                                 </div>
 
                                 {{-- Opcionais --}}
@@ -341,9 +341,11 @@
 
             {{-- Botões do Footer --}}
             <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Fechar</button>
-            <form action="" method="post" id="formModalDelete">
-                @method('delete')
-                <button type="submit" class="btn btn-confirm-action btn-confirm-action--delete" data-bs-dismiss="modal">Excluir</button>
+            <form action="" method="POST" id="formModalDelete">
+                @method('DELETE')
+                @csrf
+
+                <button type="submit" class="btn btn-confirm-action btn-confirm-action--delete">Excluir</button>
             </form>
 
         </x-slot>
@@ -359,7 +361,7 @@
             {{-- Texto de Confirmação da Ação --}}
             <div class="d-flex flex-column justify-content-center align-items-center">
                 <span id="eye-icon-modal" class="ri--eye-line modal-icon mb-3"></span>
-                <h2 id="textModalVisibility" class="roboto-medium">Deseja ocultar a Peça?</h2>
+                <h2 id="textModalVisibility" class="roboto-medium"></h2>
             </div>
 
         </x-slot>
@@ -371,9 +373,12 @@
             <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Fechar</button>
 
             {{-- Form para alterar a visibilidade da peça --}} 
-            <form action="" method="post" id="formModalVisibility">
+            <form action="" method="POST" id="formModalVisibility">
+                @method('PUT')
+                @csrf
+
                 <input type="hidden" name="oculto" id="oculto">
-                <button type="submit" class="btn btn-confirm-action btn-confirm-action--visibility" data-bs-dismiss="modal" id="btnModalVisibility">Ocultar</button>
+                <button type="submit" class="btn btn-confirm-action btn-confirm-action--visibility" id="btnModalVisibility">Ocultar</button>
             </form>
 
         </x-slot>
@@ -434,7 +439,7 @@
                                         </button>
 
                                         {{-- Botão de Visibilidade da Peça --}}
-                                        <button type="button" class="action-buttons-style action-buttons-style--visibility visivel" data-bs-toggle="modal" data-bs-target="#visibilityModal" data-espetaculo-id="{{ $espetaculo->id }}" data-espetaculo-name="{{ $espetaculo->nomeEsp }}">
+                                        <button type="button" class="action-buttons-style action-buttons-style--visibility {{ $espetaculo->oculto == 0 ? "visivel" : "invivisel" }}" data-bs-toggle="modal" data-bs-target="#visibilityModal" data-espetaculo-id="{{ $espetaculo->id }}" data-espetaculo-name="{{ $espetaculo->nomeEsp }}">
                                             <span class="d-flex justify-content-center align-items-center"><span class="eye-icon ri--eye-line"></span></span>
                                         </button>
 

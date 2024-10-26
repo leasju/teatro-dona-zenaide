@@ -296,6 +296,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     font-size: 24px;
 }
 
+.opacity-invisivel {
+    /* Opacidade para quando o botão que abriu o Modal de Visibilidade estiver no modo invisível, ele aplica uma opacidade */
+    opacity: 0.5;
+}
+
 .modalNomeEsp {
     /* Font weight e underline no texto do nome do espetáculo nos Modais de Deletar e Visibilidade */
     font-weight: 400;

@@ -160,107 +160,116 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    // Modal de Visibilidade
-    const visibilityModal = document.getElementById('visibilityModal')
+    // Identificação dos elementos
 
-    // Ícone do Modal de Visibilidade
-    const visibilityContentIconModal = document.getElementById('eye-icon-modal')
+    // Seleciona o Modal de Visibilidade
+    const visibilityModal = document.getElementById('visibilityModal');
 
-    // Botão do Modal de Visibilidade
-    const btnModalVisibility = document.getElementById('btnModalVisibility')
+    // Seleciona o botão de dentro do Modal de Visibilidade
+    const btnModalVisibility = document.getElementById('btnModalVisibility');
 
-    // Título do Modal de Visibilidade
-    const titleModalVisibility = document.getElementById("visibilityModalLabel")
+    // Seleciona o título do Modal de Visibilidade
+    const titleModalVisibility = document.getElementById("visibilityModalLabel");
 
-    // Texto do Modal de Visibilidade
-    const textModalVisibility = document.getElementById('textModalVisibility')
+    // Seleciona o texto do Modal de Visibilidade
+    const textModalVisibility = document.getElementById('textModalVisibility');
 
-    // Ícone do botão de abrir o Modal de Visibilidade
-    const iconModalVisibility = document.querySelector('.eye-icon')
+    // Seleciona o ícone de olho do conteúdo do Modal de Visibilidade
+    const visibilityContentIconModal = document.getElementById('eye-icon-modal');
 
-    // Campo do form "oculto"
-    const oculto = document.getElementById('oculto')
+    // Seleciona o campo hidden com o id de oculto para guardar o valor da visibilidade
+    const oculto = document.getElementById('oculto');
 
-    // Form do Modal de Visibilidade
-    const formModal = document.getElementById('formModalVisibility')
+    // Seleciona o form do Modal de Visibilidade
+    const formModal = document.getElementById('formModalVisibility');
 
-    // Evento que é executado toda vez que o modal de visibilidade é aberto
+    // Variável para armazenar o botão que abriu o modal
+    let buttonModalOpen; 
+
+    // Restaurar estado dos ícones ao carregar a página
+    document.querySelectorAll('.action-buttons-style--visibility').forEach(button => {
+
+        // Seleciona o ID do espetáculo referente ao botão que abriu o Modal
+        const id = button.getAttribute('data-espetaculo-id');
+
+        // Seleciona o ícone referente a esse botão
+        const iconElement = button.querySelector('.eye-icon');
+
+        // Constante para armazenar o estado de visibilidade do botão
+        const estadoVisibilidade = localStorage.getItem(`estadoVisibilidade-${id}`);
+
+        // Define o ícone com base no estado salvo
+        if (estadoVisibilidade === "invisivel") {
+            button.classList.replace('visivel', 'invisivel');
+            iconElement.classList.replace("ri--eye-line", "ri--eye-off-line");
+            button.classList.add("opacity-invisivel"); // Adiciona opacidade
+        } 
+        
+        else {
+            button.classList.replace('invisivel', 'visivel');
+            iconElement.classList.replace("ri--eye-off-line", "ri--eye-line");
+            button.classList.remove("opacity-invisivel"); // Remove opacidade
+        }
+    });
+
+    // Verifica se o modal de visibilidade existe
     if (visibilityModal) {
 
+        // Verifica se o modal de visibilidade está aberto e adiciona um evento
         visibilityModal.addEventListener('show.bs.modal', event => {
-            
-            // O botão que abriu o modal
-            const buttonModalOpen = event.relatedTarget;
 
-            // ID da peça relacionada ao botão que abriu o Modal de Visibilidade
-            const id = buttonModalOpen.getAttribute('data-espetaculo-id')
+            // Salva o botão que abriu o modal
+            buttonModalOpen = event.relatedTarget; 
 
-            // Adiciona o ID do espetaculo na rota do form
-            formModal.action = `/admin/cards/${id}/visible`
+            // Seleciona o ID da peça referente à aquele botão que abriu o Modal
+            const id = buttonModalOpen.getAttribute('data-espetaculo-id');
 
-            // Nome da peça relacionada ao botão que abriu o Modal de Visibilidade
-            const nome = buttonModalOpen.getAttribute('data-espetaculo-name')
+            // Seleciona o nome da peça referente à aquele botão que abriu o Modal
+            const nome = buttonModalOpen.getAttribute('data-espetaculo-name');
 
-            // Verificar se o botão possui a classe "visivel"
+            // Seleciona o ícone de olho referente à aquele botão que abriu o Modal
+            const iconElement = buttonModalOpen.querySelector('.eye-icon'); // Ícone do botão específico
+
+            // Define a rota do form com o ID específico
+            formModal.action = `/espetaculos/${id}/ocultar`;
+
+            // Verifica o estado atual e ajusta o modal
             if (buttonModalOpen.classList.contains('visivel')) {
-
-                // Troca os textos do modal para o modo de "Ocultar"
-                btnModalVisibility.innerText = "Ocultar"
-                titleModalVisibility.innerHTML = `Esconder Peça: <p class="modalNomeEsp">${nome}</p>`
-                textModalVisibility.innerHTML = "Deseja ocultar a peça?"
-
-                // Troca o ícone de olho do conteúdo do Modal de Visibilidade
-                visibilityContentIconModal.classList.remove("ri--eye-line")
-                visibilityContentIconModal.classList.add("ri--eye-off-line")
-
-                // Atribui 1 (invisível) para o campo oculto
-                oculto.value = 1
-                
+                btnModalVisibility.innerText = "Ocultar";
+                titleModalVisibility.innerHTML = `Esconder Peça: <p class="modalNomeEsp">${nome}</p>`;
+                textModalVisibility.innerHTML = "Deseja ocultar a peça?";
+                visibilityContentIconModal.classList.replace("ri--eye-line", "ri--eye-off-line");
+                oculto.value = 1;
+            } 
+            
+            else {
+                btnModalVisibility.innerText = "Exibir";
+                titleModalVisibility.innerHTML = `Mostrar Peça: <p class="modalNomeEsp">${nome}</p>`;
+                textModalVisibility.innerHTML = "Deseja exibir a peça?";
+                visibilityContentIconModal.classList.replace("ri--eye-off-line", "ri--eye-line");
+                oculto.value = 0;
             }
 
-            // Verificar se o botão possui a classe "invisivel"
-            if (buttonModalOpen.classList.contains('invisivel')) {
-
-                // Troca os textos do modal para o modo de "Exibir"
-                btnModalVisibility.innerText = "Exibir"
-                titleModalVisibility.innerHTML = `Mostrar Peça: <p class="modalNomeEsp">${nome}</p>`
-                textModalVisibility.innerHTML = "Deseja exibir a peça?"
-
-                // Troca o ícone de olho do conteúdo do Modal de Visibilidade
-                visibilityContentIconModal.classList.remove("ri--eye-off-line")
-                visibilityContentIconModal.classList.add("ri--eye-line")
-
-                // Atribui 0 (visível) para o campo oculto
-                oculto.value = 0
-                
-            }
-
+            // Ao confirmar a ação, altera o estado e o ícone do botão correto
             btnModalVisibility.onclick = () => {
-
                 if (buttonModalOpen.classList.contains('visivel')) {
-                    buttonModalOpen.classList.remove('visivel');
-                    buttonModalOpen.classList.add('invisivel');
-
-                    // Altera o ícone de olho do botão de abrir o Modal de Visibilidade
-                    iconModalVisibility.classList.remove("ri--eye-line")
-                    iconModalVisibility.classList.add("ri--eye-off-line")
+                    buttonModalOpen.classList.replace('visivel', 'invisivel');
+                    iconElement.classList.replace("ri--eye-line", "ri--eye-off-line");
+                    buttonModalOpen.classList.add("opacity-invisivel"); // Adiciona opacidade
+                    localStorage.setItem(`estadoVisibilidade-${id}`, "invisivel");
                 } 
                 
                 else {
-                    buttonModalOpen.classList.remove('invisivel');
-                    buttonModalOpen.classList.add('visivel');
-
-                    // Altera o ícone de olho do botão de abrir o Modal de Visibilidade
-                    iconModalVisibility.classList.remove("ri--eye-off-line")
-                    iconModalVisibility.classList.add("ri--eye-line")
+                    buttonModalOpen.classList.replace('invisivel', 'visivel');
+                    iconElement.classList.replace("ri--eye-off-line", "ri--eye-line");
+                    buttonModalOpen.classList.remove("opacity-invisivel"); // Remove opacidade
+                    localStorage.setItem(`estadoVisibilidade-${id}`, "visivel");
                 }
+            };
 
-            }
-
-        })
+        });
 
     }
-
 });
 
 // * Script para o Modal de Exclusão
@@ -289,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const id = buttonModalOpen.getAttribute('data-espetaculo-id')
 
             // Adiciona o ID do espetaculo na rota do form
-            formModalDelete.action = `/admin/cards/${id}/delete`
+            formModalDelete.action = `/espetaculos/${id}/delete`
 
             // Nome da peça relacionada ao botão que abriu o Modal de Visibilidade
             const nome = buttonModalOpen.getAttribute('data-espetaculo-name')
