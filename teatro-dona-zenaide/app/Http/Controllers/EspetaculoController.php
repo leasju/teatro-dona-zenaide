@@ -21,7 +21,8 @@ class EspetaculoController extends Controller {
     public function showHomepage()
     {
         // Obtém todos os espetáculos disponíveis, incluindo a imagem principal
-        $espetaculos = Espetaculo::with('imagemPrincipal')->get();
+        // $espetaculos = Espetaculo::with('imagemPrincipal')->get();
+        $espetaculos = Espetaculo::all();
  
         // Retorna a view da página inicial com os espetáculos
         return view('theater.home', compact('espetaculos'));

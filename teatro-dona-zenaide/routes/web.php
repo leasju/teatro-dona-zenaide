@@ -7,14 +7,10 @@ use App\Http\Controllers\EspetaculoController;
 // * Views Teatro
 
 // Rota por GET para a tela home
-Route::get('/', function () {
-    return view('theater/home');
-});
+Route::get('/', [EspetaculoController::class, 'showHomePage']);
 
-// Rota por GET para a tela play (apenas por enquanto, futuramente será chamado a view play (peça teatral) preenchida com a peça requisitada de acordo com o card da tela home)
-Route::get('/espetaculos', function() {
-    return view('theater/play_info');
-});
+// Rota por GET para a tela play
+Route::get('/espetaculos/{id}', [EspetaculoController::class, 'show']);
 
 // Rota por GET para tela sobre nós
 Route::get('/sobre-nos', function() {
