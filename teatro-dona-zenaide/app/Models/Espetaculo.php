@@ -43,6 +43,15 @@ public function imagens()
 {
     return $this->hasMany(EspImagem::class, 'fk_id_esp');
 }
+public function imagemPrincipal()
+    {
+        return $this->hasOne(EspImagem::class, 'fk_id_esp')->where('principal', true);
+    }
+
+    public function imagensOpcionais()
+    {
+        return $this->hasMany(EspImagem::class, 'fk_id_esp')->where('principal', false);
+    }
 
    
 }
