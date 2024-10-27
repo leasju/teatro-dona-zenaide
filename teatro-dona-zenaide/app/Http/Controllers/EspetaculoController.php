@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -13,7 +14,8 @@ use App\Models\EspHorario;
 use App\Models\EspImagem;
 
 
-class EspetaculoController extends Controller {
+class EspetaculoController extends Controller
+{
 
     // * ------------------------------------------THEATER------------------------------------------
 
@@ -23,7 +25,7 @@ class EspetaculoController extends Controller {
         // Obtém todos os espetáculos disponíveis, incluindo a imagem principal
         // $espetaculos = Espetaculo::with('imagemPrincipal')->get();
         $espetaculos = Espetaculo::with('imagemPrincipal')->get();
- 
+
         // Retorna a view da página inicial com os espetáculos
         return view('theater.home', compact('espetaculos'));
     }
@@ -33,14 +35,14 @@ class EspetaculoController extends Controller {
     {
         // Recupere o espetáculo e suas imagens (tanto principais quanto opcionais)
         $espetaculo = Espetaculo::with(['imagens' => function ($query) {
-             // Carrega todas as imagens, tanto as principais quanto as opcionais
-             $query->orderBy('principal', 'desc'); // Ordena para que as principais venham primeiro, se necessário
+            // Carrega todas as imagens, tanto as principais quanto as opcionais
+            $query->orderBy('principal', 'desc'); // Ordena para que as principais venham primeiro, se necessário
         }])->findOrFail($id);
- 
+
         // Separar as imagens principais e opcionais
         $imagemPrincipal = $espetaculo->imagens->where('principal', true)->first();
         $imagensOpcionais = $espetaculo->imagens->where('principal', false);
- 
+
         // Verifique se não há imagens opcionais, e se não houver, defina imagens padrão
         if ($imagensOpcionais->isEmpty()) {
             // Defina aqui as imagens padrão, se necessário
@@ -52,7 +54,7 @@ class EspetaculoController extends Controller {
                 (object) ['img' => 'img-banner5.jpg'],
             ]);
         }
- 
+
         // Retorna a view com os dados do espetáculo, imagem principal e imagens opcionais
         return view('theater.play_info', compact('espetaculo', 'imagemPrincipal', 'imagensOpcionais'));
     }
@@ -60,21 +62,21 @@ class EspetaculoController extends Controller {
     // * -------------------------------------------ADMIN-------------------------------------------
 
     // INDEX: Mostrar todos os espetáculos
-    public function index() : View
+    public function index(): View
     {
         // Exibe todos os espetáculos para o administrador (inclusive os ocultos)
-        $espetaculos = Espetaculo::all(); 
+        $espetaculos = Espetaculo::all();
 
         // Retorna para a view '/admin/cards' e faz a paginação de 5 em 5 espetáculos por página
         return view('/admin/cards', [
             'espetaculos' => DB::table('espetaculos')->paginate(5)
-        ]); 
+        ]);
     }
 
     // STORE: Salvar dados do Espetaculo
     public function store(Request $request)
     {
-        
+
         // dd($request->all());        
         $request->validate([
 
@@ -244,22 +246,25 @@ class EspetaculoController extends Controller {
 
         // Retorna para a página "/admin/cards"
         return redirect('/admin/cards')->with('success', 'Dados salvos com sucesso!');
-
     } // Fim da função store
 
     // EDIT: Mostra o form para editar um espetáculo
-    public function edit($id) 
+    public function edit($id)
     {
         // Busca o espetáculo pelo ID
-        $espetaculo = Espetaculo::findOrFail($id);
+        $espetaculo = Espetaculo::with(['dias.horarios'])->findOrFail($id);
 
+        // Formatar os horários em um array associativo
+        $diasHorarios = [];
+        foreach ($espetaculo->dias as $dia) {
+            $diasHorarios[$dia->dia] = $dia->horarios->pluck('hora')->toArray();
+        }
         // Retorna o form para editar o espetáculo com os dados
-        return view('/admin/cards_edit', compact('espetaculo'));
+        return view('/admin/cards_edit', compact('espetaculo', 'diasHorarios'));
     }
 
     // UPDATE: Atualiza os dados do espetáculo
-    public function update(Request $request)
-    {
+    public function update(Request $request) {
         
     }
 
@@ -268,7 +273,7 @@ class EspetaculoController extends Controller {
     {
         // Encontre as imagens associadas ao espetáculo na tabela 'imagens'
         $imagens = DB::table('imagens')->where('fk_id_esp', $id)->get();
-    
+
         // Exclua os arquivos de imagem do sistema de arquivos
         foreach ($imagens as $imagem) {
             if (!empty($imagem->img)) { // Verifica se o caminho da imagem não está vazio
@@ -278,36 +283,35 @@ class EspetaculoController extends Controller {
                 }
             }
         }
-    
+
         // Exclua os registros na tabela 'esp_img' que associam as imagens ao espetáculo
         DB::table('esp_img')->where('fk_id_esp', $id)->delete();
-    
+
         // Exclua os registros na tabela 'imagens'
         DB::table('imagens')->where('fk_id_esp', $id)->delete();
-    
+
         // Exclua os registros relacionados na tabela 'esp_dia_hora'
         DB::table('esp_dia_hora')->where('fk_id_esp', $id)->delete();
-    
+
         // Agora você pode deletar o espetáculo
         $espetaculo = Espetaculo::findOrFail($id);
         $espetaculo->delete();
-    
+
         return redirect('/admin/cards')->with('success', 'Espetáculo excluído com sucesso!');
     }
- 
+
     // OCULTAR: Ocultar um espetáculo
     public function ocultar($id)
     {
         // Busca o espetáculo pelo ID
         $espetaculo = Espetaculo::findOrFail($id);
- 
+
         // Alterna o estado de ocultação
         $espetaculo->oculto = !$espetaculo->oculto;
         $espetaculo->save(); // Salva a mudança no banco de dados
- 
+
         // Retorna uma mensagem de sucesso
         $message = $espetaculo->oculto ? 'Espetáculo ocultado com sucesso!' : 'Espetáculo exibido com sucesso!';
         return redirect('/admin/cards')->with('success', $message);
     }
-
 }

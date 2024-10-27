@@ -52,6 +52,10 @@ public function imagemPrincipal()
     {
         return $this->hasMany(EspImagem::class, 'fk_id_esp')->where('principal', false);
     }
+    public function horarios()
+    {
+        return $this->hasManyThrough(EspHorario::class, EspDia::class, 'fk_id_esp', 'fk_id_dia', 'id', 'id');
+    }
 
    
 }
