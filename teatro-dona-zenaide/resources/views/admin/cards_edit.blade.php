@@ -207,18 +207,18 @@
 
                             </div>
 
-                            {{-- * Collapse 3: Ficha Técnica --}}
+                            {{-- * Collapse 3: Ficha Técnica (Obrigatórios) --}}
 
                             <div class="accordion-item">
 
                                 {{-- Header do Collapse 3 --}}
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFichaTecnica" aria-expanded="false" aria-controls="collapseFichaTecnica">
-                                        Ficha Técnica
+                                        Ficha Técnica (Obrigatórios)
                                     </button>
                                 </h2>
 
-                                {{-- Conteúdo do Collapse 3: Ficha Técnica --}}
+                                {{-- Conteúdo do Collapse 3: Ficha Técnica (Obrigatórios) --}}
                                 <div id="collapseFichaTecnica" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionForm">
                                     <div class="accordion-body">
 
@@ -227,12 +227,12 @@
                                             <label for="roteiristaEsp" class="form-label">Roteiro <span class="red-star" title="Campo obrigatório">*</span></label>
                                             <input type="text" class="form-control" id="roteiristaEsp" name="roteiristaEsp" placeholder="Insira um ou mais representantes para roteiro" value="{{$espetaculo->roteiristaEsp}}" required>
                                         </div>
-
+                                        
                                         {{-- Input de Elenco --}}
                                         <div class="mb-3">
                                             <label for="elencoEsp" class="form-label">Elenco <span class="red-star" title="Campo obrigatório">*</span></label>
-                                            <input type="text" class="form-control"
-                                                id="elencoEsp" name="elencoEsp" placeholder="Insira um ou mais representantes para elenco" value="{{$espetaculo->elencoEsp}}" required>
+                                            <input type="text" class="form-control" 
+                                            id="elencoEsp" name="elencoEsp"  placeholder="Insira um ou mais representantes para elenco" value="{{$espetaculo->elencoEsp}}" required>   
                                         </div>
 
                                         {{-- Input de Direção --}}
@@ -244,88 +244,104 @@
                                         {{-- Input de Figurino --}}
                                         <div class="mb-3">
                                             <label for="figurinoEsp" class="form-label">Figurino <span class="red-star" title="Campo obrigatório">*</span></label>
-                                            <input type="text" class="form-control"
-                                                id="figurinoEsp" name="figurinoEsp" placeholder="Insira um ou mais representantes para figurino" value="{{$espetaculo->figurinoEsp}}" required>
+                                            <input type="text" class="form-control" 
+                                            id="figurinoEsp" name="figurinoEsp" placeholder="Insira um ou mais representantes para figurino" value="{{$espetaculo->figurinoEsp}}" required>
                                         </div>
-
+                                        
                                         {{-- Input de Cenografia --}}
                                         <div class="mb-3">
                                             <label for="cenoEsp" class="form-label">Cenografia <span class="red-star" title="Campo obrigatório">*</span></label>
-                                            <input type="text" class="form-control"
-                                                id="cenoEsp" name="cenoEsp" placeholder="Insira um ou mais representantes para cenografia" value="{{$espetaculo->cenoEsp}}" required>
+                                            <input type="text" class="form-control" 
+                                            id="cenoEsp" name="cenoEsp" placeholder="Insira um ou mais representantes para cenografia" value="{{$espetaculo->cenoEsp}}" required>
                                         </div>
-
+                                        
                                         {{-- Input de Iluminação --}}
                                         <div class="mb-3">
                                             <label for="luzEsp" class="form-label">Iluminação <span class="red-star" title="Campo obrigatório">*</span></label>
-                                            <input type="text" class="form-control"
-                                                id="luzEsp" name="luzEsp" placeholder="Insira um ou mais representantes para iluminação" value="{{$espetaculo->luzEsp}}" required>
+                                            <input type="text" class="form-control" 
+                                            id="luzEsp" name="luzEsp" placeholder="Insira um ou mais representantes para iluminação" value="{{$espetaculo->luzEsp}}" required>
                                         </div>
 
                                         {{-- Input de Sonorização --}}
                                         <div class="mb-3">
                                             <label for="sonoEsp" class="form-label">Sonorização <span class="red-star" title="Campo obrigatório">*</span></label>
-                                            <input type="text" class="form-control"
-                                                id="sonoEsp" name="sonoEsp" placeholder="Insira um ou mais representantes para sonorização" value="{{$espetaculo->sonoEsp}}" required>
+                                            <input type="text" class="form-control" 
+                                            id="sonoEsp" name="sonoEsp" placeholder="Insira um ou mais representantes para sonorização" value="{{$espetaculo->sonoEsp}}" required>
                                         </div>
-
+                                        
                                         {{-- Input de Produção --}}
                                         <div class="mb-3">
                                             <label for="producaoEsp" class="form-label">Produção <span class="red-star" title="Campo obrigatório">*</span></label>
-                                            <input type="text" class="form-control"
-                                                id="producaoEsp" name="producaoEsp" placeholder="Insira um ou mais representantes para produção" value="{{$espetaculo->producaoEsp}}" required>
-                                        </div>
-
-                                        {{-- Opcionais --}}
-
-                                        {{-- Input de Costureira --}}
-                                        <div class="mb-3">
-                                            <label for="costEsp" class="form-label">Costureira</label>
-                                            <input type="text" class="form-control"
-                                                id="costEsp" name="costEsp" placeholder="Insira um ou mais representantes para costureira" value="{{$espetaculo->costEsp}}">
-                                        </div>
-
-                                        {{-- Input de Assistente de Cenografia --}}
-                                        <div class="mb-3">
-                                            <label for="cenoAssistEsp" class="form-label">Assistente de cenografia</label>
-                                            <input type="text" class="form-control"
-                                                id="cenoAssistEsp" name="cenoAssistEsp" placeholder="Insira um ou mais representantes para assistente de cenografia" value="{{$espetaculo->cenoAssistEsp}}">
-                                        </div>
-
-                                        {{-- Input de Cenotécnico --}}
-                                        <div class="mb-3">
-                                            <label for="cenoTec" class="form-label">Cenotécnico</label>
-                                            <input type="text" class="form-control"
-                                                id="cenoTec" name="cenoTec" placeholder="Insira um ou mais representantes para cenotécnico" value="{{$espetaculo->cenoTec}}">
-                                        </div>
-
-                                        {{-- Input de Consultoria de Design --}}
-                                        <div class="mb-3">
-                                            <label for="designEsp" class="form-label">Consultoria de Design</label>
-                                            <input type="text" class="form-control"
-                                                id="designEsp" name="designEsp" placeholder="Insira um ou mais representantes para consultoria de design" value="{{$espetaculo->designEsp}}">
-                                        </div>
-
-                                        {{-- Input de Co-produção --}}
-                                        <div class="mb-3">
-                                            <label for="coProducaoEsp" class="form-label">Co-produção</label>
-                                            <input type="text" class="form-control"
-                                                id="coProducaoEsp" name="coProducaoEsp" placeholder="Insira um ou mais representantes para co-produção" value="{{$espetaculo->coProducaoEsp}}">
-                                        </div>
-
-                                        {{-- Input de Agradecimentos --}}
-                                        <div class="mb-3">
-                                            <label for="agradecimentos" class="form-label">Agradecimentos</label>
-                                            <input type="text" class="form-control"
-                                                id="agradecimentos" name="agradecimentos" placeholder="Insira um ou mais representantes para agradecimentos" value="{{$espetaculo->agradecimentos}}">
+                                            <input type="text" class="form-control" 
+                                            id="producaoEsp" name="producaoEsp" placeholder="Insira um ou mais representantes para produção" value="{{$espetaculo->producaoEsp}}" required>
                                         </div>
 
                                     </div>
                                 </div>
                             </div>
+
+                            {{-- * Collapse 4: Ficha Técnica (Opcionais) --}}
+
+                            <div class="accordion-item">
+
+                                {{-- Header do Collapse 4 --}}
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOpcionaisFichaTecnica" aria-expanded="false" aria-controls="collapseOpcionaisFichaTecnica">
+                                        Ficha Técnica (Opcionais)
+                                    </button>
+                                </h2>
+
+                                {{-- Conteúdo do Collapse 4: Ficha Técnica (Opcionais) --}}
+                                <div id="collapseOpcionaisFichaTecnica" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionForm">
+                                    <div class="accordion-body">
+                                        
+                                        {{-- Input de Costureira --}}
+                                        <div class="mb-3">
+                                            <label for="costEsp" class="form-label">Costureira</label>
+                                            <input type="text" class="form-control" 
+                                            id="costEsp" name="costEsp" placeholder="Insira um ou mais representantes para costureira" value="{{$espetaculo->costEsp}}">
+                                        </div>
+
+                                        {{-- Input de Assistente de cenografia --}}
+                                        <div class="mb-3">
+                                            <label for="cenoAssistEsp" class="form-label">Assistente de cenografia</label>
+                                            <input type="text" class="form-control" 
+                                            id="cenoAssistEsp" name="cenoAssistEsp" placeholder="Insira um ou mais representantes para assistente de cenografia" value="{{$espetaculo->cenoAssistEsp}}">
+                                        </div>
+
+                                        {{-- Input de Cenotécnico --}}
+                                        <div class="mb-3">
+                                            <label for="cenoTec" class="form-label">Cenotécnico</label>
+                                            <input type="text" class="form-control" 
+                                            id="cenoTec" name="cenoTec" placeholder="Insira um ou mais representantes para cenotécnico" value="{{$espetaculo->cenoTec}}">
+                                        </div>
+                                        
+                                        {{-- Input de Consultoria de Design --}}
+                                        <div class="mb-3">
+                                            <label for="designEsp" class="form-label">Consultoria de Design</label>
+                                            <input type="text" class="form-control" 
+                                            id="designEsp" name="designEsp" placeholder="Insira um ou mais representantes para consultoria de design" value="{{$espetaculo->designEsp}}">
+                                        </div>
+                                        
+                                        {{-- Input de Co-produção --}}
+                                        <div class="mb-3">
+                                            <label for="coProducaoEsp" class="form-label">Co-produção</label>
+                                            <input type="text" class="form-control" 
+                                            id="coProducaoEsp" name="coProducaoEsp" placeholder="Insira um ou mais representantes para co-produção" value="{{$espetaculo->coProducaoEsp}}">
+                                        </div>
+
+                                        {{-- Input de Agradecimentos --}}
+                                        <div class="mb-3">
+                                            <label for="agradecimentos" class="form-label">Agradecimentos</label>
+                                            <input type="text" class="form-control" 
+                                            id="agradecimentos" name="agradecimentos" placeholder="Insira um ou mais representantes para agradecimentos" value="{{$espetaculo->agradecimentos}}">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
 
                     {{-- Footer do  formulário de edição da peça --}}
                     <div id="footer-edit-esp">
