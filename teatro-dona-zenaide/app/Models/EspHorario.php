@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\Espetaculo;
 
 class EspHorario extends Model
 {
@@ -19,6 +20,10 @@ class EspHorario extends Model
     // Um horário pertence a um dia
     public function dia()
     {
-        return $this->belongsTo(EspDia::class, 'fk_id_dia');
+        return $this->belongsTo(EspDia::class);
+    }
+    public function espetaculos()
+    {
+        return $this->belongsTo(Espetaculo::class);
     }
 }

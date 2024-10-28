@@ -56,7 +56,7 @@
                         {{-- Foreach para cada espetáculo visível --}}
                         @foreach ($espetaculosVisiveis as $espetaculo)
                             <div class="card col-md-4 col-sm-12">
-                                {{-- <img src="{{ asset('img/espetaculos/' . $espetaculo->imagemPrincipal->img) }}" class="card-img-top" alt="Imagem {{ $espetaculo->nomeEsp }}"> --}}
+                                <img src="{{ asset('img/espetaculos/' . $espetaculo->imagemPrincipal->img) }}" class="card-img-top" alt="Imagem {{ $espetaculo->nomeEsp }}">
                                 <div class="card-body">
                                     <p class="card-text roboto-regular">{{ $espetaculo->tempEsp }}</p>
                                     <hr class="divider divider--card">
