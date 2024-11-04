@@ -27,7 +27,7 @@
                         <div class="form-floating mb-3">
 
                             {{-- Input e Label de Email --}}
-                            <input type="email" class="form-control" id="user" name="user" placeholder="nome@exemplo.com" required>
+                            <input type="email" class="form-control" id="user" name="user" placeholder="nome@exemplo.com" autocomplete="off" required>
                             <label for="user">Insira seu e-mail</label>
 
                         </div>
@@ -37,7 +37,7 @@
                         <div class="form-floating password-input">
 
                             {{-- Input e Label de Senha --}}
-                            <input type="password" class="form-control" id="pass" name="pass" placeholder="Senha" required>
+                            <input type="password" class="form-control" id="pass" name="pass" placeholder="Senha" autocomplete="off" required>
                             <span class="ri--eye-line togglePassword" title="Mostrar senha"></span>
 
                             <label for="pass">Insira sua senha</label>

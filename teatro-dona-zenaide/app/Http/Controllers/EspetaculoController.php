@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
@@ -263,41 +264,212 @@ class EspetaculoController extends Controller
     }
 
     // UPDATE: Atualiza os dados do espetáculo
-    public function update(Request $request) {
-        
-    }
 
-    // DESTROY: Deletar um espetáculo
-    public function destroy($id)
+    public function update(Request $request, $id)
     {
-        // Encontre as imagens associadas ao espetáculo na tabela 'imagens'
-        $imagens = DB::table('imagens')->where('fk_id_esp', $id)->get();
+        // Validação dos campos
+        $request->validate([
+            'nomeEsp' => 'required',
+            'tempEsp' => 'required',
+            'duracaoEsp' => 'required',
+            'classifEsp' => 'required',
+            'descEsp' => 'required',
+            'urlCompra' => 'required|url',
+            'roteiristaEsp' => 'required',
+            'elencoEsp' => 'required',
+            'direcaoEsp' => 'required',
+            'figurinoEsp' => 'required',
+            'cenoEsp' => 'required',
+            'luzEsp' => 'required',
+            'sonoEsp' => 'required',
+            'producaoEsp' => 'required',
+            'days' => 'required|array',
+            'schedules.*' => 'required|array',
+            'imagem_principal' => 'nullable|image',
+            'imagemOpcional_1' => 'nullable|image',
+            'imagemOpcional_2' => 'nullable|image',
+            'imagemOpcional_3' => 'nullable|image',
+            'imagemOpcional_4' => 'nullable|image',
+            'imagemOpcional_5' => 'nullable|image',
+        ]);
 
-        // Exclua os arquivos de imagem do sistema de arquivos
-        foreach ($imagens as $imagem) {
-            if (!empty($imagem->img)) { // Verifica se o caminho da imagem não está vazio
-                $imagePath = public_path('img/espetaculos/' . $imagem->img);
-                if (File::exists($imagePath)) {
-                    File::delete($imagePath); // Exclui a imagem do sistema de arquivos
+        // Encontra o espetáculo pelo ID
+        $espetaculo = Espetaculo::findOrFail($id);
+
+        // Atualiza os campos de texto e outros dados básicos
+        $espetaculo->update($request->only([
+            'nomeEsp',
+            'tempEsp',
+            'duracaoEsp',
+            'classifEsp',
+            'descEsp',
+            'urlCompra',
+            'roteiristaEsp',
+            'elencoEsp',
+            'direcaoEsp',
+            'figurinoEsp',
+            'cenoEsp',
+            'luzEsp',
+            'sonoEsp',
+            'producaoEsp',
+            'costEsp',
+            'cenoAssistEsp',
+            'cenoTec',
+            'designEsp',
+            'coProducaoEsp',
+            'agradecimentos',
+        ]));
+
+        // Remove as referências de horários e dias antigos
+        foreach ($espetaculo->dias as $dia) {
+            DB::table('esp_dia_hora')->where('fk_id_dia', $dia->id)->delete();
+        }
+
+        $espetaculo->dias()->delete(); // Agora exclui os dias antigos
+
+        // Atualiza dias e horários
+        foreach ($request->input('days') as $dayIndex => $day) {
+            $dia = EspDia::create([
+                'fk_id_esp' => $espetaculo->id,
+                'dia' => $day,
+            ]);
+
+            $schedules = $request->input("schedules.$day");
+            if (!is_array($schedules)) {
+                $schedules = [$schedules];
+            }
+
+            foreach ($schedules as $hora) {
+                if (!empty($hora)) {
+                    $horario = EspHorario::create([
+                        'fk_id_dia' => $dia->id,
+                        'hora' => $hora,
+                    ]);
+
+                    DB::table('esp_dia_hora')->insert([
+                        'fk_id_esp' => $espetaculo->id,
+                        'fk_id_dia' => $dia->id,
+                        'fk_id_hora' => $horario->id,
+                        'created_at' => now(),
+                        'updated_at' => now(),
+                    ]);
                 }
             }
         }
 
-        // Exclua os registros na tabela 'esp_img' que associam as imagens ao espetáculo
-        DB::table('esp_img')->where('fk_id_esp', $id)->delete();
+        // Atualiza a imagem principal
+        if ($request->hasFile('imagem_principal')) {
+            $imagemAntigaPrincipal = EspImagem::where('fk_id_esp', $espetaculo->id)->where('principal', true)->first();
 
-        // Exclua os registros na tabela 'imagens'
-        DB::table('imagens')->where('fk_id_esp', $id)->delete();
+            if ($imagemAntigaPrincipal) {
+                DB::table('esp_img')->where('fk_id_img', $imagemAntigaPrincipal->id)->delete();
+                $imagePath = public_path('img/espetaculos/' . $imagemAntigaPrincipal->img);
+                if (File::exists($imagePath)) {
+                    File::delete($imagePath);
+                }
+                $imagemAntigaPrincipal->delete();
+            }
 
-        // Exclua os registros relacionados na tabela 'esp_dia_hora'
-        DB::table('esp_dia_hora')->where('fk_id_esp', $id)->delete();
+            $imagemPrincipal = $request->file('imagem_principal');
+            $nomeImagemPrincipal = time() . '_' . $imagemPrincipal->getClientOriginalName();
+            $imagemPrincipal->move(public_path('img/espetaculos'), $nomeImagemPrincipal);
 
-        // Agora você pode deletar o espetáculo
-        $espetaculo = Espetaculo::findOrFail($id);
-        $espetaculo->delete();
+            $imgPrincipal = EspImagem::create([
+                'fk_id_esp' => $espetaculo->id,
+                'img' => $nomeImagemPrincipal,
+                'principal' => true,
+            ]);
+        }
 
-        return redirect('/admin/cards')->with('success', 'Espetáculo excluído com sucesso!');
+        // Atualiza as imagens opcionais
+        for ($i = 1; $i <= 5; $i++) {
+            $imagemOpcionalField = "imagemOpcional_" . $i;
+            if ($request->hasFile($imagemOpcionalField)) {
+                $imagemAntigaOpcional = EspImagem::where('fk_id_esp', $espetaculo->id)->where('principal', false)->skip($i - 1)->first();
+
+                if ($imagemAntigaOpcional) {
+                    DB::table('esp_img')->where('fk_id_img', $imagemAntigaOpcional->id)->delete();
+                    $imagePath = public_path('img/espetaculos/' . $imagemAntigaOpcional->img);
+                    if (File::exists($imagePath)) {
+                        File::delete($imagePath);
+                    }
+                    $imagemAntigaOpcional->delete();
+                }
+
+                $imagemOpcional = $request->file($imagemOpcionalField);
+                $nomeImagemOpcional = time() . '_' . $imagemOpcional->getClientOriginalName();
+                $imagemOpcional->move(public_path('img/espetaculos'), $nomeImagemOpcional);
+
+                $imgOpcional = EspImagem::create([
+                    'fk_id_esp' => $espetaculo->id,
+                    'img' => $nomeImagemOpcional,
+                    'principal' => false,
+                ]);
+            }
+        }
+
+        // Redirecionamento ao final do processo
+        return redirect('/admin/cards')->with('success', 'Dados atualizados com sucesso!');
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // DESTROY: Deletar um espetáculo
+    public function destroy($id)
+    {
+        DB::beginTransaction();
+
+        try {
+            // Exclua as imagens associadas ao espetáculo na tabela 'imagens'
+            $imagens = DB::table('imagens')->where('fk_id_esp', $id)->get();
+
+            // Exclua os arquivos de imagem do sistema de arquivos
+            foreach ($imagens as $imagem) {
+                if (!empty($imagem->img)) {
+                    $imagePath = public_path('img/espetaculos/' . $imagem->img);
+                    if (File::exists($imagePath)) {
+                        File::delete($imagePath); // Exclui a imagem do sistema de arquivos
+                    }
+                }
+            }
+
+            // Exclua os registros na tabela 'esp_img' que associam as imagens ao espetáculo
+            DB::table('esp_img')->where('fk_id_esp', $id)->delete();
+
+            // Exclua os registros na tabela 'imagens'
+            DB::table('imagens')->where('fk_id_esp', $id)->delete();
+
+            // Exclua os registros relacionados na tabela 'esp_dia_hora'
+            DB::table('esp_dia_hora')->where('fk_id_esp', $id)->delete();
+
+            // Exclua o espetáculo
+            $espetaculo = Espetaculo::findOrFail($id);
+            $espetaculo->delete();
+
+            DB::commit(); // Confirma a transação
+            return redirect('/admin/cards')->with('success', 'Espetáculo excluído com sucesso!');
+        } catch (\Exception $e) {
+            DB::rollback(); // Reverte a transação em caso de erro
+            return redirect()->back()->with('error', 'Erro ao excluir o espetáculo: ' . $e->getMessage());
+        }
+    }
+
 
     // OCULTAR: Ocultar um espetáculo
     public function ocultar($id)
