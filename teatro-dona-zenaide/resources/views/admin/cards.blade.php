@@ -185,18 +185,18 @@
 
                     </div>
                 
-                    {{-- * Collapse 3: Ficha Técnica --}}
+                    {{-- * Collapse 3: Ficha Técnica (Obrigatórios) --}}
 
                     <div class="accordion-item">
 
                         {{-- Header do Collapse 3 --}}
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFichaTecnica" aria-expanded="false" aria-controls="collapseFichaTecnica">
-                                Ficha Técnica
+                                Ficha Técnica (Obrigatórios)
                             </button>
                         </h2>
 
-                        {{-- Conteúdo do Collapse 3: Ficha Técnica --}}
+                        {{-- Conteúdo do Collapse 3: Ficha Técnica (Obrigatórios) --}}
                         <div id="collapseFichaTecnica" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionForm">
                             <div class="accordion-body">
 
@@ -255,7 +255,24 @@
                                     id="producaoEsp" name="producaoEsp" placeholder="Insira um ou mais representantes para produção" value="" required>
                                 </div>
 
-                                {{-- Opcionais --}}
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- * Collapse 4: Ficha Técnica (Opcionais) --}}
+
+                    <div class="accordion-item">
+
+                        {{-- Header do Collapse 4 --}}
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOpcionaisFichaTecnica" aria-expanded="false" aria-controls="collapseOpcionaisFichaTecnica">
+                                Ficha Técnica (Opcionais)
+                            </button>
+                        </h2>
+
+                        {{-- Conteúdo do Collapse 4: Ficha Técnica (Opcionais) --}}
+                        <div id="collapseOpcionaisFichaTecnica" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionForm">
+                            <div class="accordion-body">
                                 
                                 {{-- Input de Costureira --}}
                                 <div class="mb-3">
@@ -298,7 +315,7 @@
                                     <input type="text" class="form-control" 
                                     id="agradecimentos" name="agradecimentos" placeholder="Insira um ou mais representantes para agradecimentos" value="">
                                 </div>
-
+                                
                             </div>
                         </div>
                     </div>

@@ -206,8 +206,11 @@
     /* Alinhamento do card centralizado e em coluna */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
+
+    /* Espaçamento inferior do card body */
+    margin-bottom: 25px;
 }
 
 #cards-section .card-text {
@@ -335,6 +338,11 @@
     #cards-section .card {
         width: 250px;
         min-height: 400px;
+    }
+
+    /* Diminuindo o espaçamento inferior do card body da seção de Cards */
+    #cards-section .card-body {
+        margin-bottom: 10px;
     }
 
     /* Diminuindo o font size do título do card da seção de Cards */
