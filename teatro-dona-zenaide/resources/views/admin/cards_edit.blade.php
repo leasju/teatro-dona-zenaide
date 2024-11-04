@@ -31,9 +31,10 @@
                 </div>
 
                 {{-- Form Edit --}}
-                <form action="/admin/cards" method="POST" enctype="multipart/form-data" id="formEdit">
+                <form action="/admin/cards/{{ $espetaculo->id}}/editar"  method="POST" enctype="multipart/form-data" id="formEdit">
 
                     @csrf
+                    @method('PUT')
 
                     <div id="formEditAccordion">
                         <div class="accordion" id="accordionForm">

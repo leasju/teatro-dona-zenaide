@@ -23,7 +23,8 @@ return new class extends Migration
             // Referência pra Dias
             $table->foreign('fk_id_img')->
                     references('id')->
-                    on('imagens');
+                    on('imagens')->
+                    onDelete('cascade');
 
             $table->timestamps();
         });

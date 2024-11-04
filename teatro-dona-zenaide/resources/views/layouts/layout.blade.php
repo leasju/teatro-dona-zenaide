@@ -133,7 +133,8 @@
                         <div class="col-md-4 col-sm-12 footer-section-text-center">
                             <h2 class="tnr-bold tnr-title-size tnr-title-size--sm">FALE CONOSCO</h2>
                             <div class="form-inputs">
-                                <form action="">
+                                <form action="{{ route('contact.send') }}" method="POST">
+                                    @csrf
                                     <div class="form-floating mb-3">
                                         <input type="email" class="form-control" id="floatingInput" placeholder="nome@exemplo.com">
                                         <label for="floatingInput">Email</label>
