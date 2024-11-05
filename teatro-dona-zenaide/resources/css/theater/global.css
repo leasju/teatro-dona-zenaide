@@ -502,9 +502,6 @@ main {
 }
 
 .divider--footer {
-    /* Largura do divider */
-    --divider-width: 100%;
-
     /* Margin do divider */
     --divider-margin-bottom: 25px;
 }
@@ -517,6 +514,17 @@ main {
 
     /* Margin do divider */
     --divider-margin-top: 5px;
+}
+
+.divider--empty {
+    /* Largura do divider */
+    --divider-width: 400px;
+
+    /* Margin do divider */
+    --divider-margin-top: 20px;
+
+    /* Cor do divider */
+    color: var(--texto-primario);
 }
 
 /* Tela Play Info */

@@ -49,8 +49,11 @@
 
                     {{-- Exibe a mensagem se não houver espetáculos visíveis ou cadastrados no Banco de Dados --}}
                     @if ($espetaculosVisiveis->isEmpty())
-                        <div class="col-md-12 text-center">
-                            <p class="roboto-regular" id="isEmptyText">Nenhum espetáculo encontrado.</p>
+                        <div class="col-md-12 d-flex flex-column justify-content-center align-items-center text-center">
+                            <img src="{{ Vite::asset('resources/img/tela-home/empty-state-img.png') }}" id="empty-state-img" class="img-fluid" alt="Empty State Image">
+                            <h3 id="empty-state-title" class="roboto-medium">Não há espetáculos no momento</h3>
+                            <p id="empty-state-text" class="roboto-light">Não há espetáculos agora, mas o próximo ato já está em preparação! Não perca por esperar as próximas novidades!</p>
+                            <hr class="divider divider--empty">
                         </div>
                     @else
                         {{-- Foreach para cada espetáculo visível --}}
