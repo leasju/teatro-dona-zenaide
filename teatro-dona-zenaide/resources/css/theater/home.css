@@ -251,9 +251,37 @@
     border-radius: 0 !important;
 }
 
-#cards-section #isEmptyText {
-    /* Font size do texto de empty */
+#cards-section #empty-state-img {
+    /* Largura da imagem do empty state */
+    width: 500px;
+}
+
+#cards-section #empty-state-title {
+    /* Font size e cor do título do empty state */
+    font-size: 28px;
+    color: var(--texto-primario);
+
+    /* Espaçamento entre as letras e as linhas */
+    letter-spacing: .5px;
+
+    /* Espaçamento superior da imagem do empty state */
+    margin-top: 20px;
+}
+
+#cards-section #empty-state-text {
+    /* Font size e cor do texto do empty state */
     font-size: 20px;
+    color: var(--texto-primario);
+
+    /* Espaçamento entre as letras e as linhas */
+    letter-spacing: .5px;
+    line-height: 35px;
+
+    /* Espaçamento superior do título do empty state */
+    margin-top: 10px;
+
+    /* Zerando a margin bottom */
+    margin-bottom: 0;
 }
 
 /* 
@@ -311,6 +339,26 @@
         padding: 95px 0 95px 50px;
     }
 
+    #cards-section #empty-state-img {
+        /* Largura da imagem do empty state */
+        width: 400px;
+    }
+    
+    #cards-section #empty-state-title {
+        /* Font size do empty state */
+        font-size: 26px;
+    }
+    
+    #cards-section #empty-state-text {
+        /* Font size do empty state */
+        font-size: 18px;
+    }
+
+    .divider--empty {
+        /* Largura do divider */
+        --divider-width: 300px;
+    }
+
 }
 
 /* `md` applies to small devices (landscape phones, less than 768px) */
@@ -361,6 +409,26 @@
         height: 20px;
     }
 
+    #cards-section #empty-state-img {
+        /* Largura da imagem do empty state */
+        width: 350px;
+    }
+    
+    #cards-section #empty-state-title {
+        /* Font size do empty state */
+        font-size: 24px;
+    }
+    
+    #cards-section #empty-state-text {
+        /* Font size do empty state */
+        font-size: 16px;
+    }
+
+    .divider--empty {
+        /* Largura do divider */
+        --divider-width: 250px;
+    }
+
 }
 
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
@@ -370,6 +438,11 @@
     #cards-section .card {
         width: 300px;
         min-height: 450px;
+    }
+
+    #cards-section #empty-state-text {
+        /* Espaçamento entre as linhas */
+        line-height: 30px;
     }
 
 }
@@ -407,6 +480,32 @@
     .fontisto--ticket {
         width: 16px;
         height: 16px;
+    }
+
+    #cards-section #empty-state-img {
+        /* Largura da imagem do empty state */
+        width: 400px;
+    }
+    
+    #cards-section #empty-state-title {
+        /* Font size do empty state */
+        font-size: 22px;
+    }
+    
+    #cards-section #empty-state-text {
+        /* Font size do empty state */
+        font-size: 14px;
+    
+        /* Espaçamento superior do título do empty state */
+        margin-top: 0px;
+    }
+
+    .divider--empty {
+        /* Largura do divider */
+        --divider-width: 200px;
+
+        /* Margin do divider */
+        --divider-margin-top: 10px;
     }
 
 }

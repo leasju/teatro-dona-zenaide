@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Cria o botão de remover
         let removeButton = document.createElement('button');
         removeButton.type = 'button';
-        removeButton.classList.add('btn', 'btn-danger', 'btn-remove-schedule');
+        removeButton.classList.add('btn', 'btn-remove-schedule');
         removeButton.textContent = 'Remover';
 
         // Adiciona o input e o botão de remover ao div
