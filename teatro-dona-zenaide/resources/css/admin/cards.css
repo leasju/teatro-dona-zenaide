@@ -410,6 +410,36 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 /* 
+ * Toast Styles
+*/
+
+/* Toast de sucesso */
+.toast-success {
+    /* Alinhamento do toast */
+    display: flex;
+    place-items: center;
+
+    /* Cor do fundo do toast de sucesso */
+    background: var(--verde);
+
+    /* Box shadow do toast de sucesso */
+    box-shadow: -5px 5px 20px -5px rgba(0,0,0,0.75);
+}
+
+/* Toast de erro */
+.toast-error {
+    /* Alinhamento do toast */
+    display: flex;
+    place-items: center;
+
+    /* Cor do fundo do toast de erro */
+    background: var(--vermelho-geral);
+
+    /* Box shadow do toast de erro */
+    box-shadow: -5px 5px 20px -5px rgba(0,0,0,0.75);
+}
+
+/* 
  * Pagination Classes
 */
 
