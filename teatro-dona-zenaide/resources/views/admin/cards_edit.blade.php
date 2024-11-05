@@ -74,66 +74,51 @@
                                         <div class="mb-3 d-flex flex-column gap-2">
 
                                             <label>Dias e Horários das Sessões de Apresentação da Peça <span class="red-star" title="Campo obrigatório">*</span></label>
-                                            @foreach(['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'] as $day)
 
                                             {{-- Looping pelos dias da semana (de Domingo a Sábado) para criar checkboxes e inputs de horários --}}
+                                            @foreach(['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'] as $day)
 
-                                            {{-- Inputs Checkbox para selecionar os dias das sessões de apresentação --}}
-                                            <div class="form-check ms-2">
-                                                {{-- Checkbox para cada dia da semana, com o valor sendo o nome do dia (ex: Domingo) --}}
-                                                <input class="form-check-input clear-checkbox-day checkbox-day" type="checkbox" value="{{ $day }}" id="check{{ $day }}" name="days[]"
-                                                    {{ isset($diasHorarios[$day]) ? 'checked' : '' }}>
+                                                {{-- Inputs Checkbox para selecionar os dias das sessões de apresentação --}}
+                                                <div class="form-check ms-2">
+                                                    {{-- Checkbox para cada dia da semana, com o valor sendo o nome do dia (ex: Domingo) --}}
+                                                    <input class="form-check-input clear-checkbox-day checkbox-day" type="checkbox" value="{{ $day }}" id="check{{ $day }}" name="days[]"
+                                                        {{ isset($diasHorarios[$day]) ? 'checked' : '' }}>
 
-                                                {{-- Label para o checkbox, associada ao respectivo checkbox pelo atributo "for" --}}
-                                                <label class="form-check-label" for="check{{ $day }}">
-                                                    {{ ucfirst($day) }} {{-- O nome do dia é exibido na interface --}}
-                                                </label>
-                                            </div>
-
-                                            {{-- Div que contém os campos de horário para o respectivo dia de apresentação --}}
-                                            {{-- Inicialmente está oculta (classe d-none) e só será exibida quando o checkbox correspondente for marcado --}}
-                                            <div id="schedules-{{ $day }}" class="mt-2 ms-2 {{ isset($diasHorarios[$day]) ? '' : 'd-none' }}">
-                                                {{-- Div para agrupar os inputs de horário --}}
-                                                <div class="schedule-wrapper mb-3">
-
-
-
-
-
-
-
-                                                    @if(isset($diasHorarios[$day]))
-                                                    @foreach($diasHorarios[$day] as $hora)
-                                                    <div class="d-flex align-items-center mb-2">
-                                                        <input type="time" class="form-control me-2" name="schedules[{{ $day }}][]" value="{{ $hora }}">
-
-                                                    </div>
-                                                    
-                                                    @endforeach
-                                                    @else
-
-
-                                                    <div class="d-flex align-items-center mb-2">
-                                                        {{-- Input para inserir o horário da sessão (formato de tempo) --}}
-                                                        <input type="time" class="form-control me-2" name="schedules[{{ $day }}][]" placeholder="Horário">
-                                                    </div>
-                                                    @endif
+                                                    {{-- Label para o checkbox, associada ao respectivo checkbox pelo atributo "for" --}}
+                                                    <label class="form-check-label" for="check{{ $day }}">
+                                                        {{ ucfirst($day) }} {{-- O nome do dia é exibido na interface --}}
+                                                    </label>
                                                 </div>
 
-                                                {{-- Botão para adicionar mais horários para o respectivo dia de apresentação --}}
-                                                {{-- O atributo "day-date" contém o nome do dia, para que o JavaScript saiba a qual dia esse botão se refere --}}
-                                                <button type="button" class="btn btn-add-schedule add-schedule d-flex align-items-center mb-3" day-date="{{ $day }}">
-                                                    <span class="ic--baseline-plus"></span>
-                                                    <span class="roboto-regular">Novo horário</span>
-                                                </button>
-                                            </div>
+                                                {{-- Div que contém os campos de horário para o respectivo dia de apresentação --}}
+                                                {{-- Inicialmente está oculta (classe d-none) e só será exibida quando o checkbox correspondente for marcado --}}
+                                                <div id="schedules-{{ $day }}" class="mt-2 ms-2 {{ isset($diasHorarios[$day]) ? '' : 'd-none' }}">
+                                                    {{-- Div para agrupar os inputs de horário --}}
+                                                    <div class="schedule-wrapper mb-3">
+                                                        @if(isset($diasHorarios[$day]))
+                                                            @foreach($diasHorarios[$day] as $hora)
+                                                            <div class="d-flex align-items-center mb-2">
+                                                                <input type="time" class="form-control me-2" name="schedules[{{ $day }}][]" value="{{ $hora }}">
 
+                                                                {{-- Botão de Remover --}}
+                                                                <button type="button" class="btn btn-remove-schedule">Remover</button>
+                                                            </div>
+                                                            @endforeach
+                                                        @else
+                                                            <div class="d-flex align-items-center mb-2">
+                                                                {{-- Input para inserir o horário da sessão (formato de tempo) --}}
+                                                                <input type="time" class="form-control me-2" name="schedules[{{ $day }}][]" placeholder="Horário">
+                                                            </div>
+                                                        @endif
+                                                    </div>
 
-
-
-
-
-
+                                                    {{-- Botão para adicionar mais horários para o respectivo dia de apresentação --}}
+                                                    {{-- O atributo "day-date" contém o nome do dia, para que o JavaScript saiba a qual dia esse botão se refere --}}
+                                                    <button type="button" class="btn btn-add-schedule add-schedule d-flex align-items-center mb-3" day-date="{{ $day }}">
+                                                        <span class="ic--baseline-plus"></span>
+                                                        <span class="roboto-regular">Novo horário</span>
+                                                    </button>
+                                                </div>
                                             @endforeach
                                         </div>
 
