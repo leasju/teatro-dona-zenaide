@@ -21,6 +21,15 @@ main {
     background-color: var(--branco-preto);
 }
 
+main, .navbar, .offcanvas-body, .offcanvas-header, footer, .form-inputs input, .form-inputs textarea, .theme-container,
+#cards-section,
+#about-content-section,
+#your-theater-project-title-section, #call-to-action-box, #hold-your-event-section,
+h1, h2, h3, h4, h5, h6, p, span, a, ul, li {
+    /* Transição de cor */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 /* 
  * Icons Iconify CSS
 */
