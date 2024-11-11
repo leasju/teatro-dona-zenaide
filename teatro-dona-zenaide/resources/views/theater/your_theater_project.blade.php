@@ -74,7 +74,7 @@
                     <h2 class="roboto-regular">Estrutura:</h2>
 
                     <ul class="d-flex flex-column hold-your-event-list-ul roboto-regular">
-                        <li>300 lugares</li>
+                        <li>375 lugares</li>
                         <li>Estrutura completa de som e luz</li>
                         <li>Acesso fácil por transporte público e estacionamento</li>
                         <li>Salas de apoio</li>
