@@ -34,14 +34,14 @@
             {{-- Foreach para as imagens do slider do espetáculo  --}}
             @foreach($espetaculo->imagensOpcionais as $index => $imagem)
                 <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                    <img src="{{ asset('img/espetaculos/' . $imagem->img) }}" class="d-block w-100" alt="Imagem do espetáculo">
+                    <img src="{{ asset('img/espetaculos/' . $imagem->img) }}" class="d-block w-100 c-img" alt="Imagem do espetáculo">
                 </div>
             @endforeach
 
             {{-- Imagem padrão caso não haja imagens opcionais --}}
             @if($espetaculo->imagensOpcionais->isEmpty())
                 <div class="carousel-item active">
-                    <img src="{{ Vite::asset('resources/img/tela-play-info/img-banner.jpg') }}" class="d-block w-100" alt="Imagem padrão do espetáculo">
+                    <img src="{{ Vite::asset('resources/img/tela-play-info/img-banner.png') }}" class="d-block w-100 c-img" alt="Imagem padrão do espetáculo">
                 </div>
             @endif
 
@@ -153,7 +153,7 @@
         </div>
 
         {{-- Botão para comprar o ingresso no Sympla --}}
-        <a class="main-btn main-btn--play" href="{{ $espetaculo->urlCompra }}" target="_blank">
+        <a class="main-btn main-btn--play" href="{{ $espetaculo->urlCompra }}" target="_blank" rel="noopener noreferrer">
             <span>COMPRAR INGRESSO</span>
             <span class="tabler--arrow-right"></span>
         </a>
