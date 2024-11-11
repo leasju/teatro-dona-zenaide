@@ -19,16 +19,16 @@
                 {{-- Imagem do Teatro e Texto --}}
                 <div class="row justify-content-between">
 
-                    {{-- Imagem Teatro --}}
+                    {{-- Imagem Teatro Antigo --}}
                     <div class="col-lg-5 col-sm-12 text-center about-content-margin-bottom">
-                        <img src="{{ Vite::asset('resources/img/tela-about-us/img-sobre-teatro.png') }}" class="img-fluid" alt="">
+                        <img src="{{ Vite::asset('resources/img/tela-about-us/img-teatro-antigo.png') }}" class="img-fluid" alt="">
                     </div>
     
                     {{-- Texto Teatro --}}
                     <div class="col-lg-5 col-sm-12">
                         <h2 class="roboto-bold">O TEATRO</h2>
 
-                        <p class="roboto-regular"><span class="about-content-text-highlight">Bem-vindos ao Teatro Dona Zenaide</span>, um verdadeiro <span class="about-content-text-highlight">marco cultural</span> situado no coração de <span class="about-content-text-highlight">Jaguariúna, São Paulo</span>. Inaugurado com o propósito de ser um espaço dedicado à <span class="about-content-text-highlight">arte e à cultura</span>, o nosso teatro tem sido um <span class="about-content-text-highlight">palco vibrante</span> para uma variedade de espetáculos que vão desde <span class="about-content-text-highlight">peças teatrais</span> a <span class="about-content-text-highlight">shows musicais</span>, passando por <span class="about-content-text-highlight">apresentações de dança</span> e <span class="about-content-text-highlight">eventos comunitários</span>.</p>
+                        <p class="roboto-regular"><span class="about-content-text-highlight">O Teatro Municipal de Jaguariúna</span>, carinhosamente chamado de <span class="about-content-text-highlight">Teatro Dona Zenaide</span>, é uma <span class="about-content-text-highlight">joia da arquitetura contemporânea</span> que se destaca no cenário cultural da cidade. Situado em um <span class="about-content-text-highlight">edifício histórico</span> que, por muitos anos, foi o <span class="about-content-text-highlight">cinema local</span>, o teatro passou por uma <span class="about-content-text-highlight">reforma completa</span> e foi reinaugurado em 2008. O <span class="about-content-text-highlight">projeto de revitalização</span> foi cuidadosamente pensado para transformar o espaço em um dos <span class="about-content-text-highlight">principais centros culturais</span> da região, atendendo aos <span class="about-content-text-highlight">eventos mais importantes</span> e valorizando a <span class="about-content-text-highlight">rica cultura de Jaguariúna</span>.</p>
                         
                         <p class="roboto-regular">Nomeado em homenagem à <span class="about-content-text-highlight">Dona Zenaide</span>, uma figura local de grande <span class="about-content-text-highlight">importância e dedicação à cultura</span>, nosso teatro carrega a missão de <span class="about-content-text-highlight">enriquecer a vida cultural da comunidade</span>. Com uma <span class="about-content-text-highlight">infraestrutura moderna</span> e uma <span class="about-content-text-highlight">capacidade acolhedora</span>, oferecemos uma <span class="about-content-text-highlight">experiência única</span> para artistas e público.</p>
                     </div>
@@ -37,21 +37,20 @@
 
                 <hr class="divider divider--about">
 
-                {{-- Texto e Imagem da Dona Zenaide --}}
+                {{-- Continuação texto teatro --}}
                 <div class="row justify-content-between">
     
-                    {{-- Texto Dona Zenaide --}}
+                    {{-- Texto Continuação --}}
                     <div class="col-lg-5 col-sm-12 about-content-margin-bottom">
-                        <h2 class="roboto-bold">DONA ZENAIDE</h2>
 
-                        <p class="roboto-regular"><span class="about-content-text-highlight">Dona Zenaide</span> foi uma figura <span class="about-content-text-highlight">emblemática de Jaguariúna</span>, cuja vida e trabalho deixaram um <span class="about-content-text-highlight">impacto duradouro</span> na comunidade. Conhecida por sua <span class="about-content-text-highlight">paixão pela arte e pela cultura</span>, Dona Zenaide dedicou grande parte de sua vida a <span class="about-content-text-highlight">promover atividades culturais</span> e a <span class="about-content-text-highlight">incentivar o talento local</span>. Seu amor pelo <span class="about-content-text-highlight">teatro e pela música</span> inspirou gerações e ajudou a moldar a <span class="about-content-text-highlight">identidade cultural da cidade</span>.</p>
+                    <p class="roboto-regular"><span class="about-content-text-highlight">Com seu ambiente acolhedor e versátil</span>, o <span class="about-content-text-highlight">Teatro Dona Zenaide</span> se tornou o <span class="about-content-text-highlight">palco ideal</span> para receber uma <span class="about-content-text-highlight">diversidade impressionante de atrações</span>. <span class="about-content-text-highlight">Artistas renomados</span>, tanto <span class="about-content-text-highlight">brasileiros quanto internacionais</span>, já passaram por seu palco, encantando o público com espetáculos que vão desde o <span class="about-content-text-highlight">teatro clássico</span> à <span class="about-content-text-highlight">música contemporânea</span>. O espaço também é dedicado a <span class="about-content-text-highlight">exposições de arte</span>, <span class="about-content-text-highlight">apresentações de coral</span>, <span class="about-content-text-highlight">espetáculos de dança</span>, <span class="about-content-text-highlight">palestras inspiradoras</span> e outros <span class="about-content-text-highlight">eventos que conectam a comunidade</span>.</p>
                         
-                        <p class="roboto-regular">A inauguração do <span class="about-content-text-highlight">Teatro Dona Zenaide</span> foi um <span class="about-content-text-highlight">tributo merecido</span> a essa notável mulher, reconhecendo sua <span class="about-content-text-highlight">contribuição inestimável</span> para a cultura local. Seu espírito vive em cada <span class="about-content-text-highlight">apresentação</span>, em cada <span class="about-content-text-highlight">nota musical</span> e em cada <span class="about-content-text-highlight">aplauso</span> que ecoa em nosso teatro. <span class="about-content-text-highlight">Dona Zenaide</span> é, sem dúvida, uma <span class="about-content-text-highlight">inspiração eterna</span> para todos nós, lembrando-nos diariamente da <span class="about-content-text-highlight">importância da arte</span> em nossas vidas.</p>
+                    <p class="roboto-regular">A <span class="about-content-text-highlight">atmosfera única</span> do teatro e a <span class="about-content-text-highlight">qualidade das atrações</span> fazem dele um <span class="about-content-text-highlight">ponto de visita imperdível</span> para quem deseja vivenciar o melhor da <span class="about-content-text-highlight">cultura local</span>. Seja para um <span class="about-content-text-highlight">passeio em família</span>, uma <span class="about-content-text-highlight">noite de cultura com amigos</span> ou um <span class="about-content-text-highlight">momento de apreciação artística</span>, o <span class="about-content-text-highlight">Teatro Dona Zenaide</span> é, sem dúvida, um convite para se <span class="about-content-text-highlight">encantar e mergulhar</span> na <span class="about-content-text-highlight">arte e história de Jaguariúna</span>.</p>
                     </div>
 
-                    {{-- Imagem Dona Zenaide --}}
+                    {{-- Imagem Teatro Atual --}}
                     <div class="col-lg-5 col-sm-12 text-center">
-                        <img src="{{ Vite::asset('resources/img/tela-about-us/img-sobre-zenaide.png') }}" class="img-fluid" alt="">
+                        <img src="{{ Vite::asset('resources/img/tela-about-us/img-teatro-atual.png') }}" class="img-fluid" alt="">
                     </div>
 
                 </div>
@@ -92,23 +91,24 @@
                     <div class="tab-pane fade show active" id="mapa-de-lugares-tab-pane" role="tabpanel" aria-labelledby="mapa-de-lugares-tab" tabindex="0">
                         <div class="row d-flex justify-content-center align-items-center row-gap-5">
                             <div class="col-lg-5 col-sm-12 text-center">
-                                <img src="{{ Vite::asset('resources/img/tela-about-us/img-mapa-de-lugares.png') }}" class="img-fluid" alt="">
+                                <img src="{{ Vite::asset('resources/img/tela-about-us/img-mapa-de-lugares.jpg') }}" class="img-fluid" alt="">
                             </div>
                             <div class="col-lg-5 col-sm-12 d-flex flex-column align-items-center">
                                 <ul class="technical-characteristics-ul d-flex flex-column">
-                                    <li class="roboto-regular">Excelente lugar para <span class="technical-characteristics-text-highlight">exposições</span></li>
-                                    <li class="roboto-regular">Aconchegante, acolhedor, climatizado e <span class="technical-characteristics-text-highlight">encantador</span></li>
-                                    <li class="roboto-regular">Capacidade de <span class="technical-characteristics-text-highlight">130 pessoas</span> em pé</li>
-                                </ul>
-                            </div>
-                        </div>
+                                <li class="roboto-regular">Ambiente confortável e totalmente <span class="technical-characteristics-text-highlight">climatizado</span></li>
+                                <li class="roboto-regular"><span class="technical-characteristics-text-highlight">Poltronas de couro</span> espaçosas e confortáveis</li>
+                                <li class="roboto-regular">Excelente visibilidade de qualquer ponto da <span class="technical-characteristics-text-highlight">plateia</span></li>
+                                <li class="roboto-regular">Capacidade máxima de <span class="technical-characteristics-text-highlight">375 pessoas</span></li>
+                            </ul>
+                         </div>
                     </div>
+                </div>
 
                     {{-- Hall Conteúdo --}}
                     <div class="tab-pane fade" id="hall-tab-pane" role="tabpanel" aria-labelledby="hall-tab" tabindex="0">
                         <div class="row d-flex justify-content-center align-items-center row-gap-5">
                             <div class="col-lg-5 col-sm-12 text-center">
-                                <img src="{{ Vite::asset('resources/img/tela-about-us/img-hall.jpeg') }}" class="img-fluid" alt="">
+                                <img src="{{ Vite::asset('resources/img/tela-about-us/img-hall.jpg') }}" class="img-fluid" alt="">
                             </div>
                             <div class="col-lg-5 col-sm-12 d-flex flex-column align-items-center">
                                 <ul class="technical-characteristics-ul d-flex flex-column">
@@ -125,12 +125,13 @@
                     <div class="tab-pane fade" id="palco-tab-pane" role="tabpanel" aria-labelledby="palco-tab" tabindex="0">
                         <div class="row d-flex justify-content-center align-items-center row-gap-5">
                             <div class="col-lg-5 col-sm-12 text-center">
-                                <img src="{{ Vite::asset('resources/img/tela-about-us/img-palco.jpeg') }}" class="img-fluid" alt="">
+                                <img src="{{ Vite::asset('resources/img/tela-about-us/img-palco.jpg') }}" class="img-fluid" alt="">
                             </div>
                             <div class="col-lg-5 col-sm-12 d-flex flex-column align-items-center">
                                 <ul class="technical-characteristics-ul d-flex flex-column">
                                     <li class="roboto-regular">Excelente estrutura para <span class="technical-characteristics-text-highlight">acolher todos</span> os espetáculos</li>
-                                    <li class="roboto-regular">Dimensões do palco são de <span class="technical-characteristics-text-highlight">1.54m²</span> por <span class="technical-characteristics-text-highlight">4,7m²</span></li>
+                                    <li class="roboto-regular">Dimensões do palco são de <span class="technical-characteristics-text-highlight">8,50m</span> por <span class="technical-characteristics-text-highlight">8,45m</span></li>
+                                    <li class="roboto-regular">Dimensões do pró-cenio são de <span class="technical-characteristics-text-highlight">2,17m</span> por <span class="technical-characteristics-text-highlight">8,45m</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -140,14 +141,13 @@
                     <div class="tab-pane fade" id="equipamento-de-luz-tab-pane" role="tabpanel" aria-labelledby="equipamento-de-luz-tab" tabindex="0">
                         <div class="row d-flex justify-content-center align-items-center row-gap-5">
                             <div class="col-lg-5 col-sm-12 text-center">
-                                <img src="{{ Vite::asset('resources/img/tela-about-us/img-equipamento-de-luz.jpeg') }}" class="img-fluid" alt="">
+                                <img src="{{ Vite::asset('resources/img/tela-about-us/img-equipamento-de-luz.jpg') }}" class="img-fluid" alt="">
                             </div>
                             <div class="col-lg-5 col-sm-12 d-flex flex-column align-items-center">
                                 <ul class="technical-characteristics-ul d-flex flex-column">
-                                    <li class="roboto-regular">01 <span class="technical-characteristics-text-highlight">mesa Element</span></li>
-                                    <li class="roboto-regular">01 monitor 15"</li>
-                                    <li class="roboto-regular">12 <span class="technical-characteristics-text-highlight">DIMMERBOX</span> de 12 canais com 2000w por canal</li>
-                                    <li class="roboto-regular"><span class="technical-characteristics-text-highlight">5 varas</span> fixas no palco</li>
+                                    <li class="roboto-regular">18 <span class="technical-characteristics-text-highlight">Varas de cenário</span></li>
+                                    <li class="roboto-regular">4 Bambolinas</li>
+                                    <li class="roboto-regular">5 <span class="technical-characteristics-text-highlight">Varas de luz</span></li>
                                 </ul>
                             </div>
                         </div>
