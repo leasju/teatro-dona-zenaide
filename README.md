@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/60c7b284-8ae6-4d4c-9473-dabec80481f3" width="250"/>
+</div>
+
 # Teatro Dona Zenaide - Website Oficial
 
 Este projeto faz parte do Trabalho de Conclusão de Curso (TCC) para o curso de Desenvolvimento de Sistemas no ano de 2024 e foi criado com o objetivo de desenvolver um site oficial para o Teatro Dona Zenaide, localizado em Jaguariúna. O projeto surgiu como uma solução para melhorar a divulgação das peças teatrais, que anteriormente era feita apenas pelo Instagram, com alcance limitado.
@@ -15,19 +19,54 @@ O site foi projetado para ampliar a visibilidade das apresentações teatrais, p
 ## Tecnologias Utilizadas
 O desenvolvimento do site foi realizado utilizando as seguintes tecnologias:
 
-- HTML: Estruturação das páginas do site.
-- CSS: Estilização e design responsivo.
-- JavaScript: Funcionalidades interativas no frontend.
-- PHP: Lógica do backend e integração com banco de dados.
-- MySQL: Banco de dados utilizado para armazenar as informações do site.
-- Laravel: Framework PHP para organizar e otimizar o desenvolvimento do backend.
-- Bootstrap: Framework de CSS utilizado para criar um design moderno e responsivo.
-- Vite JS: Ferramenta utilizada para otimização e compilação de assets do projeto.
+<table style="width: 100; border: none;" cellspacing="0" cellpadding="0" border="0">
+  
+  <tr>
+    <td><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/></td>
+    <td>Estruturação das páginas do site.</td>
+  </tr>
 
-## Integrantes do Grupo do TCC24
+  <tr>
+    <td><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/></td>
+    <td>Estilização e design responsivo.</td>
+  </tr>
 
-- Alan Moreira Duarte de Castro
-- Caio Rafael Marconato Paranhos
-- Felipe Piva Andrade
-- Giovani Wesselka Heriberto Bianchi
-- Julia de Souza Leandro
+  <tr>
+    <td><img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/></td>
+    <td>Funcionalidades interativas no frontend.</td>
+  </tr>
+
+  <tr>
+    <td><img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white"/></td>
+    <td>Lógica do backend e integração com banco de dados.</td>
+  </tr>
+
+  <tr>
+    <td><img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"/></td>
+    <td>Banco de dados utilizado para armazenar as informações do site.</td>
+  </tr>
+
+  <tr>
+    <td><img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white"/></td>
+    <td>Framework PHP para organizar e otimizar o desenvolvimento do backend.</td>
+  </tr>
+
+  <tr>
+    <td><img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/></td>
+    <td>Framework de CSS utilizado para criar um design moderno e responsivo.</td>
+  </tr>
+
+  <tr>
+    <td><img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E"/></td>
+    <td>Ferramenta utilizada para servidor de desenvolvimento local com fast refresh e compilação de assets do projeto.</td>
+  </tr>
+  
+</table>
+
+## Integrantes do Grupo do TCC 2024
+
+- (Back-End) Alan Moreira Duarte de Castro - alanmoreiraduart@gmail.com
+- (UI/UX - Análise de Requisitos) Caio Rafael Marconato Paranhos - caiorafamarconatop@gmail.com
+- (Documentação) Felipe Piva Andrade - felipepiva40@gmail.com
+- (Front-End) Giovani Wesselka Heriberto Bianchi - giovaniwhb@gmail.com
+- (Banco de Dados) Julia de Souza Leandro - jusouzaleandro@gmail.com
