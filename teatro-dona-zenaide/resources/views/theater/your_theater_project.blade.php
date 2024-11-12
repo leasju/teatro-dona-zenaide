@@ -28,7 +28,7 @@
                     <p class="roboto-regular">Venha conosco dar vida as suas ideias, tira-las do papel. No palco do Dona Zenaide tudo isso é possivel!</p>
 
                     {{-- Botão de Entre Em Contato --}}
-                    <a class="main-btn main-btn--project" href="#">ENTRE EM CONTATO</a>
+                    <a class="main-btn main-btn--project" href="https://wa.me/551938375160">ENTRE EM CONTATO</a>
                     
                 </div>
 
