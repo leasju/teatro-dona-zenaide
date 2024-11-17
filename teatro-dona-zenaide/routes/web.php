@@ -24,9 +24,9 @@ Route::get('/seu-projeto-no-teatro', function () {
 });
 
 //Rota para o Fale Conosco
-Route::post('/fale-conosco', [ContactController::class, 'sendMessage'])->name('contact.send');
-
-
+//Rotas para o envio de email
+Route::post('/contact/send', [ContactController::class, 'sendMessage'])->name('contact.sendMessage');
+Route::post('/contact', [ContactController::class, 'sendMessage'])->name('contact.sendMessage');
 
 // * Views Administrador
 

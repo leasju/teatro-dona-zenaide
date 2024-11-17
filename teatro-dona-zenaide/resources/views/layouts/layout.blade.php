@@ -5,7 +5,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
     <title>@yield('view-title')</title>
 
     {{-- Importando o arquivo JS com o Vite que contém os arquivos CSS e JS --}}
@@ -141,16 +142,18 @@
                     <div class="col-md-4 col-sm-12 footer-section-text-center">
                         <h2 class="tnr-bold tnr-title-size tnr-title-size--sm">FALE CONOSCO</h2>
                         <div class="form-inputs">
-                            <form action="{{ route('contact.send') }}" method="POST">
+                            <form id="contactForm" action="/contact" method="POST">
                                 @csrf
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput" placeholder="nome@exemplo.com">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com">
                                     <label for="floatingInput">Email</label>
+                                    <span class="text-danger" id="emailError"></span>
                                 </div>
 
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Mensagem" id="floatingTextarea"></textarea>
+                                    <textarea class="form-control" placeholder="Mensagem" id="message" name="message"></textarea>
                                     <label for="floatingTextarea">Mensagem</label>
+                                    <span class="text-danger" id="messageError"></span>
                                 </div>
 
                                 <button class="main-btn main-btn--footer">
@@ -158,6 +161,9 @@
                                     <span class="fluent--send-28-filled"></span>
                                 </button>
                             </form>
+                            <div id="successMessage" class="mt-3 text-success" style="display: none;">
+                                Email enviado com sucesso!
+                            </div>
                         </div>
                     </div>
 
