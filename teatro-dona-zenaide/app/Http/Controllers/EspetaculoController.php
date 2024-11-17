@@ -24,7 +24,7 @@ class EspetaculoController extends Controller
     public function showHomepage()
     {
         // Obtém todos os espetáculos disponíveis, incluindo a imagem principal
-        $espetaculos = Espetaculo::with('imagemPrincipal')->get();
+        $espetaculos = Espetaculo::with('imagemPrincipal')->where('trash', 0)->get();
 
         // Retorna a view da página inicial com os espetáculos
         return view('theater.home', compact('espetaculos'));
@@ -61,15 +61,40 @@ class EspetaculoController extends Controller
 
     // * -------------------------------------------ADMIN-------------------------------------------
 
-    // INDEX: Mostrar todos os espetáculos
-    public function index(): View
+    // INDEX: Mostrar todos os espetáculos ativos ou ocultos
+    // INDEX: Mostrar todos os espetáculos ativos ou ocultos
+public function index(Request $request): View
+{
+    // Obtém o valor do filtro enviado pela URL (padrão: 'todos')
+    $filtro = $request->input('filtro', 'todos');
+
+    // Inicia a consulta
+    $query = Espetaculo::query();
+
+    // Aplica o filtro com base no campo "oculto"
+    if ($filtro === 'ocultos') {
+        $query->where('oculto', 1); // Exibe apenas ocultos
+    } elseif ($filtro === 'ativos') {
+        $query->where('oculto', 0); // Exibe apenas ativos
+    }
+
+    // Faz a paginação de 5 em 5 espetáculos por página
+    $espetaculos = $query->where('trash', 0)->paginate(5);
+
+    // Retorna para a view '/admin/cards' com os espetáculos e o filtro ativo
+    return view('admin.cards', compact('espetaculos', 'filtro'));
+}
+
+
+    // INDEX: Mostrar todos os espetáculos excluíos
+    public function indexLixeira(): View
     {
         // Exibe todos os espetáculos para o administrador (inclusive os ocultos)
         $espetaculos = Espetaculo::all();
 
         // Retorna para a view '/admin/cards' e faz a paginação de 5 em 5 espetáculos por página
-        return view('/admin/cards', [
-            'espetaculos' => DB::table('espetaculos')->paginate(5)
+        return view('/admin/lixeira', [
+            'espetaculos' => DB::table('espetaculos')->where('trash', 1)->paginate(5)
         ]);
     }
 
@@ -412,24 +437,6 @@ class EspetaculoController extends Controller
         return redirect('/admin/cards')->with('success', 'Dados atualizados com sucesso!');
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // DESTROY: Deletar um espetáculo
     public function destroy($id)
     {
@@ -463,13 +470,12 @@ class EspetaculoController extends Controller
             $espetaculo->delete();
 
             DB::commit(); // Confirma a transação
-            return redirect('/admin/cards')->with('success', 'Espetáculo excluído com sucesso!');
+            return redirect('/admin/cards/lixeira')->with('success', 'Espetáculo excluído com sucesso!');
         } catch (\Exception $e) {
             DB::rollback(); // Reverte a transação em caso de erro
             return redirect()->back()->with('error', 'Erro ao excluir o espetáculo: ' . $e->getMessage());
         }
     }
-
 
     // OCULTAR: Ocultar um espetáculo
     public function ocultar($id)
@@ -484,5 +490,33 @@ class EspetaculoController extends Controller
         // Retorna uma mensagem de sucesso
         $message = $espetaculo->oculto ? 'Espetáculo ocultado com sucesso!' : 'Espetáculo exibido com sucesso!';
         return redirect('/admin/cards')->with('success', $message);
+    }
+
+    // REMOVE: Remove um espetáculo para a lixeira
+    public function remove($id)
+    {
+        // Busca o espetáculo pelo ID
+        $espetaculo = Espetaculo::findOrFail($id);
+
+        // Alterna o estado de ocultação
+        $espetaculo->trash = !$espetaculo->trash;
+        $espetaculo->save(); // Salva a mudança no banco de dados
+
+        // Retorna uma mensagem de sucesso
+        return redirect('/admin/cards')->with('success', 'Espetáculo removido com sucesso!');
+    }
+
+    // RESTORE: Restaura um espetáculo da lixeira
+    public function restore($id)
+    {
+        // Busca o espetáculo pelo ID
+        $espetaculo = Espetaculo::findOrFail($id);
+
+        // Alterna o estado de ocultação
+        $espetaculo->trash = !$espetaculo->trash;
+        $espetaculo->save(); // Salva a mudança no banco de dados
+
+        // Retorna uma mensagem de sucesso
+        return redirect('/admin/cards/lixeira')->with('success', 'Espetáculo restaurado com sucesso!');
     }
 }

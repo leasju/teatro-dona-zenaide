@@ -56,7 +56,14 @@ public function imagemPrincipal()
     {
         return $this->hasManyThrough(EspHorario::class, EspDia::class, 'fk_id_esp', 'fk_id_dia', 'id', 'id');
     }
-
+    protected $casts = [
+        'trash' => 'boolean',
+    ];
+    
+    protected $attributes = [
+        'trash' => 0, // Valor padrão
+    ];
+    
    
 }
 
