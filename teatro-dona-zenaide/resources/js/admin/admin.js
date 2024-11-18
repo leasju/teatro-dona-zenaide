@@ -347,6 +347,87 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })
 
+// * Script para o Modal de Remoção
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Selecionando o Modal Delete
+    const removeModal = document.getElementById("removeModal")
+
+    // Selecionando o form do Modal Delete
+    const formModalRemove = document.getElementById("formModalRemove")
+
+    // Título do Modal de Visibilidade
+    const titleModalRemove = document.getElementById("removeModalLabel")
+
+    // Se existe o Modal Delete...
+    if (removeModal) {
+
+        // Lógica para ao abrir o Modal de Exclusão
+        removeModal.addEventListener("show.bs.modal", event => {
+
+            // O botão que abriu o modal
+            const buttonModalOpen = event.relatedTarget;
+
+            // ID da peça relacionada ao botão que abriu o Modal de Exclusão
+            const id = buttonModalOpen.getAttribute('data-espetaculo-id')
+
+            // Adiciona o ID do espetaculo na rota do form
+            formModalRemove.action = `/espetaculos/${id}/remove`
+
+            // Nome da peça relacionada ao botão que abriu o Modal de Visibilidade
+            const nome = buttonModalOpen.getAttribute('data-espetaculo-name')
+
+            // Inserindo o texto no título do Modal com o nome da peça relacionada ao botão que abriu o Modal
+            titleModalDelete.innerHTML = `Remover Peça: <p class="modalNomeEsp">${nome}</p>`
+
+        });
+
+    }
+
+})
+
+// * Script para o Modal de Restauração
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Selecionando o Modal Delete
+    const restoreModal = document.getElementById("restoreModal")
+
+    // Selecionando o form do Modal Delete
+    const formModalRestore = document.getElementById("formModalRestore")
+
+    // Título do Modal de Visibilidade
+    const titleModalRestore = document.getElementById("restoreModalLabel")
+
+    // Se existe o Modal Delete...
+    if (restoreModal) {
+
+        // Lógica para ao abrir o Modal de Exclusão
+        restoreModal.addEventListener("show.bs.modal", event => {
+
+            // O botão que abriu o modal
+            const buttonModalOpen = event.relatedTarget;
+
+            // ID da peça relacionada ao botão que abriu o Modal de Exclusão
+            const id = buttonModalOpen.getAttribute('data-espetaculo-id')
+
+            // Adiciona o ID do espetaculo na rota do form
+            formModalRestore.action = `/espetaculos/${id}/restore`
+
+            // Nome da peça relacionada ao botão que abriu o Modal de Visibilidade
+            const nome = buttonModalOpen.getAttribute('data-espetaculo-name')
+
+            // Inserindo o texto no título do Modal com o nome da peça relacionada ao botão que abriu o Modal
+            titleModalRestore.innerHTML = `Restaurar Peça: <p class="modalNomeEsp">${nome}</p>`
+
+        });
+
+    }
+
+})
+
+
 // * Script para resetar o Modal de Novo
 
 document.addEventListener('DOMContentLoaded', function () {

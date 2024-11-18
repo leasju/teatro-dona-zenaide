@@ -24,9 +24,9 @@ Route::get('/seu-projeto-no-teatro', function () {
 });
 
 //Rota para o Fale Conosco
-Route::post('/fale-conosco', [ContactController::class, 'sendMessage'])->name('contact.send');
-
-
+//Rotas para o envio de email
+Route::post('/contact/send', [ContactController::class, 'sendMessage'])->name('contact.sendMessage');
+Route::post('/contact', [ContactController::class, 'sendMessage'])->name('contact.sendMessage');
 
 // * Views Administrador
 
@@ -51,6 +51,12 @@ Route::middleware('auth')->group(function () {
     // Rota para o método "index" da classe "EspetaculosController"
     Route::get('/admin/cards', [EspetaculoController::class, 'index']);
 
+    Route::get('/admin/cards/lixeira', [EspetaculoController::class, 'indexLixeira']);
+    // Rota para exclusão de espetáculo 
+    Route::delete('/espetaculos/{id}/delete', [EspetaculoController::class, 'destroy'])->name('espetaculos.destroy');
+
+    // Rota para restauração de espetáculo 
+    Route::put('/espetaculos/{id}/restore', [EspetaculoController::class, 'restore'])->name('espetaculos.restore');
 
     // * Botões de ação da lista de cards cadastrados
 
@@ -60,8 +66,8 @@ Route::middleware('auth')->group(function () {
     //Rota que edita o espetáculo
     Route::put('/admin/cards/{id}/editar', [EspetaculoController::class, 'update']);
 
-    // Rota para exclusão de espetáculo 
-    Route::delete('/espetaculos/{id}/delete', [EspetaculoController::class, 'destroy'])->name('espetaculos.destroy');
+    // Rota para remoção de espetáculo 
+    Route::put('/espetaculos/{id}/remove', [EspetaculoController::class, 'remove'])->name('espetaculos.remove');
 
     // Rota para atualizar a visibilidade
     Route::put('/espetaculos/{id}/ocultar', [EspetaculoController::class, 'ocultar'])->name('espetaculos.ocultar');
