@@ -379,7 +379,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const nome = buttonModalOpen.getAttribute('data-espetaculo-name')
 
             // Inserindo o texto no título do Modal com o nome da peça relacionada ao botão que abriu o Modal
-            titleModalDelete.innerHTML = `Remover Peça: <p class="modalNomeEsp">${nome}</p>`
+            titleModalRemove.innerHTML = `Remover Peça: <p class="modalNomeEsp">${nome}</p>`
 
         });
 
@@ -426,7 +426,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 })
-
 
 // * Script para resetar o Modal de Novo
 

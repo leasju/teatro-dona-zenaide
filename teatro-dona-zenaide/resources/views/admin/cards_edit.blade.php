@@ -2,7 +2,7 @@
 @extends('layouts.layout_admin')
 
 {{-- Mudando o título da página dinamicamente --}}
-@section('view-title', 'Edição da Peça - Administrador')
+@section('view-title', 'Edição: ' . $espetaculo->nomeEsp . ' - Administrador')
 
 {{-- Conteúdo da Navbar --}}
 @section('navbar-content')
@@ -22,7 +22,7 @@
 
 <div id="table-cards-area">
     <div class="container">
-        <div class="row d-flex justify-content-center align-items-center vh-100">
+        <div class="row d-flex justify-content-center align-items-center">
             <div id="table-cards-box-edit" class="col-md-12">
 
                 {{-- Título da Peça para Edição --}}

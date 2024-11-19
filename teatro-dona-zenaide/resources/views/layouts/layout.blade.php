@@ -62,14 +62,6 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav nav-pills d-flex justify-content-end flex-grow-1">
 
-                            @auth
-                                <li class="nav-item">
-                                    <a class="nav-link roboto-regular" aria-current="page" href="/admin/cards">CARDS</a>
-                                </li>
-                                
-                                <hr class="divider divider--header">
-                            @endauth
-
                             <li class="nav-item">
                                 {{-- request()->is('home') = se na url a requisição for home, inserir a classe active, se não, conteúdo em branco  --}}
                                 <a class="nav-link roboto-regular {{ request()->is('/') ? 'active' : ''}}" aria-current="page" href="/">HOME</a>
@@ -94,6 +86,15 @@
                             </li>
 
                             <hr class="divider divider--header">
+
+                            @auth
+                                <li class="nav-item">
+                                    <a id="admin-link-button-navbar" class="roboto-bold nav-link" aria-current="page" href="/admin/cards">Administrador</a>
+                                </li>
+                                
+                                <hr class="divider divider--header">
+                            @endauth
+                            
                         </ul>
                     </div>
                 </div>
@@ -173,6 +174,13 @@
             </div>
         </div>
     </footer>
+
+    {{-- * Botão de Administrador --}}
+    @auth
+        <div id="admin-link">
+            <a id="admin-link-button" class="roboto-bold" aria-current="page" href="/admin/cards">Administrador</a>
+        </div>
+    @endauth
 
     {{-- * Botão de Back to Top (voltar ao topo) --}}
     <button id="backToTop" class="back-to-top-btn d-flex align-items-center" title="Voltar ao topo">

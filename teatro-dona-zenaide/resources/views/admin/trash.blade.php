@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav d-flex justify-content-end flex-grow-1">
             <li class="nav-item">
-                <a class="nav-link roboto-regular" id="admin-indicator" aria-current="page" href="#">Modo Administrador</a>
+                <a class="nav-link roboto-regular" id="admin-indicator" aria-current="page" href="/admin/cards">Modo Administrador</a>
             </li>
             <li class="nav-item">
                 {{-- Botão de Logout --}}
@@ -67,7 +67,7 @@
             
             {{-- Texto de Confirmação da Ação --}}
             <div class="d-flex flex-column justify-content-center align-items-center">
-                <span class="ph--trash-bold modal-icon mb-3"></span>
+                <span class="ic--baseline-restore modal-icon mb-3"></span>
                 <h2 class="roboto-medium">Deseja prosseguir com a restauração?</h2>
             </div>
 
@@ -82,7 +82,7 @@
                 @method('PUT')
                 @csrf
 
-                <button type="submit" class="btn btn-confirm-action btn-confirm-action--remove">Restaurar</button>
+                <button type="submit" class="btn btn-confirm-action btn-confirm-action--restore">Restaurar</button>
             </form>
 
         </x-slot>
@@ -94,19 +94,20 @@
 
     <div id="table-cards-area">
         <div class="container">
-            <div class="row d-flex justify-content-center align-items-center vh-100">
+            <div class="row d-flex justify-content-center align-items-center">
 
                 <div id="table-cards-box" class="col-md-12">
 
                     {{-- Conteúdo do Topo da Tabela de Peças --}}
                     <div class="table-top-content d-flex justify-content-between align-items-center mb-5">
                         {{-- Título da Tabela --}}
-                        <h1 class="roboto-regular">Lixeira (exclua ou restaure peças excluídas)</h1>
+                        <h1 class="roboto-regular">Exclua ou Restaure Peças Removidas</h1>
 
                         <!-- Botão de voltar para a tela de cards -->
-                        <button class="main-btn main-btn--trash">
-                            <a href="/admin/cards">Voltar</a>
-                        </button>
+                        <a href="/admin/cards" class="main-btn main-btn--back">
+                            <span class="lets-icons--back"></span>
+                            <span class="roboto-regular">Voltar</span>
+                        </a>
                     </div>
 
                     {{-- Tabela de Peças --}}
@@ -115,7 +116,6 @@
                         {{-- Cabeçalho da Tabela de Peças --}}
                         <thead>
                             <tr>
-                                <th scope="col" class="roboto-regular">ID</th>
                                 <th scope="col" class="roboto-regular">Nome da Peça</th>
                                 <th scope="col" class="roboto-regular">Data</th>
                                 <th scope="col" class="roboto-regular">Ação</th>
@@ -126,7 +126,6 @@
                         <tbody>
                             @forelse($espetaculos as $espetaculo)
                                 <tr>
-                                    <td>{{ $espetaculo->id }}</td>
                                     <td>{{ $espetaculo->nomeEsp }}</td>
                                     <td>{{ $espetaculo->tempEsp }}</td> 
                                     
@@ -134,8 +133,8 @@
                                     <td id="action-buttons">
                                         
                                         {{-- Botão de Restaurar Peça --}}
-                                        <button class="action-buttons-style" data-bs-toggle="modal" data-bs-target="#restoreModal" data-espetaculo-id="{{ $espetaculo->id }}" data-espetaculo-name="{{ $espetaculo->nomeEsp }}">
-                                            <span class="ph--arrow-bold"></span>
+                                        <button class="action-buttons-style action-buttons-style--restore" data-bs-toggle="modal" data-bs-target="#restoreModal" data-espetaculo-id="{{ $espetaculo->id }}" data-espetaculo-name="{{ $espetaculo->nomeEsp }}">
+                                            <span class="ic--baseline-restore"></span>
                                         </button>
 
                                         {{-- Botão de Excluir Peça --}}
@@ -147,7 +146,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="4">Nenhum espetáculo excluído.</td>
+                                    <td colspan="3">Nenhum espetáculo removido.</td>
                                 </tr>
                             @endforelse
                         </tbody>
@@ -162,34 +161,34 @@
         </div>
     </div>
 
-{{-- Toast de Sucesso --}}
-@if (session('success'))
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            Toastify({
-                text: "{{ session('success') }}",
-                duration: 3000,
-                destination: "http://127.0.0.1:8000/",
-                newWindow: true,
-                close: true,
-                gravity: "top",
-                position: "right",
-                stopOnFocus: true,
+    {{-- Toast de Sucesso --}}
+    @if (session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Toastify({
+                    text: "{{ session('success') }}",
+                    duration: 3000,
+                    destination: "http://127.0.0.1:8000/admin/cards",
+                    newWindow: true,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    stopOnFocus: true,
 
-                // Espaçamento do canto da tela
-                offset: {
-                    y: 100
-                },
+                    // Espaçamento do canto da tela
+                    offset: {
+                        y: 100
+                    },
 
-                // Ícone
-                avatar: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z'/%3E%3C/svg%3E",
+                    // Ícone
+                    avatar: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z'/%3E%3C/svg%3E",
 
-                // Classe
-                className: "toast-success",
-                onClick: function() {}
-            }).showToast();
-        });
-    </script>
-@endif
+                    // Classe
+                    className: "toast-success",
+                    onClick: function() {}
+                }).showToast();
+            });
+        </script>
+    @endif
 
 @endsection

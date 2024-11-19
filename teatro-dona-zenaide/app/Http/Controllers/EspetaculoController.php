@@ -63,28 +63,27 @@ class EspetaculoController extends Controller
 
     // INDEX: Mostrar todos os espetáculos ativos ou ocultos
     // INDEX: Mostrar todos os espetáculos ativos ou ocultos
-public function index(Request $request): View
-{
-    // Obtém o valor do filtro enviado pela URL (padrão: 'todos')
-    $filtro = $request->input('filtro', 'todos');
+    public function index(Request $request): View
+    {
+        // Obtém o valor do filtro enviado pela URL (padrão: 'todos')
+        $filtro = $request->input('filtro', 'todos');
 
-    // Inicia a consulta
-    $query = Espetaculo::query();
+        // Inicia a consulta
+        $query = Espetaculo::query();
 
-    // Aplica o filtro com base no campo "oculto"
-    if ($filtro === 'ocultos') {
-        $query->where('oculto', 1); // Exibe apenas ocultos
-    } elseif ($filtro === 'ativos') {
-        $query->where('oculto', 0); // Exibe apenas ativos
+        // Aplica o filtro com base no campo "oculto"
+        if ($filtro === 'ocultos') {
+            $query->where('oculto', 1); // Exibe apenas ocultos
+        } elseif ($filtro === 'ativos') {
+            $query->where('oculto', 0); // Exibe apenas ativos
+        }
+
+        // Faz a paginação de 5 em 5 espetáculos por página
+        $espetaculos = $query->where('trash', 0)->paginate(4);
+
+        // Retorna para a view '/admin/cards' com os espetáculos e o filtro ativo
+        return view('admin.cards', compact('espetaculos', 'filtro'));
     }
-
-    // Faz a paginação de 5 em 5 espetáculos por página
-    $espetaculos = $query->where('trash', 0)->paginate(5);
-
-    // Retorna para a view '/admin/cards' com os espetáculos e o filtro ativo
-    return view('admin.cards', compact('espetaculos', 'filtro'));
-}
-
 
     // INDEX: Mostrar todos os espetáculos excluíos
     public function indexLixeira(): View
@@ -94,7 +93,7 @@ public function index(Request $request): View
 
         // Retorna para a view '/admin/cards' e faz a paginação de 5 em 5 espetáculos por página
         return view('/admin/trash', [
-            'espetaculos' => DB::table('espetaculos')->where('trash', 1)->paginate(5)
+            'espetaculos' => DB::table('espetaculos')->where('trash', 1)->paginate(4)
         ]);
     }
 
@@ -519,4 +518,5 @@ public function index(Request $request): View
         // Retorna uma mensagem de sucesso
         return redirect('/admin/cards/lixeira')->with('success', 'Espetáculo restaurado com sucesso!');
     }
+    
 }
