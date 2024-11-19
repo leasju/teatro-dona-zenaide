@@ -93,7 +93,7 @@ public function index(Request $request): View
         $espetaculos = Espetaculo::all();
 
         // Retorna para a view '/admin/cards' e faz a paginação de 5 em 5 espetáculos por página
-        return view('/admin/lixeira', [
+        return view('/admin/trash', [
             'espetaculos' => DB::table('espetaculos')->where('trash', 1)->paginate(5)
         ]);
     }

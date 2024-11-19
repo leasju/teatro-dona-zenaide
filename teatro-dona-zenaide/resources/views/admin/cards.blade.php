@@ -426,32 +426,37 @@
                         <a href="/admin/cards/lixeira">Lixeira</a>
                     </button>
                 </div>
+
+                {{-- Filtros em Dropdown --}}
                 <div class="dropdown">
+
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{ ucfirst($filtro === 'todos' ? 'Todos' : $filtro) }}
+                        {{ ucfirst($filtro === 'todos' ? 'Todos' : $filtro) }}
                     </button>
+
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <li>
-        <a class="dropdown-item {{ $filtro === 'todos' ? 'active' : '' }}" href="{{ url('/admin/cards') }}?filtro=todos">
-            Todos
-        </a>
-    </li>
-    <li>
-        <a class="dropdown-item {{ $filtro === 'ocultos' ? 'active' : '' }}" href="{{ url('/admin/cards') }}?filtro=ocultos">
-            Ocultos
-        </a>
-    </li>
-    <li>
-        <a class="dropdown-item {{ $filtro === 'ativos' ? 'active' : '' }}" href="{{ url('/admin/cards') }}?filtro=ativos">
-            Ativos
-        </a>
-    </li>
-</ul>
+                        <li>
+                            <a class="dropdown-item {{ $filtro === 'todos' ? 'active' : '' }}" href="{{ url('/admin/cards') }}?filtro=todos">
+                                Todos
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ $filtro === 'ocultos' ? 'active' : '' }}" href="{{ url('/admin/cards') }}?filtro=ocultos">
+                                Ocultos
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ $filtro === 'ativos' ? 'active' : '' }}" href="{{ url('/admin/cards') }}?filtro=ativos">
+                                Ativos
+                            </a>
+                        </li>
+                    </ul>
 
                 </div>
 
                 {{-- Tabela de Peças --}}
                 <table class="table table-striped table-bordered text-center align-middle">
+
                     {{-- Cabeçalho da Tabela de Peças --}}
                     <thead>
                         <tr>
@@ -511,61 +516,61 @@
 
 {{-- Toast de Sucesso --}}
 @if (session('success'))
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        Toastify({
-            text: "{{ session('success') }}",
-            duration: 3000,
-            destination: "http://127.0.0.1:8000/",
-            newWindow: true,
-            close: true,
-            gravity: "top",
-            position: "right",
-            stopOnFocus: true,
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Toastify({
+                text: "{{ session('success') }}",
+                duration: 3000,
+                destination: "http://127.0.0.1:8000/",
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "right",
+                stopOnFocus: true,
 
-            // Espaçamento do canto da tela
-            offset: {
-                y: 100
-            },
+                // Espaçamento do canto da tela
+                offset: {
+                    y: 100
+                },
 
-            // Ícone
-            avatar: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z'/%3E%3C/svg%3E",
+                // Ícone
+                avatar: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z'/%3E%3C/svg%3E",
 
-            // Classe
-            className: "toast-success",
-            onClick: function() {}
-        }).showToast();
-    });
-</script>
+                // Classe
+                className: "toast-success",
+                onClick: function() {}
+            }).showToast();
+        });
+    </script>
 @endif
 
 {{-- Toast de Erro --}}
 @if (session('error'))
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        Toastify({
-            text: "{{ session('error') }}",
-            duration: 3000,
-            newWindow: true,
-            close: true,
-            gravity: "top",
-            position: "right",
-            stopOnFocus: true,
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Toastify({
+                text: "{{ session('error') }}",
+                duration: 3000,
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "right",
+                stopOnFocus: true,
 
-            // Espaçamento do canto da tela
-            offset: {
-                y: 100
-            },
+                // Espaçamento do canto da tela
+                offset: {
+                    y: 100
+                },
 
-            // Ícone
-            avatar: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8'/%3E%3C/svg%3E",
+                // Ícone
+                avatar: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8'/%3E%3C/svg%3E",
 
-            // Classe
-            className: "toast-error",
-            onClick: function() {}
-        }).showToast();
-    });
-</script>
+                // Classe
+                className: "toast-error",
+                onClick: function() {}
+            }).showToast();
+        });
+    </script>
 @endif
 
 @endsection

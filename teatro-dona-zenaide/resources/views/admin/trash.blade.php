@@ -2,7 +2,7 @@
 @extends('layouts.layout_admin')
 
 {{-- Mudando o título da página dinamicamente --}}
-@section('view-title', 'Peças - Administrador')
+@section('view-title', 'Lixeira - Administrador')
 
 {{-- Conteúdo da Navbar --}}
 @section('navbar-content')
@@ -103,16 +103,15 @@
                         {{-- Título da Tabela --}}
                         <h1 class="roboto-regular">Lixeira (exclua ou restaure peças excluídas)</h1>
 
-                        <!-- BOTÃO DE VOLTAR PARA A TELA DE CARDS -->
-                        {{-- Botão ir para a lixeira --}}
+                        <!-- Botão de voltar para a tela de cards -->
                         <button class="main-btn main-btn--trash">
                             <a href="/admin/cards">Voltar</a>
                         </button>
-
                     </div>
 
                     {{-- Tabela de Peças --}}
                     <table class="table table-striped table-bordered text-center align-middle">
+
                         {{-- Cabeçalho da Tabela de Peças --}}
                         <thead>
                             <tr>
@@ -131,7 +130,7 @@
                                     <td>{{ $espetaculo->nomeEsp }}</td>
                                     <td>{{ $espetaculo->tempEsp }}</td> 
                                     
-                                    {{-- Botões de Ação (editar, excluir e alterar visibilidade) --}}
+                                    {{-- Botões de Ação (restaurar e excluir) --}}
                                     <td id="action-buttons">
                                         
                                         {{-- Botão de Restaurar Peça --}}
@@ -143,7 +142,6 @@
                                         <button class="action-buttons-style" data-bs-toggle="modal" data-bs-target="#deleteModal" data-espetaculo-id="{{ $espetaculo->id }}" data-espetaculo-name="{{ $espetaculo->nomeEsp }}">
                                             <span class="ph--trash-bold"></span>
                                         </button>
-
 
                                     </td>
                                 </tr>
@@ -163,5 +161,35 @@
             </div>
         </div>
     </div>
+
+{{-- Toast de Sucesso --}}
+@if (session('success'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Toastify({
+                text: "{{ session('success') }}",
+                duration: 3000,
+                destination: "http://127.0.0.1:8000/",
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "right",
+                stopOnFocus: true,
+
+                // Espaçamento do canto da tela
+                offset: {
+                    y: 100
+                },
+
+                // Ícone
+                avatar: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z'/%3E%3C/svg%3E",
+
+                // Classe
+                className: "toast-success",
+                onClick: function() {}
+            }).showToast();
+        });
+    </script>
+@endif
 
 @endsection
