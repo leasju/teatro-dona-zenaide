@@ -20,6 +20,9 @@
     {{-- CSS Bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+    {{-- Toastify CSS --}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
 </head>
 
 <body>
@@ -150,7 +153,7 @@
                                 @csrf
 
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                                     <label for="floatingInput">Email</label>
                                     <span class="text-danger" id="emailError"></span>
                                 </div>
@@ -158,6 +161,7 @@
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="Mensagem" id="message" name="message"></textarea>
                                     <label for="floatingTextarea">Mensagem</label>
+                                    <div></div>
                                     <span class="text-danger" id="messageError"></span>
                                 </div>
 
@@ -220,6 +224,9 @@
     {{-- JS Bootstrap --}}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    {{-- JS Toastify --}}
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 </body>
 
