@@ -381,6 +381,58 @@ h1, h2, h3, h4, h5, h6, p, span, a, ul, li {
 }
 
 /* 
+ * Botão de Administrador
+*/
+
+#admin-link {
+    /* Posicionamento do botão de administrador */
+    position: fixed;
+
+    /* Top e right do botão de administrador */
+    top: 140px;
+    right: 20px;
+}
+
+#admin-link-button {
+    /* Cor de fundo e cor do texto do botão de administrador */
+    background-color: var(--vermelho-geral);
+    color: var(--branco);
+
+    /* Removendo o underline do link */
+    text-decoration: none;
+
+    /* Espaçamento entre as letras */
+    letter-spacing: 1px;
+
+    /* Espaçamento interno */
+    padding: 15px;
+
+    /* Border radius */
+    border-radius: 5px;
+}
+
+#admin-link-button-navbar {
+    /* Começando invisível o botão de administrador da navbar */
+    display: none;
+
+    /* Cor de fundo e cor do texto do botão de administrador */
+    background-color: var(--vermelho-geral);
+    color: var(--branco);
+
+    /* Removendo o underline do link */
+    text-decoration: none;
+
+    /* Espaçamento entre as letras */
+    letter-spacing: 1px;
+
+    /* Espaçamento interno */
+    padding: 15px;
+
+    /* Border radius */
+    border-radius: 5px;
+}
+
+/* 
  * Back to Top Button
 */
 
@@ -677,6 +729,23 @@ h1, h2, h3, h4, h5, h6, p, span, a, ul, li {
 }
 
 /* 
+ * Toast Styles
+*/
+
+/* Toast de sucesso */
+.toast-success {
+    /* Alinhamento do toast */
+    display: flex;
+    place-items: center;
+
+    /* Cor do fundo do toast de sucesso */
+    background: var(--verde);
+
+    /* Box shadow do toast de sucesso */
+    box-shadow: -5px 5px 20px -5px rgba(0,0,0,0.75);
+}
+
+/* 
  *   Header/Navbar 
 */
 
@@ -897,6 +966,16 @@ header .nav-item:hover::after {
     header .navbar {
         /* Retirando a posição de fixed da Navbar em telas menores do que Tablet (768px) */
         position: absolute !important;
+    }
+
+    #admin-link-button {
+        /* Tornando o botão de administrador invisível em telas menores do que Tablet */
+        display: none;
+    }
+
+    #admin-link-button-navbar {
+        /* Tornando o botão de administrador da navbar visível em telas menores do que Tablet */
+        display: block;
     }
 
 }

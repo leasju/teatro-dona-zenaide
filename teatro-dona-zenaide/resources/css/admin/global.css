@@ -21,6 +21,11 @@ html {
     background-size: cover;
 }
 
+.row {
+    /* View Port da Tela */
+    height: 85vh;
+}
+
 /* 
  *  Global Variables 
 */
@@ -132,6 +137,26 @@ html {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2048 2048'%3E%3Cpath fill='%23f2f2f2' d='M1792 993q60 41 107 93t81 114t50 131t18 141q0 119-45 224t-124 183t-183 123t-224 46q-91 0-176-27t-156-78t-126-122t-85-157H128V128h256V0h128v128h896V0h128v128h256zM256 256v256h1408V256h-128v128h-128V256H512v128H384V256zm643 1280q-3-31-3-64q0-86 24-167t73-153h-97v-128h128v86q41-51 91-90t108-67t121-42t128-15q100 0 192 33V640H256v896zm573 384q93 0 174-35t142-96t96-142t36-175q0-93-35-174t-96-142t-142-96t-175-36q-93 0-174 35t-142 96t-96 142t-36 175q0 93 35 174t96 142t142 96t175 36m64-512h192v128h-320v-384h128zM384 1024h128v128H384zm256 0h128v128H640zm0-256h128v128H640zm-256 512h128v128H384zm256 0h128v128H640zm384-384H896V768h128zm256 0h-128V768h128zm256 0h-128V768h128z'/%3E%3C/svg%3E");
 }
 
+/* Back Icon */
+.lets-icons--back {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='m4 10l-.707.707L2.586 10l.707-.707zm17 8a1 1 0 1 1-2 0zM8.293 15.707l-5-5l1.414-1.414l5 5zm-5-6.414l5-5l1.414 1.414l-5 5zM4 9h10v2H4zm17 7v2h-2v-2zm-7-7a7 7 0 0 1 7 7h-2a5 5 0 0 0-5-5z'/%3E%3C/svg%3E");
+}
+
+/* Restore Icon */
+.ic--baseline-restore {
+    display: flex;
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f2f2f2' d='M13 3a9 9 0 0 0-9 9H1l3.89 3.89l.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7s-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.95 8.95 0 0 0 13 21a9 9 0 0 0 0-18m-1 5v5l4.28 2.54l.72-1.21l-3.5-2.08V8z'/%3E%3C/svg%3E");
+}
+
 /* 
  * Tooltips
 */
@@ -220,9 +245,56 @@ html {
     background-color: var(--verde);
 }
 
+.main-btn--filter {
+    /* Definindo uma largura e altura para o botão e retirando seu padding */
+    --btn-width: 100px;
+    --btn-padding: 0;
+    height: 50px;
+
+    /* Border radius do botão */
+    border-radius: 10px;
+
+    /* Background color do botão */
+    background-color: var(--azul);
+}
+
+.main-btn--trash {
+    /* Definindo uma largura e altura para o botão e retirando seu padding */
+    --btn-width: 100px;
+    --btn-padding: 0;
+    height: 50px;
+
+    /* Border radius do botão */
+    border-radius: 10px;
+
+    /* Background color do botão */
+    background-color: var(--vermelho-geral);
+
+    /* Espaçamento entre o texto e o ícone */
+    gap: 2px;
+}
+
+.main-btn--back {
+    /* Definindo uma largura e altura para o botão e retirando seu padding */
+    --btn-width: 100px;
+    --btn-padding: 0;
+    height: 50px;
+
+    /* Border radius do botão */
+    border-radius: 10px;
+
+    /* Background color do botão */
+    background-color: var(--cinza);
+}
+
 /* 
  *   Header/Navbar 
 */
+
+header {
+    /* Espaçamento da fixed navbar */
+    margin-bottom: 100px;
+}
 
 header .navbar {
     /* Definindo altura, background color */

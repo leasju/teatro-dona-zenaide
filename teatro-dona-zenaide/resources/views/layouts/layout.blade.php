@@ -61,12 +61,6 @@
                     {{-- Corpo da Navbar --}}
                     <div class="offcanvas-body">
                         <ul class="navbar-nav nav-pills d-flex justify-content-end flex-grow-1">
-                            @auth
-                            <li class="nav-item">
-                                <a class="nav-link roboto-regular" aria-current="page" href="/admin/cards">CARDS</a>
-                            </li>
-                            <hr class="divider divider--header">
-                            @endauth
 
                             <li class="nav-item">
                                 {{-- request()->is('home') = se na url a requisição for home, inserir a classe active, se não, conteúdo em branco  --}}
@@ -92,6 +86,15 @@
                             </li>
 
                             <hr class="divider divider--header">
+
+                            @auth
+                                <li class="nav-item">
+                                    <a id="admin-link-button-navbar" class="roboto-bold nav-link" aria-current="page" href="/admin/cards">Administrador</a>
+                                </li>
+                                
+                                <hr class="divider divider--header">
+                            @endauth
+                            
                         </ul>
                     </div>
                 </div>
@@ -143,7 +146,9 @@
                         <h2 class="tnr-bold tnr-title-size tnr-title-size--sm">FALE CONOSCO</h2>
                         <div class="form-inputs">
                             <form id="contactForm" action="/contact" method="POST">
+
                                 @csrf
+
                                 <div class="form-floating mb-3">
                                     <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com">
                                     <label for="floatingInput">Email</label>
@@ -160,10 +165,8 @@
                                     <span>ENVIAR MENSAGEM</span>
                                     <span class="fluent--send-28-filled"></span>
                                 </button>
+
                             </form>
-                            <div id="successMessage" class="mt-3 text-success" style="display: none;">
-                                Email enviado com sucesso!
-                            </div>
                         </div>
                     </div>
 
@@ -172,10 +175,47 @@
         </div>
     </footer>
 
+    {{-- * Botão de Administrador --}}
+    @auth
+        <div id="admin-link">
+            <a id="admin-link-button" class="roboto-bold" aria-current="page" href="/admin/cards">Administrador</a>
+        </div>
+    @endauth
+
     {{-- * Botão de Back to Top (voltar ao topo) --}}
     <button id="backToTop" class="back-to-top-btn d-flex align-items-center" title="Voltar ao topo">
         <span class="iconamoon--arrow-up-2"></span>
     </button>
+
+    {{-- Toast de Sucesso --}}
+    @if (session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Toastify({
+                    text: "{{ session('success') }}",
+                    duration: 3000,
+                    destination: "http://127.0.0.1:8000/",
+                    newWindow: true,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    stopOnFocus: true,
+
+                    // Espaçamento do canto da tela
+                    offset: {
+                        y: 100
+                    },
+
+                    // Ícone
+                    avatar: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z'/%3E%3C/svg%3E",
+
+                    // Classe
+                    className: "toast-success",
+                    onClick: function() {}
+                }).showToast();
+            });
+        </script>
+    @endif
 
     {{-- JS Bootstrap --}}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

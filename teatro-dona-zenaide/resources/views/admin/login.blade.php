@@ -9,7 +9,7 @@
 
     <div id="login-area">
         <div class="container">
-            <div class="row d-flex justify-content-center align-items-center vh-100">
+            <div class="row d-flex justify-content-center align-items-center">
 
                 <div id="login-box" class="col-xxl-6 col-xl-7 col-lg-9 col-md-10 col-sm-12">
 

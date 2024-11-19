@@ -32,7 +32,7 @@
     margin: 0;
 }
 
-#table-cards-box .table-top-content .main-btn--new .roboto-regular {
+#table-cards-box .table-top-content .main-btn--new .roboto-regular, .main-btn--trash .roboto-regular, .main-btn--back .roboto-regular {
     /* Centralizando a span de 'Novo' do botão para igualar com o ícone */
     position: relative;
     top: 1.5px;
@@ -119,6 +119,12 @@
 #table-cards-box #action-buttons .action-buttons-style--visibility input {
     /* Escondendo o input do checkbox do botão de visibilidade da peça */
     display: none;
+}
+
+/* Botão de Restauras Peça */
+#table-cards-box #action-buttons .action-buttons-style--restore {
+    /* Alterando a cor do botão para azul */
+    --background-color-action-button: var(--azul);
 }
 
 /* 
@@ -296,7 +302,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 /* Modal Delete and Modal Visibility */
 
-#deleteModal .modal-body h2, #visibilityModal .modal-body h2 {
+#deleteModal .modal-body h2, #visibilityModal .modal-body h2, #removeModal .modal-body h2, #restoreModal .modal-body h2 {
     /* Font size do título de confirmação do Modal de Deletar e do Modal de Visibilidade */
     font-size: 24px;
 }
@@ -366,6 +372,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     --modal-button-background-color: var(--azul);
 }
 
+.modal-footer .btn-confirm-action--restore, .modal-footer .btn-confirm-action--restore:hover, .modal-footer .btn-confirm-action--restore:active {
+    /* Variável de cor de fundo do botão de confirmação */
+    --modal-button-background-color: var(--azul);
+}
+
 /* Botão de Limpar Modal */
 
 #newModal .btn-clear-modal {
@@ -409,6 +420,13 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000000' d='M17.883 19.297A10.95 10.95 0 0 1 12 21c-5.392 0-9.878-3.88-10.818-9A11 11 0 0 1 4.52 5.935L1.394 2.808l1.414-1.414l19.799 19.798l-1.414 1.415zM5.936 7.35A8.97 8.97 0 0 0 3.223 12a9.005 9.005 0 0 0 13.201 5.838l-2.028-2.028A4.5 4.5 0 0 1 8.19 9.604zm6.978 6.978l-3.242-3.241a2.5 2.5 0 0 0 3.241 3.241m7.893 2.265l-1.431-1.431A8.9 8.9 0 0 0 20.778 12A9.005 9.005 0 0 0 9.552 5.338L7.974 3.76C9.221 3.27 10.58 3 12 3c5.392 0 9.878 3.88 10.819 9a10.95 10.95 0 0 1-2.012 4.593m-9.084-9.084Q11.86 7.5 12 7.5a4.5 4.5 0 0 1 4.492 4.778z'/%3E%3C/svg%3E");
 }
 
+/* Modal Restore Icon */
+.ic--baseline-restore.modal-icon {
+    width: 64px;
+    height: 64px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000000' d='M13 3a9 9 0 0 0-9 9H1l3.89 3.89l.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7s-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.95 8.95 0 0 0 13 21a9 9 0 0 0 0-18m-1 5v5l4.28 2.54l.72-1.21l-3.5-2.08V8z'/%3E%3C/svg%3E");
+}
+
 /* 
  * Toast Styles
 */
@@ -442,6 +460,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 /* 
  * Pagination Classes
 */
+
+/* Alterando a margin top do paginator pra mt-3 */
+#paginator-id .mt-4 {
+    margin-top: 1rem !important;
+}
 
 /* Cor de texto para o texto de paginação com os resultados */
 .paginator-text {

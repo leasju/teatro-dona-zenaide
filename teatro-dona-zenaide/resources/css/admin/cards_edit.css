@@ -12,7 +12,7 @@
     position: relative;
 
     /* Altura máxima para quando abrir o collapse e margin top */
-    margin-top: 100px;
+    margin-top: 10px;
     max-height: 800px;
 
     /* Adiciona uma barra de rolagem vertical */
