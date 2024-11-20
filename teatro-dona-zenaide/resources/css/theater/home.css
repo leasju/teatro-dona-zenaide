@@ -151,29 +151,29 @@
  * Cards Section
 */
 
-#cards-section {
+#pecas {
     /* Background color para a seção de cards */
     background-color: var(--branco-preto);
 }
 
-#cards-section h2 {
+#pecas h2 {
     /* Margin e padding do h2 (title) */
     margin: 0;
     padding: 95px 0 95px 95px;
 }
 
-#cards-section .container-fluid {
+#pecas .container-fluid {
     /* Sobrepondo as margins e padding do bootstrap, para se adequar ao projeto */
     margin: 0 !important;
     padding: 0 0 190px 0 !important;
 }
 
-#cards-section .row {
+#pecas .row {
     /* Sobrepondo a variável de padding da classe .row que espaçava internamente o card */
     --bs-gutter-x: 0;
 }
 
-#cards-section .cards {
+#pecas .cards {
     /* O alinhamento dos cards está em classes do bootstrap no HTML */
 
     /* Gap entre os cards */
@@ -183,7 +183,7 @@
     margin: 0 100px 0 100px;
 }
 
-#cards-section .card {
+#pecas .card {
     /* Sobrepondo variáveis do card do bootstrap */
     --bs-card-bg: var(--branco);
     --bs-card-border-color: var(--card-border-color);
@@ -202,7 +202,7 @@
     box-shadow: -6px 6px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-#cards-section .card-body {
+#pecas .card-body {
     /* Alinhamento do card centralizado e em coluna */
     display: flex;
     flex-direction: column;
@@ -213,7 +213,7 @@
     margin-bottom: 25px;
 }
 
-#cards-section .card-text {
+#pecas .card-text {
     /* Sobrepondo a margin do texto do card do bootstrap */
     margin: 0 !important;
 
@@ -224,7 +224,7 @@
     font-size: 14px;
 }
 
-#cards-section .card-title {
+#pecas .card-title {
     /* Altura mínima do título */
     min-height: 70px;
 
@@ -238,7 +238,7 @@
     text-align: center;
 }
 
-#cards-section .card-img-top {
+#pecas .card-img-top {
     /* Largura da imagem do card */
     max-width: 400px;
     width: auto;
@@ -251,12 +251,12 @@
     border-radius: 0 !important;
 }
 
-#cards-section #empty-state-img {
+#pecas #empty-state-img {
     /* Largura da imagem do empty state */
     width: 500px;
 }
 
-#cards-section #empty-state-title {
+#pecas #empty-state-title {
     /* Font size e cor do título do empty state */
     font-size: 28px;
     color: var(--texto-primario);
@@ -268,7 +268,7 @@
     margin-top: 20px;
 }
 
-#cards-section #empty-state-text {
+#pecas #empty-state-text {
     /* Font size e cor do texto do empty state */
     font-size: 20px;
     color: var(--texto-primario);
@@ -292,18 +292,18 @@
 @media (max-width: 1399.98px) {
 
     /* Diminuindo o espaçamento lateral da seção de Cards */
-    #cards-section .cards {
+    #pecas .cards {
         margin: 0 50px 0 50px;
     }
 
     /* Diminuindo o tamanho dos cards da seção de Cards */
-    #cards-section .card {
+    #pecas .card {
         width: 350px;
         min-height: 550px;
     }
 
     /* Diminuindo o font size e o espaçamento lateral do título da seção de Cards */
-    #cards-section h2 {
+    #pecas h2 {
         font-size: 40px;
         padding: 95px 0 95px 50px;
     }
@@ -314,17 +314,17 @@
 @media (max-width: 1199.98px) {
 
     /* Diminuindo o espaçamento lateral do título da seção de Cards */
-    #cards-section h2 {
+    #pecas h2 {
         padding: 95px 0 95px 25px;
     }
 
     /* Diminuindo o gap entre os cards da seção de Cards */
-    #cards-section .cards {
+    #pecas .cards {
         gap: 40px;
     }
 
     /* Diminuindo o tamanho dos cards da seção de Cards */
-    #cards-section .card {
+    #pecas .card {
         width: 300px;
         min-height: 500px;
     }
@@ -335,21 +335,21 @@
 @media (max-width: 991.98px) {
 
     /* Aumentando o espaçamento lateral do título da seção de Cards */
-    #cards-section h2 {
+    #pecas h2 {
         padding: 95px 0 95px 50px;
     }
 
-    #cards-section #empty-state-img {
+    #pecas #empty-state-img {
         /* Largura da imagem do empty state */
         width: 400px;
     }
     
-    #cards-section #empty-state-title {
+    #pecas #empty-state-title {
         /* Font size do empty state */
         font-size: 26px;
     }
     
-    #cards-section #empty-state-text {
+    #pecas #empty-state-text {
         /* Font size do empty state */
         font-size: 18px;
     }
@@ -364,18 +364,18 @@
 /* `md` applies to small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
 
-    #cards-section .container-fluid {
+    #pecas .container-fluid {
         padding: 0 0 95px 0 !important;
     }
 
     /* Diminuindo o espaçamento lateral do título da seção de Cards */
-    #cards-section h2 {
+    #pecas h2 {
         padding: 60px 0 60px 25px;
         font-size: 30px;
     }
 
     /* Diminuindo o gap entre os cards e o espaçamento lateral da seção de Cards */
-    #cards-section .cards {
+    #pecas .cards {
         column-gap: 25px;
         row-gap: 50px;
 
@@ -383,23 +383,23 @@
     }
 
     /* Diminuindo o tamanho dos cards da seção de Cards */
-    #cards-section .card {
+    #pecas .card {
         width: 250px;
         min-height: 400px;
     }
 
     /* Diminuindo o espaçamento inferior do card body da seção de Cards */
-    #cards-section .card-body {
+    #pecas .card-body {
         margin-bottom: 10px;
     }
 
     /* Diminuindo o font size do título do card da seção de Cards */
-    #cards-section .card-title {
+    #pecas .card-title {
         font-size: 20px;
     }
 
     /* Zerando a margin do título do botão do card da seção de Cards */
-    #cards-section .main-btn--card {
+    #pecas .main-btn--card {
         margin-top: 0;
     }
 
@@ -409,17 +409,17 @@
         height: 20px;
     }
 
-    #cards-section #empty-state-img {
+    #pecas #empty-state-img {
         /* Largura da imagem do empty state */
         width: 350px;
     }
     
-    #cards-section #empty-state-title {
+    #pecas #empty-state-title {
         /* Font size do empty state */
         font-size: 24px;
     }
     
-    #cards-section #empty-state-text {
+    #pecas #empty-state-text {
         /* Font size do empty state */
         font-size: 16px;
     }
@@ -435,12 +435,12 @@
 @media (max-width: 575.98px) {
 
     /* Aumentando o tamanho dos cards da seção de Cards */
-    #cards-section .card {
+    #pecas .card {
         width: 300px;
         min-height: 450px;
     }
 
-    #cards-section #empty-state-text {
+    #pecas #empty-state-text {
         /* Espaçamento entre as linhas */
         line-height: 30px;
     }
@@ -451,28 +451,28 @@
 @media (max-width: 399.98px) {
 
     /* Diminuindo o gap entre os cards da seção de Cards */
-    #cards-section .cards {
+    #pecas .cards {
         row-gap: 25px;
     }
     
     /* Aumentando o tamanho dos cards da seção de Cards */
-    #cards-section .card {
+    #pecas .card {
         width: 275px;
         min-height: 425px;
     }
 
     /* Diminuindo o font size do horário do card da seção de Cards */
-    #cards-section .card-text {
+    #pecas .card-text {
         font-size: 12px;
     }
 
     /* Diminuindo o font size do título do card da seção de Cards */
-    #cards-section .card-title {
+    #pecas .card-title {
         font-size: 18px;
     }
 
     /* Diminuindo o font size do botão do card da seção de Cards */
-    #cards-section .main-btn--card {
+    #pecas .main-btn--card {
         --btn-font-size: 14px;
     }
 
@@ -482,17 +482,17 @@
         height: 16px;
     }
 
-    #cards-section #empty-state-img {
+    #pecas #empty-state-img {
         /* Largura da imagem do empty state */
         width: 400px;
     }
     
-    #cards-section #empty-state-title {
+    #pecas #empty-state-title {
         /* Font size do empty state */
         font-size: 22px;
     }
     
-    #cards-section #empty-state-text {
+    #pecas #empty-state-text {
         /* Font size do empty state */
         font-size: 14px;
     
