@@ -94,8 +94,6 @@
                                 <li class="nav-item">
                                     <a id="admin-link-button-navbar" class="roboto-bold nav-link" aria-current="page" href="/admin/cards">Administrador</a>
                                 </li>
-                                
-                                <hr class="divider divider--header">
                             @endauth
                             
                         </ul>
@@ -191,7 +189,7 @@
         <span class="iconamoon--arrow-up-2"></span>
     </button>
 
-    {{-- Toast de Sucesso --}}
+    {{-- * Toast de Sucesso --}}
     @if (session('success'))
         <script>
             document.addEventListener('DOMContentLoaded', function() {
