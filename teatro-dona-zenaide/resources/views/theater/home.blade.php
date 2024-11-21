@@ -20,7 +20,7 @@
                     </div>
 
                     {{-- Botão de Ver Peças --}}
-                    <a class="main-btn main-btn--hero" href="#cards-section">
+                    <a class="main-btn main-btn--hero" href="#pecas">
                         <span>VER PEÇAS</span>
                         <span class="ri--arrow-down-s-line"></span>
                     </a>
@@ -31,7 +31,7 @@
     </div>
 
     {{-- * Cards Section * --}}
-    <div id="cards-section" class="hidden-element">
+    <div id="pecas" class="hidden-element">
         <div class="container-fluid">
 
                 {{-- Title: Em Cartaz --}}

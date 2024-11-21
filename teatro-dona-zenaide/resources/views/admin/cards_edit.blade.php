@@ -332,8 +332,12 @@
                     {{-- Footer do  formulário de edição da peça --}}
                     <div id="footer-edit-esp">
 
+                        {{-- Enviar a URL para o back-end contendo o filtro ativo no momento e a página da paginação --}}
+                        <input type="hidden" id="redirect-filter-edit" name="filter">
+                        <input type="hidden" id="redirect-page-edit" name="page">
+
                         {{-- Botões do Footer --}}
-                        <a href="/admin/cards" id="linkVoltar">
+                        <a href="/admin/cards?filtro={{ request()->get('filtro', 'todos') }}&page={{ request()->get('page', 1) }}" id="linkVoltar">
                             <button type="button" class="btn btn-back">Voltar</button>
                         </a>
                         <button type="submit" class="btn btn-confirm-edit">Editar</button>

@@ -18,28 +18,26 @@ class LoginController extends Controller
 
     // Login
     public function loginAdm(Request $request)
-{
-    // Validação dos dados inseridos no formulário de login do administrador
-    $request->validate([
-        'user' => 'required|email',
-        'pass' => 'required',
-    ]);
+    {
+        // Validação dos dados inseridos no formulário de login do administrador
+        $request->validate([
+            'user' => 'required|email',
+            'pass' => 'required',
+        ]);
 
-    // Busca o usuário no banco de dados
-    $ologin = Login::where('adm_user', $request->input('user'))->first();
+        // Busca o usuário no banco de dados
+        $ologin = Login::where('adm_user', $request->input('user'))->first();
 
-    if (!$ologin || !Hash::check($request->input('pass'), $ologin->adm_pass)) {
-        return back()->withErrors(['error' => 'Usuário ou senha inválidos']);
+        if (!$ologin || !Hash::check($request->input('pass'), $ologin->adm_pass)) {
+            return back()->withErrors(['error' => 'Usuário ou senha inválidos']);
+        }
+
+        // Autenticar o usuário
+        Auth::login($ologin);
+
+        // Redirecionar para a página desejada
+        return redirect()->intended('/admin/cards?filtro=todos&page=1')->with('success', 'Login realizado com sucesso!');
     }
-
-    // Autenticar o usuário
-    Auth::login($ologin);
-
-    // Redirecionar para a página desejada
-    return redirect()->intended('/admin/cards')->with('success', 'Login realizado com sucesso!');
-}
-
-
 
     // Logout 
     public function logout(Request $request)
@@ -53,6 +51,5 @@ class LoginController extends Controller
         // Redireciona para a página de login sem dados
         return redirect()->route('login')->withInput([]);
     }
-    
 
 }

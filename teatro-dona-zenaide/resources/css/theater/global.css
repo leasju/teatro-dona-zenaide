@@ -32,6 +32,38 @@ h1, h2, h3, h4, h5, h6, p, span, a, ul, li {
 }
 
 /* 
+ * Scroll Bar Styles
+*/
+
+body {
+    --sb-track-color: #212121;
+    --sb-thumb-color: var(--vermelho-geral);
+    --sb-size: 14px;
+}
+  
+body::-webkit-scrollbar {
+    width: var(--sb-size)
+}
+  
+body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 3px;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
+    border: 1px solid #212121;
+}
+  
+@supports not selector(::-webkit-scrollbar) {
+    body {
+        scrollbar-color: var(--sb-thumb-color)
+                         var(--sb-track-color);
+    }
+}
+
+/* 
  * Icons Iconify CSS
 */
 
@@ -173,6 +205,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, ul, li {
 
     /* Colors */
     --vermelho-geral: #D5321D;
+    --verde: #30A61D;
     --branco: #FFFFFF;
     --semibranco: #F8F9FA;
     --branco-preto: #F8F9FA;
@@ -1102,6 +1135,24 @@ input:focus, input:active, textarea:focus, textarea:active {
 #footer-area input {
     /* Cor do texto dos inputs do footer */
     color: var(--footer-input-color);
+}
+
+/* Adicionando um background color para a div que acompanha a label da textarea, para que o texto não sobreponha a label */
+.form-floating textarea:not(:placeholder-shown) ~ label ~ div {
+    width: calc(100% - 2rem);
+    height: 1rem;
+    background-color: var(--branco-preto);
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    z-index: 1;
+    padding-top: 1.625rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+.form-floating textarea ~ label {
+    z-index: 2;
 }
 
 /* 

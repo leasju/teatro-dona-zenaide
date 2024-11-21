@@ -134,6 +134,11 @@
     color: var(--texto-primario);
 }
 
+#play-info-section #play-info p {
+    /* Centralizando o texto dos parágrafos informativos da peça */ 
+    text-align: center;
+}
+
 #play-info-section #play-ticket-info {
     /* Font size e cor do parágrafo de aviso sobre a compra dos ingressos */
     font-size: 16px;

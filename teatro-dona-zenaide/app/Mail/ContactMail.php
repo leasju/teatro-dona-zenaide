@@ -32,7 +32,7 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Nova Mensagem de Contato') // Define o assunto do e-mail
+        return $this->subject('Nova mensagem de contato') // Define o assunto do e-mail
                     ->view('emails.contact'); // Define a view que será utilizada para o corpo do e-mail
     }
 }

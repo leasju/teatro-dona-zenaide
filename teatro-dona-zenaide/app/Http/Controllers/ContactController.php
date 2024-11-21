@@ -22,7 +22,7 @@ class ContactController extends Controller
         ];
 
         // Envia o e-mail para o destinatário
-        Mail::to('alanmoreiraduart@gmail.com')->send(new ContactMail($details));
+        Mail::to('giovaniwhb@gmail.com')->send(new ContactMail($details));
 
         return redirect()->back()->with('success', 'Email enviado com sucesso!');
     }
