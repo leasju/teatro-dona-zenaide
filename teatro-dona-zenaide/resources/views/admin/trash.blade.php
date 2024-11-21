@@ -1,6 +1,14 @@
 {{-- Puxando o layout --}}
 @extends('layouts.layout_admin')
 
+{{-- Importando o arquivo JS da Trash --}}
+@section('trash-js')
+
+    {{-- Importando o arquivo JS da Trash --}}
+    @vite('resources/js/admin/trash.js')
+
+@endsection
+
 {{-- Mudando o título da página dinamicamente --}}
 @section('view-title', 'Lixeira - Administrador')
 
@@ -27,7 +35,7 @@
 {{-- Conteúdo da página --}}
 @section('content')
 
-    {{-- * Modal (Delete) --}}
+    {{-- * Modal (Delete and Restore) --}}
 
     {{-- * Delete Modal --}}
     <x-admin.modal modalclasswidth="" id="deleteModal" labelledby="deleteModalLabel" title="Deletar Peça">
@@ -51,6 +59,9 @@
             <form action="" method="POST" id="formModalDelete">
                 @method('DELETE')
                 @csrf
+
+                {{-- Enviar a URL para o back-end contendo o filtro ativo no momento e a página da paginação --}}
+                <input type="hidden" id="redirect-filter-delete" name="filter">
 
                 <button type="submit" class="btn btn-confirm-action btn-confirm-action--delete">Excluir</button>
             </form>
@@ -82,6 +93,9 @@
                 @method('PUT')
                 @csrf
 
+                {{-- Enviar a URL para o back-end contendo o filtro ativo no momento e a página da paginação --}}
+                <input type="hidden" id="redirect-filter-restore" name="filter">
+
                 <button type="submit" class="btn btn-confirm-action btn-confirm-action--restore">Restaurar</button>
             </form>
 
@@ -104,7 +118,7 @@
                         <h1 class="roboto-regular">Exclua ou Restaure Peças Removidas</h1>
 
                         <!-- Botão de voltar para a tela de cards -->
-                        <a href="/admin/cards" class="main-btn main-btn--back">
+                        <a href="/admin/cards?filtro={{ request()->get('filtro', 'todos') }}" class="main-btn main-btn--back">
                             <span class="lets-icons--back"></span>
                             <span class="roboto-regular">Voltar</span>
                         </a>

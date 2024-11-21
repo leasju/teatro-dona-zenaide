@@ -11,6 +11,12 @@
     {{-- Importando o arquivo JS com o Vite que contém os arquivos CSS e JS --}}
     @vite('resources/js/admin/admin.js')
 
+    {{-- Importação do JS dos Cards somente se for a tela de Cards --}}
+    @yield('cards-js')
+
+    {{-- Importação do JS da Trash somente se for a tela de Trash --}}
+    @yield('trash-js')
+
     {{-- Icons - Iconify: Implementando os ícones no CSS e utilizando a tag <span> para mostrar os ícones --}}
 
     {{-- Fonte - Roboto --}}

@@ -5,7 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EspetaculoController;
 use App\Http\Controllers\ContactController;
 
-// * Views Teatro
+// * ---------------------------------------------------------VIEWS TEATRO---------------------------------------------------------------
 
 // Rota por GET para a tela home
 Route::get('/', [EspetaculoController::class, 'showHomePage']);
@@ -23,12 +23,15 @@ Route::get('/seu-projeto-no-teatro', function () {
     return view('theater/your_theater_project');
 });
 
-//Rota para o Fale Conosco
-//Rotas para o envio de email
+// * Rotas para o Fale Conosco
+
+// Rotas para o envio de email
 Route::post('/contact/send', [ContactController::class, 'sendMessage'])->name('contact.sendMessage');
 Route::post('/contact', [ContactController::class, 'sendMessage'])->name('contact.sendMessage');
 
-// * Views Administrador
+// * ------------------------------------------------------------------------------------------------------------------------------------
+
+// * -----------------------------------------------------VIEWS ADMINISTRADOR------------------------------------------------------------
 
 // Rota por GET para tela de Login do Admin
 Route::get('/admin/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -39,19 +42,24 @@ Route::post('/admin/login', [LoginController::class, 'loginAdm']);
 // Rota por GET para o método "logout" da classe "LoginController"
 Route::get('/admin/logout', [LoginController::class, 'logout']);
 
-//ROTA PROTEGIDAS POR AUTENTICAÇÂO
+// * Rotas protegidas por autenticação
+
 Route::middleware('auth')->group(function () {
+
     // Rota por GET para tela de Cards do Admin
     Route::get('/admin/cards', function () {
         return view('admin/cards');
     });
+
     // Rota para o método "store" da classe "EspetaculosController" 
     Route::post('/admin/cards', [EspetaculoController::class, 'store']);
 
     // Rota para o método "index" da classe "EspetaculosController"
     Route::get('/admin/cards', [EspetaculoController::class, 'index']);
 
+    // Rota para o método "indexLixeira" da classe "EspetaculosController"
     Route::get('/admin/cards/lixeira', [EspetaculoController::class, 'indexLixeira']);
+
     // Rota para exclusão de espetáculo 
     Route::delete('/espetaculos/{id}/delete', [EspetaculoController::class, 'destroy'])->name('espetaculos.destroy');
 
@@ -63,7 +71,7 @@ Route::middleware('auth')->group(function () {
     // Rota que retorna os dados do espetáculo para a view de edição
     Route::get('/admin/cards/{id}/editar', [EspetaculoController::class, 'edit']);
 
-    //Rota que edita o espetáculo
+    // Rota que edita o espetáculo
     Route::put('/admin/cards/{id}/editar', [EspetaculoController::class, 'update']);
 
     // Rota para remoção de espetáculo 
@@ -71,4 +79,7 @@ Route::middleware('auth')->group(function () {
 
     // Rota para atualizar a visibilidade
     Route::put('/espetaculos/{id}/ocultar', [EspetaculoController::class, 'ocultar'])->name('espetaculos.ocultar');
+
 });
+
+// * ------------------------------------------------------------------------------------------------------------------------------------

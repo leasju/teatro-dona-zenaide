@@ -1,6 +1,14 @@
 {{-- Puxando o layout --}}
 @extends('layouts.layout_admin')
 
+{{-- Importando o arquivo JS dos Cards --}}
+@section('cards-js')
+
+    {{-- Importando o arquivo JS dos Cards --}}
+    @vite('resources/js/admin/cards.js')
+
+@endsection
+
 {{-- Mudando o título da página dinamicamente --}}
 @section('view-title', 'Peças - Administrador')
 
@@ -328,6 +336,10 @@
         {{-- Footer do Modal --}}
         <x-slot name="footer">
 
+            {{-- Enviar a URL para o back-end contendo o filtro ativo no momento e a página da paginação --}}
+            <input type="hidden" id="redirect-filter-new" name="filter">
+            <input type="hidden" id="redirect-page-new" name="page">
+
             {{-- Botões do Footer --}}
             <button type="button" class="btn btn-exit" data-bs-dismiss="modal">Fechar</button>
             <button type="button" class="btn btn-clear-modal" id="clearModalButton">Limpar</button>
@@ -362,6 +374,10 @@
                 @method('PUT')
                 @csrf
 
+                {{-- Enviar a URL para o back-end contendo o filtro ativo no momento e a página da paginação --}}
+                <input type="hidden" id="redirect-filter-remove" name="filter">
+                <input type="hidden" id="redirect-page-remove" name="page">
+
                 <button type="submit" class="btn btn-confirm-action btn-confirm-action--delete">Remover</button>
             </form>
 
@@ -393,6 +409,10 @@
             <form action="" method="POST" id="formModalVisibility">
                 @method('PUT')
                 @csrf
+
+                {{-- Enviar a URL para o back-end contendo o filtro ativo no momento e a página da paginação --}}
+                <input type="hidden" id="redirect-filter-visibility" name="filter">
+                <input type="hidden" id="redirect-page-visibility" name="page">
 
                 <input type="hidden" name="oculto" id="oculto">
                 <button type="submit" class="btn btn-confirm-action btn-confirm-action--visibility" id="btnModalVisibility">Ocultar</button>
@@ -426,17 +446,17 @@
 
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <li>
-                                        <a class="dropdown-item {{ $filtro === 'todos' ? 'active' : '' }}" href="{{ url('/admin/cards') }}?filtro=todos">
+                                        <a class="dropdown-item {{ $filtro === 'todos' ? 'active' : '' }}" href="{{ url('/admin/cards') }}?filtro=todos" data-filter="todos">
                                             Todos
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item {{ $filtro === 'ocultos' ? 'active' : '' }}" href="{{ url('/admin/cards') }}?filtro=ocultos">
+                                        <a class="dropdown-item {{ $filtro === 'ocultos' ? 'active' : '' }}" href="{{ url('/admin/cards') }}?filtro=ocultos" data-filter="ocultos">
                                             Ocultos
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item {{ $filtro === 'ativos' ? 'active' : '' }}" href="{{ url('/admin/cards') }}?filtro=ativos">
+                                        <a class="dropdown-item {{ $filtro === 'ativos' ? 'active' : '' }}" href="{{ url('/admin/cards') }}?filtro=ativos" data-filter="ativos">
                                             Ativos
                                         </a>
                                     </li>
@@ -476,7 +496,7 @@
                                     <td id="action-buttons">
 
                                         {{-- Botão de Editar Peça --}}
-                                        <a href="/admin/cards/{{$espetaculo->id}}/editar" id="editLink">
+                                        <a href="/admin/cards/{{$espetaculo->id}}/editar?filtro={{ request()->get('filtro', 'todos') }}&page={{ request()->get('page', 1) }}" id="editLink">
                                             <button class="action-buttons-style action-buttons-style--edit">
                                                 <span class="bx--edit"></span>
                                             </button>
@@ -495,9 +515,44 @@
                                     </td>
                                 </tr>
                             @empty
-                                <tr>
-                                    <td colspan="3">Nenhum espetáculo cadastrado.</td>
-                                </tr>
+
+                                {{-- Verifica se há pelo menos um espetáculo visível --}}
+                                @php
+                                    $espetaculosVisiveis = $espetaculos->filter(function($espetaculo) {
+                                        return $espetaculo->oculto === 0;
+                                    });
+                                @endphp
+
+                                {{-- Se não houver espetáculos visíveis no filtro de ocultos, mostra a mensagem --}}
+                                @if (request()->get('filtro') === 'ocultos' && $espetaculosVisiveis->isEmpty())
+
+                                    {{-- Mostra a mensagem --}}
+                                    <tr>
+                                        <td colspan="3">Nenhum espetáculo oculto.</td>
+                                    </tr>
+
+                                @endif
+
+                                {{-- Se não houver espetáculos visíveis no filtro de ativos, mostra a mensagem --}}
+                                @if (request()->get('filtro') === 'ativos' && $espetaculosVisiveis->isEmpty())
+
+                                    {{-- Mostra a mensagem --}}
+                                    <tr>
+                                        <td colspan="3">Nenhum espetáculo ativo.</td>
+                                    </tr>
+
+                                @endif
+
+                                {{-- Se não houver espetáculos visíveis no filtro de todos, mostra a mensagem --}}
+                                @if (request()->get('filtro') === 'todos' && $espetaculosVisiveis->isEmpty())
+
+                                    {{-- Mostra a mensagem --}}
+                                    <tr>
+                                        <td colspan="3">Nenhum espetáculo cadastrado.</td>
+                                    </tr>
+
+                                @endif
+
                             @endforelse
                         </tbody>
 
@@ -505,14 +560,14 @@
 
                     {{-- Botão de Lixeira --}}
                     <div id="trash-button" class="d-flex justify-content-end mt-3">
-                        <a href="/admin/cards/lixeira" class="main-btn main-btn--trash">
+                        <a href="/admin/cards/lixeira?filtro={{ request()->get('filtro', 'todos') }}" class="main-btn main-btn--trash">
                             <span class="ph--trash-bold"></span>
                             <span class="roboto-regular">Lixeira</span>
                         </a>
                     </div>
 
                     {{-- Paginação dos Espetáculos --}}
-                    {{ $espetaculos->links() }}
+                    {{ $espetaculos->appends(['filtro' => $filtro])->links() }}
 
                 </div>
             </div>

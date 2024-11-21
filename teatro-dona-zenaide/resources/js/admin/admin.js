@@ -560,4 +560,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// * Script para atualizar a página com base no filtro e página armazenados no localStorage quando a ação de Editar for realizada
+
+document.addEventListener('DOMContentLoaded', function () {
+    const currentFilterEdit = localStorage.getItem('filtro') || 'todos';
+    const currentPageEdit = localStorage.getItem('page') || 1;
+
+    // Adiciona os valores armazenados a um campo oculto do formulário ou envia via AJAX
+    const filterFieldEdit = document.querySelector('#redirect-filter-edit');
+    const pageFieldEdit = document.querySelector('#redirect-page-edit');
+
+    if (filterFieldEdit && pageFieldEdit) {
+        filterFieldEdit.value = currentFilterEdit;
+        pageFieldEdit.value = currentPageEdit;
+    }
+});
+
 // * ---------------------------------------------------------------------------------------------------------------------------------
