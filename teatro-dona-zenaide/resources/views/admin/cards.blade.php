@@ -516,15 +516,18 @@
                                 </tr>
                             @empty
 
-                                {{-- Verifica se há pelo menos um espetáculo visível --}}
-                                @php
-                                    $espetaculosVisiveis = $espetaculos->filter(function($espetaculo) {
-                                        return $espetaculo->oculto === 0;
-                                    });
-                                @endphp
+                                {{-- Se não houver espetáculos cadastrados no filtro de todos na página 1 ou menor que 1, mostra a mensagem --}}
+                                @if (request()->get('page') <= 1 && request()->get('filtro') === 'todos' && $espetaculos->isEmpty())
 
-                                {{-- Se não houver espetáculos visíveis no filtro de ocultos, mostra a mensagem --}}
-                                @if (request()->get('filtro') === 'ocultos' && $espetaculosVisiveis->isEmpty())
+                                    {{-- Mostra a mensagem --}}
+                                    <tr>
+                                        <td colspan="3">Nenhum espetáculo cadastrado.</td>
+                                    </tr>
+
+                                @endif
+
+                                {{-- Se não houver espetáculos visíveis no filtro de ocultos na página 1 ou menor que 1, mostra a mensagem --}}
+                                @if (request()->get('page') <= 1 && request()->get('filtro') === 'ocultos' && $espetaculos->isEmpty())
 
                                     {{-- Mostra a mensagem --}}
                                     <tr>
@@ -533,22 +536,12 @@
 
                                 @endif
 
-                                {{-- Se não houver espetáculos visíveis no filtro de ativos, mostra a mensagem --}}
-                                @if (request()->get('filtro') === 'ativos' && $espetaculosVisiveis->isEmpty())
+                                {{-- Se não houver espetáculos visíveis no filtro de ativos na página 1 ou menor que 1, mostra a mensagem --}}
+                                @if (request()->get('page') <= 1 && request()->get('filtro') === 'ativos' && $espetaculos->isEmpty())
 
                                     {{-- Mostra a mensagem --}}
                                     <tr>
                                         <td colspan="3">Nenhum espetáculo ativo.</td>
-                                    </tr>
-
-                                @endif
-
-                                {{-- Se não houver espetáculos visíveis no filtro de todos, mostra a mensagem --}}
-                                @if (request()->get('filtro') === 'todos' && $espetaculosVisiveis->isEmpty())
-
-                                    {{-- Mostra a mensagem --}}
-                                    <tr>
-                                        <td colspan="3">Nenhum espetáculo cadastrado.</td>
                                     </tr>
 
                                 @endif
