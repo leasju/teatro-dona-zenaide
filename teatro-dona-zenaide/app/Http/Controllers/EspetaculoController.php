@@ -61,24 +61,32 @@ class EspetaculoController extends Controller
     // * -------------------------------------------ADMIN-------------------------------------------
 
     // INDEX: Mostrar todos os espetáculos ativos ou ocultos
-    public function index(Request $request): View
+    public function index(Request $request): \Illuminate\View\View|\Illuminate\Http\RedirectResponse
     {
         // Obtém o valor do filtro enviado pela URL (padrão: 'todos')
         $filtro = $request->input('filtro', 'todos');
-
+    
+        // Obtém o valor da página enviada pela URL (padrão: 1) e converte para inteiro
+        $page = (int) $request->input('page', 1);
+    
         // Inicia a consulta
         $query = Espetaculo::query();
-
+    
         // Aplica o filtro com base no campo "oculto"
         if ($filtro === 'ocultos') {
             $query->where('oculto', 1); // Exibe apenas ocultos
         } elseif ($filtro === 'ativos') {
             $query->where('oculto', 0); // Exibe apenas ativos
         }
-
+    
         // Faz a paginação de 4 em 4 espetáculos por página
         $espetaculos = $query->where('trash', 0)->paginate(4);
-
+    
+        // Se a página atual estiver vazia e não for a primeira, redireciona para a anterior
+        if ($espetaculos->isEmpty() && $page > 1) {
+            return redirect("/admin/cards?filtro={$filtro}&page=" . ($page - 1))->with('success', 'Voltando para a página anterior');
+        }
+    
         // Retorna para a view '/admin/cards' com os espetáculos e o filtro ativo
         return view('admin.cards', compact('espetaculos', 'filtro'));
     }
