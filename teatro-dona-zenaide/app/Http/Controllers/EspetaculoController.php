@@ -84,7 +84,11 @@ class EspetaculoController extends Controller
     
         // Se a página atual estiver vazia e não for a primeira, redireciona para a anterior
         if ($espetaculos->isEmpty() && $page > 1) {
-            return redirect("/admin/cards?filtro={$filtro}&page=" . ($page - 1))->with('success', 'Voltando para a página anterior');
+            // Mantém a mensagem original da sessão, se existir
+            $successMessage = session('success', 'Voltando para a página anterior');
+    
+            return redirect("/admin/cards?filtro={$filtro}&page=" . ($page - 1))
+                ->with('success', $successMessage);
         }
     
         // Retorna para a view '/admin/cards' com os espetáculos e o filtro ativo
