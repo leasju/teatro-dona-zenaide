@@ -62,6 +62,7 @@
 
                 {{-- Enviar a URL para o back-end contendo o filtro ativo no momento e a página da paginação --}}
                 <input type="hidden" id="redirect-filter-delete" name="filter">
+                <input type="hidden" id="redirect-page-delete" name="page">
 
                 <button type="submit" class="btn btn-confirm-action btn-confirm-action--delete">Excluir</button>
             </form>
@@ -95,6 +96,7 @@
 
                 {{-- Enviar a URL para o back-end contendo o filtro ativo no momento e a página da paginação --}}
                 <input type="hidden" id="redirect-filter-restore" name="filter">
+                <input type="hidden" id="redirect-page-restore" name="page">
 
                 <button type="submit" class="btn btn-confirm-action btn-confirm-action--restore">Restaurar</button>
             </form>

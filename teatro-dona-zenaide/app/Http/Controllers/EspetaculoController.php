@@ -95,16 +95,32 @@ class EspetaculoController extends Controller
         return view('admin.cards', compact('espetaculos', 'filtro'));
     }
 
-    // INDEX: Mostrar todos os espetáculos excluíos
-    public function indexLixeira(): View
+    // INDEX: Mostrar todos os espetáculos excluídos
+    public function indexLixeira(Request $request): \Illuminate\View\View|\Illuminate\Http\RedirectResponse
     {
-        // Exibe todos os espetáculos para o administrador (inclusive os ocultos)
-        $espetaculos = Espetaculo::all();
-
-        // Retorna para a view '/admin/cards' e faz a paginação de 4 em 4 espetáculos por página
-        return view('/admin/trash', [
-            'espetaculos' => DB::table('espetaculos')->where('trash', 1)->paginate(4)
-        ]);
+        // Obtém o valor do filtro enviado pela URL (padrão: 'todos')
+        $filtro = $request->input('filtro', 'todos');
+    
+        // Obtém o valor da página enviada pela URL (padrão: 1) e converte para inteiro
+        $page = (int) $request->input('page', 1);
+    
+        // Inicia a consulta
+        $query = DB::table('espetaculos')->where('trash', 1);
+    
+        // Faz a paginação de 4 em 4 espetáculos por página
+        $espetaculos = $query->paginate(4)->appends(['filtro' => $filtro]);
+    
+        // Se a página atual estiver vazia e não for a primeira, redireciona para a anterior
+        if ($espetaculos->isEmpty() && $page > 1) {
+            // Mantém a mensagem original da sessão, se existir
+            $successMessage = session('success', 'Voltando para a página anterior');
+    
+            return redirect("/admin/cards/lixeira?filtro={$filtro}&page=" . ($page - 1))
+                ->with('success', $successMessage);
+        }
+    
+        // Retorna para a view '/admin/trash' com os espetáculos e o filtro
+        return view('/admin/trash', compact('espetaculos', 'filtro'));
     }
 
     // STORE: Salvar dados do Espetaculo
@@ -498,9 +514,10 @@ class EspetaculoController extends Controller
 
             // Recupera os parâmetros 'filtro' e 'page' enviados via request ou usa padrões
             $filtro = request('filter', 'todos');
+            $page = request('page', 1);
         
             // Constrói a URL de redirecionamento
-            $redirectUrl = "/admin/cards/lixeira?filtro={$filtro}";
+            $redirectUrl = "/admin/cards/lixeira?filtro={$filtro}&page={$page}";
 
             return redirect($redirectUrl)->with('success', 'Espetáculo excluído com sucesso!');
         } 
@@ -567,9 +584,10 @@ class EspetaculoController extends Controller
 
         // Recupera os parâmetros 'filtro' e 'page' enviados via request ou usa padrões
         $filtro = request('filter', 'todos');
+        $page = request('page', 1);
     
         // Constrói a URL de redirecionamento
-        $redirectUrl = "/admin/cards/lixeira?filtro={$filtro}";
+        $redirectUrl = "/admin/cards/lixeira?filtro={$filtro}&page={$page}";
 
         // Retorna uma mensagem de sucesso
         return redirect($redirectUrl)->with('success', 'Espetáculo restaurado com sucesso!');
